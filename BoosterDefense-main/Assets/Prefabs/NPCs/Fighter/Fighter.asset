@@ -15,7 +15,7 @@ MonoBehaviour:
   tagTarget:
   - tags:
     - Enemy
-    collect: 1
+    collect: 3
   coolDowncollect:
   - 2
   rangecollect: 2
