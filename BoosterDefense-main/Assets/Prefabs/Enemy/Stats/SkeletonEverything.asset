@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07614ad8fc07844991deb28324b35a7, type: 3}
+  m_Name: SkeletonEverything
+  m_EditorClassIdentifier: 
+  tagTarget:
+  - tags:
+    - Weapons
+    - Base
+    - Food
+    - Scraps
+    - NPC
+    - Build
+    damage: 1
+  damage: 0
+  coolDownCapacities:
+  - 1
+  range: 3
+  speed: 2
+  hp: 8
+  coinsDropped: 5
+  zone: 3

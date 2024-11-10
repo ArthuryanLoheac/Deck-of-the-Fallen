@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93c94551396d1644b071fba9be48e5a, type: 3}
+  m_Name: BoosterRessource
+  m_EditorClassIdentifier: 
+  nameBooster: Ressources
+  priceGold: 50
+  icon: {fileID: 21300000, guid: 0eed3f039be215541b4ebf66986141bc, type: 3}
+  nbCard: 4
+  nbRare: 1
+  percentSuperRare: 10
+  listCardCommon:
+  - {fileID: 11400000, guid: 779a59fa18a62c64d85ea3f210f0d3bf, type: 2}
+  - {fileID: 11400000, guid: 78d0cab0bd4388045b61cb4af8cd94c6, type: 2}
+  - {fileID: 11400000, guid: bbe6dbcb3fe256845a5281c582ac28d8, type: 2}
+  listCardRare:
+  - {fileID: 11400000, guid: afff6284fbb6401469572384a93a3eea, type: 2}
+  - {fileID: 11400000, guid: 0d135336106003f47a4c30895687bcf9, type: 2}
+  - {fileID: 11400000, guid: b1eb1afbddb0be94ca4c564e1beac245, type: 2}
+  listCardSuperRare:
+  - {fileID: 11400000, guid: df99c05476b51bf4b88252e699e10297, type: 2}
