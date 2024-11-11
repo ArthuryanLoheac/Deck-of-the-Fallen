@@ -18,7 +18,8 @@ public class Arbalete : MonoBehaviour
 
     private void LookEnemy(GameObject enemy)
     {
-        WeaponArm.transform.LookAt(enemy.transform.GetChild(0));
+        var targetRotation = Quaternion.LookRotation(enemy.transform.GetChild(0).position - WeaponArm.transform.position);
+        WeaponArm.transform.rotation = Quaternion.Slerp(WeaponArm.transform.rotation, targetRotation, 10 * Time.deltaTime);
     }
 
     private IEnumerator InfligeDamageToEennemy(GameObject enemy, float time)
