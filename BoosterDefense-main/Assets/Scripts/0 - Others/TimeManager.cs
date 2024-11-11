@@ -49,15 +49,21 @@ public class TimeManager : MonoBehaviour
     }
     public void setNormalSpeed()
     {
-        Time.timeScale = 1;
+        if (!GameManager.instance.GameEnded)
+            Time.timeScale = 1;
     }
-
     public void setLowSpeed()
     {
-        Time.timeScale = lowSpeed;
+        if (!GameManager.instance.GameEnded)
+            Time.timeScale = lowSpeed;
+    }
+    public void setNoSpeed()
+    {
+        Time.timeScale = 0;
     }
     public void setHighSpeed()
     {
-        Time.timeScale = highSpeed;
+        if (!GameManager.instance.GameEnded)
+            Time.timeScale = highSpeed;
     }
 }

@@ -58,7 +58,7 @@ public class Life : MonoBehaviour
             RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
         }
         if (GetComponent<Base>() != null)
-            SceneManager.LoadScene("Menu");
+            GameManager.instance.Defeat();
         Destroy(gameObject);
     }
     // Update is called once per frame

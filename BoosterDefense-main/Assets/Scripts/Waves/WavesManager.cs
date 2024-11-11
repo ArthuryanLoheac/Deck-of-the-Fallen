@@ -69,16 +69,10 @@ public class WavesManager : MonoBehaviour
         }
     }
 
-    public void Win()
-    {
-        LevelManager.instance.LevelWin(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("Menu");
-    }
-
     private void CheckWin()
     {
         if (waveActual >= maxWave)
-            Win();
+            GameManager.instance.Win();
     }
 
     public float GetTimeStartingWave()
@@ -124,7 +118,7 @@ public class WavesManager : MonoBehaviour
             UpdateCoolDownActive();
             CheckWin();
         } else {
-            Win();
+            GameManager.instance.Win();
         }
     }
 
