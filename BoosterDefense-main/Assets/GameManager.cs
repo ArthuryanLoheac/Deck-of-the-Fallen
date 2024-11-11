@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     }
     public void Defeat()
     {
+        LooseUI.GetComponent<SetUILoose>().SetupUI();
         LooseUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();

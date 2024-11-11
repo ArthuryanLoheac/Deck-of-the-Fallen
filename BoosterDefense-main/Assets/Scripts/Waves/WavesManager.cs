@@ -11,7 +11,7 @@ public class WavesManager : MonoBehaviour
     public bool isDrawCardResetCalled;
     private GameObject[] Spawners;
     public int maxWave;
-    private int waveActual;
+    public int waveActual;
     private GameObject spawnerMax;
     public float[] timeAfterStartingWave;
     private List<float> timeMaxStartingWave;
