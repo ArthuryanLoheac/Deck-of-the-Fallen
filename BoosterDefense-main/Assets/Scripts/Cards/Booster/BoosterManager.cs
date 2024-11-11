@@ -19,7 +19,7 @@ public class BoosterManager : MonoBehaviour
     }
 
 
-    private void DrawFromList(List<CardStats> lst, bool AddCardToHand = false)
+    private CardStats DrawFromList(List<CardStats> lst, bool AddCardToHand = false)
     {
         //Random Carte
         CardStats cardDraw = lst[Random.Range(0, lst.Count)];
@@ -30,24 +30,41 @@ public class BoosterManager : MonoBehaviour
             //Ajoute dans le deck
             DeckCardsManager.instance.AllCards.Add(cardDraw);
         }
+        return cardDraw;
     }
 
-    public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
+    IEnumerator DrawAnimationCoroutine(BoosterStats boosterStats, bool AddCardToHand = false)
     {
-        //Draw Normal Cards
         for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++) {
-            DrawFromList(boosterStats.listCardCommon, AddCardToHand);
-        }
+            BoosterDrawCardUI.instance.DesactiveCard();
+            yield return new WaitForSeconds(0.5f);
 
+            CardStats card = DrawFromList(boosterStats.listCardCommon, AddCardToHand);
+
+            BoosterDrawCardUI.instance.SetupCard(card);
+            yield return new WaitForSeconds(1.5f);
+        }
         //Rare and super rare
         for (int j = 0; j < boosterStats.nbRare; j++) {
+            BoosterDrawCardUI.instance.DesactiveCard();
+
             if (Random.Range(1, 101) < boosterStats.percentSuperRare) {
                 //Super rare
-                DrawFromList(boosterStats.listCardSuperRare, AddCardToHand);
+                yield return new WaitForSeconds(2f);
+                CardStats card = DrawFromList(boosterStats.listCardSuperRare, AddCardToHand);
+                BoosterDrawCardUI.instance.SetupCard(card);
             } else {
                 //rare
-                DrawFromList(boosterStats.listCardRare, AddCardToHand);
+                yield return new WaitForSeconds(2f);
+                CardStats card = DrawFromList(boosterStats.listCardRare, AddCardToHand);
+                BoosterDrawCardUI.instance.SetupCard(card);
             }
+            yield return new WaitForSeconds(1f);
+            BoosterDrawCardUI.instance.DesactiveCard();
         }
+    }
+    public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
+    {
+        StartCoroutine(DrawAnimationCoroutine(boosterStats, AddCardToHand));
     }
 }
