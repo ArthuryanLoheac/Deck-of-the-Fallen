@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaba5ac842b09a4caf47c333aa825f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationNormalDraw: {fileID: 0}
   boosterOwned:
   - {fileID: 11400000, guid: 9c539d3981266f5478a44bd2b018b081, type: 2}
 --- !u!114 &562752198

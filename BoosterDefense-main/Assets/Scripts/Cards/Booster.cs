@@ -33,7 +33,7 @@ public class Booster : MonoBehaviour
 
     void Update()
     {
-        if (boosterStats){
+        if (boosterStats && !BoosterDrawCardUI.instance.isDrawing){
             button.interactable = RessourceManager.instance.GetRessourceAmount(RessourceType.gold) >= price;
         } else {
             button.interactable = false;

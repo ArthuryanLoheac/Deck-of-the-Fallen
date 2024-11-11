@@ -6,6 +6,7 @@ using UnityEngine;
 public class BoosterManager : MonoBehaviour
 {
     public static BoosterManager instance;
+    public Animation animationNormalDraw;
 
     public List<BoosterStats> boosterOwned;
 
@@ -35,13 +36,13 @@ public class BoosterManager : MonoBehaviour
 
     IEnumerator DrawAnimationCoroutine(BoosterStats boosterStats, bool AddCardToHand = false)
     {
+        BoosterDrawCardUI.instance.isDrawing = true;
         for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++) {
             BoosterDrawCardUI.instance.DesactiveCard();
-            yield return new WaitForSeconds(0.5f);
 
             CardStats card = DrawFromList(boosterStats.listCardCommon, AddCardToHand);
 
-            BoosterDrawCardUI.instance.SetupCard(card);
+            BoosterDrawCardUI.instance.SetupCard(card, 0);
             yield return new WaitForSeconds(1.5f);
         }
         //Rare and super rare
@@ -50,18 +51,18 @@ public class BoosterManager : MonoBehaviour
 
             if (Random.Range(1, 101) < boosterStats.percentSuperRare) {
                 //Super rare
-                yield return new WaitForSeconds(2f);
                 CardStats card = DrawFromList(boosterStats.listCardSuperRare, AddCardToHand);
-                BoosterDrawCardUI.instance.SetupCard(card);
+                BoosterDrawCardUI.instance.SetupCard(card, 1);
+            yield return new WaitForSeconds(1.5f);
             } else {
                 //rare
-                yield return new WaitForSeconds(2f);
                 CardStats card = DrawFromList(boosterStats.listCardRare, AddCardToHand);
-                BoosterDrawCardUI.instance.SetupCard(card);
+                BoosterDrawCardUI.instance.SetupCard(card, 1);
+                yield return new WaitForSeconds(1.5f);
             }
-            yield return new WaitForSeconds(1f);
             BoosterDrawCardUI.instance.DesactiveCard();
         }
+        BoosterDrawCardUI.instance.isDrawing = false;
     }
     public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
     {
