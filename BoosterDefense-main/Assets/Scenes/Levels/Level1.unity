@@ -13138,6 +13138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CardPrefab: {fileID: 1436063236}
+  isDrawing: 0
 --- !u!1001 &1778830912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15972,7 +15973,7 @@ PrefabInstance:
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.data[0].oneEnemyWaves.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 3907904795144399996, guid: 0487f31a2b454c1478b89930ce372328, type: 3}
+      objectReference: {fileID: 3907904795144399996, guid: 7bd6b205affe3b54e978f56080b5c262, type: 3}
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.data[1].oneEnemyWaves.Array.data[0].enemy
       value: 

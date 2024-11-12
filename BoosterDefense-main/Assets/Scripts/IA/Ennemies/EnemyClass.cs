@@ -28,29 +28,38 @@ public class EnemyIAClass : MonoBehaviour
     public virtual void CapacitiesPassives() {}
     public virtual void CapacitiesOnDeath() {}
     #endregion Capacity
-
     #region Update
     void Update()
     {
-        agent.speed = ComputeSpeed(stats.speed);
-        if (Time.time > timeActiveMove){
-            FindPathTimer(); // cherche chemin tout les X
-            if (target != null) {
-                bool inRange = Vector3.Distance(transform.position, target.transform.position) <= stats.range + getBoudsSizeTarget() + 0.5f;
+        if (!GetComponent<Life>().isDead)
+        {
+            agent.speed = ComputeSpeed(stats.speed);
+            if (Time.time > timeActiveMove)
+            {
+                FindPathTimer(); // cherche chemin tout les X
+                if (target != null)
+                {
+                    bool inRange = Vector3.Distance(transform.position, target.transform.position) <= stats.range + getBoudsSizeTarget() + 0.5f;
 
-                if (inRange) {
-                    LookAtTarget();
-                    CapacitiesOnRange(target);
-                } else {
-                    UpdatePath();
-                    CheckBlockingObject();
+                    if (inRange)
+                    {
+                        LookAtTarget();
+                        CapacitiesOnRange(target);
+                    }
+                    else
+                    {
+                        UpdatePath();
+                        CheckBlockingObject();
+                    }
                 }
-            } else {
-                FindPathTimer();
+                else
+                {
+                    FindPathTimer();
+                }
+                animator.SetFloat("Speed", Mathf.Min(1, SmoothValue(agent.desiredVelocity.sqrMagnitude)));
+                animator.SetFloat("SpeedAttack", ComputeSpeed(1));
+                CapacitiesPassives();
             }
-            animator.SetFloat("Speed", Mathf.Min(1, SmoothValue(agent.desiredVelocity.sqrMagnitude)));
-            animator.SetFloat("SpeedAttack",  ComputeSpeed(1));
-            CapacitiesPassives();
         }
     }
     void OnDestroy()
@@ -150,7 +159,7 @@ public class EnemyIAClass : MonoBehaviour
         foreach (GameObject t in enemies)
         {
             float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist)
+            if (dist < minDist && t.GetComponent<Life>().isDead == false)
             {
                 tMin = t;
                 minDist = dist;

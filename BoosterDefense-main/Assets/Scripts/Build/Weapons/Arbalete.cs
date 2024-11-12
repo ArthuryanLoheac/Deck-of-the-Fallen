@@ -51,7 +51,7 @@ public class Arbalete : MonoBehaviour
         Collider[] cols = Physics.OverlapSphere(transform.position, weapon.range, RessourceManager.instance.AllLayer);
         
         foreach (Collider col in cols) {
-            if (col.tag == "Enemy") {
+            if (col.tag == "Enemy" && !col.gameObject.GetComponent<Life>().isDead) {
                 target = col.gameObject;
                 ShootEnemy(target);
             }
@@ -61,7 +61,7 @@ public class Arbalete : MonoBehaviour
     private void UpdateTarget()
     {
         //Check target toujours à distance
-        if (Vector3.Distance(target.transform.position, transform.position) > weapon.range) {
+        if (Vector3.Distance(target.transform.position, transform.position) > weapon.range || target.GetComponent<Life>().isDead) {
             target = null;
         } else {
             LookEnemy(target);

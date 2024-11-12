@@ -34,24 +34,26 @@ public class UniteIAClass : MonoBehaviour
 
     void Update()
     {
-        agent.speed = ComputeSpeed(stats.speed);
-        CapacitiesPassives();
-        if (isPriorityMovement) {
-            //if priority movement -> move to this position
-            PriorityMovement();
-        } else {
-            FindPathTimer();
-            if (target != null) {
-                //if have a target -> check new one / move to his direction / etc
-                TargetManagement();
+        if (!GetComponent<Life>().isDead){
+            agent.speed = ComputeSpeed(stats.speed);
+            CapacitiesPassives();
+            if (isPriorityMovement) {
+                //if priority movement -> move to this position
+                PriorityMovement();
             } else {
-                //find a target
                 FindPathTimer();
+                if (target != null) {
+                    //if have a target -> check new one / move to his direction / etc
+                    TargetManagement();
+                } else {
+                    //find a target
+                    FindPathTimer();
+                }
             }
+            animator.SetFloat("Speed", SmoothValue(agent.desiredVelocity.sqrMagnitude));
+            animator.SetFloat("SpeedAttack",  ComputeSpeed(1));
+                CheckClickAndMove();
         }
-        animator.SetFloat("Speed", SmoothValue(agent.desiredVelocity.sqrMagnitude));
-        animator.SetFloat("SpeedAttack",  ComputeSpeed(1));
-        CheckClickAndMove();
     }
     #endregion  Update
     #region  IA
@@ -180,7 +182,7 @@ public class UniteIAClass : MonoBehaviour
         foreach (GameObject t in enemies)
         {
             float dist = Vector3.Distance(t.transform.position, currentPos);
-            if (dist < minDist && ChooseTarget(t))
+            if (dist < minDist && ChooseTarget(t) && t.GetComponent<Life>().isDead == false)
             {
                 tMin = t;
                 minDist = dist;

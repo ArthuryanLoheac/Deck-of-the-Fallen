@@ -16,6 +16,7 @@ public enum TypeDamage {
 public class Life : MonoBehaviour
 {
     public float hp;
+    public bool isDead;
     [HideInInspector]public float hpMax;
     public GameObject HPBarprefabs;
     private GameObject HPBar;
@@ -43,7 +44,7 @@ public class Life : MonoBehaviour
     private void UpdateHealthBar()
     {
         if (!isBase){
-            if (hp < hpMax) {
+            if (hp < hpMax && isDead == false) {
                 HPBar.SetActive(true);
             } else {
                 HPBar.SetActive(false);
@@ -52,19 +53,41 @@ public class Life : MonoBehaviour
         fillHpBar.fillAmount = (float)hp / (float)hpMax;
     }
 
+    private void DeathAlly()
+    {
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("Dead", true); ;
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        Destroy(gameObject, .8f);
+    }
+    private void DeathEnnemy()
+    {
+        this.transform.GetChild(0).GetComponent<Animator>().SetBool("Dead", true);
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        Destroy(gameObject, 1.39f);
+    }
+
     private void Death()
     {
-        if (PlaneManager.instance.surfaces[0] != null) {
+        isDead = true;
+        if (PlaneManager.instance.surfaces[0] != null) 
             RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
-        }
+        
         if (GetComponent<Base>() != null)
             GameManager.instance.Defeat();
-        Destroy(gameObject);
+
+        if (GetComponent<IACollectRessources>() || GetComponent<IAAttackMonster>() || GetComponent<IAReparatorBuildings>())
+            DeathAlly();
+        else if (GetComponent<Enemy>() || GetComponent<EnemyKamikaze>())
+            DeathEnnemy();
+        else 
+            Destroy(gameObject);
+
+        UpdateHealthBar();
     }
     // Update is called once per frame
     void Update()
     {
-        if(hp <= 0){
+        if (hp <= 0){
             Death();
         } else {
             UpdateHealthBar();
@@ -89,6 +112,7 @@ public class Life : MonoBehaviour
 
     void Start()
     {
+        isDead = false;
         hpMax = hp;
         isBase = GetComponent<Base>() != null;
         sizeY = GetComponent<Collider>().bounds.size.y + 1f;
