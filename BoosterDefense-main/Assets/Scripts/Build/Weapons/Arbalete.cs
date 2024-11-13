@@ -4,28 +4,21 @@ using UnityEngine;
 
 public class Arbalete : MonoBehaviour
 {
-    public GameObject WeaponArm;
     public Weapon weapon;
     public float nextTimeShooting;
     private GameObject target;
-    public GameObject arrow;
     private CoolDownActication ActivationManager;
+    public GameObject FxShoot;
+    public GameObject ShootingPoint;
 
     void Start()
     {
         ActivationManager = GetComponent<CoolDownActication>();
     }
 
-    private void LookEnemy(GameObject enemy)
-    {
-        var targetRotation = Quaternion.LookRotation(enemy.transform.GetChild(0).position - WeaponArm.transform.position);
-        WeaponArm.transform.rotation = Quaternion.Slerp(WeaponArm.transform.rotation, targetRotation, 10 * Time.deltaTime);
-    }
-
-    private IEnumerator InfligeDamageToEennemy(GameObject enemy, float time)
+    private void InfligeDamageToEennemy(GameObject enemy)
     {
         //Inflige les dégats dans X seconds
-        yield return new WaitForSeconds(time);
         if (enemy)
             enemy.GetComponent<Life>().TakeDamage(weapon.damage);
     }
@@ -34,14 +27,20 @@ public class Arbalete : MonoBehaviour
     {
         //Ataque enemies
         if (Time.time >= nextTimeShooting) {
-            LookEnemy(enemy);
             nextTimeShooting = Time.time + weapon.cooldown;
-            Vector3 vec = WeaponArm.transform.position;
-            vec.y *= 1.5f;
-            GameObject ar = Instantiate(arrow, vec, WeaponArm.transform.rotation, transform);
 
-            float time = Vector3.Distance(transform.position, enemy.transform.position) / ar.GetComponent<ArrowArbalete>().speed;
-            StartCoroutine(InfligeDamageToEennemy(enemy, time));
+            Vector3 positionEnemy = enemy.transform.position;
+            positionEnemy.y += GetComponent<Collider>().bounds.size.y / 2;
+            Vector3 directionVector = (positionEnemy - ShootingPoint.transform.position).normalized;
+
+            GameObject obj = Instantiate(FxShoot, ShootingPoint.transform.position, Quaternion.LookRotation(directionVector), ShootingPoint.transform);
+
+            float distance = Vector3.Distance(positionEnemy, ShootingPoint.transform.position);
+            float speed = distance / 180f;
+            if (speed <= 0.03f)
+                speed = 0.03f;
+            Destroy(obj, 2f);
+            InfligeDamageToEennemy(enemy);
         }
     }
 
@@ -64,7 +63,6 @@ public class Arbalete : MonoBehaviour
         if (Vector3.Distance(target.transform.position, transform.position) > weapon.range || target.GetComponent<Life>().isDead) {
             target = null;
         } else {
-            LookEnemy(target);
             ShootEnemy(target);
         }
     }
