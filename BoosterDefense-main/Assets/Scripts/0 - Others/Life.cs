@@ -69,11 +69,12 @@ public class Life : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        if (PlaneManager.instance.surfaces[0] != null) 
-            RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
+        RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
         
         if (GetComponent<Base>() != null)
             GameManager.instance.Defeat();
+
+        GetComponent<BuffsAndDebuffs>().ResetBuffs();
 
         if (GetComponent<IACollectRessources>() || GetComponent<IAAttackMonster>() || GetComponent<IAReparatorBuildings>())
             DeathAlly();

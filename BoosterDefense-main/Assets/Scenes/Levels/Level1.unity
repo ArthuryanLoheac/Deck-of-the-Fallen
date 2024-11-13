@@ -5273,6 +5273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -6863,6 +6864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -7111,6 +7113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -7313,6 +7316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -7898,6 +7902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -10421,6 +10426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -12350,6 +12356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -15066,6 +15073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -15520,7 +15528,11 @@ MonoBehaviour:
   drawButton: {fileID: 0}
   cards: []
   cardsUsed: []
-  StartHand: []
+  StartHand:
+  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
+  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
+  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
+  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
 --- !u!4 &2113065950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4760462262958385033, guid: 789cb1e1aecba714a8b59b6790f1d740, type: 3}

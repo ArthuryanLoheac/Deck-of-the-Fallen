@@ -34,7 +34,7 @@ public class BuffManager : MonoBehaviour
             case TypeBuffs.Slow:
                 return TypeMore.Reset;
             case TypeBuffs.Fire:
-                return TypeMore.Add;
+                return TypeMore.Reset;
             case TypeBuffs.Invincibility:
                 return TypeMore.Reset;
             default:

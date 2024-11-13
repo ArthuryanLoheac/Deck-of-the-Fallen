@@ -8,6 +8,7 @@ public class AreaZoneUI : MonoBehaviour
     private GameObject areaInteract;
     private GameObject areaDetection;
     private GameObject ObjToSpawn;
+    public float valueDefault = 1;
 
     private void WeaponArea()
     {
