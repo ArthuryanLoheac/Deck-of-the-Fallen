@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4474024275810472877}
   - component: {fileID: -7901740428964300183}
   m_Layer: 0
-  m_Name: Molotov
+  m_Name: MolotovBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb143e623650677488c2c7839d0c3fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RangeExplosion: 4
-  timeEffect: 4
-  Damage: 3
+  RangeExplosion: 7
+  timeEffect: 6
+  Damage: 5
   FireFx: {fileID: 1392961458021664, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}

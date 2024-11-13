@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5934647251009889670}
   - component: {fileID: 5056882305981315325}
   m_Layer: 0
-  m_Name: MolotovGhost
+  m_Name: MolotovBigGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabAreaZone: {fileID: 3710373662353697412, guid: 525ae19d823fcd8418c5c4cd91f25124, type: 3}
-  valueDefault: 4
+  valueDefault: 7
 --- !u!114 &5056882305981315325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f708720da2adf744ae6f9ea5c718a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToSpawn: {fileID: 6326139082785386119, guid: b1737b40b2eab7647ae1fd5a3a240c3c, type: 3}
+  objToSpawn: {fileID: 6326139082785386119, guid: 9c106679451327f48a614116c1eecb73, type: 3}
   posableInEnnemyZone: 1
 --- !u!1 &8290855084025289034
 GameObject:
