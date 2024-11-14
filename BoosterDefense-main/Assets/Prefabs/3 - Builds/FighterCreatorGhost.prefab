@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7704215027005153155}
   - component: {fileID: 7508674429168981380}
   - component: {fileID: 4006730353681414646}
+  - component: {fileID: 9184617092860023128}
   m_Layer: 14
   m_Name: FighterCreatorGhost
   m_TagString: Untagged
@@ -69,6 +70,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 5070826136400796597, guid: 2f25e5a76695070428335af5626b3f29, type: 3}
   posableInEnnemyZone: 0
+--- !u!114 &9184617092860023128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070826136400796597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9437e404475f54e4f9645a88c0acf225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabAreaZone: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
+  valueDefault: 0
+  weapon: {fileID: 0}
+  npcStats: {fileID: 0}
 --- !u!1001 &340073561985390377
 PrefabInstance:
   m_ObjectHideFlags: 0

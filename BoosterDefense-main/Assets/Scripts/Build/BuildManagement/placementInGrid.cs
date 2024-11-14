@@ -87,7 +87,7 @@ public class placementInGrid : MonoBehaviour
     private void ChangeColors(Transform t, Material material)
     {
         for (int i = 0; i < t.childCount; i++) {
-            if (t.GetChild(i).gameObject.GetComponent<Renderer>() != null) {
+            if (t.GetChild(i).gameObject.GetComponent<Renderer>() != null && t.GetChild(i).gameObject.tag != "UiArea") {
                 t.GetChild(i).gameObject.GetComponent<Renderer>().material = material;
             }
             if (t.GetChild(i).transform.childCount > 0) {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 273660591722076206}
   - component: {fileID: 5119060843753829320}
   - component: {fileID: 6063144127434215959}
+  - component: {fileID: 2608001538384118789}
   m_Layer: 14
   m_Name: BaseGhost
   m_TagString: Untagged
@@ -70,6 +71,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2107252493709494298, guid: ecf0075dd74ee5c4c8114bc75e71ce31, type: 3}
+--- !u!114 &2608001538384118789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9007171006751760155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9437e404475f54e4f9645a88c0acf225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabAreaZone: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
+  valueDefault: 0
+  weapon: {fileID: 0}
+  npcStats: {fileID: 0}
 --- !u!1001 &3616034709624903831
 PrefabInstance:
   m_ObjectHideFlags: 0

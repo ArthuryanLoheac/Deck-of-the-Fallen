@@ -18,6 +18,7 @@ TagManager:
   - Scraps
   - Food
   - Build
+  - UiArea
   layers:
   - Default
   - TransparentFX

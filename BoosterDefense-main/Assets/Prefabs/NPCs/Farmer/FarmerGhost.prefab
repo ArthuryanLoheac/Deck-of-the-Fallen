@@ -84,7 +84,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9437e404475f54e4f9645a88c0acf225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabAreaZone: {fileID: 3710373662353697412, guid: 525ae19d823fcd8418c5c4cd91f25124, type: 3}
+  prefabAreaZone: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
+  valueDefault: 0
+  weapon: {fileID: 0}
+  npcStats: {fileID: 11400000, guid: 15ff94e361f3c4f46a5e6110db56641b, type: 2}
 --- !u!1001 &5285424035211110128
 PrefabInstance:
   m_ObjectHideFlags: 0
