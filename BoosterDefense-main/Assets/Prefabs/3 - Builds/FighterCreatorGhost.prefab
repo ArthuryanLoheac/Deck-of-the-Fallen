@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabAreaZone: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
-  valueDefault: 0
+  valueDefault: 7
   weapon: {fileID: 0}
   npcStats: {fileID: 0}
 --- !u!1001 &340073561985390377
