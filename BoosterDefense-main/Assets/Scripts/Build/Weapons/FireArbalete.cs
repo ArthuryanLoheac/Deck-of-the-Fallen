@@ -8,10 +8,12 @@ public class FireArbalete : MonoBehaviour
     public Weapon weapon;
     public float nextTimeShooting;
     private GameObject target;
-    public GameObject arrow;
+    private GameObject ShootingPoint;
     private CoolDownActication ActivationManager;
     public float timeEffect = 2f;
 
+    public GameObject FxBlood;
+    public GameObject FxImpact;
     void Start()
     {
         ActivationManager = GetComponent<CoolDownActication>();
@@ -22,10 +24,9 @@ public class FireArbalete : MonoBehaviour
         WeaponArm.transform.LookAt(enemy.transform.GetChild(0));
     }
 
-    private IEnumerator InfligeDamageToEennemy(GameObject enemy, float time)
+    private void InfligeDamageToEennemy(GameObject enemy)
     {
         //Inflige les dégats dans X seconds
-        yield return new WaitForSeconds(time);
         if (enemy){
             enemy.GetComponent<Life>().TakeDamage(weapon.damage);
             enemy.GetComponent<BuffsAndDebuffs>().AddEffect(TypeBuffs.Fire, timeEffect, weapon.damage);
@@ -38,12 +39,18 @@ public class FireArbalete : MonoBehaviour
         if (Time.time >= nextTimeShooting) {
             LookEnemy(enemy);
             nextTimeShooting = Time.time + weapon.cooldown;
-            Vector3 vec = WeaponArm.transform.position;
-            vec.y *= 1.5f;
-            GameObject ar = Instantiate(arrow, vec, WeaponArm.transform.rotation, transform);
 
-            float time = Vector3.Distance(transform.position, enemy.transform.position) / ar.GetComponent<ArrowArbalete>().speed;
-            StartCoroutine(InfligeDamageToEennemy(enemy, time));
+            Vector3 positionEnemy = enemy.transform.position;
+            positionEnemy.y += GetComponent<Collider>().bounds.size.y / 2;
+            Vector3 directionVector = (positionEnemy - ShootingPoint.transform.position).normalized;
+
+            RaycastHit hit;
+            if (Physics.Raycast(ShootingPoint.transform.position, directionVector, out hit, weapon.range, LayerMask.GetMask("IAs")))
+                Destroy(Instantiate(FxBlood, hit.point, Quaternion.FromToRotation(Vector3.zero, hit.normal)), 2f);
+            if (Physics.Raycast(ShootingPoint.transform.position, directionVector, out hit, Mathf.Infinity, LayerMask.GetMask("BuildingLayer", "EnemyTerritory", "RessourceLayer", "Scraps", "Build")))
+                Destroy(Instantiate(FxImpact, hit.point, Quaternion.FromToRotation(Vector3.zero, hit.normal)), 2f);
+
+            InfligeDamageToEennemy(enemy);
         }
     }
 

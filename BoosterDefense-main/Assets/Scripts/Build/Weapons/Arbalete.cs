@@ -11,6 +11,10 @@ public class Arbalete : MonoBehaviour
     public GameObject FxShoot;
     public GameObject ShootingPoint;
 
+    public GameObject FxBlood;
+    public GameObject FxImpact;
+
+
     void Start()
     {
         ActivationManager = GetComponent<CoolDownActication>();
@@ -35,10 +39,12 @@ public class Arbalete : MonoBehaviour
 
             GameObject obj = Instantiate(FxShoot, ShootingPoint.transform.position, Quaternion.LookRotation(directionVector), ShootingPoint.transform);
 
-            float distance = Vector3.Distance(positionEnemy, ShootingPoint.transform.position);
-            float speed = distance / 180f;
-            if (speed <= 0.03f)
-                speed = 0.03f;
+            RaycastHit hit;
+            if (Physics.Raycast(ShootingPoint.transform.position, directionVector, out hit, weapon.range, LayerMask.GetMask("IAs")))
+                Destroy(Instantiate(FxBlood, hit.point, Quaternion.FromToRotation(Vector3.zero, hit.normal)), 2f);
+            if (Physics.Raycast(ShootingPoint.transform.position, directionVector, out hit, Mathf.Infinity, LayerMask.GetMask("BuildingLayer", "EnemyTerritory", "RessourceLayer", "Scraps", "Build")))
+                Destroy(Instantiate(FxImpact, hit.point, Quaternion.FromToRotation(Vector3.zero, hit.normal)), 2f);
+         
             Destroy(obj, 2f);
             InfligeDamageToEennemy(enemy);
         }

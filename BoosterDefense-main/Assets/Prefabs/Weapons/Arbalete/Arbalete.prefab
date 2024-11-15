@@ -120,6 +120,8 @@ MonoBehaviour:
   nextTimeShooting: 0
   FxShoot: {fileID: 1769621416249240, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
   ShootingPoint: {fileID: 2447945241491768673}
+  FxBlood: {fileID: 1489431029902184, guid: 4430919f14c50f84085d287cbcb2c30e, type: 3}
+  FxImpact: {fileID: 1450638143650814, guid: 9fe1ddc0da27cb44ebeeb8c2befa68bd, type: 3}
 --- !u!114 &2258359865464944602
 MonoBehaviour:
   m_ObjectHideFlags: 0
