@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private bool IsDragging = false;
     private Transform parentBeforeDrag;
     public int positionBeforeDrag;
     public Image[] imageToDisableWhileDragging;
@@ -15,7 +14,6 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Start drag the card
-        IsDragging = true;
         CardsManager.instance.CardGrabbed = gameObject;
         UnitDrag.instance.IsDraggingCard = true;
 
@@ -42,7 +40,6 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         //When release card
         UnitDrag.instance.IsDraggingCard = false;
-        IsDragging = false;
 
         ComputeNewPosition();
         CardsManager.instance.CardGrabbed = null;

@@ -534,10 +534,12 @@ MonoBehaviour:
   - SceneName: Level1
     NameLevel: Carn City
     isDeblocked: 1
+    stars: -1
     SceneNameDeblock: Level2
   - SceneName: Level2
     NameLevel: Tacos City
     isDeblocked: 0
+    stars: -1
     SceneNameDeblock: 
 --- !u!4 &562752195
 Transform:
@@ -658,7 +660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourceLayer:
     serializedVersion: 2
-    m_Bits: 11392
+    m_Bits: 10368
   AllLayer:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -65,12 +65,17 @@ public class placementInGrid : MonoBehaviour
     private void CheckPlaceObj()
     {
         if (Input.GetMouseButtonDown(0) && isCursorOnMap() && isPosabled && Time.time > timer) {
-            Instantiate(objToSpawn, transform.position, transform.rotation);
+            //Debug.Log("card: " + card);
             BuildManager.instance.isBuilding = false;
             CardsManager.instance.UpdatePosCards();
+            //Debug.Log("RessourceManager : " + RessourceManager.instance);
+            //Debug.Log("card: " + card);
+            //Debug.Log("card.priceRessource : "+ card.priceRessource);
+            //Debug.Log(" -card.price: " + -card.price);
             RessourceManager.instance.AddRessource(card.priceRessource, -card.price);
             if (card.addToCardUsed)
                 CardsManager.instance.AddCardToCardUsed(card);
+            Instantiate(objToSpawn, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         if (Input.GetMouseButtonDown(1)) {

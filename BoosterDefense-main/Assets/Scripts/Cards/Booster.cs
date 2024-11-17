@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Booster : MonoBehaviour
 {
-    public BoosterStats boosterStats;
+    public BoosterStats boosterStats = null;
     public Image image;
     public TMP_Text Name;
     public TMP_Text Price;

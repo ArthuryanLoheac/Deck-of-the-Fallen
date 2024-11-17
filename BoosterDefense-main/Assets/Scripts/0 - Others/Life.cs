@@ -92,6 +92,10 @@ public class Life : MonoBehaviour
             Death();
         } else {
             UpdateHealthBar();
+            if (isBase) {
+                BaseLifeManager.instance.life = hp;
+                BaseLifeManager.instance.lifeMax = hpMax;
+            }
         }
     }
 

@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class level {
     public string SceneName;
     public string NameLevel;
     public bool isDeblocked;
+    public int stars = -1;
     public string SceneNameDeblock;
     //public int nbStars ...
 }
@@ -37,6 +39,11 @@ public class LevelManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void SetStars(int stars)
+    {
+        GetLevel(SceneManager.GetActiveScene().name).stars = stars;
     }
 
     public void LevelWin(string levelSceneName)

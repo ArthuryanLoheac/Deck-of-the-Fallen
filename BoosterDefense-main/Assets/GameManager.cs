@@ -19,18 +19,42 @@ public class GameManager : MonoBehaviour
         LooseUI.SetActive(false);
         WinUI.SetActive(false);
     }
+
+    int GetStars() 
+    {
+        float percent = BaseLifeManager.instance.getPercentHealth();
+        int i = 0;
+        if (percent < 1f) {
+            if (percent == 0f)
+                i = 0;
+            if (percent > 0f)
+                i = 1;
+            if (percent > .5f)
+                i = 2;
+            if (percent > .75f)
+                i = 3;
+        } else 
+            i = 4;
+        
+        return i;
+    }
+
     // Start is called before the first frame update
     public void Win()
     {
         WinUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();
+        int stars = GetStars();
+        WinUI.GetComponent<SetUILoose>().SetupUI(stars);
+        LevelManager.instance.SetStars(stars);
     }
     public void Defeat()
     {
-        LooseUI.GetComponent<SetUILoose>().SetupUI();
         LooseUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();
+        WinUI.GetComponent<SetUILoose>().SetupUI(0);
+        LevelManager.instance.SetStars(0);
     }
 }

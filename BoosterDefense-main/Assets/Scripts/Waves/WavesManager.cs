@@ -9,18 +9,21 @@ public class WavesManager : MonoBehaviour
 {
     public Button button;
     public bool isDrawCardResetCalled;
+    public bool isEndWaveCalled;
     private GameObject[] Spawners;
     public int maxWave;
     public int waveActual;
+    public int lastWaveCompleted = 0;
     private GameObject spawnerMax;
     public float[] timeAfterStartingWave;
     private List<float> timeMaxStartingWave;
-    public bool[] IsMarchandBefore;
     public static WavesManager instance;
+    public bool[] IsMarchandBefore;
+    public bool isWinCalled = false;
 
     public bool isMarchandThisWave()
     {
-        return IsMarchandBefore[waveActual];
+        return IsMarchandBefore[lastWaveCompleted];
     }
 
     void Awake()
@@ -41,11 +44,13 @@ public class WavesManager : MonoBehaviour
 
     void Start()
     {
+        lastWaveCompleted = 0;
         timeMaxStartingWave = new List<float>();
         foreach(float f in timeAfterStartingWave)
             timeMaxStartingWave.Add(f);
         Spawners = GameObject.FindGameObjectsWithTag("Spawner");
         GetMaxSpawner();
+        isWinCalled = false;
         isDrawCardResetCalled = false;
     }
 
@@ -68,11 +73,20 @@ public class WavesManager : MonoBehaviour
             DrawCardsButton.instance.ResetDrawTime();
         }
     }
+    private void endWave()
+    {
+        isEndWaveCalled = true;
+        lastWaveCompleted = waveActual;
+        if (lastWaveCompleted < 0)
+            lastWaveCompleted = 0;
+    }
 
     private void CheckWin()
     {
-        if (waveActual >= maxWave)
+        if (waveActual >= maxWave && !isWinCalled) {
+            isWinCalled = true;
             GameManager.instance.Win();
+        }
     }
 
     public float GetTimeStartingWave()
@@ -107,6 +121,9 @@ public class WavesManager : MonoBehaviour
     void Update()
     {
         waveActual = spawnerMax.GetComponent<WaveSpawner>().waveActual;
+        if (isValidToNextWave() && !isEndWaveCalled && waveActual > 0) {
+            endWave();
+        }
         if (!PlaceBase.instance.BasePlaced || !isValidToNextWave()) {
             TimerCoolDown.instance.UpdateCoolDown(false);
             button.interactable = false;
@@ -124,6 +141,7 @@ public class WavesManager : MonoBehaviour
 
     public void NextWaveSpawners()
     {
+        isEndWaveCalled = false;
         foreach (GameObject obj in Spawners) {
             obj.GetComponent<WaveSpawner>().NextWave();
         }
