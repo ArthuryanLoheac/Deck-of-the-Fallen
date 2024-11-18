@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardMolotovBig
   m_EditorClassIdentifier: 
-  name: Molotov
+  name: Molotov Big
   image: {fileID: 21300000, guid: 05df0a4d484fe884ab798abcc96eded9, type: 3}
-  price: 0
+  price: 15
   priceRessource: 0
-  ghostToSpawn: {fileID: 215035147963519678, guid: e0fb050cddd6f2248beddfdbe4716a7e, type: 3}
+  ghostToSpawn: {fileID: 215035147963519678, guid: a2000b3ec189f404d8b06f6977cf06bc, type: 3}
   CanBeSold: 1
-  ValueSold: 25
-  SoldType: 1
+  ValueSold: 5
+  SoldType: 0
   addToCardUsed: 0
-  description: Create a flaming puddle for all units in the area
+  description: Create a BIG flaming puddle for all units in the area

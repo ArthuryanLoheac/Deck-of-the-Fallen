@@ -11685,7 +11685,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1881733631}
         m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -15185,6 +15185,7 @@ MonoBehaviour:
   - 60
   - 45
   IsMarchandBefore: 000100000100
+  isWinCalled: 0
 --- !u!114 &1881733631
 MonoBehaviour:
   m_ObjectHideFlags: 0
