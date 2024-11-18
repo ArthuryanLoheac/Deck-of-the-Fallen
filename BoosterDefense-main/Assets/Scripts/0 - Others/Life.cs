@@ -89,7 +89,8 @@ public class Life : MonoBehaviour
     void Update()
     {
         if (hp <= 0){
-            Death();
+            if (!isDead)
+                Death();
         } else {
             UpdateHealthBar();
             if (isBase) {
