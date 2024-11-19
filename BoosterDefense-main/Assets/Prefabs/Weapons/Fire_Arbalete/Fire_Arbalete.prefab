@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5022327030726378793}
   - component: {fileID: 7494714431555995493}
   - component: {fileID: 1904389093150274734}
+  - component: {fileID: -554368505044602077}
   m_Layer: 0
   m_Name: Fire_Arbalete
   m_TagString: Weapons
@@ -165,8 +166,21 @@ MonoBehaviour:
   WeaponArm: {fileID: 0}
   weapon: {fileID: 11400000, guid: 7a92b61c8b68e9a4aa13b18d3afaab87, type: 2}
   nextTimeShooting: 0
-  arrow: {fileID: 8561657286134307994, guid: 7fc896bd7c2d76e458520c99957b6166, type: 3}
   timeEffect: 2
+  FxBlood: {fileID: 0}
+  FxImpact: {fileID: 0}
+--- !u!114 &-554368505044602077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910272335522828243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642c8354f1f824f4b9ce3f0fbda8efc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5976315647268347105
 GameObject:
   m_ObjectHideFlags: 0

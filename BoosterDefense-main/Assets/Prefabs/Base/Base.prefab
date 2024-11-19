@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5993998765971932138}
   - component: {fileID: 7816600512014602448}
   - component: {fileID: 1521176943325995638}
+  - component: {fileID: 5329890140798907766}
+  - component: {fileID: 5813317102426977743}
   m_Layer: 0
   m_Name: Base
   m_TagString: Base
@@ -105,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
@@ -131,6 +134,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2107252493709494298, guid: ecf0075dd74ee5c4c8114bc75e71ce31, type: 3}
+--- !u!114 &5329890140798907766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9007171006751760155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cd956db369c6849a46a71c1f680eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imunities: {fileID: 0}
+--- !u!114 &5813317102426977743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9007171006751760155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642c8354f1f824f4b9ce3f0fbda8efc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &525957040469419094
 PrefabInstance:
   m_ObjectHideFlags: 0

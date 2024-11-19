@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2258359865464944602}
   - component: {fileID: 5022327030726378793}
   - component: {fileID: 7494714431555995493}
+  - component: {fileID: -1121919157426341556}
   m_Layer: 0
   m_Name: Arbalete
   m_TagString: Weapons
@@ -168,6 +169,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imunities: {fileID: 0}
+--- !u!114 &-1121919157426341556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910272335522828243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642c8354f1f824f4b9ce3f0fbda8efc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2447945241491768673
 GameObject:
   m_ObjectHideFlags: 0

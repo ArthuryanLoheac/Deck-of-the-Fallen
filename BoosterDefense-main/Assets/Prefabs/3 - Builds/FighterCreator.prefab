@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7508674429168981380}
   - component: {fileID: 6780774395322585589}
   - component: {fileID: 6919061191161043304}
+  - component: {fileID: 8899036620863102574}
+  - component: {fileID: 3459200993054737564}
   m_Layer: 0
   m_Name: FighterCreator
   m_TagString: Build
@@ -104,10 +106,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
+  isDead: 0
   hpMax: 0
   HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
+--- !u!114 &8899036620863102574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070826136400796597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cd956db369c6849a46a71c1f680eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imunities: {fileID: 0}
+--- !u!114 &3459200993054737564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070826136400796597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642c8354f1f824f4b9ce3f0fbda8efc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &340073561985390377
 PrefabInstance:
   m_ObjectHideFlags: 0

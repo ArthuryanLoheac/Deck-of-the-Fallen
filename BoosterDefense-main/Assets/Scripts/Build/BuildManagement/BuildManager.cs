@@ -10,6 +10,7 @@ public class BuildManager : MonoBehaviour
     public Material invalidMaterial;
     public LayerMask placementLayerMask;
     public LayerMask placementLayerMaskEnnemy;
+    public GameObject FxBuild;
 
     void Awake()
     {
