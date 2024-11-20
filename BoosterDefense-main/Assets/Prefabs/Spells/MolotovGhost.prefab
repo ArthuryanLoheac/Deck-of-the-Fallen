@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 6326139082785386119, guid: b1737b40b2eab7647ae1fd5a3a240c3c, type: 3}
   posableInEnnemyZone: 1
+  posableInHitBoxes: 1
 --- !u!1 &8290855084025289034
 GameObject:
   m_ObjectHideFlags: 0

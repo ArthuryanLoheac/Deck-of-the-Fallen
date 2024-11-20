@@ -11,6 +11,7 @@ public class placementInGrid : MonoBehaviour
     public GameObject objToSpawn;
     private bool isPosabled;
     public bool posableInEnnemyZone;
+    public bool posableInHitBoxes = false;
     private float rotateAngle = 15;
     private float timer = 0.1f;
 
@@ -131,19 +132,25 @@ public class placementInGrid : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        if (posableInHitBoxes)
+            isPosabled = true;
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
             isPosabled = false;
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        if (posableInHitBoxes)
+            isPosabled = true;
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
             isPosabled = false;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        if (posableInHitBoxes)
+            isPosabled = true;
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
             isPosabled = true;
     }
 }

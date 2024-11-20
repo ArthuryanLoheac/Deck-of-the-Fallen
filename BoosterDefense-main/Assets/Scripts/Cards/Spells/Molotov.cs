@@ -13,9 +13,10 @@ public class Molotov : MonoBehaviour
 
     IEnumerator StopAfterDelay(GameObject obj)
     {
-        yield return new WaitForSeconds(timeEffect - 1f);
+        float times = Random.Range(0.5f, 2f);
+        yield return new WaitForSeconds(timeEffect - times);
         obj.GetComponent<ParticleSystem>().Stop();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(times);
         Destroy(obj, timeEffect + 1f);
     }
 
