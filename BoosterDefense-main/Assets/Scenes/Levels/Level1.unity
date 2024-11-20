@@ -15102,7 +15102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowSpeed: 0.5
-  highSpeed: 8
+  highSpeed: 3
   highSpeedButton: {fileID: 54702873}
   lowSpeedButton: {fileID: 339135976}
   normalSpeedButton: {fileID: 1212875736}
@@ -15185,7 +15185,7 @@ MonoBehaviour:
   - 75
   - 60
   - 45
-  IsMarchandBefore: 000100000100
+  IsMarchandBefore: 010001
   isWinCalled: 0
 --- !u!114 &1881733631
 MonoBehaviour:
@@ -16261,7 +16261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressourceLayer:
     serializedVersion: 2
-    m_Bits: 11392
+    m_Bits: 10368
   AllLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -16622,6 +16622,7 @@ GameObject:
   - component: {fileID: 2028422632}
   - component: {fileID: 2028422631}
   - component: {fileID: 2028422633}
+  - component: {fileID: 2028422634}
   m_Layer: 0
   m_Name: DEBUG
   m_TagString: Untagged
@@ -16696,6 +16697,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationNormalDraw: {fileID: 0}
   boosterOwned: []
+--- !u!114 &2028422634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028422630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56eecebbefe1fd45aca68afc53a5b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - SceneName: Level1
+    NameLevel: Carn City
+    isDeblocked: 1
+    stars: -1
+    SceneNameDeblock: Level2
+  - SceneName: Level2
+    NameLevel: Tacos City
+    isDeblocked: 0
+    stars: -1
+    SceneNameDeblock: 
 --- !u!4 &2033301548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4760462262958385033, guid: 789cb1e1aecba714a8b59b6790f1d740, type: 3}

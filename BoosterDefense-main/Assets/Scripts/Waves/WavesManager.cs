@@ -23,6 +23,8 @@ public class WavesManager : MonoBehaviour
 
     public bool isMarchandThisWave()
     {
+        if (lastWaveCompleted >= IsMarchandBefore.Length)
+            return false;
         return IsMarchandBefore[lastWaveCompleted];
     }
 
