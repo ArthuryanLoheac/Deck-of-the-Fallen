@@ -8,4 +8,7 @@ public class Weapon : ScriptableObject
     public int damage;
     public int range;
     public float cooldown;
+    public TypeBuffs typeBuffs;
+    public float damageBuffs;
+    public float timeEffect;
 }

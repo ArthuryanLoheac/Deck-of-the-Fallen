@@ -11,6 +11,7 @@ public enum TypeBuffs {
     Fire,
     Invincibility,
     Slow,
+    None,
 }
 
 public enum TypeMore {
