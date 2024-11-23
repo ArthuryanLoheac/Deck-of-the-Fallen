@@ -9,20 +9,24 @@ public class WavesManager : MonoBehaviour
 {
     public Button button;
     public bool isDrawCardResetCalled;
-    public bool isEndWaveCalled;
     private GameObject[] Spawners;
     public int maxWave;
     public int waveActual;
     public int lastWaveCompleted = 0;
     private GameObject spawnerMax;
-    public float[] timeAfterStartingWave;
     private List<float> timeMaxStartingWave;
     public static WavesManager instance;
+    public float[] timeAfterStartingWave;
     public bool[] IsMarchandAfter;
+    public bool[] IsBoss;
     public bool isWinCalled = false;
+
+    private bool isInWave = false;
+    private float startTimeWave = 0;
 
     [Header("UIS")]
     public List<GameObject> posUIs = new List<GameObject>();
+    public List<GameObject> lines = new List<GameObject>();
     public GameObject cardsPrefab;
     public GameObject normalPrefab;
     public GameObject bossPrefab;
@@ -35,6 +39,34 @@ public class WavesManager : MonoBehaviour
         return IsMarchandAfter[lastWaveCompleted-1];
     }
 
+    void UpdateUI()
+    {
+        foreach(GameObject gen in genPrefabs)
+            Destroy(gen);
+        genPrefabs = new List<GameObject>();
+        foreach(GameObject line in lines) 
+            line.SetActive(false);
+        for (int i = 0; i < posUIs.Count; i++) {
+            int wave = i + waveActual;
+            GameObject obj = null;
+            if (wave < maxWave){
+                if (wave < IsMarchandAfter.Length && IsMarchandAfter[wave]) {
+                    obj = Instantiate(cardsPrefab, posUIs[i].transform);
+                } else if (wave < IsBoss.Length && IsBoss[wave]) {
+                    obj = Instantiate(bossPrefab, posUIs[i].transform);
+                } else {
+                    obj = Instantiate(normalPrefab, posUIs[i].transform);
+                }
+            }
+            if (wave+1 < maxWave){
+                lines[i].SetActive(true);
+            }
+            
+            if (obj){
+                genPrefabs.Add(obj);
+            }
+        }
+    }
     void Awake()
     {
         instance = this;
@@ -61,6 +93,8 @@ public class WavesManager : MonoBehaviour
         GetMaxSpawner();
         isWinCalled = false;
         isDrawCardResetCalled = false;
+        isInWave = false;
+        UpdateUI();
     }
 
     public bool isValidToNextWave()
@@ -84,13 +118,14 @@ public class WavesManager : MonoBehaviour
     }
     private void endWave()
     {
-        isEndWaveCalled = true;
+        isInWave = false;
         lastWaveCompleted = waveActual;
         if (lastWaveCompleted < 0)
             lastWaveCompleted = 0;
         if (isMarchandThisWave()) {
             BoosterMarchandManager.instance.ActiveMarchand();
         }
+        UpdateUI();
     }
 
     private void CheckWin()
@@ -130,10 +165,26 @@ public class WavesManager : MonoBehaviour
         TimerCoolDown.instance.UpdateCoolDown(true, GetTimeStartingWave(), GetTimeMaxStartingWave());
     }
 
+    void UpdateMoveUi()
+    {
+        //Debug.Log(genPrefabs[0]);
+        if (isInWave && genPrefabs[0]) {
+            float value = 1f - Mathf.PingPong((Time.time-startTimeWave) / 12f, .1f);
+            float valueOpacity = 1 - Mathf.PingPong((Time.time-startTimeWave) / 2f, .6f);
+            genPrefabs[0].transform.localScale = new Vector3(value,value,value);
+            Image image = genPrefabs[0].GetComponent<Image>();
+            image.color = new Color(image.color.r, image.color.g, image.color.b, valueOpacity);
+        } else if (genPrefabs[0]) {
+            genPrefabs[0].transform.localScale = new Vector3(1,1,1);
+            Image image = genPrefabs[0].GetComponent<Image>();
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
+        }
+    }
+
     void Update()
     {
         waveActual = spawnerMax.GetComponent<WaveSpawner>().waveActual;
-        if (isValidToNextWave() && !isEndWaveCalled && waveActual > 0) {
+        if (isValidToNextWave() && isInWave && waveActual > 0) {
             endWave();
         }
         if (!PlaceBase.instance.BasePlaced || !isValidToNextWave()) {
@@ -149,11 +200,13 @@ public class WavesManager : MonoBehaviour
         } else if (!BoosterMarchandManager.instance.Activated) {
             GameManager.instance.Win();
         }
+        UpdateMoveUi();
     }
 
     public void NextWaveSpawners()
     {
-        isEndWaveCalled = false;
+        isInWave = true;
+        startTimeWave = Time.time;
         foreach (GameObject obj in Spawners) {
             obj.GetComponent<WaveSpawner>().NextWave();
         }
