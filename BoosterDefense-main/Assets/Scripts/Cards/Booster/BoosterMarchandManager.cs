@@ -16,8 +16,9 @@ public class BoosterMarchandManager : MonoBehaviour
     {
         instance = this;
     }
-    private void ActiveMarchand()
+    public void ActiveMarchand()
     {
+        Activated = true;
         //Met en pause
         Time.timeScale = 0;
 
@@ -44,15 +45,5 @@ public class BoosterMarchandManager : MonoBehaviour
     void Start()
     {
         Activated = false;
-    }
-
-    void Update()
-    {
-        if (WavesManager.instance.isValidToNextWave() && WavesManager.instance.isMarchandThisWave() && !Activated && PlaceBase.instance.BasePlaced) {
-            Activated = true;
-            ActiveMarchand();
-        } else if (!WavesManager.instance.isValidToNextWave()) {
-            Activated = false;
-        }
     }
 }

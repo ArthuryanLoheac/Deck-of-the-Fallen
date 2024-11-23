@@ -18,14 +18,21 @@ public class WavesManager : MonoBehaviour
     public float[] timeAfterStartingWave;
     private List<float> timeMaxStartingWave;
     public static WavesManager instance;
-    public bool[] IsMarchandBefore;
+    public bool[] IsMarchandAfter;
     public bool isWinCalled = false;
 
-    public bool isMarchandThisWave()
+    [Header("UIS")]
+    public List<GameObject> posUIs = new List<GameObject>();
+    public GameObject cardsPrefab;
+    public GameObject normalPrefab;
+    public GameObject bossPrefab;
+    private List<GameObject> genPrefabs = new List<GameObject>();
+
+    bool isMarchandThisWave()
     {
-        if (lastWaveCompleted >= IsMarchandBefore.Length)
+        if (lastWaveCompleted-1 >= IsMarchandAfter.Length)
             return false;
-        return IsMarchandBefore[lastWaveCompleted];
+        return IsMarchandAfter[lastWaveCompleted-1];
     }
 
     void Awake()
@@ -81,11 +88,14 @@ public class WavesManager : MonoBehaviour
         lastWaveCompleted = waveActual;
         if (lastWaveCompleted < 0)
             lastWaveCompleted = 0;
+        if (isMarchandThisWave()) {
+            BoosterMarchandManager.instance.ActiveMarchand();
+        }
     }
 
     private void CheckWin()
     {
-        if (waveActual >= maxWave && !isWinCalled) {
+        if (waveActual >= maxWave && !isWinCalled && !BoosterMarchandManager.instance.Activated) {
             isWinCalled = true;
             GameManager.instance.Win();
         }
@@ -136,7 +146,7 @@ public class WavesManager : MonoBehaviour
             button.interactable = true;
             UpdateCoolDownActive();
             CheckWin();
-        } else {
+        } else if (!BoosterMarchandManager.instance.Activated) {
             GameManager.instance.Win();
         }
     }

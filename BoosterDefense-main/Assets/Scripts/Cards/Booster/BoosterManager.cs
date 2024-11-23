@@ -63,6 +63,8 @@ public class BoosterManager : MonoBehaviour
             BoosterDrawCardUI.instance.DesactiveCard();
         }
         BoosterDrawCardUI.instance.isDrawing = false;
+        if (BoosterMarchandManager.instance)
+            BoosterMarchandManager.instance.Activated = false;
     }
     public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
     {
