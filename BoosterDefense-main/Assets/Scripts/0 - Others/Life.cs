@@ -75,6 +75,7 @@ public class Life : MonoBehaviour
             GameManager.instance.Defeat();
 
         GetComponent<BuffsAndDebuffs>().ResetBuffs();
+        
 
         if (GetComponent<IACollectRessources>() || GetComponent<IAAttackMonster>() || GetComponent<IAReparatorBuildings>())
             DeathAlly();

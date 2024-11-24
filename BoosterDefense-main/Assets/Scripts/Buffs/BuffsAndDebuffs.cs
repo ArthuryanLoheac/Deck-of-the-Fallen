@@ -118,6 +118,8 @@ public class BuffsAndDebuffs : MonoBehaviour
     {
         if (imunities && isBuffInList(typeBuffs, imunities.lstImunities))
             return;
+        if (GetComponent<Life>().isDead)
+            return;
         switch(BuffManager.instance.GetAddType(typeBuffs)) {
             case TypeMore.Add:
                 AddEffectNormal(typeBuffs, time, force);
