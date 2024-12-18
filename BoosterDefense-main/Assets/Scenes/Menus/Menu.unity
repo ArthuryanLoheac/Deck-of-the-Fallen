@@ -660,11 +660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - SceneName: Level2
-    NameLevel: Tacos City
-    isDeblocked: 1
-    stars: 4
-    SceneNameDeblock: 
   - SceneName: Level1
     NameLevel: Carn City
     isDeblocked: 1
@@ -672,7 +667,7 @@ MonoBehaviour:
     SceneNameDeblock: Level2
   - SceneName: Level2
     NameLevel: Tacos City
-    isDeblocked: 0
+    isDeblocked: 1
     stars: -1
     SceneNameDeblock: 
 --- !u!4 &562752195
@@ -2505,6 +2500,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1627631823}
     m_Modifications:
+    - target: {fileID: 1927760283770329647, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480650296290717296, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647851944542778855, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7270937959193848482, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
