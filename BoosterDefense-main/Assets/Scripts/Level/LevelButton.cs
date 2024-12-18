@@ -82,7 +82,7 @@ public class LevelButton : MonoBehaviour
         if (button.interactable && DeckCardsManager.instance.deck.Count < DeckCardsManager.instance.nbCardMin) {
             button.interactable = false;
         }
-        text.gameObject.SetActive(button.interactable);
+        text.gameObject.SetActive(LevelManager.instance.levels[levelId].isDeblocked);
     }
 
     public void LoadSceneLevel()
