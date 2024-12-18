@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2156108743516650640, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
+      propertyPath: speed.x
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2410517258611278299, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
       propertyPath: m_Name
       value: Navigation_Overlay

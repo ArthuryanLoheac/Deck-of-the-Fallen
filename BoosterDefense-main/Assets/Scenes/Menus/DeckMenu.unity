@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 624707041}
-  speed: {x: -0.1, y: 0}
+  speed: {x: -0.8, y: 0}
   size: {x: 256, y: 256}
 --- !u!114 &624707041
 MonoBehaviour:
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 979246625}
-  speed: {x: -0.1, y: 0}
+  speed: {x: -0.8, y: 0}
   size: {x: 256, y: 256}
 --- !u!114 &979246625
 MonoBehaviour:
@@ -2864,6 +2864,10 @@ PrefabInstance:
     - target: {fileID: 1792250038936114894, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156108743516650640, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
+      propertyPath: speed.x
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2410517258611278299, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
       propertyPath: m_Name
