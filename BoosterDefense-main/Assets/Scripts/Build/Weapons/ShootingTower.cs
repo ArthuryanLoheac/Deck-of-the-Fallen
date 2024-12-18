@@ -76,7 +76,7 @@ public class ShootingTower : MonoBehaviour
 
     void Update()
     {
-        if (ActivationManager.isActive){
+        if (ActivationManager && ActivationManager.isActive){
             //si le delay est passé cherche target ou attack
             if (target == null) {
                 UpdateNoTarget();
