@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 1010026174}
-  speed: {x: -0.1, y: 0}
+  speed: {x: -0.8, y: 0}
   size: {x: 256, y: 256}
 --- !u!114 &1010026174
 MonoBehaviour:

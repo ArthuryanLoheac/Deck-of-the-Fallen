@@ -13,6 +13,13 @@ public class LevelButton : MonoBehaviour
     public GameObject[] stars;
     public GameObject[] starsPerfect;
     public GameObject AllStars;
+    [Header("Icons")]
+    public Sprite IconComplete;
+    public Color ColorComplete;
+    public Sprite IconToDo;
+    public Color ColorToDo;
+    public Sprite IconLock;
+    public Color ColorLock;
 
 
     void SetStars()
@@ -36,10 +43,30 @@ public class LevelButton : MonoBehaviour
         }
     }
 
+    void SetIcon()
+    {
+        level lvl = LevelManager.instance.levels[levelId];
+
+        if (lvl.isDeblocked) {
+            if (lvl.stars == -1) {
+                GetComponent<Image>().sprite = IconToDo;
+                GetComponent<Image>().color = ColorToDo;
+            } else {
+                GetComponent<Image>().sprite = IconComplete;
+                GetComponent<Image>().color = ColorComplete;
+            }
+        } else {
+            GetComponent<Image>().sprite = IconLock;
+            GetComponent<Image>().color = ColorLock;
+        }
+    }
+
     void Start()
     {
         button = GetComponent<Button>();
         text.text = LevelManager.instance.levels[levelId].NameLevel;
+
+        SetIcon();
 
         if (LevelManager.instance.levels[levelId].stars != -1 ) {
             AllStars.SetActive(true);
@@ -55,6 +82,7 @@ public class LevelButton : MonoBehaviour
         if (button.interactable && DeckCardsManager.instance.deck.Count < DeckCardsManager.instance.nbCardMin) {
             button.interactable = false;
         }
+        text.gameObject.SetActive(button.interactable);
     }
 
     public void LoadSceneLevel()
