@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 2
   addToCardUsed: 1
   description: Collect <color=blue>scraps</color> <b>(0.5 / sec)</b>
+  type: 0
+  hasHp: 1

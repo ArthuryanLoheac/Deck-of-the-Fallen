@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 2
   addToCardUsed: 1
   description: Can restore life to buildings
+  type: 0
+  hasHp: 1

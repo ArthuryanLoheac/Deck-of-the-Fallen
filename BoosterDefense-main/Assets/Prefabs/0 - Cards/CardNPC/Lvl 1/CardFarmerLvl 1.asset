@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 2
   addToCardUsed: 1
   description: Collect <color=blue>food</color> <b>(1.25 / sec)</b>
+  type: 0
+  hasHp: 1

@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 2
   addToCardUsed: 1
   description: Can be collected to earn <color=blue>food</color> <b>(10)</b>
+  type: 2
+  hasHp: 1

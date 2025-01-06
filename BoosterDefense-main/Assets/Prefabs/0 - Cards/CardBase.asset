@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 0
   addToCardUsed: 0
   description: The base to protect !
+  type: 2
+  hasHp: 1

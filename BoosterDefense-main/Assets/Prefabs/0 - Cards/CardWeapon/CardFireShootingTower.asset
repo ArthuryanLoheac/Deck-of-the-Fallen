@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 1
   addToCardUsed: 1
   description: Attack monsters nearby
+  type: 2
+  hasHp: 1

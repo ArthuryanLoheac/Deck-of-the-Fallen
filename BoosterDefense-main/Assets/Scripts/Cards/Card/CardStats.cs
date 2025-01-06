@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum TypeCard {
+    Npc,
+    Sort,
+    Batiment,
+    Vehicule,
+    Equipement
+}
+
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class CardStats : ScriptableObject
 {
@@ -21,4 +29,8 @@ public class CardStats : ScriptableObject
     public bool addToCardUsed = true;
     [Header("Description")]
     public string description;
+    [Header("Type")]
+    public TypeCard type;
+    [Header("HP")]
+    public bool hasHp;
 }

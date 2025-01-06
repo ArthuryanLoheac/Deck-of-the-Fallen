@@ -22,3 +22,5 @@ MonoBehaviour:
   SoldType: 0
   addToCardUsed: 0
   description: Create a BIG flaming puddle for all units in the area
+  type: 1
+  hasHp: 0

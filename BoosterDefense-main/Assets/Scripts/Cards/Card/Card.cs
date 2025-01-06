@@ -18,8 +18,37 @@ public class Card : MonoBehaviour
     public TMP_Text textCardCount;
     [HideInInspector]public CardStats cardStats;
     public Image BG;
+    public Image Fondu;
     [Header("Description")]
     public TMP_Text description;
+    [Header("Icones Type")]
+    public Image iconType;
+    public GameObject iconHP;
+    public TMP_Text textHP;
+    [Header("Icones Images")]
+    public Sprite Sort;
+    public Sprite Npc;
+    public Sprite Batiment;
+    public Sprite Vehicule;
+    public Sprite Equipement;
+
+    private Sprite GetSpriteType(TypeCard type)
+    {
+        switch(type) {
+            case TypeCard.Sort:
+                return Sort;
+            case TypeCard.Npc:
+                return Npc;
+            case TypeCard.Batiment:
+                return Batiment;
+            case TypeCard.Vehicule:
+                return Vehicule;
+            case TypeCard.Equipement:
+                return Equipement;
+            default :
+                return Batiment;
+        }
+    }
 
     public void SetStats(CardStats stats, bool desctipionActive = false)
     {
@@ -27,14 +56,21 @@ public class Card : MonoBehaviour
         textObject.text = cardStats.name;
         iconObject.sprite = cardStats.image;
         cardCount = 1;
-        description.enabled = desctipionActive;
+        description.enabled = true;
         description.richText = true;    
-        description.text =  cardStats.description;
+        description.text = cardStats.description;
+        iconType.sprite = GetSpriteType(stats.type);
+        iconHP.SetActive(stats.hasHp);
+        if (stats.hasHp){
+            textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
+        }
     
         if (cardStats.price <= 0) {
             iconPrice.gameObject.SetActive(false);
             textPrice.gameObject.SetActive(false);
         } else {
+            iconPrice.gameObject.SetActive(true);
+            textPrice.gameObject.SetActive(true);
             iconPrice.sprite = RessourceManager.instance.GetRessourceIcon(cardStats.priceRessource);
             textPrice.text = cardStats.price.ToString();
         }
@@ -45,7 +81,7 @@ public class Card : MonoBehaviour
         if (b)
             return new Color(col.r, col.g, col.b, 1);
         else
-            return new Color(col.r, col.g, col.b, .5f);
+            return new Color(col.r, col.g, col.b, .9f);
     }
 
     private void MakeTransparent(bool b)
@@ -56,6 +92,7 @@ public class Card : MonoBehaviour
         textPrice.color = GetColorTransparent(textPrice.color, b);
         textCardCount.color = GetColorTransparent(textCardCount.color, b);
         BG.color = GetColorTransparent(BG.color, b);
+        Fondu.color = GetColorTransparent(Fondu.color, b);
     }
 
     void Start()
