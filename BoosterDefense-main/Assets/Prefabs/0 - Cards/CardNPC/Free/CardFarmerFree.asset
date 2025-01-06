@@ -20,5 +20,5 @@ MonoBehaviour:
   CanBeSold: 1
   ValueSold: 0
   SoldType: 2
-  addToCardUsed: 1
+  addToCardUsed: 0
   description: Collect <color=blue>food</color> <b>(0.5 / sec)</b>
