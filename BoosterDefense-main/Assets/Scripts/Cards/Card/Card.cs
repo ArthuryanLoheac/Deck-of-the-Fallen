@@ -7,30 +7,44 @@ using Unity.VisualScripting;
 
 public class Card : MonoBehaviour
 {
+    
+    public Image[] lstToTransparenceWhenBlocked;
     public Image iconObject;
     public TMP_Text textObject;
     [Header("Price")]
     public Image iconPrice;
     public TMP_Text textPrice;
     private Button button;
+    public Sprite scrapsIcon;
+    public Sprite goldIcon;
+    public Sprite foodIcon;
+    private Vector3 originalPosTxtPrice;
+
+
     [Header("Count")]
     [HideInInspector]public int cardCount;
     public TMP_Text textCardCount;
     [HideInInspector]public CardStats cardStats;
     public Image BG;
-    public Image Fondu;
+
+
     [Header("Description")]
     public TMP_Text description;
+
+
     [Header("Icones Type")]
     public Image iconType;
     public GameObject iconHP;
     public TMP_Text textHP;
+
+
     [Header("Icones Images")]
     public Sprite Sort;
     public Sprite Npc;
     public Sprite Batiment;
     public Sprite Vehicule;
     public Sprite Equipement;
+
 
     private Sprite GetSpriteType(TypeCard type)
     {
@@ -48,6 +62,18 @@ public class Card : MonoBehaviour
             default :
                 return Batiment;
         }
+    }
+
+    private Sprite getIconRessourcesCard(RessourceType nameRessource)
+    {
+        if (nameRessource == RessourceType.scraps) {
+            return scrapsIcon;
+        } else if (nameRessource == RessourceType.gold) {
+            return goldIcon;
+        } else if (nameRessource == RessourceType.food) {
+            return foodIcon;
+        }
+        return null;
     }
 
     public void SetStats(CardStats stats, bool desctipionActive = false)
@@ -71,8 +97,13 @@ public class Card : MonoBehaviour
         } else {
             iconPrice.gameObject.SetActive(true);
             textPrice.gameObject.SetActive(true);
-            iconPrice.sprite = RessourceManager.instance.GetRessourceIcon(cardStats.priceRessource);
+            iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
             textPrice.text = cardStats.price.ToString();
+            if (cardStats.priceRessource == RessourceType.scraps) {
+                textPrice.transform.position = originalPosTxtPrice + (Vector3.up) * 10f;
+            } else {
+                textPrice.transform.position = originalPosTxtPrice;
+            }
         }
     }
 
@@ -86,18 +117,15 @@ public class Card : MonoBehaviour
 
     private void MakeTransparent(bool b)
     {
-        iconObject.color = GetColorTransparent(iconObject.color, b);
-        textObject.color = GetColorTransparent(textObject.color, b);
-        iconPrice.color = GetColorTransparent(iconPrice.color, b);
-        textPrice.color = GetColorTransparent(textPrice.color, b);
-        textCardCount.color = GetColorTransparent(textCardCount.color, b);
-        BG.color = GetColorTransparent(BG.color, b);
-        Fondu.color = GetColorTransparent(Fondu.color, b);
+        foreach (Image img in lstToTransparenceWhenBlocked) {
+            img.color = GetColorTransparent(img.color, b);
+        }
     }
 
     void Start()
     {
         button = GetComponent<Button>();
+        originalPosTxtPrice = textPrice.transform.position;
     }
 
     private void UpdatePrice()

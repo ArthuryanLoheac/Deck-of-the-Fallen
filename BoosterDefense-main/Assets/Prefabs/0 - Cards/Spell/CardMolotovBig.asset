@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardMolotovBig
   m_EditorClassIdentifier: 
   name: Molotov Big
-  image: {fileID: 21300000, guid: 05df0a4d484fe884ab798abcc96eded9, type: 3}
+  image: {fileID: 21300000, guid: 6733a3587bdf67a43a9013e65e33ab43, type: 3}
   price: 15
   priceRessource: 0
   ghostToSpawn: {fileID: 215035147963519678, guid: a2000b3ec189f404d8b06f6977cf06bc, type: 3}
