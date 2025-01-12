@@ -125,6 +125,7 @@ public class Life : MonoBehaviour
 
         //Active the visibility of the bar
         ActiveImageRecursive(HPBar);
+        TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
     }
 
     void Start()

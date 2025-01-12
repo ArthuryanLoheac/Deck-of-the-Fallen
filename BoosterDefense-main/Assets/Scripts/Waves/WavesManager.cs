@@ -95,6 +95,7 @@ public class WavesManager : MonoBehaviour
         isDrawCardResetCalled = false;
         isInWave = false;
         UpdateUI();
+        TimerCoolDown.instance.setIconWait(IconWaveType.Base);
     }
 
     public bool isValidToNextWave()
@@ -125,6 +126,7 @@ public class WavesManager : MonoBehaviour
         if (isMarchandThisWave()) {
             BoosterMarchandManager.instance.ActiveMarchand();
         }
+        TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
         UpdateUI();
     }
 
@@ -205,6 +207,7 @@ public class WavesManager : MonoBehaviour
 
     public void NextWaveSpawners()
     {
+        TimerCoolDown.instance.setIconWait(IconWaveType.Fight);
         isInWave = true;
         startTimeWave = Time.time;
         foreach (GameObject obj in Spawners) {
