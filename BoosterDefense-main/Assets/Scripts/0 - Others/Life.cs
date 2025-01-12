@@ -107,14 +107,24 @@ public class Life : MonoBehaviour
             PlaneManager.instance.BakeSurface();
     }
 
+     private void ActiveImageRecursive(GameObject obj)
+    {
+        for (int i = 0; i < obj.transform.childCount; i++) {
+            Transform child = obj.transform.GetChild(i);
+            if (child.GetComponent<Image>())
+                child.GetComponent<Image>().enabled = true;
+            ActiveImageRecursive(child.gameObject);
+        }
+    }
+
     private void StartBase()
     {
         HPBar = GameObject.FindGameObjectWithTag("HealthBarBase");
-        fillHpBar = HPBar.transform.GetChild(2).GetComponent<Image>();
+        fillHpBar = HPBar.transform.GetChild(1).GetChild(1).GetComponent<Image>();
         UpdateHealthBar();
 
         //Active the visibility of the bar
-        HPBar.GetComponent<Canvas>().enabled = true;
+        ActiveImageRecursive(HPBar);
     }
 
     void Start()
