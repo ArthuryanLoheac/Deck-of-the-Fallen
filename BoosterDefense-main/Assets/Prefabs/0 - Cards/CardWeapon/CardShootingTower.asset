@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardShootingTower
   m_EditorClassIdentifier: 
-  name: Simple Tower
+  name: SIMPLE TOWER
   image: {fileID: 21300000, guid: c3e055a3d2354f945a791ad1c72073b9, type: 3}
   price: 20
   priceRessource: 1
@@ -24,3 +24,4 @@ MonoBehaviour:
   description: Attack monsters nearby
   type: 2
   hasHp: 1
+  rarity: 0

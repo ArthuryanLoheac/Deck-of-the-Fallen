@@ -46,6 +46,13 @@ public class Card : MonoBehaviour
     public Sprite Equipement;
 
 
+    
+    [Header("BG Contours")]
+    public Image Contour;
+    public Sprite ContoursCommon;
+    public Sprite ContoursRare;
+    public Sprite ContoursSuperRare;
+
     private Sprite GetSpriteType(TypeCard type)
     {
         switch(type) {
@@ -91,6 +98,13 @@ public class Card : MonoBehaviour
             textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
         }
     
+        if (stats.rarity == Rarity.Rare)
+            Contour.sprite = ContoursRare;
+        if (stats.rarity == Rarity.Common)
+            Contour.sprite = ContoursCommon;
+        if (stats.rarity == Rarity.SuperRare)
+            Contour.sprite = ContoursSuperRare;
+    
         if (cardStats.price <= 0) {
             iconPrice.gameObject.SetActive(false);
             textPrice.gameObject.SetActive(false);
@@ -99,11 +113,11 @@ public class Card : MonoBehaviour
             textPrice.gameObject.SetActive(true);
             iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
             textPrice.text = cardStats.price.ToString();
-            if (cardStats.priceRessource == RessourceType.scraps) {
-                textPrice.transform.position = originalPosTxtPrice + (Vector3.up) * 10f;
-            } else {
-                textPrice.transform.position = originalPosTxtPrice;
-            }
+            //if (cardStats.priceRessource == RessourceType.scraps) {
+            //    textPrice.transform.position = originalPosTxtPrice + (Vector3.up) * 10f;
+            //} else {
+            //    textPrice.transform.position = originalPosTxtPrice;
+            //}
         }
     }
 

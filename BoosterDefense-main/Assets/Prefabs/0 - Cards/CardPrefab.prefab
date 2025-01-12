@@ -222,6 +222,10 @@ MonoBehaviour:
   Batiment: {fileID: 21300000, guid: 58ac6bac3d522bf4e8512947c04fd6a7, type: 3}
   Vehicule: {fileID: 21300000, guid: 73b06da295851fe4cb8197bfe5daa54b, type: 3}
   Equipement: {fileID: 21300000, guid: 8a65f66b8fbcf4248a5b819cb71edfeb, type: 3}
+  Contour: {fileID: 2343885989525650066}
+  ContoursCommon: {fileID: 21300000, guid: 20d954000c48df14b8cfe6c3a735c168, type: 3}
+  ContoursRare: {fileID: 21300000, guid: d7c9e7b3207134949adcf0a575b167fe, type: 3}
+  ContoursSuperRare: {fileID: 21300000, guid: 58811e1520351424c852b3d0c6467bf9, type: 3}
 --- !u!114 &4112455891166056531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,8 +1193,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7, y: -6.7898}
-  m_SizeDelta: {x: 129.66, y: 185.3319}
+  m_AnchoredPosition: {x: 2.7003, y: -8.3}
+  m_SizeDelta: {x: 139.11, y: 198.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7967683132210865337
 CanvasRenderer:
@@ -1220,7 +1224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e09c22813d804c4783fa0e356375a62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20d954000c48df14b8cfe6c3a735c168, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

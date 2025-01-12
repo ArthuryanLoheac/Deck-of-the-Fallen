@@ -11,6 +11,12 @@ public enum TypeCard {
     Equipement
 }
 
+public enum Rarity {
+    Common,
+    Rare,
+    SuperRare
+}
+
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class CardStats : ScriptableObject
 {
@@ -33,4 +39,5 @@ public class CardStats : ScriptableObject
     public TypeCard type;
     [Header("HP")]
     public bool hasHp;
+    public Rarity rarity;
 }

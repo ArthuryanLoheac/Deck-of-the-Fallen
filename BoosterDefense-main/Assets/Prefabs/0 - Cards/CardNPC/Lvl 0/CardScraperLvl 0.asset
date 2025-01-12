@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardScraperLvl 0
   m_EditorClassIdentifier: 
-  name: Scraper
+  name: SCRAPPER
   image: {fileID: 21300000, guid: 0faaf6c19112af148bd57ad21974d136, type: 3}
   price: 15
   priceRessource: 2
@@ -24,3 +24,4 @@ MonoBehaviour:
   description: Collect <color=blue>scraps</color> <b>(0.5 / sec)</b>
   type: 0
   hasHp: 1
+  rarity: 0
