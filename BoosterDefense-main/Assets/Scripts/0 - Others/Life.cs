@@ -109,10 +109,13 @@ public class Life : MonoBehaviour
 
      private void ActiveImageRecursive(GameObject obj)
     {
+        if (obj.GetComponent<Image>()) obj.GetComponent<Image>().enabled = true;
+        if (obj.GetComponent<Slider>()) obj.GetComponent<Slider>().enabled = true;
         for (int i = 0; i < obj.transform.childCount; i++) {
             Transform child = obj.transform.GetChild(i);
-            if (child.GetComponent<Image>())
-                child.GetComponent<Image>().enabled = true;
+            if (child.GetComponent<Image>()) child.GetComponent<Image>().enabled = true;
+            if (child.GetComponent<Slider>()) child.GetComponent<Slider>().enabled = true;
+            
             ActiveImageRecursive(child.gameObject);
         }
     }
