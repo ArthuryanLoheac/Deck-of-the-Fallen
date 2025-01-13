@@ -45,7 +45,7 @@ public class Molotov : MonoBehaviour
             Collider[] cols = Physics.OverlapSphere(transform.position, RangeExplosion, RessourceManager.instance.AllLayer);
             foreach (Collider c in cols)
             {
-                if (c.gameObject.tag == "Enemy" || c.gameObject.tag == "NPC" || c.gameObject.tag == "Food")
+                if (c.gameObject.tag == "Enemy")
                 {
                     c.gameObject.GetComponent<BuffsAndDebuffs>().AddEffect(TypeBuffs.Fire, timeEffect, Damage);
                 }
