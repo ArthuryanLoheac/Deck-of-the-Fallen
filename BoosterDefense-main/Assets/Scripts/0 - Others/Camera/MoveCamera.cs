@@ -40,10 +40,12 @@ public class MoveCamera : MonoBehaviour
 
     void Update()
     {
-        //move with keys
-        UpdateMoveKeys();
-        //move with right click
-        if (Input.GetMouseButton(1))
-            UpdateMoveMouse();
+        if (!GameManager.instance.GameEnded) {
+            //move with keys
+            UpdateMoveKeys();
+            //move with right click
+            if (Input.GetMouseButton(1))
+                UpdateMoveMouse();
+        }
     }
 }

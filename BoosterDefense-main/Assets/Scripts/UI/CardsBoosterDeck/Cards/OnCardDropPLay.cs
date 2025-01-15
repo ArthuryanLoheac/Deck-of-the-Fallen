@@ -7,11 +7,19 @@ using UnityEngine.EventSystems;
 
 public class OnCardDropPLay : MonoBehaviour, IDropHandler
 {
+    public static OnCardDropPLay instance;
     private Camera myCamera;
+    public Image img;
 
     void Awake()
     {
+        instance = this;
         myCamera = Camera.main;
+    }
+
+    void Start()
+    {
+        img.raycastTarget = false;
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -24,5 +32,14 @@ public class OnCardDropPLay : MonoBehaviour, IDropHandler
                 dropped.GetComponent<DraggableCard>().ResetPosition();
             }
         }
+    }
+
+    public void startDrag()
+    {
+        img.raycastTarget = true;
+    }
+    public void endDrag()
+    {
+        img.raycastTarget = false;
     }
 }

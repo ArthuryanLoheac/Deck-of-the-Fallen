@@ -30,7 +30,7 @@ public class SampleScrollUV : MonoBehaviour
             rawImage.rectTransform.rect.height / size.y
         );
         rawImage.uvRect = new Rect(
-            rawImage.uvRect.position + (speed * Time.deltaTime),
+            rawImage.uvRect.position + (speed * Time.unscaledDeltaTime),
             calculatedSizeBasedOnScreen
         );
     }

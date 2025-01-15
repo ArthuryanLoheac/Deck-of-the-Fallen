@@ -16,6 +16,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         //Start drag the card
         CardsManager.instance.CardGrabbed = gameObject;
         UnitDrag.instance.IsDraggingCard = true;
+        OnCardDropPLay.instance.startDrag();
 
         //Save datas of before drag
         parentBeforeDrag = transform.parent;
@@ -40,6 +41,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         //When release card
         UnitDrag.instance.IsDraggingCard = false;
+        OnCardDropPLay.instance.endDrag();
 
         ComputeNewPosition();
         CardsManager.instance.CardGrabbed = null;
