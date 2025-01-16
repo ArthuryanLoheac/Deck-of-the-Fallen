@@ -9,5 +9,8 @@ public class BuyBooster : MonoBehaviour
     {
         RessourceManager.instance.AddRessource(RessourceType.gold, -booster.price);
         BoosterManager.instance.OpenBooster(booster.boosterStats, AddCardToHand);
+        if (BoosterMarchandManager.instance) {
+            BoosterMarchandManager.instance.DesActiveMarchand(booster);
+        }
     }
 }
