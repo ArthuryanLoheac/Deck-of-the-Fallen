@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e52c2ddabace8dc499f60b84c5e4c77f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f81c0a3f48753554f9b16334134b1a53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -574,7 +574,6 @@ MonoBehaviour:
   image: {fileID: 1340300538904757511}
   Name: {fileID: 5621344426196923797}
   Price: {fileID: 8780641933783602134}
-  iconPrice: {fileID: 8395535740856546195}
   button: {fileID: 3325309452819042301}
   price: 0
 --- !u!1 &8192747863480450939
@@ -644,8 +643,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Booster NPC
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afcebb41185c963468e990b4825138af, type: 2}
-  m_sharedMaterial: {fileID: 8620275261864098981, guid: afcebb41185c963468e990b4825138af, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: da7e9568bb1bd684588eeb3d4c830706, type: 2}
+  m_sharedMaterial: {fileID: 392884837564286817, guid: da7e9568bb1bd684588eeb3d4c830706, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -669,15 +668,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.6
-  m_fontSizeBase: 45.6
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -751,6 +750,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d10a2c4b67b4adc4088ef3445a4b6562, type: 2}
+    - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_fontColor.b
       value: 0
