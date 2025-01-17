@@ -186,30 +186,34 @@ public class WavesManager : MonoBehaviour
     void Update()
     {
         waveActual = spawnerMax.GetComponent<WaveSpawner>().waveActual;
-        if (isValidToNextWave() && isInWave && waveActual > 0) {
+        if (isValidToNextWave() && isInWave && waveActual > 0) 
             endWave();
-        }
         if (!PlaceBase.instance.BasePlaced || !isValidToNextWave()) {
             TimerCoolDown.instance.UpdateCoolDown(false);
             button.interactable = false;
             isDrawCardResetCalled = false;
-        } else if (waveActual < maxWave) {
-            CheckSpawnerCoolDown();
-            CheckDrawCardReset();
-            button.interactable = true;
-            UpdateCoolDownActive();
-            CheckWin();
         } else if (!BoosterMarchandManager.instance.Activated) {
-            GameManager.instance.Win();
+            if (waveActual < maxWave) {
+                CheckSpawnerCoolDown();
+                CheckDrawCardReset();
+                button.interactable = true;
+                UpdateCoolDownActive();
+                CheckWin();
+            } else {
+                GameManager.instance.Win();
+            }
+        } else {
+            TimerCoolDown.instance.UpdateCoolDown(true, 0f, 1f);
+            TimerCoolDown.instance.setIconWait(IconWaveType.Booster);
         }
         UpdateMoveUi();
     }
 
     public void NextWaveSpawners()
     {
-        TimerCoolDown.instance.setIconWait(IconWaveType.Fight);
         isInWave = true;
         startTimeWave = Time.time;
+        TimerCoolDown.instance.setIconWait(IconWaveType.Fight);
         foreach (GameObject obj in Spawners) {
             obj.GetComponent<WaveSpawner>().NextWave();
         }

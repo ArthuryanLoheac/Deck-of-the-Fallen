@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public enum IconWaveType {
     Fight,
     Base,
+    Booster,
     Wait
 }
 
@@ -24,6 +25,7 @@ public class TimerCoolDown : MonoBehaviour
     public Sprite iconWait;
     public Sprite iconFight;
     public Sprite iconBase;
+    public Sprite iconBooster;
     
     void Awake()
     {
@@ -47,10 +49,12 @@ public class TimerCoolDown : MonoBehaviour
     {
         if (type != IconWaveType.Wait) {
             imageIcons.color = colorGrey;
-                if (type == IconWaveType.Fight) {
+            if (type == IconWaveType.Fight) {
                 imageIcons.sprite = iconFight;
             } else if (type == IconWaveType.Base) {
                 imageIcons.sprite = iconBase;
+            } else if (type == IconWaveType.Booster) {
+                imageIcons.sprite = iconBooster;
             }
         } else {
             imageIcons.sprite = iconWait;
