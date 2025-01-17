@@ -40,7 +40,8 @@ public class MoveCamera : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.GameEnded) {
+        if (!GameManager.instance.GameEnded && !BoosterMarchandManager.instance.Activated
+            && !PauseMenuManager.instance.isPause) {
             //move with keys
             UpdateMoveKeys();
             //move with right click

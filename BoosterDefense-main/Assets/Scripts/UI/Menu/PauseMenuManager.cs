@@ -5,8 +5,13 @@ using UnityEngine;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-    private static bool isPause;
+    public bool isPause;
+    public static PauseMenuManager instance;
 
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         pauseMenu.SetActive(false);
