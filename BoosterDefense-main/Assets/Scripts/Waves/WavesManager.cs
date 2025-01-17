@@ -78,6 +78,7 @@ public class WavesManager : MonoBehaviour
         //Reset All
         foreach(GameObject gen in genPrefabs)
             Destroy(gen);
+        genPrefabs = new List<GameObject>();
         foreach (GameObject line in lines)
             line.SetActive(false);
         
@@ -92,7 +93,7 @@ public class WavesManager : MonoBehaviour
             if (_wavesIdTypes+1 < lstWavesTypes.Count)
                 line.SetActive(true);
 
-
+            //Create GameObject for the good type of wave
             switch(lstWavesTypes[_wavesIdTypes]) {
                 case typeIconWaves.Fight:
                     genPrefabs.Add(Instantiate(normalPrefab, posUi.transform));
@@ -129,8 +130,10 @@ public class WavesManager : MonoBehaviour
 
     void Start()
     {
+        //Active UI Next Waves 
         foreach (GameObject ui in posUIs)
             ui.SetActive(true);
+
         lastWaveCompleted = 0;
         timeMaxStartingWave = new List<float>();
         foreach(float f in timeAfterStartingWave)
@@ -168,11 +171,12 @@ public class WavesManager : MonoBehaviour
     {
         isInWave = false;
         lastWaveCompleted = waveActual;
+
         if (lastWaveCompleted < 0)
             lastWaveCompleted = 0;
-        if (isMarchandThisWave()) {
+        if (isMarchandThisWave())
             BoosterMarchandManager.instance.ActiveMarchand();
-        }
+
         TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
         nextTypeWave();
     }
@@ -201,6 +205,7 @@ public class WavesManager : MonoBehaviour
 
     private void CheckSpawnerCoolDown()
     {
+        //Check automatic start wave
         if (waveActual < maxWave) {
             timeAfterStartingWave[waveActual] -= Time.deltaTime;
             if (timeAfterStartingWave[waveActual] <= 0) {
@@ -216,48 +221,56 @@ public class WavesManager : MonoBehaviour
 
     void UpdateMoveUi()
     {
-        //Debug.Log(genPrefabs[0]);
-        //if (isInWave && genPrefabs[0]) {
-        //    float value = 1f - Mathf.PingPong((Time.time-startTimeWave) / 12f, .1f);
-        //    float valueOpacity = 1 - Mathf.PingPong((Time.time-startTimeWave) / 2f, .6f);
-        //    genPrefabs[0].transform.localScale = new Vector3(value,value,value);
-        //    Image image = genPrefabs[0].GetComponent<Image>();
-        //    image.color = new Color(image.color.r, image.color.g, image.color.b, valueOpacity);
-        //} else if (genPrefabs[0]) {
-        //    genPrefabs[0].transform.localScale = new Vector3(1,1,1);
-        //    Image image = genPrefabs[0].GetComponent<Image>();
-        //    image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
-        //}
+        if ((isInWave || BoosterMarchandManager.instance.Activated) && genPrefabs[0]) {
+            //Animated Zoomed
+            float value = 1f - Mathf.PingPong((Time.unscaledTime-startTimeWave) / 12f, .1f);
+            float valueOpacity = 1 - Mathf.PingPong((Time.unscaledTime-startTimeWave) / 2f, .6f);
+            genPrefabs[0].transform.localScale = new Vector3(value,value,value);
+            Image image = genPrefabs[0].GetComponent<Image>();
+            image.color = new Color(image.color.r, image.color.g, image.color.b, valueOpacity);
+        } else if (genPrefabs[0]) {
+            //NOT Animated Zoomed
+            genPrefabs[0].transform.localScale = new Vector3(1,1,1);
+            Image image = genPrefabs[0].GetComponent<Image>();
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
+        }
     }
 
     void Update()
     {
+        //set waveActual
         waveActual = spawnerMax.GetComponent<WaveSpawner>().waveActual;
+
+        //Check End of Wave
         if (isValidToNextWave() && isInWave && waveActual > 0) 
             endWave();
+        
+        //Check Disable button next wave
         if (!PlaceBase.instance.BasePlaced || !isValidToNextWave()) {
             TimerCoolDown.instance.UpdateCoolDown(false);
             button.interactable = false;
             isDrawCardResetCalled = false;
-        } else if (!BoosterMarchandManager.instance.Activated) {
-            if (waveActual < maxWave) {
+        } else if (!BoosterMarchandManager.instance.Activated) { // Not in selection booster
+            if (waveActual < maxWave) { // In Waves
                 CheckSpawnerCoolDown();
                 CheckDrawCardReset();
                 button.interactable = true;
                 UpdateCoolDownActive();
                 CheckWin();
-            } else {
+            } else { // End all waves
                 GameManager.instance.Win();
             }
-        } else {
+        } else { // In Selection Booster
             TimerCoolDown.instance.UpdateCoolDown(true, 0f, 1f);
             TimerCoolDown.instance.setIconWait(IconWaveType.Booster);
         }
+        //Update UI next wave
         UpdateMoveUi();
     }
 
     public void NextWaveSpawners()
     {
+        //Launch Next Wave
         isInWave = true;
         startTimeWave = Time.time;
         TimerCoolDown.instance.setIconWait(IconWaveType.Fight);

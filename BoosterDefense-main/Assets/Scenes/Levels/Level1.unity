@@ -6125,9 +6125,10 @@ MonoBehaviour:
   - {fileID: 1542803540}
   - {fileID: 298986463}
   - {fileID: 1970371689}
-  cardsPrefab: {fileID: 1872365380769750990, guid: 60d2d8400a0240542b8284a84c18b324, type: 3}
+  boosterPrefab: {fileID: 1872365380769750990, guid: 60d2d8400a0240542b8284a84c18b324, type: 3}
   normalPrefab: {fileID: 2009132045432188173, guid: 214d0f09ba6f4bf48840f1fca508d126, type: 3}
   bossPrefab: {fileID: 1378927710447274280, guid: 13cb2d5cb867cb046a28be71b67e8557, type: 3}
+  endPrefab: {fileID: 2009132045432188173, guid: 39d0600baf17b964f99f33e8d1a77fd7, type: 3}
 --- !u!114 &1881733631
 MonoBehaviour:
   m_ObjectHideFlags: 0
