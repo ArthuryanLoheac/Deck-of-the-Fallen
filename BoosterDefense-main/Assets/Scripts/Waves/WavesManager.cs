@@ -5,8 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+public enum typeIconWaves{
+    Fight,
+    Boss,
+    Booster,
+    End
+}
+
 public class WavesManager : MonoBehaviour
 {
+    public static WavesManager instance;
     public Button button;
     public bool isDrawCardResetCalled;
     private GameObject[] Spawners;
@@ -15,7 +23,6 @@ public class WavesManager : MonoBehaviour
     public int lastWaveCompleted = 0;
     private GameObject spawnerMax;
     private List<float> timeMaxStartingWave;
-    public static WavesManager instance;
     public float[] timeAfterStartingWave;
     public bool[] IsMarchandAfter;
     public bool[] IsBoss;
@@ -27,10 +34,37 @@ public class WavesManager : MonoBehaviour
     [Header("UIS")]
     public List<GameObject> posUIs = new List<GameObject>();
     public List<GameObject> lines = new List<GameObject>();
-    public GameObject cardsPrefab;
+    public GameObject boosterPrefab;
     public GameObject normalPrefab;
     public GameObject bossPrefab;
+    public GameObject endPrefab;
     private List<GameObject> genPrefabs = new List<GameObject>();
+
+    private List<typeIconWaves> lstWavesTypes = new List<typeIconWaves>();
+    private int wavesIdTypes = 0;
+
+    public void nextTypeWave()
+    {
+        wavesIdTypes++;
+        ReUpdateUI();
+    }
+
+    List<typeIconWaves> listUiWaves()
+    {
+        List<typeIconWaves> lst = new List<typeIconWaves>();
+
+        for(int i = 0; i < timeAfterStartingWave.Length; i++) {
+            if (IsBoss[i])
+                lst.Add(typeIconWaves.Boss);
+            else
+                lst.Add(typeIconWaves.Fight);
+
+            if (IsMarchandAfter[i])
+                lst.Add(typeIconWaves.Booster);
+        }
+        lst.Add(typeIconWaves.End);
+        return lst;
+    }
 
     bool isMarchandThisWave()
     {
@@ -39,31 +73,41 @@ public class WavesManager : MonoBehaviour
         return IsMarchandAfter[lastWaveCompleted-1];
     }
 
-    void UpdateUI()
+    void ReUpdateUI()
     {
+        //Reset All
         foreach(GameObject gen in genPrefabs)
             Destroy(gen);
-        genPrefabs = new List<GameObject>();
-        foreach(GameObject line in lines) 
+        foreach (GameObject line in lines)
             line.SetActive(false);
+        
+        //Set icons waves & arrows
         for (int i = 0; i < posUIs.Count; i++) {
-            int wave = i + waveActual;
-            GameObject obj = null;
-            if (wave < maxWave){
-                if (wave < IsMarchandAfter.Length && IsMarchandAfter[wave]) {
-                    obj = Instantiate(cardsPrefab, posUIs[i].transform);
-                } else if (wave < IsBoss.Length && IsBoss[wave]) {
-                    obj = Instantiate(bossPrefab, posUIs[i].transform);
-                } else {
-                    obj = Instantiate(normalPrefab, posUIs[i].transform);
-                }
-            }
-            if (wave+1 < maxWave){
-                lines[i].SetActive(true);
-            }
-            
-            if (obj){
-                genPrefabs.Add(obj);
+            int _wavesIdTypes = wavesIdTypes + i;
+            GameObject posUi = posUIs[i];
+            GameObject line = lines[i];
+
+            if (_wavesIdTypes >= lstWavesTypes.Count)
+                break;
+            if (_wavesIdTypes+1 < lstWavesTypes.Count)
+                line.SetActive(true);
+
+
+            switch(lstWavesTypes[_wavesIdTypes]) {
+                case typeIconWaves.Fight:
+                    genPrefabs.Add(Instantiate(normalPrefab, posUi.transform));
+                    break;
+                case typeIconWaves.Boss:
+                    genPrefabs.Add(Instantiate(bossPrefab, posUi.transform));
+                    break;
+                case typeIconWaves.Booster:
+                    genPrefabs.Add(Instantiate(boosterPrefab, posUi.transform));
+                    break;
+                case typeIconWaves.End:
+                    genPrefabs.Add(Instantiate(endPrefab, posUi.transform));
+                    break;
+                default:
+                    break;
             }
         }
     }
@@ -85,6 +129,8 @@ public class WavesManager : MonoBehaviour
 
     void Start()
     {
+        foreach (GameObject ui in posUIs)
+            ui.SetActive(true);
         lastWaveCompleted = 0;
         timeMaxStartingWave = new List<float>();
         foreach(float f in timeAfterStartingWave)
@@ -94,7 +140,8 @@ public class WavesManager : MonoBehaviour
         isWinCalled = false;
         isDrawCardResetCalled = false;
         isInWave = false;
-        UpdateUI();
+        lstWavesTypes = listUiWaves();
+        ReUpdateUI();
         TimerCoolDown.instance.setIconWait(IconWaveType.Base);
     }
 
@@ -127,7 +174,7 @@ public class WavesManager : MonoBehaviour
             BoosterMarchandManager.instance.ActiveMarchand();
         }
         TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
-        UpdateUI();
+        nextTypeWave();
     }
 
     private void CheckWin()
@@ -170,17 +217,17 @@ public class WavesManager : MonoBehaviour
     void UpdateMoveUi()
     {
         //Debug.Log(genPrefabs[0]);
-        if (isInWave && genPrefabs[0]) {
-            float value = 1f - Mathf.PingPong((Time.time-startTimeWave) / 12f, .1f);
-            float valueOpacity = 1 - Mathf.PingPong((Time.time-startTimeWave) / 2f, .6f);
-            genPrefabs[0].transform.localScale = new Vector3(value,value,value);
-            Image image = genPrefabs[0].GetComponent<Image>();
-            image.color = new Color(image.color.r, image.color.g, image.color.b, valueOpacity);
-        } else if (genPrefabs[0]) {
-            genPrefabs[0].transform.localScale = new Vector3(1,1,1);
-            Image image = genPrefabs[0].GetComponent<Image>();
-            image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
-        }
+        //if (isInWave && genPrefabs[0]) {
+        //    float value = 1f - Mathf.PingPong((Time.time-startTimeWave) / 12f, .1f);
+        //    float valueOpacity = 1 - Mathf.PingPong((Time.time-startTimeWave) / 2f, .6f);
+        //    genPrefabs[0].transform.localScale = new Vector3(value,value,value);
+        //    Image image = genPrefabs[0].GetComponent<Image>();
+        //    image.color = new Color(image.color.r, image.color.g, image.color.b, valueOpacity);
+        //} else if (genPrefabs[0]) {
+        //    genPrefabs[0].transform.localScale = new Vector3(1,1,1);
+        //    Image image = genPrefabs[0].GetComponent<Image>();
+        //    image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
+        //}
     }
 
     void Update()

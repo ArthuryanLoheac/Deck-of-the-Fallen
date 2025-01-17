@@ -63,9 +63,11 @@ public class BoosterManager : MonoBehaviour
             BoosterDrawCardUI.instance.DesactiveCard();
         }
         BoosterDrawCardUI.instance.isDrawing = false;
+        //Fermeture marchand apres pioche
         if (BoosterMarchandManager.instance) {
             BoosterMarchandManager.instance.Activated = false;
             TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
+            WavesManager.instance.nextTypeWave();
         }
     }
     public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
