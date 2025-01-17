@@ -6672,9 +6672,9 @@ MonoBehaviour:
   scraps: 230
   gold: 0
   food: 0
-  scrapsIcon: {fileID: 21300000, guid: 1a9c1b00c043d714e8f5b88f7b121759, type: 3}
+  scrapsIcon: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
   goldIcon: {fileID: 21300000, guid: 0d93693b79a040f45afb3225a1f0b8a6, type: 3}
-  foodIcon: {fileID: 21300000, guid: ece035d81a9623b4db89253bb70a325f, type: 3}
+  foodIcon: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}
 --- !u!4 &2002557822
 Transform:
   m_ObjectHideFlags: 0
@@ -7361,6 +7361,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1881733626}
+    - target: {fileID: 4830190219239548943, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
     - target: {fileID: 5642559574510148202, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7397,6 +7401,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7894801334296031073, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -199.7368
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894801334296031073, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -27.732
+      objectReference: {fileID: 0}
     - target: {fileID: 7965894077656725028, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7421,6 +7433,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.9056604
       objectReference: {fileID: 0}
+    - target: {fileID: 8829118614350605722, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}
     - target: {fileID: 8868484628837159506, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
