@@ -14,6 +14,7 @@ public class OnCardDropOnSell : MonoBehaviour, IDropHandler
     {
         //When releasing a card on the sell part
         GameObject dropped = eventData.pointerDrag;
+        CardsManager.instance.AddCardToCardUsed(cardGrabbed.GetComponent<Card>().cardStats);
         dropped.GetComponent<Card>().SellCard();
         if (dropped) {
             dropped.GetComponent<DraggableCard>().ResetPosition();
