@@ -18,6 +18,7 @@ public class BoosterMarchandManager : MonoBehaviour
     }
     public void ActiveMarchand()
     {
+        ZoomCardManager.instance.DesactiveCardZoom();
         Activated = true;
         //Met en pause
         Time.timeScale = 0;

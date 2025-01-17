@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void Win()
     {
+        ZoomCardManager.instance.DesactiveCardZoom();
         WinUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     }
     public void Defeat()
     {
+        ZoomCardManager.instance.DesactiveCardZoom();
         LooseUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();
