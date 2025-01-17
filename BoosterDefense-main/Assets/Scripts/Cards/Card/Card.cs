@@ -45,8 +45,6 @@ public class Card : MonoBehaviour
     public Sprite Vehicule;
     public Sprite Equipement;
 
-
-    
     [Header("BG Contours")]
     public Image Contour;
     public Sprite ContoursCommon;
