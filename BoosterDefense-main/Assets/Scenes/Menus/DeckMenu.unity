@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabUICardPlacement: {fileID: 2895022599350005132, guid: 3f89fde563ccc7b4c84974e263261570, type: 3}
   prefabUICardPlacementHand: {fileID: 2895022599350005132, guid: e3ad52f6b17ddec4797eec4ceb3f1689, type: 3}
-  cardPrefab: {fileID: 380974737205684631, guid: c7be7cc268cdecb4a821d51ec186f964, type: 3}
+  cardPrefab: {fileID: 4333293451054857453, guid: c7be7cc268cdecb4a821d51ec186f964, type: 3}
   canvasAll: {fileID: 1089497052}
   canvasDeck: {fileID: 1330323412}
   canvasHand: {fileID: 413783480}

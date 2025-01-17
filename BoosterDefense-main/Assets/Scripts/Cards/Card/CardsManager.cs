@@ -18,6 +18,7 @@ public class CardsManager : MonoBehaviour
     public GameObject SellCard;
     private float separationX = 70f;
     private float separationY = 10f;
+    private float cardPosYDown = 30f;
     private float posDiffX;
 
     void Awake()
@@ -76,9 +77,12 @@ public class CardsManager : MonoBehaviour
             if (transform.GetChild(i).GetComponent<DraggableCard>().Zoomed){
                 transform.GetChild(i).localScale = new Vector3(1.3f,1.3f,1.3f);
                 transform.GetChild(i).transform.eulerAngles = Vector3.zero;
+
+                var rectTransform = transform.GetChild(i).GetComponent<RectTransform>();
+                float height = rectTransform.rect.height;
                 transform.GetChild(i).transform.position = new Vector3(
                     transform.position.x + (posDiffX * count) - ((nbCardToShow - 1) * (posDiffX/2) + (valueRotation * 10f)),
-                    transform.position.y, transform.position.z);
+                    (height/2) * (Screen.height / 1080f), transform.position.z);
             } else { 
                 transform.GetChild(i).localScale = new Vector3(1f,1f,1f);
                 Vector3 vec = transform.GetChild(i).transform.eulerAngles;
@@ -86,7 +90,7 @@ public class CardsManager : MonoBehaviour
                 transform.GetChild(i).transform.eulerAngles = vec;
                 transform.GetChild(i).transform.position = new Vector3(
                     transform.position.x + (posDiffX * count) - ((nbCardToShow - 1) * (posDiffX/2) + (valueRotation * 10f)),
-                    transform.position.y - (Mathf.Abs(valueRotation) * GetPosDiffY()), transform.position.z);
+                    transform.position.y - (Mathf.Abs(valueRotation) * GetPosDiffY()) - cardPosYDown, transform.position.z);
             }
             
             transform.GetChild(i).gameObject.SetActive(true);
@@ -119,7 +123,7 @@ public class CardsManager : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(true);
             transform.GetChild(i).transform.position = new Vector3(
                 transform.position.x + (posDiffX * count) - (nbCardToShow * (posDiffX/2) + (valueRotation * 10f)),
-                transform.position.y - (Mathf.Abs(valueRotation) * GetPosDiffY()), transform.position.z);
+                transform.position.y - (Mathf.Abs(valueRotation) * GetPosDiffY()) - cardPosYDown, transform.position.z);
             count++;
         }
         for (int i = cursorCards + nbCardToShow; i < transform.childCount; i++)
