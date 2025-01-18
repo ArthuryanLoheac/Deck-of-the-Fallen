@@ -8,8 +8,7 @@ public class Ressource : MonoBehaviour
     public int value;
     private int valueMax;
     public RessourceType typeRessource;
-    public GameObject RessourceBar;
-    private Image fillHpBar;
+    private Image fillRessourceBar;
     private float sizeY;
     public GameObject CollectedRessourcePopup;
 
@@ -18,11 +17,11 @@ public class Ressource : MonoBehaviour
         if (value <= 0)
             Destroy(gameObject);
         if (value < valueMax) {
-            fillHpBar.transform.parent.gameObject.SetActive(true);
+            fillRessourceBar.transform.parent.parent.gameObject.SetActive(true);
         } else {
-            fillHpBar.transform.parent.gameObject.SetActive(false);
+            fillRessourceBar.transform.parent.parent.gameObject.SetActive(false);
         }   
-        fillHpBar.fillAmount = (float)value / (float)valueMax;
+        fillRessourceBar.fillAmount = (float)value / (float)valueMax;
     }
 
     public void collectRessource(int amount, GameObject Collecter)
@@ -34,6 +33,23 @@ public class Ressource : MonoBehaviour
         Instantiate(CollectedRessourcePopup, vec, Quaternion.identity).GetComponent<SetValue>().SetValueText(valueCollected, typeRessource);
     }
 
+    public GameObject GetChildObject(Transform parent, string _tag)
+    {
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            if (child.tag == _tag)
+            {
+                return child.gameObject;
+            }
+            if (child.childCount > 0)
+            {
+                GetChildObject(child, _tag);
+            }
+        }
+        return null;
+    }
+
     void Start()
     {
         valueMax = value;
@@ -41,7 +57,10 @@ public class Ressource : MonoBehaviour
         sizeY = GetComponent<Collider>().bounds.size.y + 1f;
         Vector3 vec = new Vector3(transform.position.x, transform.position.y + sizeY + 0.5f, transform.position.z);
 
-        GameObject RessourceBarGenerate = Instantiate(RessourceBar, vec, Quaternion.identity, transform);
-        fillHpBar = RessourceBarGenerate.transform.GetChild(2).GetComponent<Image>();
+        GameObject statsBarGenerate = GetChildObject(transform, "StatsBarUi");
+        if (statsBarGenerate == null) {
+            statsBarGenerate = Instantiate(UIManager.instance.statsBar, vec, Quaternion.identity, transform);
+        }
+        fillRessourceBar = statsBarGenerate.transform.GetChild(0).GetChild(0).GetChild(2).GetComponent<Image>();
     }
 }

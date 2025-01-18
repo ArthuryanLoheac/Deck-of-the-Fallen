@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaUIManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public static AreaUIManager instance;
+    public static UIManager instance;
 
     public GameObject defaultArea;
     public GameObject collectArea;
     public GameObject detectionArea;
     public GameObject weaponArea;
+
+    public GameObject statsBar;
 
     void Awake()
     {

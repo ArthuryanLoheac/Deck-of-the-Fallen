@@ -18,7 +18,6 @@ public class Life : MonoBehaviour
     public float hp;
     public bool isDead;
     [HideInInspector]public float hpMax;
-    public GameObject HPBarprefabs;
     private GameObject HPBar;
     private Image fillHpBar;
     private float sizeY;
@@ -50,7 +49,7 @@ public class Life : MonoBehaviour
                 HPBar.SetActive(false);
             }
         }
-        fillHpBar.fillAmount = (float)hp / (float)hpMax;
+            fillHpBar.fillAmount = (float)hp / (float)hpMax;
     }
 
     private void DeathAlly()
@@ -131,6 +130,23 @@ public class Life : MonoBehaviour
         TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
     }
 
+    public GameObject GetChildObject(Transform parent, string _tag)
+    {
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            if (child.tag == _tag)
+            {
+                return child.gameObject;
+            }
+            if (child.childCount > 0)
+            {
+                GetChildObject(child, _tag);
+            }
+        }
+        return null;
+    }
+
     void Start()
     {
         isDead = false;
@@ -144,8 +160,13 @@ public class Life : MonoBehaviour
         } else {
             //défini parametre de base
             Vector3 vec = new Vector3(transform.position.x, transform.position.y + sizeY, transform.position.z);
-            HPBar = Instantiate(HPBarprefabs, vec, Quaternion.identity, transform);
-            fillHpBar = HPBar.transform.GetChild(2).GetComponent<Image>();
+
+            GameObject statsBarGenerate = GetChildObject(transform, "StatsBarUi");
+            if (statsBarGenerate == null) {
+                statsBarGenerate = Instantiate(UIManager.instance.statsBar, vec, Quaternion.identity, transform);
+            }
+            HPBar = statsBarGenerate.transform.GetChild(1).gameObject;
+            fillHpBar = HPBar.transform.GetChild(0).GetChild(2).GetComponent<Image>();
             UpdateHealthBar();
         }
     }

@@ -125,6 +125,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: ea18bebe0c0538c44addbe2000f60538, type: 2}
   life: {fileID: 0}
   target: {fileID: 0}
+  speedComputed: 0
   agent: {fileID: 0}
   pathUpdateDelay: 0
   nextTimeUpdateRandomPos: 0
@@ -148,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
+  isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
+  HPBarprefabs: {fileID: 8749365430953877397, guid: 72ee53b5c77ab994bb94c3e575c07b84, type: 3}
   coinsDropped: 2
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &-6104551598154205683
@@ -164,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cd956db369c6849a46a71c1f680eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imunities: {fileID: 0}
 --- !u!1001 &9150864011394156994
 PrefabInstance:
   m_ObjectHideFlags: 0

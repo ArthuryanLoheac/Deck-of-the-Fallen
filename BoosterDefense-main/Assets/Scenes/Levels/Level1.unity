@@ -7087,8 +7087,8 @@ MonoBehaviour:
   StartHand:
   - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
   - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
-  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
-  - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
+  - {fileID: 11400000, guid: 7ff755c39d4f4bb45915c727498199c8, type: 2}
+  - {fileID: 11400000, guid: 2e4c731d2bf2b3a4caf9ff31f645322f, type: 2}
 --- !u!4 &2113065950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4760462262958385033, guid: 789cb1e1aecba714a8b59b6790f1d740, type: 3}
@@ -7444,6 +7444,10 @@ PrefabInstance:
     - target: {fileID: 9016816134101548115, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_Name
       value: --- CANVAS ---
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156386682670009193, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

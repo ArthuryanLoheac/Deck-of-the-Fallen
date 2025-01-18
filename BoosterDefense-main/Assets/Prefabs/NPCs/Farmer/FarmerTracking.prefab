@@ -242,8 +242,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 12
+  isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
+  HPBarprefabs: {fileID: 8749365430953877397, guid: 72ee53b5c77ab994bb94c3e575c07b84, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &-7721709533509126399
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cd956db369c6849a46a71c1f680eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imunities: {fileID: 0}
 --- !u!1001 &5617053337656058865
 PrefabInstance:
   m_ObjectHideFlags: 0

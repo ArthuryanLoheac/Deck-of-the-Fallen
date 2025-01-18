@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4673595548369332459}
   - component: {fileID: -5943221879255296472}
   - component: {fileID: 8344686353540466128}
+  - component: {fileID: 5655655280838048319}
   m_Layer: 8
   m_Name: SkeletonRessources
   m_TagString: Enemy
@@ -124,6 +125,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 5bc5907c5688b5a4d9f66c9aba556ab6, type: 2}
   life: {fileID: 0}
   target: {fileID: 0}
+  speedComputed: 0
   agent: {fileID: 0}
   pathUpdateDelay: 0
   nextTimeUpdateRandomPos: 0
@@ -147,10 +149,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
+  isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
+  HPBarprefabs: {fileID: 8749365430953877397, guid: 72ee53b5c77ab994bb94c3e575c07b84, type: 3}
   coinsDropped: 2
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
+--- !u!114 &5655655280838048319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907904795144399996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cd956db369c6849a46a71c1f680eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imunities: {fileID: 0}
 --- !u!1001 &300931867213507961
 PrefabInstance:
   m_ObjectHideFlags: 0
