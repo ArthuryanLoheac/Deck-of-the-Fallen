@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum DeckEmplacement {
     All,
@@ -32,12 +33,38 @@ public class DeckUIManagement : MonoBehaviour
     public Vector2 sizeCard = new Vector2(165, 220);
     public Vector2 offSetPos = new Vector2(130, 310);
 
+    [Header("Scrollbar")]
+    public Scrollbar scrollbarAll;
+    public Scrollbar scrollbarDeck;
+
     void Awake()
     {
         if (!instance)
             instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void initScrollBar(List<GameObject> lst, Scrollbar scrollbar)
+    {
+        scrollbar.value = 0;
+        scrollbar.size = ((float)4 / ((float)lst.Count / 5.0f));
+        if (scrollbar.size == 1)
+            scrollbar.gameObject.SetActive(false);
+        else
+            scrollbar.gameObject.SetActive(true);
+    }
+
+    private void initEveryThing()
+    {
+        InitAlls();
+        InitHand();
+        InitDeck();
+        InitAllsCards();
+        InitCardsDeck();
+        InitCardsHand();
+        initScrollBar(cardsBackAll, scrollbarAll);
+        initScrollBar(cardsBackDeck, scrollbarDeck);
     }
 
     public void Refresh()
@@ -51,25 +78,14 @@ public class DeckUIManagement : MonoBehaviour
         foreach(GameObject obj in cardsBackHand) {
             Destroy(obj);
         }
-        InitAlls();
-        InitHand();
-        InitDeck();
-        InitAllsCards();
-        InitCardsDeck();
-        InitCardsHand();
-
+        initEveryThing();
     }
 
     void Start()
     {
         offsetAll = 0;
         offsetDeck = 0;
-        InitAlls();
-        InitHand();
-        InitDeck();
-        InitAllsCards();
-        InitCardsDeck();
-        InitCardsHand();
+        initEveryThing();
     }
 
     #region cards
@@ -116,7 +132,7 @@ public class DeckUIManagement : MonoBehaviour
     
     private void InitAlls()
     {
-        int nbCard = (int)Mathf.Round(DeckCardsManager.instance.AllCards.Count / 5) * 5 + 5;
+        int nbCard = (int)Mathf.Round(DeckCardsManager.instance.AllCards.Count / 5) * 5;
         nbCard = Mathf.Max(20, nbCard);
         cardsBackAll = new List<GameObject>();
         for (int i = 0; i < nbCard; i++) {
@@ -165,13 +181,20 @@ public class DeckUIManagement : MonoBehaviour
         }
     }
 
-    public float UpdateOffset(List<GameObject> lst, int nbRows, float offset)
+    public float UpdateOffset(List<GameObject> lst, int nbRows, float offset, Scrollbar scrollbar)
     {
         float offsetUpdated = offset + -Input.mouseScrollDelta.y * speedMouseWheel;
         if (offsetUpdated < 0)
             offsetUpdated = 0;
         if (offsetUpdated > ((lst.Count / 5) - nbRows) * sizeCard.y + 40)
             offsetUpdated = ((lst.Count / 5) - nbRows) * sizeCard.y + 40;
+        // Update scrollbar
+        scrollbar.value = offsetUpdated / (((lst.Count / 5) - nbRows) * sizeCard.y + 40);
+        scrollbar.size = ((float)4 / ((float)lst.Count / 5.0f));
+        if (scrollbar.size == 1)
+            scrollbar.gameObject.SetActive(false);
+        else
+            scrollbar.gameObject.SetActive(true);
         return offsetUpdated;
     }
 
@@ -185,9 +208,9 @@ public class DeckUIManagement : MonoBehaviour
     void Update()
     {
         if (isInRect(canvasAll.GetComponent<RectTransform>()))
-            offsetAll = UpdateOffset(cardsBackAll, 4, offsetAll);
+            offsetAll = UpdateOffset(cardsBackAll, 4, offsetAll, scrollbarAll);
         else if (isInRect(canvasDeck.GetComponent<RectTransform>()))
-            offsetDeck = UpdateOffset(cardsBackDeck, 3, offsetDeck);
+            offsetDeck = UpdateOffset(cardsBackDeck, 3, offsetDeck, scrollbarDeck);
         SetPosWithOffset();
     }
     #endregion BackCards
