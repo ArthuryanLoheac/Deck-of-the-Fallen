@@ -64,7 +64,7 @@ public class DeckUIManagement : MonoBehaviour
         InitCardsDeck();
         InitCardsHand();
         initScrollBar(cardsBackAll, scrollbarAll);
-        initScrollBar(cardsBackDeck, scrollbarDeck);
+        initScrollBar(cardsBackDeck, scrollbarDeck);    
     }
 
     public void Refresh()
@@ -86,6 +86,8 @@ public class DeckUIManagement : MonoBehaviour
         offsetAll = 0;
         offsetDeck = 0;
         initEveryThing();
+        scrollbarAll.onValueChanged.AddListener(delegate { setOffsetAll(); });
+        scrollbarDeck.onValueChanged.AddListener(delegate { setOffsetDeck(); });
     }
 
     #region cards
@@ -132,7 +134,7 @@ public class DeckUIManagement : MonoBehaviour
     
     private void InitAlls()
     {
-        int nbCard = (int)Mathf.Round(DeckCardsManager.instance.AllCards.Count / 5) * 5;
+        int nbCard = (int)Mathf.Round(DeckCardsManager.instance.AllCards.Count / 5) * 5 + 4;
         nbCard = Mathf.Max(20, nbCard);
         cardsBackAll = new List<GameObject>();
         for (int i = 0; i < nbCard; i++) {
@@ -202,6 +204,15 @@ public class DeckUIManagement : MonoBehaviour
     {
         Vector2 localMousePosition = rect.InverseTransformPoint(Input.mousePosition);
         return rect.rect.Contains(localMousePosition);
+    }
+
+    public void setOffsetAll()
+    {
+        offsetAll = scrollbarAll.value * (((cardsBackAll.Count / 5) - 4) * sizeCard.y + 40);
+    }
+    public void setOffsetDeck()
+    {
+        offsetDeck = scrollbarDeck.value * (((cardsBackDeck.Count / 5) - 3) * sizeCard.y + 30);
     }
 
     // Update is called once per frame
