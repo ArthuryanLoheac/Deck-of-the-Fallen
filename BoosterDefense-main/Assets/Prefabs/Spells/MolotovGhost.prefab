@@ -80,6 +80,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueDefault: 4
+  valueWeapon: 0
+  valueRessource: 0
   weapon: {fileID: 0}
   npcStats: {fileID: 0}
 --- !u!114 &5056882305981315325

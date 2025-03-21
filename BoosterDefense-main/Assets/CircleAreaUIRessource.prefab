@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3829892651548709572}
   - component: {fileID: 856700326621694983}
   - component: {fileID: 8502910346318396766}
+  - component: {fileID: 2956772955978084080}
   m_Layer: 0
-  m_Name: CircleAreaUIRaimbow
+  m_Name: CircleAreaUIRessource
   m_TagString: UiArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11213bb280baa0a46871c22c5a1c21d0, type: 2}
+  - {fileID: 2100000, guid: 3024965f69f397448bfc42eb48075ddf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2956772955978084080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167983929933918706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c1b7a460a54e647bf08ca489ef868a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -25

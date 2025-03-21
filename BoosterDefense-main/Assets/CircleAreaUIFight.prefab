@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3829892651548709572}
   - component: {fileID: 856700326621694983}
   - component: {fileID: 8502910346318396766}
-  - component: {fileID: 2437275568409804338}
+  - component: {fileID: 4890415139381575832}
   m_Layer: 0
-  m_Name: CircleAreaUI
+  m_Name: CircleAreaUIFight
   m_TagString: UiArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7eb97b17430c1564eb6b43614bfbf371, type: 2}
+  - {fileID: 2100000, guid: 89d9560a6186c744b9a8d3b2bbe313b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2437275568409804338
+--- !u!114 &4890415139381575832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c1b7a460a54e647bf08ca489ef868a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: -25

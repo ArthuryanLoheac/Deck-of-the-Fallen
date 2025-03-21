@@ -83,7 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9437e404475f54e4f9645a88c0acf225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueDefault: 1
+  valueDefault: 0
+  valueWeapon: 0
+  valueRessource: 0
+  valueDetection: 0
   weapon: {fileID: 11400000, guid: 7a92b61c8b68e9a4aa13b18d3afaab87, type: 2}
   npcStats: {fileID: 0}
 --- !u!1001 &6195221099551006812

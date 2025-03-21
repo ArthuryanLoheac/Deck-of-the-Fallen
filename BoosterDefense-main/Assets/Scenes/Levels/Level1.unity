@@ -5593,9 +5593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultArea: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
-  collectArea: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
-  detectionArea: {fileID: 167983929933918706, guid: 3342e041557ab6345a0440db994c4d99, type: 3}
-  weaponArea: {fileID: 167983929933918706, guid: eaa8ad6070ac7b048a9357290b651cf2, type: 3}
+  collectArea: {fileID: 167983929933918706, guid: 9730a20559a1cb544858583b0c8e6b88, type: 3}
+  detectionArea: {fileID: 167983929933918706, guid: d61aabb0df8ded9498bf313502f82f6c, type: 3}
+  weaponArea: {fileID: 167983929933918706, guid: 3342e041557ab6345a0440db994c4d99, type: 3}
   statsBar: {fileID: 1014191320}
 --- !u!114 &1881733634
 MonoBehaviour:
