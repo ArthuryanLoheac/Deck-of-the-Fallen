@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardScraperLvl 1
   m_EditorClassIdentifier: 
   name: SCRAPPER UPGRADED
-  image: {fileID: 21300000, guid: 0faaf6c19112af148bd57ad21974d136, type: 3}
+  image: {fileID: 21300000, guid: a4a2437f978caae4eb61e7653a98fc35, type: 3}
   price: 30
   priceRessource: 2
   ghostToSpawn: {fileID: 2395485346363015865, guid: e35a4e0c4b2496c4780c2d014dff723b, type: 3}

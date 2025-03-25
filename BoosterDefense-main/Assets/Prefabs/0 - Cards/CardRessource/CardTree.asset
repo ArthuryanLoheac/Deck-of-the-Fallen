@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardTree
   m_EditorClassIdentifier: 
   name: SCRAPS - TREE
-  image: {fileID: 21300000, guid: b3fe76fde0ebb8746b9178508c0ddd99, type: 3}
+  image: {fileID: 21300000, guid: 2ab52a53216d98d498b9ba3e5f47c8a3, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 1725418776452192475, guid: f881429d5ba8a7b46b0f812691d7f8f7, type: 3}

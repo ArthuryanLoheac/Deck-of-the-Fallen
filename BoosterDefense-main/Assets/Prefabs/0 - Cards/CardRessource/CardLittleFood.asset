@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardLittleFood
   m_EditorClassIdentifier: 
   name: SQUIRREL
-  image: {fileID: 21300000, guid: 6076a4cd4f2b4fe4abd24a248cd522a9, type: 3}
+  image: {fileID: 21300000, guid: 34f538bd0dda7b6468bb04b6102e5ba1, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 9007171006751760155, guid: 662fae2cbf21c19429293745946cd72b, type: 3}

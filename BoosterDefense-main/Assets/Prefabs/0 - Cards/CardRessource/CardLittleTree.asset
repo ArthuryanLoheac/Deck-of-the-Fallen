@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardLittleTree
   m_EditorClassIdentifier: 
   name: SCRAP - SHRUBS
-  image: {fileID: 21300000, guid: b3fe76fde0ebb8746b9178508c0ddd99, type: 3}
+  image: {fileID: 21300000, guid: e11474a050c511b4fafc4abeb1b96a39, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 9007171006751760155, guid: f348065c4261d7d4cbc6843e0fff6210, type: 3}

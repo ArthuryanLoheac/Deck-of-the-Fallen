@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardLittleStone
+  m_Name: CardLittleScrap
   m_EditorClassIdentifier: 
   name: SCRAPS - ROCK
-  image: {fileID: 21300000, guid: 3482bdecc2ebc144083bcce79374128e, type: 3}
+  image: {fileID: 21300000, guid: 1be2002b6205e494dbf2c6466f417490, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 9007171006751760155, guid: 90c73b5a9d389b442b0c63e5fbe4b6ec, type: 3}
