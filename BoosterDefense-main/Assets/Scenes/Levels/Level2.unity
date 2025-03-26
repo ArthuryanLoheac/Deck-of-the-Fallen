@@ -2166,7 +2166,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &616776832
@@ -2665,9 +2664,10 @@ MonoBehaviour:
   isWinCalled: 0
   posUIs: []
   lines: []
-  cardsPrefab: {fileID: 0}
+  boosterPrefab: {fileID: 0}
   normalPrefab: {fileID: 0}
   bossPrefab: {fileID: 0}
+  endPrefab: {fileID: 0}
 --- !u!1 &781806013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -2720,7 +2720,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &781806020
@@ -2969,7 +2968,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &820569212
@@ -3134,7 +3132,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &862409634
@@ -3417,7 +3414,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &958038861
@@ -3997,6 +3993,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1250238782210755383, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1892518073786979630, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4052,6 +4052,22 @@ PrefabInstance:
     - target: {fileID: 3245761010206226201, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138407140784928825, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138407140784928825, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138407140784928825, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50.27505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138407140784928825, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.56909
       objectReference: {fileID: 0}
     - target: {fileID: 5642559574510148202, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4416,7 +4432,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &1338415489
@@ -5324,7 +5339,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &1597310169
@@ -6766,7 +6780,6 @@ MonoBehaviour:
   hp: 200
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 4151731063816292453, guid: ebea57383c4f846499af600672e50c9d, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!114 &2023866740

@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805318389859771188, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -190,7 +194,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 6410316848777728976, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -835,6 +851,10 @@ PrefabInstance:
     - target: {fileID: 273660591722076206, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
       propertyPath: m_Name
@@ -1810,6 +1830,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
       propertyPath: m_Name
       value: Stone (1)
@@ -2357,6 +2381,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 1174783034998844911, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174633317267022989, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3836581064361698930, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -2413,7 +2445,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3174633317267022989, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+    - {fileID: 1174783034998844911, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2527,6 +2561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -2587,7 +2625,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2905,6 +2949,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -2979,6 +3027,10 @@ PrefabInstance:
     - target: {fileID: 7365354717612230999, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494714431555995493, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8093337683275296476, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
       propertyPath: m_LocalScale.x
@@ -3105,6 +3157,10 @@ PrefabInstance:
     - target: {fileID: 273660591722076206, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
       propertyPath: m_Name
@@ -3640,6 +3696,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805318389859771188, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -3700,7 +3760,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 6410316848777728976, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5179,6 +5251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805318389859771188, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -5239,7 +5315,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 6410316848777728976, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5262,6 +5350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -5322,7 +5414,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5905,6 +6003,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -5965,7 +6067,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6632,6 +6740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805318389859771188, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -6692,7 +6804,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 6410316848777728976, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7370,6 +7494,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
       propertyPath: m_Name
       value: Ship (3)
@@ -7576,6 +7704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -7636,7 +7768,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8252,6 +8390,154 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
+--- !u!1 &1845564121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845564123}
+  - component: {fileID: 1845564122}
+  - component: {fileID: 1845564124}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1845564122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845564121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f57d2d9404c2df4d97dde7b6eabf2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GameChill
+    clip: {fileID: 8300000, guid: bb5d4895233a36d419344f938ecaec96, type: 3}
+  - name: GameCombat
+    clip: {fileID: 8300000, guid: 831e1734ecfbe78498f480cf54a6101d, type: 3}
+  - name: StartMenu
+    clip: {fileID: 8300000, guid: 9884fb9ad7267194c9e09a0311f6c2b0, type: 3}
+--- !u!4 &1845564123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845564121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 955.0347, y: 534.51447, z: -6.971783}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1845564124
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845564121}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1848960292
 GameObject:
   m_ObjectHideFlags: 0
@@ -8584,6 +8870,10 @@ PrefabInstance:
     - target: {fileID: 273660591722076206, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
       propertyPath: m_Name
@@ -9392,6 +9682,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3805318389859771188, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -9452,7 +9746,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5251920899236204244, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 6410316848777728976, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 693981228968006731, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+    - {fileID: 5508653407533892917, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9616,6 +9922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -9676,7 +9986,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9832,6 +10148,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5329890140798907766, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007171006751760155, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
       propertyPath: m_Name
       value: Ship (1)
@@ -9853,6 +10173,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1408745805}
     m_Modifications:
+    - target: {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -9913,7 +10237,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_05 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 176801866772166729, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
+    - {fileID: 5215896850558443719, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9969,6 +10299,10 @@ PrefabInstance:
     - target: {fileID: 7365354717612230999, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494714431555995493, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8093337683275296476, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
       propertyPath: m_LocalScale.x
@@ -10389,3 +10723,4 @@ SceneRoots:
   - {fileID: 1408745805}
   - {fileID: 112469354}
   - {fileID: 1054617780}
+  - {fileID: 1845564123}

@@ -146,6 +146,8 @@ public class WavesManager : MonoBehaviour
         lstWavesTypes = listUiWaves();
         ReUpdateUI();
         TimerCoolDown.instance.setIconWait(IconWaveType.Base);
+
+        SoundManager.instance.PlaySound("GameChill", true);
     }
 
     public bool isValidToNextWave()
@@ -176,6 +178,7 @@ public class WavesManager : MonoBehaviour
             lastWaveCompleted = 0;
         if (isMarchandThisWave())
             BoosterMarchandManager.instance.ActiveMarchand();
+        SoundManager.instance.PlaySound("GameChill", true);
 
         TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
         nextTypeWave();
@@ -200,7 +203,6 @@ public class WavesManager : MonoBehaviour
         if (waveActual < maxWave)
             return timeMaxStartingWave[waveActual];
         return 0;
-
     }
 
     private void CheckSpawnerCoolDown()
@@ -274,8 +276,8 @@ public class WavesManager : MonoBehaviour
         isInWave = true;
         startTimeWave = Time.time;
         TimerCoolDown.instance.setIconWait(IconWaveType.Fight);
-        foreach (GameObject obj in Spawners) {
+        SoundManager.instance.PlaySound("GameCombat", true);
+        foreach (GameObject obj in Spawners)
             obj.GetComponent<WaveSpawner>().NextWave();
-        }
     }
 }
