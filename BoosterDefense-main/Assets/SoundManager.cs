@@ -14,7 +14,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource audioSource;
     public Sound[] sounds;
     private string currentSound;
-    public float speedOutIn;
+    public float speedOutIn = 1.25f;
     public float volume;
 
     void Awake()
@@ -35,26 +35,22 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-    }
-
-    Sound GetSound(string soundName)
-    {
-        foreach (Sound sound in sounds) {
-            if (sound.name == soundName)
-                return sound;
+        if (audioSource.volume < volume) {
+            audioSource.volume += Time.deltaTime * speedOutIn;
+        } else {
+            audioSource.volume = volume;
         }
-        return null;
     }
 
     public void PlaySound(string soundName, bool loop = false)
     {
-        Sound sound = GetSound(soundName);
+        Sound sound = System.Array.Find(sounds, s => s.name == soundName);
         if (sound != null && currentSound != soundName) {
             currentSound = soundName;
             audioSource.Stop();
             audioSource.clip = sound.clip;
             audioSource.loop = loop;
-            audioSource.volume = volume;
+            audioSource.volume = 0;
             audioSource.Play();
         }
     }
