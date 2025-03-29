@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]	
 public class Sound {
@@ -40,6 +41,11 @@ public class SoundManager : MonoBehaviour
         } else {
             audioSource.volume = volume;
         }
+    }
+
+    public void SetVolume(Slider slider)
+    {
+        this.volume = slider.value;
     }
 
     public void PlaySound(string soundName, bool loop = false)
