@@ -156,6 +156,7 @@ public class UniteIAClass : MonoBehaviour
         life.coinsDropped = stats.coinsDropped;
         path = new NavMeshPath();
         animator.Play("Pop");
+        SoundManager.instance.PlaySoundOneShot("SpawnNPC");
     }
 
     public int getIdPriorityTarget(GameObject obj)

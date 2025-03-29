@@ -279,5 +279,6 @@ public class WavesManager : MonoBehaviour
         SoundManager.instance.PlaySound("GameCombat", true);
         foreach (GameObject obj in Spawners)
             obj.GetComponent<WaveSpawner>().NextWave();
+        SoundManager.instance.PlaySoundOneShot("NewWave");
     }
 }

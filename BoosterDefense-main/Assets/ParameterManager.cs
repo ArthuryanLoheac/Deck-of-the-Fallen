@@ -27,7 +27,8 @@ public class ParameterManager : MonoBehaviour
 
     void setParams()
     {
-        sliderMusic.value = SoundManager.instance.volume;
+        sliderMusic.value = SoundManager.instance.volumeMusic;
+        sliderSound.value = SoundManager.instance.volumeSound;
     }
 
     public void OpenCloseParameters(bool open)

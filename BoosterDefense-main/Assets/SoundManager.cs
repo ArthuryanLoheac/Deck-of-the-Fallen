@@ -13,10 +13,14 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     private AudioSource audioSource;
+    public Sound[] musics;
     public Sound[] sounds;
-    private string currentSound;
+    private string currentMusic;
     public float speedOutIn = 1.25f;
-    public float volume;
+    public float volumeMusic;
+    public float volumeSound;
+
+    private Coroutine transitionCoroutine;
 
     void Awake()
     {
@@ -30,36 +34,64 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        volume = 0.5f;
-        PlaySound("StartMenu", true); 
+        volumeMusic = 0.5f;
+        PlaySound("StartMenu", true, false); 
     }
 
     void Update()
     {
-        if (audioSource.volume < volume) {
-            audioSource.volume += Time.deltaTime * speedOutIn;
-        } else {
-            audioSource.volume = volume;
-        }
     }
 
-    public void SetVolume(Slider slider)
+    public void SetVolumeMusic(Slider slider)
     {
-        this.volume = slider.value;
+        this.volumeMusic = slider.value;
+    }
+    public void SetVolumeSound(Slider slider)
+    {
+        this.volumeSound = slider.value;
     }
 
-    public void PlaySound(string soundName, bool loop = false)
+    public void PlaySoundOneShot(string soundName)
     {
         Sound sound = System.Array.Find(sounds, s => s.name == soundName);
-        if (sound != null && currentSound != soundName) {
-            currentSound = soundName;
-            if (audioSource.isPlaying)
-                audioSource.Stop();
-            audioSource.Stop();
-            audioSource.clip = sound.clip;
-            audioSource.loop = loop;
-            audioSource.volume = 0;
-            audioSource.Play();
+
+        if (sound != null)
+            audioSource.PlayOneShot(sound.clip, volumeSound);
+    }
+
+    public void PlaySound(string musicName, bool loop = false, bool fadeOut = true)
+    {
+        Sound music = System.Array.Find(musics, s => s.name == musicName);
+
+        if (music != null && currentMusic != musicName) {
+            currentMusic = musicName;
+            if (transitionCoroutine != null)
+                StopCoroutine(transitionCoroutine);
+            transitionCoroutine = StartCoroutine(TransitionToNewMusic(music, loop, fadeOut));
         }
+    }
+
+    private IEnumerator TransitionToNewMusic(Sound newMusic, bool loop, bool fadeOut = true)
+    {
+        // Fade out
+        if (!fadeOut)
+            audioSource.volume = 0.0f;
+        while (audioSource.volume > 0) {
+            audioSource.volume -= Time.deltaTime * speedOutIn;
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.clip = newMusic.clip;
+        audioSource.loop = loop;
+        audioSource.Stop();
+        audioSource.Play();
+        currentMusic = newMusic.name;
+
+        while (audioSource.volume < volumeMusic) {
+            audioSource.volume += Time.deltaTime * speedOutIn;
+            yield return null;
+        }
+        audioSource.volume = volumeMusic;
     }
 }

@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetSoundSlider : MonoBehaviour
 {
-    public void SetVolume()
+    public void SetVolumeMusic(Slider slider)
     {
-        SoundManager.instance.SetVolume(GetComponent<UnityEngine.UI.Slider>());
+        SoundManager.instance.SetVolumeMusic(slider);
+    }
+    public void SetVolumeSound(Slider slider)
+    {
+        SoundManager.instance.SetVolumeSound(slider);
     }
 }
