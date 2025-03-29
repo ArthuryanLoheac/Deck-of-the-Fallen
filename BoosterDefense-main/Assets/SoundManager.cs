@@ -47,6 +47,8 @@ public class SoundManager : MonoBehaviour
         Sound sound = System.Array.Find(sounds, s => s.name == soundName);
         if (sound != null && currentSound != soundName) {
             currentSound = soundName;
+            if (audioSource.isPlaying)
+                audioSource.Stop();
             audioSource.Stop();
             audioSource.clip = sound.clip;
             audioSource.loop = loop;

@@ -144,6 +144,7 @@ public class DeckUIManagement : MonoBehaviour
             cardsBackAll.Add(obj);
         }
     }
+
     private void InitHand()
     {
         cardsBackHand = new List<GameObject>();
@@ -154,6 +155,7 @@ public class DeckUIManagement : MonoBehaviour
             cardsBackHand.Add(obj);
         }
     }
+
     private void InitDeck()
     {
         int nbCard = (int)Mathf.Round(DeckCardsManager.instance.deck.Count / 5) * 5 + 5;
@@ -188,10 +190,10 @@ public class DeckUIManagement : MonoBehaviour
         float offsetUpdated = offset + -Input.mouseScrollDelta.y * speedMouseWheel;
         if (offsetUpdated < 0)
             offsetUpdated = 0;
-        if (offsetUpdated > ((lst.Count / 5) - nbRows) * sizeCard.y + 40)
-            offsetUpdated = ((lst.Count / 5) - nbRows) * sizeCard.y + 40;
+        if (offsetUpdated > ((lst.Count / 5) - nbRows) * sizeCard.y + 140)
+            offsetUpdated = ((lst.Count / 5) - nbRows) * sizeCard.y + 140;
         // Update scrollbar
-        scrollbar.value = offsetUpdated / (((lst.Count / 5) - nbRows) * sizeCard.y + 40);
+        scrollbar.value = offsetUpdated / (((lst.Count / 5) - nbRows) * sizeCard.y + 140);
         scrollbar.size = ((float)4 / ((float)lst.Count / 5.0f));
         if (scrollbar.size == 1)
             scrollbar.gameObject.SetActive(false);
