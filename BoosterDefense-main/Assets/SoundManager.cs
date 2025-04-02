@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         volumeMusic = 0.5f;
-        PlaySound("StartMenu", true, false); 
+        PlaySound("StartMenu", true); 
     }
 
     void Update()
@@ -59,38 +59,16 @@ public class SoundManager : MonoBehaviour
             audioSource.PlayOneShot(sound.clip, volumeSound);
     }
 
-    public void PlaySound(string musicName, bool loop = false, bool fadeOut = true)
+    public void PlaySound(string musicName, bool loop = false)
     {
         Sound music = System.Array.Find(musics, s => s.name == musicName);
 
         if (music != null && currentMusic != musicName) {
             currentMusic = musicName;
-            if (transitionCoroutine != null)
-                StopCoroutine(transitionCoroutine);
-            transitionCoroutine = StartCoroutine(TransitionToNewMusic(music, loop, fadeOut));
+            audioSource.Stop();
+            audioSource.clip = music.clip;
+            audioSource.loop = loop;
+            audioSource.Play();
         }
-    }
-
-    private IEnumerator TransitionToNewMusic(Sound newMusic, bool loop, bool fadeOut = true)
-    {
-        // Fade out
-        if (!fadeOut)
-            audioSource.volume = 0.0f;
-        while (audioSource.volume > 0) {
-            audioSource.volume -= Time.deltaTime * speedOutIn;
-            yield return null;
-        }
-
-        audioSource.Stop();
-        audioSource.clip = newMusic.clip;
-        audioSource.loop = loop;
-        audioSource.Play();
-        currentMusic = newMusic.name;
-
-        while (audioSource.volume < volumeMusic) {
-            audioSource.volume += Time.deltaTime * speedOutIn;
-            yield return null;
-        }
-        audioSource.volume = volumeMusic;
     }
 }
