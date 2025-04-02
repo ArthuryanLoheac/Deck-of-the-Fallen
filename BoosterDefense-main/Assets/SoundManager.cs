@@ -84,7 +84,6 @@ public class SoundManager : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = newMusic.clip;
         audioSource.loop = loop;
-        audioSource.Stop();
         audioSource.Play();
         currentMusic = newMusic.name;
 

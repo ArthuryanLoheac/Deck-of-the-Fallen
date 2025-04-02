@@ -122,63 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1549836
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4340405215556952098, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_Name
-      value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 955.0347
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 534.51447
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.971783
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6506054953278523226, guid: 402399065c66d29438ddca8629465833, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 402399065c66d29438ddca8629465833, type: 3}
 --- !u!1001 &199070607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,7 +781,7 @@ GameObject:
   - component: {fileID: 562752197}
   - component: {fileID: 562752198}
   m_Layer: 0
-  m_Name: DatasManager
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -858,13 +801,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - SceneName: Level1
-    NameLevel: Carn City
+    NameLevel: Complexe 47
     isDeblocked: 1
     stars: -1
     SceneNameDeblock: Level2
   - SceneName: Level2
-    NameLevel: Tacos City
-    isDeblocked: 1
+    NameLevel: Hangar Omega
+    isDeblocked: 0
     stars: -1
     SceneNameDeblock: 
 --- !u!4 &562752195
@@ -2985,11 +2928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270937959193848482, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -568
+      value: -482
       objectReference: {fileID: 0}
     - target: {fileID: 7270937959193848482, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -332
+      value: -321
       objectReference: {fileID: 0}
     - target: {fileID: 7270937959193848482, guid: f7e267fdcf434f243ae35b74520930d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3024,5 +2967,4 @@ SceneRoots:
   - {fileID: 1298647824}
   - {fileID: 1124140715}
   - {fileID: 465076423}
-  - {fileID: 1549836}
   - {fileID: 1602941389}
