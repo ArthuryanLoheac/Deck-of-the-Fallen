@@ -20,4 +20,5 @@ public class NPCStats : ScriptableObject
     public float speed;
     public float hp;
     public int coinsDropped;
+    public string soundDeath;
 }

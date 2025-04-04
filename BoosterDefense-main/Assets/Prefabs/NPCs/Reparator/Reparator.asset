@@ -24,3 +24,4 @@ MonoBehaviour:
   speed: 2
   hp: 10
   coinsDropped: 0
+  soundDeath: DeathNPC_F

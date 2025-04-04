@@ -24,6 +24,8 @@ public class EnemyExplodeOnDie : EnemyIAClass
     public void Explode()
     {
         if (Time.time > nextTimeAttack) {
+            mYstats.soundDeath = "";
+            SoundManager.instance.PlaySoundOneShot("KamikazeBoom");
             animator.Play("Attack");
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplode);
             foreach(Collider col in hitColliders) {

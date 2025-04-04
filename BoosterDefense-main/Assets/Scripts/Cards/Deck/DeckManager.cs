@@ -111,9 +111,17 @@ public class DeckManager : MonoBehaviour
 
     public void DrawAndSpawnCardValue()
     {
+        StartCoroutine(playSoundDraw(cardsDrawned));
         for (int i = 0; i < cardsDrawned; i++) {
             DrawAndSpawnXCard(1);
             CheckSwapCardsUsedToCards();
+        }
+    }
+    IEnumerator playSoundDraw(int i)
+    {
+        for (int j = 0; j < i; j++) {
+            SoundManager.instance.PlaySoundOneShot("DrawCard");
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }

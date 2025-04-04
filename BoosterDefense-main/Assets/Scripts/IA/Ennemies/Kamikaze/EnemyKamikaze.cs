@@ -16,7 +16,9 @@ public class EnemyKamikaze : EnemyIAClass
 
     public void Explode()
     {
+        SoundManager.instance.PlaySoundOneShot("KamikazeBoom");
         if (Time.time > nextTimeAttack) {
+            mYstats.soundDeath = "";
             animator.Play("Attack");
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplode);
             foreach(Collider col in hitColliders) {

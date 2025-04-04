@@ -27,3 +27,4 @@ MonoBehaviour:
   hp: 10
   coinsDropped: 2
   zone: 3
+  soundDeath: DeathMob

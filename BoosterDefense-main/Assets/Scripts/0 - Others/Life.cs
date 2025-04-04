@@ -54,12 +54,24 @@ public class Life : MonoBehaviour
 
     private void DeathAlly()
     {
+        if (GetComponent<IACollectRessources>())
+            SoundManager.instance.PlaySoundOneShot(GetComponent<IACollectRessources>().stats.soundDeath);
+        else if (GetComponent<IAReparatorBuildings>())
+            SoundManager.instance.PlaySoundOneShot(GetComponent<IAReparatorBuildings>().stats.soundDeath);
+        else if (GetComponent<IAAttackMonster>())
+            SoundManager.instance.PlaySoundOneShot(GetComponent<IAAttackMonster>().stats.soundDeath);
+
         this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("Dead", true); ;
         this.GetComponent<NavMeshAgent>().enabled = false;
         Destroy(gameObject, .8f);
     }
     private void DeathEnnemy()
     {
+        if (GetComponent<Enemy>())
+            SoundManager.instance.PlaySoundOneShot(GetComponent<Enemy>().stats.soundDeath);
+        if (GetComponent<EnemyKamikaze>())
+            SoundManager.instance.PlaySoundOneShot(GetComponent<EnemyKamikaze>().stats.soundDeath);
+    
         this.transform.GetChild(0).GetComponent<Animator>().SetBool("Dead", true);
         this.GetComponent<NavMeshAgent>().enabled = false;
         Destroy(gameObject, 1.39f);

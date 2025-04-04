@@ -45,6 +45,9 @@ public class SoundManager : MonoBehaviour
     public void SetVolumeMusic(Slider slider)
     {
         this.volumeMusic = slider.value;
+        if (audioSource.isPlaying) {
+            audioSource.volume = volumeMusic;
+        }
     }
     public void SetVolumeSound(Slider slider)
     {

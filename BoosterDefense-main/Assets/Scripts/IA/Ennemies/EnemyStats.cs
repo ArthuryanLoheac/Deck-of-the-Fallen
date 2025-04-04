@@ -21,4 +21,5 @@ public class EnemyStats : ScriptableObject
     public float hp;
     public int coinsDropped;
     public float zone;
+    public string soundDeath;
 }

@@ -64,6 +64,8 @@ public class EnemyIAClass : MonoBehaviour
     }
     void OnDestroy()
     {
+        if (stats.soundDeath != "")
+            SoundManager.instance.PlaySoundOneShot(stats.soundDeath);
         CapacitiesOnDeath();
     }
     #endregion Update

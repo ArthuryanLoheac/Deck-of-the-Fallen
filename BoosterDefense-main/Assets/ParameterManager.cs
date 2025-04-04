@@ -22,11 +22,12 @@ public class ParameterManager : MonoBehaviour
 
     void Start()
     {
-        setParams();
     }
 
     void setParams()
     {
+        if (SoundManager.instance == null)
+            return;
         sliderMusic.value = SoundManager.instance.volumeMusic;
         sliderSound.value = SoundManager.instance.volumeSound;
     }
