@@ -69,6 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 9007171006751760155, guid: 240093d6e4b9c0a4992675f06ab58fcf, type: 3}
   posableInEnnemyZone: 0
+  posableInHitBoxes: 0
+  soundSpawn: 
 --- !u!1001 &330926579573424614
 PrefabInstance:
   m_ObjectHideFlags: 0

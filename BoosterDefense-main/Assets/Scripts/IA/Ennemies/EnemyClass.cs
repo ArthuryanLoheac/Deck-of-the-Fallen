@@ -29,31 +29,23 @@ public class EnemyIAClass : MonoBehaviour
     public virtual void CapacitiesOnDeath() {}
     #endregion Capacity
     #region Update
-    void Update()
-    {
-        if (!GetComponent<Life>().isDead)
-        {
+    void Update() {
+        if (!GetComponent<Life>().isDead) {
             agent.speed = ComputeSpeed(stats.speed);
-            if (Time.time > timeActiveMove)
-            {
+            if (Time.time > timeActiveMove) {
                 FindPathTimer(); // cherche chemin tout les X
-                if (target != null)
-                {
+                if (target != null) {
                     bool inRange = Vector3.Distance(transform.position, target.transform.position) <= stats.range + getBoudsSizeTarget() + 0.5f;
 
-                    if (inRange)
-                    {
+                    if (inRange) {
                         LookAtTarget();
                         CapacitiesOnRange(target);
-                    }
-                    else
-                    {
+                    } else {
                         UpdatePath();
                         CheckBlockingObject();
                     }
                 }
-                else
-                {
+                else {
                     FindPathTimer();
                 }
                 animator.SetFloat("Speed", Mathf.Min(1, SmoothValue(agent.desiredVelocity.sqrMagnitude)));
@@ -62,10 +54,9 @@ public class EnemyIAClass : MonoBehaviour
             }
         }
     }
-    void OnDestroy()
-    {
+    void OnDestroy() {
         if (stats.soundDeath != "")
-            SoundManager.instance.PlaySoundOneShot(stats.soundDeath);
+            SoundManager.instance.PlaySound(stats.soundDeath);
         CapacitiesOnDeath();
     }
     #endregion Update
@@ -77,11 +68,13 @@ public class EnemyIAClass : MonoBehaviour
             FindAndSetTarget();
         }
     }
+
     private float SmoothValue(float target)
     {
         previousValue = Mathf.SmoothDamp(previousValue, target, ref yVelocity, 0.2f);
         return previousValue;
     }
+
     private bool CheckBlockingObject()
     {
         //Attaque l'objet devant si il bloque
@@ -92,7 +85,7 @@ public class EnemyIAClass : MonoBehaviour
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
     
             if (Physics.Raycast(start, fwd, out objectHit, 1)) {
-                if(objectHit.collider.gameObject.tag !="Enemy"){
+                if(objectHit.collider.gameObject.tag != "Enemy"){
                     CapacitiesOnRange(objectHit.collider.gameObject);
                     return true;
                 }
@@ -111,6 +104,7 @@ public class EnemyIAClass : MonoBehaviour
     public float ComputeSpeed(float speedValue, bool isReduce=true)
     {
         float speed = speedValue;
+
         if (GetComponent<BuffsAndDebuffs>().isBuffActive(TypeBuffs.Slow)) {
             Buffs buff = GetComponent<BuffsAndDebuffs>().GetFirstBuffActive(TypeBuffs.Slow);
             if (isReduce)

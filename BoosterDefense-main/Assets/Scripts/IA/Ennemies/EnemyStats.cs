@@ -22,4 +22,5 @@ public class EnemyStats : ScriptableObject
     public int coinsDropped;
     public float zone;
     public string soundDeath;
+    public string soundSpawn;
 }

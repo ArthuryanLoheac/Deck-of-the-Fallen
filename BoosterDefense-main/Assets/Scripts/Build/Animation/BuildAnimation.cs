@@ -25,7 +25,7 @@ public class BuildAnimation : MonoBehaviour
         postionEditedStart = vec;
         GameObject obj = Instantiate(BuildManager.instance.FxBuild, postionStart, Quaternion.identity);
         Destroy(obj, 2f);
-        SoundManager.instance.PlaySoundOneShot("Building");
+        SoundManager.instance.PlaySound("Building");
     }
 
     // Update is called once per frame

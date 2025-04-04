@@ -147,7 +147,7 @@ public class WavesManager : MonoBehaviour
         ReUpdateUI();
         TimerCoolDown.instance.setIconWait(IconWaveType.Base);
 
-        SoundManager.instance.PlaySound("GameChill", true);
+        SoundManager.instance.PlayMusic("GameChill", true);
     }
 
     public bool isValidToNextWave()
@@ -178,7 +178,7 @@ public class WavesManager : MonoBehaviour
             lastWaveCompleted = 0;
         if (isMarchandThisWave())
             BoosterMarchandManager.instance.ActiveMarchand();
-        SoundManager.instance.PlaySound("GameChill", true);
+        SoundManager.instance.PlayMusic("GameChill", true);
 
         TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
         nextTypeWave();
@@ -276,9 +276,9 @@ public class WavesManager : MonoBehaviour
         isInWave = true;
         startTimeWave = Time.time;
         TimerCoolDown.instance.setIconWait(IconWaveType.Fight);
-        SoundManager.instance.PlaySound("GameCombat", true);
+        SoundManager.instance.PlayMusic("GameCombat", true);
         foreach (GameObject obj in Spawners)
             obj.GetComponent<WaveSpawner>().NextWave();
-        SoundManager.instance.PlaySoundOneShot("NewWave");
+        SoundManager.instance.PlaySound("NewWave");
     }
 }

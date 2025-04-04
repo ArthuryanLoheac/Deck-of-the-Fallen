@@ -120,7 +120,7 @@ public class DeckManager : MonoBehaviour
     IEnumerator playSoundDraw(int i)
     {
         for (int j = 0; j < i; j++) {
-            SoundManager.instance.PlaySoundOneShot("DrawCard");
+            SoundManager.instance.PlaySound("DrawCard");
             yield return new WaitForSeconds(0.2f);
         }
     }

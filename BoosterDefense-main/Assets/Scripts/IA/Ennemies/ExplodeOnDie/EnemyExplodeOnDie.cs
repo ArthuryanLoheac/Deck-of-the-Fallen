@@ -19,13 +19,14 @@ public class EnemyExplodeOnDie : EnemyIAClass
             nextTimeAttack = Time.time + ComputeSpeed(coolDownAttack, false);
             targetAttack.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(targetAttack)].damage);
             animator.Play("Attack");
+            SoundManager.instance.PlaySound("ZombieAttackSimple");
         }
     }
     public void Explode()
     {
         if (Time.time > nextTimeAttack) {
             mYstats.soundDeath = "";
-            SoundManager.instance.PlaySoundOneShot("KamikazeBoom");
+            SoundManager.instance.PlaySound("KamikazeBoom");
             animator.Play("Attack");
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplode);
             foreach(Collider col in hitColliders) {

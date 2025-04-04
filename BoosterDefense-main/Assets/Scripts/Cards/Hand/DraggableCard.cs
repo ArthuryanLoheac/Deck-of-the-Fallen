@@ -104,6 +104,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundManager.instance.PlaySound("CardSound");
         Zoomed = true;
     }
     public void OnPointerExit(PointerEventData eventData)

@@ -572,3 +572,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 9007171006751760155, guid: 7abc7c501284276458ab88d60084d5ed, type: 3}
   posableInEnnemyZone: 0
+  posableInHitBoxes: 0
+  soundSpawn: SpawnSheep

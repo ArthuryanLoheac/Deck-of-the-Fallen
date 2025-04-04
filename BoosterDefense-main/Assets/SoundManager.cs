@@ -35,7 +35,7 @@ public class SoundManager : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         volumeMusic = 0.5f;
-        PlaySound("StartMenu", true); 
+        PlayMusic("StartMenu", true); 
     }
 
     void Update()
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
         this.volumeSound = slider.value;
     }
 
-    public void PlaySoundOneShot(string soundName)
+    public void PlaySound(string soundName)
     {
         Sound sound = System.Array.Find(sounds, s => s.name == soundName);
 
@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
             audioSource.PlayOneShot(sound.clip, volumeSound);
     }
 
-    public void PlaySound(string musicName, bool loop = false)
+    public void PlayMusic(string musicName, bool loop = false)
     {
         Sound music = System.Array.Find(musics, s => s.name == musicName);
 

@@ -67,7 +67,7 @@ public class CardsManager : MonoBehaviour
         UpdateCursor();
         int nbCardToShow = GetNumberCardToShow();
         UpdateCursor();
-        
+
         //active or desactive cards in the hands
         for (int i = 0; i < cursorCards; i++)
             transform.GetChild(i).gameObject.SetActive(false);

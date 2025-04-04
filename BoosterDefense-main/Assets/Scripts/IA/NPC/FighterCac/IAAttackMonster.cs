@@ -16,6 +16,7 @@ public class IAAttackMonster : UniteIAClass
             nextTimeAttack = Time.time + ComputeSpeed(coolDownAttack, false);
             targetAttack.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(targetAttack)].collect);
             animator.Play("Attack");
+            SoundManager.instance.PlaySound("NpcAttackAxe");
         }
     }
     public override void CapacitiesOnRange(GameObject targetAttack)

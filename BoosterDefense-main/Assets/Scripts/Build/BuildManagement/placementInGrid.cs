@@ -17,6 +17,7 @@ public class placementInGrid : MonoBehaviour
 
     private CardStats card;
     private int posInSiblings;
+    public string soundSpawn;
 
     public void SetValues(CardStats cardToAdd, int pos)
     {
@@ -66,6 +67,7 @@ public class placementInGrid : MonoBehaviour
     private void CheckPlaceObj()
     {
         if (Input.GetMouseButtonDown(0) && isCursorOnMap() && isPosabled && Time.time > timer) {
+            SoundManager.instance.PlaySound(soundSpawn);
             BuildManager.instance.isBuilding = false;
             CardsManager.instance.UpdatePosCards();
             RessourceManager.instance.AddRessource(card.priceRessource, -card.price);

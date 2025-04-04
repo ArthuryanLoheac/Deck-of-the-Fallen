@@ -43,7 +43,7 @@ public class BoosterManager : MonoBehaviour
             CardStats card = DrawFromList(boosterStats.listCardCommon, AddCardToHand);
 
             BoosterDrawCardUI.instance.SetupCard(card, 0);
-            SoundManager.instance.PlaySoundOneShot("DrawCard");
+            SoundManager.instance.PlaySound("DrawCard");
             yield return new WaitForSeconds(1.5f);
         }
         //Rare and super rare
@@ -54,13 +54,13 @@ public class BoosterManager : MonoBehaviour
                 //Super rare
                 CardStats card = DrawFromList(boosterStats.listCardSuperRare, AddCardToHand);
                 BoosterDrawCardUI.instance.SetupCard(card, 1);
-                SoundManager.instance.PlaySoundOneShot("DrawCard");
+                SoundManager.instance.PlaySound("DrawCard");
                 yield return new WaitForSeconds(1.5f);
             } else {
                 //rare
                 CardStats card = DrawFromList(boosterStats.listCardRare, AddCardToHand);
                 BoosterDrawCardUI.instance.SetupCard(card, 1);
-                SoundManager.instance.PlaySoundOneShot("DrawCard");
+                SoundManager.instance.PlaySound("DrawCard");
                 yield return new WaitForSeconds(1.5f);
             }
             BoosterDrawCardUI.instance.DesactiveCard();

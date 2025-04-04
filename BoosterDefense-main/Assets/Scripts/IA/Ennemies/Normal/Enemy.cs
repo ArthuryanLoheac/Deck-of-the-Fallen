@@ -16,6 +16,7 @@ public class Enemy : EnemyIAClass
             nextTimeAttack = Time.time + ComputeSpeed(coolDownAttack, false);
             targetAttack.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(targetAttack)].damage);
             animator.Play("Attack");
+            SoundManager.instance.PlaySound("ZombieAttackSimple");
         }
     }
     public override void CapacitiesOnRange(GameObject targetAttack)

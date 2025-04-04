@@ -704,3 +704,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 9007171006751760155, guid: 1d9db75c930a3da4da5bbb78026ac57e, type: 3}
   posableInEnnemyZone: 0
+  posableInHitBoxes: 0
+  soundSpawn: SpawnSquirrel

@@ -24,9 +24,9 @@ public class Molotov : MonoBehaviour
     void Start()
     {
         TimeEnd = Time.time + timeEffect;
+        SoundManager.instance.PlaySound("Molotov");
 
-        for (int i = 0; i < RangeExplosion * 30; i++)
-        {
+        for (int i = 0; i < RangeExplosion * 30; i++) {
             float range = Random.Range(0f, RangeExplosion);
             float angle = Random.Range(0f, 360f);
 

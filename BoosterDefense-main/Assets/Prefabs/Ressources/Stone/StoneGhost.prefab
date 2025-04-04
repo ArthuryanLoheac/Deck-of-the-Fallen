@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 9007171006751760155, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
   posableInEnnemyZone: 0
+  posableInHitBoxes: 0
+  soundSpawn: 
 --- !u!65 &41233155291847352
 BoxCollider:
   m_ObjectHideFlags: 0
