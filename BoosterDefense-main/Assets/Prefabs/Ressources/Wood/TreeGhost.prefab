@@ -49,7 +49,7 @@ MonoBehaviour:
   objToSpawn: {fileID: 9007171006751760155, guid: f0cd7e4d49e8ba6469a88b877283617a, type: 3}
   posableInEnnemyZone: 0
   posableInHitBoxes: 0
-  soundSpawn: 
+  soundSpawn: ScrapSpawn
 --- !u!65 &6876280465679103328
 BoxCollider:
   m_ObjectHideFlags: 0
