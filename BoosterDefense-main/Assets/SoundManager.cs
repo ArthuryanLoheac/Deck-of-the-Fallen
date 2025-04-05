@@ -34,7 +34,8 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        volumeMusic = 0.5f;
+        volumeMusic = PlayerPrefs.GetFloat("VolumeMusic", .5f);
+        volumeSound = PlayerPrefs.GetFloat("VolumeSound", .5f);
         PlayMusic("StartMenu", true); 
     }
 
@@ -48,10 +49,14 @@ public class SoundManager : MonoBehaviour
         if (audioSource.isPlaying) {
             audioSource.volume = volumeMusic;
         }
+        PlayerPrefs.SetFloat("VolumeMusic", volumeMusic);
+        PlayerPrefs.Save();
     }
     public void SetVolumeSound(Slider slider)
     {
         this.volumeSound = slider.value;
+        PlayerPrefs.SetFloat("VolumeSound", volumeSound);
+        PlayerPrefs.Save();
     }
 
     public void PlaySound(string soundName)
@@ -70,6 +75,7 @@ public class SoundManager : MonoBehaviour
             currentMusic = musicName;
             audioSource.Stop();
             audioSource.clip = music.clip;
+            audioSource.volume = volumeMusic;
             audioSource.loop = loop;
             audioSource.Play();
         }
