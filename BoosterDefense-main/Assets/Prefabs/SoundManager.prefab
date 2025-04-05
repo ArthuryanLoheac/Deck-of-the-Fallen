@@ -60,8 +60,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ff02046250f4f974a822adaa0cc5efa0, type: 3}
   - name: DeathMob
     clip: {fileID: 8300000, guid: 756edf51f4582e04796e38f3325b286c, type: 3}
-  - name: ButtonUIClick
-    clip: {fileID: 8300000, guid: 166041b58803a5447b9058326e681623, type: 3}
   - name: DrawCard
     clip: {fileID: 8300000, guid: 3bc8aa95d0f8b7e4eaacf6e516471891, type: 3}
   - name: CardSound
@@ -88,6 +86,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 82fbc1b27fff14c4eab8b9c655f4d2c4, type: 3}
   - name: ScrapSpawn
     clip: {fileID: 8300000, guid: d2d71f979032ef04f8144cb531494478, type: 3}
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: d2d71f979032ef04f8144cb531494478, type: 3}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 166041b58803a5447b9058326e681623, type: 3}
   speedOutIn: 1.25
   volumeMusic: 0
   volumeSound: 0.5

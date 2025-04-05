@@ -810,6 +810,7 @@ GameObject:
   - component: {fileID: 264559360}
   - component: {fileID: 264559359}
   - component: {fileID: 264559363}
+  - component: {fileID: 264559364}
   m_Layer: 5
   m_Name: Parametre
   m_TagString: Untagged
@@ -969,6 +970,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ae487f816c816249a39788e20eb90e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &264559364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264559357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &277548851
@@ -3144,6 +3157,7 @@ GameObject:
   - component: {fileID: 823499315}
   - component: {fileID: 823499314}
   - component: {fileID: 823499313}
+  - component: {fileID: 823499318}
   m_Layer: 5
   m_Name: Nouvelle Partie
   m_TagString: Untagged
@@ -3305,6 +3319,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823499311}
   m_CullTransparentMesh: 1
+--- !u!114 &823499318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823499311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &823853216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3664,6 +3690,7 @@ GameObject:
   - component: {fileID: 899522020}
   - component: {fileID: 899522019}
   - component: {fileID: 899522018}
+  - component: {fileID: 899522022}
   m_Layer: 5
   m_Name: Continuer
   m_TagString: Untagged
@@ -3801,6 +3828,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899522016}
   m_CullTransparentMesh: 1
+--- !u!114 &899522022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899522016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &903728178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8093337683275296476, guid: cedc21fa6c08d59418d4223467c862c2, type: 3}
@@ -7684,6 +7723,7 @@ GameObject:
   - component: {fileID: 1763871965}
   - component: {fileID: 1763871964}
   - component: {fileID: 1763871968}
+  - component: {fileID: 1763871969}
   m_Layer: 5
   m_Name: Quitter
   m_TagString: Untagged
@@ -7843,6 +7883,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db411deb7601e1f4d818b929324549bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1763871969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763871962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1767949085
@@ -8819,6 +8871,7 @@ GameObject:
   - component: {fileID: 1975943505}
   - component: {fileID: 1975943504}
   - component: {fileID: 1975943503}
+  - component: {fileID: 1975943507}
   m_Layer: 5
   m_Name: ChargerUnePartie
   m_TagString: Untagged
@@ -8956,6 +9009,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975943501}
   m_CullTransparentMesh: 1
+--- !u!114 &1975943507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975943501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1990549961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3448647613925869208, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
@@ -10272,6 +10337,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3930408732641553512, guid: 402399065c66d29438ddca8629465833, type: 3}
+      propertyPath: sounds.Array.data[17].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 74799347bf2a031429435a4642dd2b15, type: 3}
     - target: {fileID: 4340405215556952098, guid: 402399065c66d29438ddca8629465833, type: 3}
       propertyPath: m_Name
       value: SoundManager
