@@ -25252,6 +25252,7 @@ GameObject:
   - component: {fileID: 3918677298278580321}
   - component: {fileID: 8095115735131382866}
   - component: {fileID: 3024059890661300325}
+  - component: {fileID: 8925672178685272141}
   m_Layer: 5
   m_Name: NextWaveButton
   m_TagString: Untagged
@@ -25410,6 +25411,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54e4878acde07943bc240a7c5be58be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8925672178685272141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701913362564005550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5887505793855342094
@@ -43649,6 +43662,7 @@ GameObject:
   - component: {fileID: 8382467900985701181}
   - component: {fileID: 6969948863418418687}
   - component: {fileID: 5378601080072730461}
+  - component: {fileID: 7659337486369118765}
   m_Layer: 5
   m_Name: NextWaveButton
   m_TagString: Untagged
@@ -43809,6 +43823,18 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7659337486369118765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840337624409417804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bec60165322a5a4b97e21a1aaf4b665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8874653315257256285
 GameObject:
   m_ObjectHideFlags: 0
@@ -45444,7 +45470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_AnchorMin.x
@@ -45452,15 +45478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 125.76
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 45.2126
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45492,11 +45518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 157.8
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -34.6063
       objectReference: {fileID: 0}
     - target: {fileID: 4164625289371221798, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -58,7 +58,7 @@ public class SoundManager : MonoBehaviour
     {
         Sound sound = System.Array.Find(sounds, s => s.name == soundName);
 
-        if (sound != null)
+        if (sound != null && sound.clip != null)
             audioSource.PlayOneShot(sound.clip, volumeSound);
     }
 
