@@ -1076,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_text
-      value: Parametre
+      value: Parameters
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_Maskable
@@ -2049,7 +2049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_text
-      value: Quitter
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_Maskable
@@ -8211,7 +8211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_text
-      value: Continuer
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_Maskable
@@ -8632,7 +8632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_text
-      value: Charger partie
+      value: Load Game
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_Maskable
@@ -10124,7 +10124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_text
-      value: Nouvelle partie
+      value: New Game
       objectReference: {fileID: 0}
     - target: {fileID: 1990594193549166204, guid: a85100a06f572314886cabafe64a1396, type: 3}
       propertyPath: m_Maskable
