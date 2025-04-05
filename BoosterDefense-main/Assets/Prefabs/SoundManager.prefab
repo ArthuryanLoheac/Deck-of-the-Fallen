@@ -87,7 +87,7 @@ MonoBehaviour:
   - name: ScrapSpawn
     clip: {fileID: 8300000, guid: d2d71f979032ef04f8144cb531494478, type: 3}
   - name: ButtonHover
-    clip: {fileID: 8300000, guid: d2d71f979032ef04f8144cb531494478, type: 3}
+    clip: {fileID: 8300000, guid: 74799347bf2a031429435a4642dd2b15, type: 3}
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 166041b58803a5447b9058326e681623, type: 3}
   speedOutIn: 1.25

@@ -34,7 +34,8 @@ public class ParameterManager : MonoBehaviour
 
     public void OpenCloseParameters(bool open)
     {
-        canva.SetActive(open);
+        if (canva)
+            canva.SetActive(open);
         isOpen = open;
         if (open)
             setParams();
