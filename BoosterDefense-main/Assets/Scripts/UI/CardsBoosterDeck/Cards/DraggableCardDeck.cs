@@ -14,6 +14,7 @@ public class DraggableCardDeck : MonoBehaviour, IBeginDragHandler, IDragHandler,
     public DeckEmplacement emplacement;
     public void OnBeginDrag(PointerEventData eventData)
     {
+        SoundManager.instance.PlaySound("CardSound");
         dragging = true;
         parentBeforeDrag = transform.parent;
         transform.SetParent(transform.parent.parent.parent);
