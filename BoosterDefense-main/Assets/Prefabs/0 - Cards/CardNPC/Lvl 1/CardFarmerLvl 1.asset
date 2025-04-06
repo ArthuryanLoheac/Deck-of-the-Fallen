@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardFarmerLvl 1
   m_EditorClassIdentifier: 
   name: FARMER UPGRADED
-  image: {fileID: 21300000, guid: 2213280ad8679fc4685bc5e2b8df131e, type: 3}
+  image: {fileID: 21300000, guid: 28109318f8b11bf45b1dd9b6bb15264a, type: 3}
   price: 30
   priceRessource: 2
   ghostToSpawn: {fileID: 2395485346363015865, guid: cf59e4c3636fbc446911172c24d446ed, type: 3}

@@ -30,12 +30,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6879260915842373028}
+  m_Father: {fileID: 5729019085689658304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.4, y: 9.4}
-  m_SizeDelta: {x: 101.5259, y: 101.5259}
+  m_AnchoredPosition: {x: 2.6445, y: -6.8439}
+  m_SizeDelta: {x: 139.0566, y: 198.9418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &637442895891057574
 CanvasRenderer:
@@ -352,8 +352,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
-  m_sharedMaterial: {fileID: 392884837564286817, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -453,7 +453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.6652, y: 77.33598}
+  m_AnchoredPosition: {x: 2.6652, y: 78.3}
   m_SizeDelta: {x: 125.6296, y: 14.7415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7440083484818861148
@@ -486,15 +486,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: DEFLECTOR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
-  m_sharedMaterial: {fileID: 392884837564286817, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281413937
-  m_fontColor: {r: 0.19215687, g: 0.19215687, b: 0.19215687, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -582,6 +582,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8598915005876252312}
+  - {fileID: 3920080292727888416}
   - {fileID: 8932926295017888056}
   m_Father: {fileID: 6879260915842373028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1312,7 +1313,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5729019085689658304}
-  - {fileID: 3920080292727888416}
   - {fileID: 8219533864043402512}
   - {fileID: 3859638319157623763}
   - {fileID: 3887006985157944461}
@@ -1392,15 +1392,15 @@ MonoBehaviour:
   m_text: "Les cartes MTG personnalis\xE9es, de plus en plus populaires pour la personnalisation
     et les cadeaux "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
-  m_sharedMaterial: {fileID: 392884837564286817, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281413937
-  m_fontColor: {r: 0.19215688, g: 0.19215688, b: 0.19215688, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

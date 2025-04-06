@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardFarmerFree
   m_EditorClassIdentifier: 
   name: FARMER FREE
-  image: {fileID: 21300000, guid: 2b7f33a594e5420459741bc25a095b55, type: 3}
+  image: {fileID: 21300000, guid: 28109318f8b11bf45b1dd9b6bb15264a, type: 3}
   price: 0
   priceRessource: 2
   ghostToSpawn: {fileID: 2395485346363015865, guid: c87d4b9e6df4df6448fa30c88f7e659e, type: 3}
