@@ -124,7 +124,7 @@ public class Card : MonoBehaviour
         if (b)
             return new Color(col.r, col.g, col.b, 1);
         else
-            return new Color(col.r, col.g, col.b, .9f);
+            return new Color(col.r, col.g, col.b, .5f);
     }
 
     private void MakeTransparent(bool b)

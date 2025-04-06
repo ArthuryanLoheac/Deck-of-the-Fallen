@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardFighter
   m_EditorClassIdentifier: 
   name: FIGHTER
-  image: {fileID: 21300000, guid: 4ef0b1408c70bba428c3d6b41cceb4d8, type: 3}
+  image: {fileID: 21300000, guid: 52080e5d41b80c04a9098b636ada7a99, type: 3}
   price: 15
   priceRessource: 2
   ghostToSpawn: {fileID: 2395485346363015865, guid: 31a27a95cb350a5479a4be33957393dc, type: 3}
