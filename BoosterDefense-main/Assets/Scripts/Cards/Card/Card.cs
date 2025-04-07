@@ -49,7 +49,7 @@ public class Card : MonoBehaviour
     {
         switch(type) {
             case TypeCard.Sort:
-                return "SORT";
+                return "SPELL";
             case TypeCard.Npc:
                 return "HEROS";
             case TypeCard.Batiment:
@@ -120,7 +120,7 @@ public class Card : MonoBehaviour
         if (b)
             return new Color(col.r, col.g, col.b, 1);
         else
-            return new Color(col.r, col.g, col.b, .5f);
+            return new Color(col.r, col.g, col.b, .7f);
     }
 
     private void MakeTransparent(bool b)

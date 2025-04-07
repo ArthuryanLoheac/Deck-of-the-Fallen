@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardLittleFood
   m_EditorClassIdentifier: 
-  name: SQUIRREL
+  name: Squirrel
   image: {fileID: 21300000, guid: 34f538bd0dda7b6468bb04b6102e5ba1, type: 3}
   price: 0
   priceRessource: 0

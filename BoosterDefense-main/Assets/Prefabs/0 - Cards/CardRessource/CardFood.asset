@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardFood
   m_EditorClassIdentifier: 
-  name: SHEEP
+  name: Sheep
   image: {fileID: 21300000, guid: ccdc541f14e15d54c9bfe7e1c0850b20, type: 3}
   price: 0
   priceRessource: 0

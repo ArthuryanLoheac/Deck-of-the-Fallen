@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardFighterCreator
   m_EditorClassIdentifier: 
-  name: TRAINING CAMP
+  name: Training camp
   image: {fileID: 21300000, guid: 7c00fb0c4cdff4b4ba99198a338fda61, type: 3}
   price: 75
   priceRessource: 1

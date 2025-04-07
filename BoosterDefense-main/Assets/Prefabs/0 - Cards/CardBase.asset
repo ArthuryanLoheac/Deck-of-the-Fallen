@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardBase
   m_EditorClassIdentifier: 
-  name: BASE
+  name: Headquarters
   image: {fileID: 21300000, guid: 0992e4afb430ba241937a992a5cdb9f9, type: 3}
   price: 0
   priceRessource: 0

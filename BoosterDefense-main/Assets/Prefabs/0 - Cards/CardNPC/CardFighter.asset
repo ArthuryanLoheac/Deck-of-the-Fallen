@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardFighter
   m_EditorClassIdentifier: 
-  name: FIGHTER
+  name: Fighter
   image: {fileID: 21300000, guid: 52080e5d41b80c04a9098b636ada7a99, type: 3}
   price: 15
   priceRessource: 2

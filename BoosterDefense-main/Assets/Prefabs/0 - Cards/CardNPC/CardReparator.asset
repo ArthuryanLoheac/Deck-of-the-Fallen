@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardReparator
   m_EditorClassIdentifier: 
-  name: REPARTATOR
+  name: Reparator
   image: {fileID: 21300000, guid: ac2036b6b52d41440b719b1ef3cd42d2, type: 3}
   price: 15
   priceRessource: 2

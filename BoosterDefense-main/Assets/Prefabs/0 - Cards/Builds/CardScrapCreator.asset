@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardScrapCreator
   m_EditorClassIdentifier: 
-  name: SCRAP CREATOR
+  name: Waste center
   image: {fileID: 21300000, guid: 55077bd031cdfc043ad26a48497ee5bf, type: 3}
   price: 75
   priceRessource: 1
