@@ -14,6 +14,7 @@ public class UniteIAClass : MonoBehaviour
     [HideInInspector]public Life life;
     [HideInInspector]public float sizeY;
     [HideInInspector]public NavMeshPath path;
+    private bool isLockedSart = true;
 
     [HideInInspector]public Camera myCam;
     [HideInInspector]public LayerMask Ground;
@@ -34,7 +35,7 @@ public class UniteIAClass : MonoBehaviour
 
     void Update()
     {
-        if (!GetComponent<Life>().isDead){
+        if (!GetComponent<Life>().isDead && !isLockedSart) {
             agent.speed = ComputeSpeed(stats.speed);
             CapacitiesPassives();
             if (isPriorityMovement) {
@@ -157,6 +158,13 @@ public class UniteIAClass : MonoBehaviour
         path = new NavMeshPath();
         animator.Play("Pop");
         SoundManager.instance.PlaySound(mYstats.soundSpawn);
+        StartCoroutine(UnlockMove(animator.GetCurrentAnimatorStateInfo(0).length));
+    }
+
+    IEnumerator UnlockMove(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isLockedSart = false;
     }
 
     public int getIdPriorityTarget(GameObject obj)
