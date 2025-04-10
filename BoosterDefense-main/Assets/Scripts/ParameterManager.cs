@@ -22,6 +22,7 @@ public class ParameterManager : MonoBehaviour
 
     void Start()
     {
+        OpenCloseParameters(false);
     }
 
     void setParams()
