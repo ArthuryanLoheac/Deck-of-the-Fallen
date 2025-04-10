@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6761152447169375595}
   - component: {fileID: 3952221169921597396}
   - component: {fileID: 2656000143156364171}
-  - component: {fileID: 2197276229823524146}
+  - component: {fileID: 6379716944137766168}
   m_Layer: 5
   m_Name: CardPrefabDeck
   m_TagString: Untagged
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 4333293451054857453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5312490878825528236}
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120.3525, y: 172.0167}
+  m_AnchoredPosition: {x: 0, y: 6.926}
+  m_SizeDelta: {x: 137.1227, y: 210.1752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3952221169921597396
 CanvasRenderer:
@@ -85,7 +85,7 @@ MonoBehaviour:
   ContoursCommon: {fileID: 21300000, guid: 429fa1fcfbbfdcd4e8bcc94622153a43, type: 3}
   ContoursRare: {fileID: 21300000, guid: 429fa1fcfbbfdcd4e8bcc94622153a43, type: 3}
   ContoursSuperRare: {fileID: 21300000, guid: 429fa1fcfbbfdcd4e8bcc94622153a43, type: 3}
---- !u!114 &2197276229823524146
+--- !u!114 &6379716944137766168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,17 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4333293451054857453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e82e8cc7a607948a3533a6d89eae7b, type: 3}
+  m_Script: {fileID: 11500000, guid: af91a81524e464946a1203db2a59c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragging: 0
-  imageToDisableWhileDragging:
-  - {fileID: 913507451759535252}
-  - {fileID: 6843963711815266522}
-  - {fileID: 4744189922563765313}
-  - {fileID: 527991539049309717}
-  - {fileID: 216620043241108170}
-  emplacement: 0
 --- !u!1001 &9114585668098017864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,11 +171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1
+      value: 0.000022531
       objectReference: {fileID: 0}
     - target: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: -19.079
       objectReference: {fileID: 0}
     - target: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
