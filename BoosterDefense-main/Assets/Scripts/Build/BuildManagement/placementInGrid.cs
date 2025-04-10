@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class placementInGrid : MonoBehaviour
 {
@@ -67,6 +68,8 @@ public class placementInGrid : MonoBehaviour
     private void CheckPlaceObj()
     {
         if (Input.GetMouseButtonDown(0) && isCursorOnMap() && isPosabled && Time.time > timer) {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             SoundManager.instance.PlaySound(soundSpawn);
             BuildManager.instance.isBuilding = false;
             CardsManager.instance.UpdatePosCards();
