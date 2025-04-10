@@ -2208,8 +2208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 33.85205}
-  m_SizeDelta: {x: 223.0143, y: 67.7032}
+  m_AnchoredPosition: {x: -743.5, y: 665.7}
+  m_SizeDelta: {x: 198.0653, y: 53.6694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024486368
 MonoBehaviour:
@@ -2248,8 +2248,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 59450466dad5c3a47bae6fda8e78b13c, type: 2}
+  m_sharedMaterial: {fileID: 1733731142660409128, guid: 59450466dad5c3a47bae6fda8e78b13c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2273,8 +2273,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.83
-  m_fontSizeBase: 50.83
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2432,7 +2432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000013987, y: -3.2}
+  m_AnchoredPosition: {x: -23.1, y: -1.6392}
   m_SizeDelta: {x: 93.054, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044779565
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deck
+  m_text: 'Deck :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
   m_sharedMaterial: {fileID: 4299220722095240433, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.9211426, w: 0}
+  m_margin: {x: 0, y: 0, z: -3.1582031, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2930,8 +2930,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 63.96277, y: 129.2908}
-  m_SizeDelta: {x: -37.9644, y: -53.2783}
+  m_AnchoredPosition: {x: 108.83557, y: 129.2908}
+  m_SizeDelta: {x: 21.8661, y: -53.2783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1259510690
 CanvasRenderer:
