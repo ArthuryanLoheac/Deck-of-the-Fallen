@@ -10,6 +10,8 @@ public class DeckMenuManager : MonoBehaviour
     public GameObject cardPrefabDeck;
     public GameObject canvasAllCards;
     public GameObject canvasDeckCards;
+    public GameObject scrollDeckCards;
+    public GameObject canvasHandCards;
     public GameObject CardMoved;
     public Vector2 offsetAll = new Vector2(0, 0);
     public Vector2 offsetDeck = new Vector2(0, 0);
@@ -18,7 +20,9 @@ public class DeckMenuManager : MonoBehaviour
     public List<List<GameObject>> cardsAll = new List<List<GameObject>>();
     [HideInInspector]
     public List<List<GameObject>> cardsDeck = new List<List<GameObject>>();
+    public List<List<GameObject>> cardsHand = new List<List<GameObject>>();
     Vector2 sizeCard;
+    public bool isHandStartMenu = false;
 
     private void Awake()
     {
@@ -37,9 +41,9 @@ public class DeckMenuManager : MonoBehaviour
         cardZoomed.SetActive(false);
         initStock();
         initDeck();
+        initStartHand();
         SetSizeCanva();
-        UpdatePosCardsAll();
-        UpdatePosCardsDeck();
+        RefreshAll();
     }
     private GameObject RemoveCardX(int i, int x, List<List<GameObject>> lstCards)
     {
@@ -55,24 +59,48 @@ public class DeckMenuManager : MonoBehaviour
         return card;
     }
 
+    public void RefreshAll()
+    {
+        UpdatePosCardsAll();
+        UpdatePosCardsDeck();
+        UpdatePosCardsHand();
+        canvasHandCards.transform.parent.gameObject.SetActive(isHandStartMenu);
+        canvasDeckCards.transform.parent.gameObject.SetActive(!isHandStartMenu);
+        scrollDeckCards.SetActive(!isHandStartMenu);
+    }
+
     void UpdateOnlyNecessaryList(bool isAll)
     {
-        if (isAll)
-            UpdatePosCardsAll();
-        else
-            UpdatePosCardsDeck();
+        UpdatePosCardsAll();
+        UpdatePosCardsDeck();
+        UpdatePosCardsHand();
     }
 
     public void AddCardTo(bool All, GameObject card)
     {
-        List<List<GameObject>> lstCards = All ? cardsAll : cardsDeck;
-        GameObject canvas = All ? canvasAllCards : canvasDeckCards;
+        List<List<GameObject>> lstCards;
+        GameObject canvas;
 
-        if (All)
+        if (All) {
             DeckCardsManager.instance.AllCards.Add(card.GetComponent<Card>().cardStats);
-        else
+            lstCards = cardsAll;
+            canvas = canvasAllCards;
+        } else if (isHandStartMenu) {
+            if (DeckCardsManager.instance.StartHand.Count < 5) {
+                DeckCardsManager.instance.StartHand.Add(card.GetComponent<Card>().cardStats);
+                lstCards = cardsHand;
+                canvas = canvasHandCards;
+            } else {
+                DeckCardsManager.instance.AllCards.Add(card.GetComponent<Card>().cardStats); // Back in stock
+                lstCards = cardsAll;
+                canvas = canvasAllCards;
+            }
+        } else {
             DeckCardsManager.instance.deck.Add(card.GetComponent<Card>().cardStats);
-    
+            lstCards = cardsDeck;
+            canvas = canvasDeckCards;
+        }
+
         for (int i = 0; i < lstCards.Count; i++) {
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name ==
                 card.GetComponent<Card>().cardStats.name) {
@@ -96,16 +124,19 @@ public class DeckMenuManager : MonoBehaviour
 
     public GameObject TakeCardFrom(Card card)
     {
-
         bool All = card.transform.parent.gameObject == canvasAllCards;
-        List<List<GameObject>> lstCards = All ? cardsAll : cardsDeck;
-        GameObject canvas = All ? canvasAllCards : canvasDeckCards;
+        List<List<GameObject>> lstCards = All ? cardsAll : (isHandStartMenu ? cardsHand : cardsDeck);
+        GameObject canvas = All ? canvasAllCards : (isHandStartMenu ? canvasHandCards : canvasDeckCards);
         
         if (All)
             DeckCardsManager.instance.AllCards.Remove(card.cardStats);
-        else
-            DeckCardsManager.instance.deck.Remove(card.cardStats);
-    
+        else {
+            if (isHandStartMenu)
+                DeckCardsManager.instance.StartHand.Remove(card.cardStats);
+            else
+                DeckCardsManager.instance.deck.Remove(card.cardStats);
+        }
+
         for (int i = 0; i < lstCards.Count; i++) {
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name == card.cardStats.name) {
                 GameObject a;
@@ -137,13 +168,16 @@ public class DeckMenuManager : MonoBehaviour
         Vector2 sizeCanvas = new Vector2(canvasAllCards.GetComponent<RectTransform>().sizeDelta.x,
             canvasAllCards.GetComponent<RectTransform>().sizeDelta.y);
     
+        cardsAll.Sort(delegate (List<GameObject> a, List<GameObject> b) {
+            return a[0].GetComponent<Card>().cardStats.name.CompareTo(b[0].GetComponent<Card>().cardStats.name);
+        });
+
         for (int i = 0; i < cardsAll.Count; i++) {
             for (int j = 0; j < cardsAll[i].Count; j++) {
                 cardsAll[i][j].transform.localPosition = new Vector3(-sizeCanvas.x/2 + (i/2 * (sizeCard.x + offsetBetweenCards.x)) + (sizeCard.x/2f) + offsetAll.x,
                     sizeCanvas.y/2 - sizeCard.y /2f - offsetAll.y - (i % 2 == 1 ? sizeCard.y + offsetBetweenCards.y : 0) - j*10,
                     0);
             }
-
         }
     }
     private void UpdatePosCardsDeck()
@@ -152,9 +186,32 @@ public class DeckMenuManager : MonoBehaviour
         Vector2 sizeCanvas = new Vector2(canvasDeckCards.GetComponent<RectTransform>().sizeDelta.x,
             canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y);
     
+        cardsDeck.Sort(delegate (List<GameObject> a, List<GameObject> b) {
+            return a[0].GetComponent<Card>().cardStats.name.CompareTo(b[0].GetComponent<Card>().cardStats.name);
+        });
+
         for (int i = 0; i < cardsDeck.Count; i++) {
             for (int j = 0; j < cardsDeck[i].Count; j++) {
                 cardsDeck[i][j].transform.localPosition = new Vector3(-sizeCanvas.x/2 + (i * (sizeCard.x + offsetBetweenCards.x)) + (sizeCard.x/2f) + offsetDeck.x,
+                sizeCanvas.y/2 - sizeCard.y /2f - offsetDeck.y - j*10,
+                0);
+            }
+        }
+    }
+
+    private void UpdatePosCardsHand()
+    {
+        SetSizeCanva();
+        Vector2 sizeCanvas = new Vector2(canvasHandCards.GetComponent<RectTransform>().sizeDelta.x,
+            canvasHandCards.GetComponent<RectTransform>().sizeDelta.y);
+    
+        cardsHand.Sort(delegate (List<GameObject> a, List<GameObject> b) {
+            return a[0].GetComponent<Card>().cardStats.name.CompareTo(b[0].GetComponent<Card>().cardStats.name);
+        });
+
+        for (int i = 0; i < cardsHand.Count; i++) {
+            for (int j = 0; j < cardsHand[i].Count; j++) {
+                cardsHand[i][j].transform.localPosition = new Vector3(-sizeCanvas.x/2 + (i * (sizeCard.x + offsetBetweenCards.x)) + (sizeCard.x/2f) + offsetDeck.x,
                 sizeCanvas.y/2 - sizeCard.y /2f - offsetDeck.y - j*10,
                 0);
             }
@@ -164,11 +221,14 @@ public class DeckMenuManager : MonoBehaviour
 
     void SetSizeCanva()
     {
+        canvasHandCards.GetComponent<RectTransform>().sizeDelta = new Vector2(
+                                    Mathf.Max(1400, cardsHand.Count * (sizeCard.x + offsetBetweenCards.x) + offsetDeck.x),
+                                    canvasHandCards.GetComponent<RectTransform>().sizeDelta.y);
         canvasDeckCards.GetComponent<RectTransform>().sizeDelta = new Vector2(
-                                    cardsDeck.Count * (sizeCard.x + offsetBetweenCards.x) + offsetDeck.x,
+                                    Mathf.Max(1400, cardsDeck.Count * (sizeCard.x + offsetBetweenCards.x) + offsetDeck.x),
                                     canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y);
         canvasAllCards.GetComponent<RectTransform>().sizeDelta = new Vector2(
-                                    Mathf.Round((cardsAll.Count + 1)/2) * (sizeCard.x + offsetBetweenCards.x) + offsetAll.x,
+                                    Mathf.Max(1400, Mathf.Round((cardsAll.Count + 1)/2) * (sizeCard.x + offsetBetweenCards.x) + offsetAll.x),
                                     canvasAllCards.GetComponent<RectTransform>().sizeDelta.y);
     }
 
@@ -208,8 +268,9 @@ public class DeckMenuManager : MonoBehaviour
     {
         int iPos = 0;
 
-        Vector2 sizeCanvas = new Vector2(canvasDeckCards.GetComponent<RectTransform>().sizeDelta.x,
-            canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y);
+        DeckCardsManager.instance.deck.Sort(delegate (CardStats a, CardStats b) {
+            return a.name.CompareTo(b.name);
+        });
 
         for (int i = 0; i < DeckCardsManager.instance.deck.Count; i++) {
             int nbCard = HandleCardExisting(i, cardsDeck, DeckCardsManager.instance.deck);
@@ -229,6 +290,32 @@ public class DeckMenuManager : MonoBehaviour
         return iPos;
     }
 
+    int initStartHand()
+    {
+        int iPos = 0;
+
+        DeckCardsManager.instance.StartHand.Sort(delegate (CardStats a, CardStats b) {
+            return a.name.CompareTo(b.name);
+        });
+
+        for (int i = 0; i < DeckCardsManager.instance.StartHand.Count; i++) {
+            int nbCard = HandleCardExisting(i, cardsHand, DeckCardsManager.instance.StartHand);
+            if (nbCard > 3)
+                continue;
+            if (nbCard == 0) {
+                GameObject card = InitCard(i, canvasHandCards, DeckCardsManager.instance.StartHand);
+                cardsHand.Add(new List<GameObject> { card });
+                iPos++;
+            } else {
+                int jPos = getJPos(DeckCardsManager.instance.StartHand[i], cardsHand);
+                GameObject card = InitCard(i, canvasHandCards, DeckCardsManager.instance.StartHand);
+                card.transform.SetSiblingIndex(1);
+                cardsHand[jPos].Add(card);
+            }
+        }
+        return iPos;
+    }
+
     #endregion "DECK"
 
     #region "STOCK"
@@ -236,6 +323,10 @@ public class DeckMenuManager : MonoBehaviour
     int initStock()
     {
         int iPos = 0;
+
+        DeckCardsManager.instance.AllCards.Sort(delegate (CardStats a, CardStats b) {
+            return a.name.CompareTo(b.name);
+        });
 
         for (int i = 0; i < DeckCardsManager.instance.AllCards.Count; i++) {
             int nbCard = HandleCardExisting(i, cardsAll, DeckCardsManager.instance.AllCards);
