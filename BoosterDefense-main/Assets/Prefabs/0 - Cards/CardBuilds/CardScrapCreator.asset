@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
+  m_Name: CardScrapCreator
+  m_EditorClassIdentifier: 
+  name: Waste center
+  image: {fileID: 21300000, guid: 55077bd031cdfc043ad26a48497ee5bf, type: 3}
+  price: 75
+  priceRessource: 1
+  ghostToSpawn: {fileID: 5070826136400796597, guid: b30b3b7e253c7ff40bbb686b9c9e7de0, type: 3}
+  CanBeSold: 1
+  ValueSold: 20
+  SoldType: 1
+  addToCardUsed: 1
+  description: Create tree <b>(one each 30 sec) (3 max active)</b>
+  type: 2
+  hasHp: 1
+  rarity: 0

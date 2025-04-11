@@ -14,6 +14,7 @@ public class Card : MonoBehaviour
     [Header("Price")]
     public Image iconPrice;
     public TMP_Text textPrice;
+    public TMP_Text textPrice_Free;
     private Button button;
     public Sprite scrapsIcon;
     public Sprite goldIcon;
@@ -33,17 +34,10 @@ public class Card : MonoBehaviour
 
 
     [Header("Icones Type")]
-    public Image iconType;
+    public TMP_Text iconType;
     public GameObject iconHP;
     public TMP_Text textHP;
 
-
-    [Header("Icones Images")]
-    public Sprite Sort;
-    public Sprite Npc;
-    public Sprite Batiment;
-    public Sprite Vehicule;
-    public Sprite Equipement;
 
     [Header("BG Contours")]
     public Image Contour;
@@ -51,21 +45,21 @@ public class Card : MonoBehaviour
     public Sprite ContoursRare;
     public Sprite ContoursSuperRare;
 
-    private Sprite GetSpriteType(TypeCard type)
+    private string GetSpriteType(TypeCard type)
     {
         switch(type) {
             case TypeCard.Sort:
-                return Sort;
+                return "SPELL";
             case TypeCard.Npc:
-                return Npc;
+                return "HEROS";
             case TypeCard.Batiment:
-                return Batiment;
+                return "BUILDING";
             case TypeCard.Vehicule:
-                return Vehicule;
+                return "VEHICLE";
             case TypeCard.Equipement:
-                return Equipement;
+                return "EQUIPMENT";
             default :
-                return Batiment;
+                return "BUILDING";
         }
     }
 
@@ -90,7 +84,7 @@ public class Card : MonoBehaviour
         description.enabled = true;
         description.richText = true;    
         description.text = cardStats.description;
-        iconType.sprite = GetSpriteType(stats.type);
+        iconType.text = GetSpriteType(stats.type);
         iconHP.SetActive(stats.hasHp);
         if (stats.hasHp){
             textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
@@ -106,11 +100,13 @@ public class Card : MonoBehaviour
         if (cardStats.price <= 0) {
             iconPrice.gameObject.SetActive(false);
             textPrice.gameObject.SetActive(false);
+            textPrice_Free.gameObject.SetActive(true);
         } else {
             iconPrice.gameObject.SetActive(true);
             textPrice.gameObject.SetActive(true);
             iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
             textPrice.text = cardStats.price.ToString();
+            textPrice_Free.gameObject.SetActive(false);
             //if (cardStats.priceRessource == RessourceType.scraps) {
             //    textPrice.transform.position = originalPosTxtPrice + (Vector3.up) * 10f;
             //} else {
@@ -124,7 +120,7 @@ public class Card : MonoBehaviour
         if (b)
             return new Color(col.r, col.g, col.b, 1);
         else
-            return new Color(col.r, col.g, col.b, .9f);
+            return new Color(col.r, col.g, col.b, .7f);
     }
 
     private void MakeTransparent(bool b)

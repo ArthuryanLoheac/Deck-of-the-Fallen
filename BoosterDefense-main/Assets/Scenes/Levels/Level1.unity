@@ -7577,7 +7577,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardsDrawned: 3
   drawButton: {fileID: 0}
-  cards: []
+  cards:
+  - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
+  - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
+  - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   cardsUsed: []
   StartHand:
   - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}

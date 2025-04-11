@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardScrap
   m_EditorClassIdentifier: 
-  name: SCRAPS - STONE
+  name: Junk
   image: {fileID: 21300000, guid: fa0c0b4dda71f744790f145e106f18ea, type: 3}
   price: 0
   priceRessource: 0
