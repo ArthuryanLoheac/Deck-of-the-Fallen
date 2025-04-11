@@ -9,32 +9,35 @@ public class Card : MonoBehaviour
 {
     
     public Image[] lstToTransparenceWhenBlocked;
+    [Header("Card")]
     public Image iconObject;
     public TMP_Text textObject;
+    
     [Header("Price")]
     public Image iconPrice;
     public TMP_Text textPrice;
     public TMP_Text textPrice_Free;
     private Button button;
+    [Header("Icons Price")]
     public Sprite scrapsIcon;
     public Sprite goldIcon;
     public Sprite foodIcon;
-    private Vector3 originalPosTxtPrice;
 
 
     [Header("Count")]
     [HideInInspector]public int cardCount;
     public TMP_Text textCardCount;
     [HideInInspector]public CardStats cardStats;
-    public Image BG;
 
 
     [Header("Description")]
     public TMP_Text description;
+    public TMP_Text story;
 
 
-    [Header("Icones Type")]
+    [Header("Type")]
     public TMP_Text iconType;
+    [Header("HP")]
     public GameObject iconHP;
     public TMP_Text textHP;
 
@@ -42,8 +45,7 @@ public class Card : MonoBehaviour
     [Header("BG Contours")]
     public Image Contour;
     public Sprite ContoursCommon;
-    public Sprite ContoursRare;
-    public Sprite ContoursSuperRare;
+    public Image BG;
 
     private string GetSpriteType(TypeCard type)
     {
@@ -82,8 +84,11 @@ public class Card : MonoBehaviour
         iconObject.sprite = cardStats.image;
         cardCount = 1;
         description.enabled = true;
-        description.richText = true;    
+        description.richText = true;
         description.text = cardStats.description;
+        story.enabled = true;
+        story.richText = true;
+        story.text = cardStats.story;
         iconType.text = GetSpriteType(stats.type);
         iconHP.SetActive(stats.hasHp);
         if (stats.hasHp){
@@ -91,11 +96,11 @@ public class Card : MonoBehaviour
         }
     
         if (stats.rarity == Rarity.Rare)
-            Contour.sprite = ContoursRare;
+            Contour.sprite = ContoursCommon;
         if (stats.rarity == Rarity.Common)
             Contour.sprite = ContoursCommon;
         if (stats.rarity == Rarity.SuperRare)
-            Contour.sprite = ContoursSuperRare;
+            Contour.sprite = ContoursCommon;
     
         if (cardStats.price <= 0) {
             iconPrice.gameObject.SetActive(false);
@@ -107,11 +112,6 @@ public class Card : MonoBehaviour
             iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
             textPrice.text = cardStats.price.ToString();
             textPrice_Free.gameObject.SetActive(false);
-            //if (cardStats.priceRessource == RessourceType.scraps) {
-            //    textPrice.transform.position = originalPosTxtPrice + (Vector3.up) * 10f;
-            //} else {
-            //    textPrice.transform.position = originalPosTxtPrice;
-            //}
         }
     }
 
@@ -133,7 +133,6 @@ public class Card : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-        originalPosTxtPrice = textPrice.transform.position;
     }
 
     private void UpdatePrice()

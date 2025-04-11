@@ -35,6 +35,7 @@ public class CardStats : ScriptableObject
     public bool addToCardUsed = true;
     [Header("Description")]
     public string description;
+    public string story;
     [Header("Type")]
     public TypeCard type;
     [Header("HP")]
