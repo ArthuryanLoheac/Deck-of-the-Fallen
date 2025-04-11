@@ -12,7 +12,7 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         cardDragged = DeckMenuManager.instance.TakeCardFrom(GetComponent<Card>());
-        cardDragged.transform.SetParent(DeckMenuManager.instance.CardMoved.transform);
+        cardDragged.transform.SetParent(DeckMenuManager.instance.canvasCardMoved.transform);
     }
 
     public void OnDrag(PointerEventData eventData)

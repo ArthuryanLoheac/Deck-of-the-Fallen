@@ -1,28 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 
 public class DeckMenuManager : MonoBehaviour
 {
     public static DeckMenuManager instance;
+    [Header("Cards")]
     public GameObject cardZoomed;
     public GameObject cardPrefabDeck;
+    [Header("Canvas & Scroll")]
     public GameObject canvasAllCards;
     public GameObject canvasDeckCards;
     public GameObject scrollDeckCards;
     public GameObject canvasHandCards;
-    public GameObject CardMoved;
+    public GameObject canvasCardMoved;
+    [Header("Titles")]
+    public GameObject titleDeckCards;
+    public TMP_Text nbDeckCards;
+    public GameObject titleHandCards;
+    public TMP_Text nbHandCards;
+    public TMP_Text nbAllCards;
+
+    [Header("Offsets")]
     public Vector2 offsetAll = new Vector2(0, 0);
     public Vector2 offsetDeck = new Vector2(0, 0);
-    public Vector2 offsetBetweenCards = new Vector2(0, 0);
-    [HideInInspector]
-    public List<List<GameObject>> cardsAll = new List<List<GameObject>>();
-    [HideInInspector]
-    public List<List<GameObject>> cardsDeck = new List<List<GameObject>>();
-    public List<List<GameObject>> cardsHand = new List<List<GameObject>>();
+     public Vector2 offsetBetweenCards = new Vector2(0, 0);
+    [Header("Others")]
+    [HideInInspector] public List<List<GameObject>> cardsAll = new List<List<GameObject>>();
+    [HideInInspector] public List<List<GameObject>> cardsDeck = new List<List<GameObject>>();
+    [HideInInspector]public List<List<GameObject>> cardsHand = new List<List<GameObject>>();
     Vector2 sizeCard;
-    public bool isHandStartMenu = false;
+    [HideInInspector]public bool isHandStartMenu = false;
+    int maxCardInHand = 5;
 
     private void Awake()
     {
@@ -59,14 +70,26 @@ public class DeckMenuManager : MonoBehaviour
         return card;
     }
 
+    private void updateNbCards()
+    {
+        nbDeckCards.text = DeckCardsManager.instance.deck.Count.ToString();
+        nbAllCards.text = DeckCardsManager.instance.AllCards.Count.ToString();
+        string txt = DeckCardsManager.instance.StartHand.Count.ToString();
+        if (DeckCardsManager.instance.StartHand.Count >= maxCardInHand)
+            txt = "MAX";
+        nbHandCards.text = txt;
+    }
+
     public void RefreshAll()
     {
         UpdatePosCardsAll();
         UpdatePosCardsDeck();
         UpdatePosCardsHand();
         canvasHandCards.transform.parent.gameObject.SetActive(isHandStartMenu);
+        titleHandCards.SetActive(isHandStartMenu);
         canvasDeckCards.transform.parent.gameObject.SetActive(!isHandStartMenu);
-        scrollDeckCards.SetActive(!isHandStartMenu);
+        titleDeckCards.SetActive(!isHandStartMenu);
+        updateNbCards();
     }
 
     void UpdateOnlyNecessaryList(bool isAll)
@@ -86,7 +109,7 @@ public class DeckMenuManager : MonoBehaviour
             lstCards = cardsAll;
             canvas = canvasAllCards;
         } else if (isHandStartMenu) {
-            if (DeckCardsManager.instance.StartHand.Count < 5) {
+            if (DeckCardsManager.instance.StartHand.Count < maxCardInHand) {
                 DeckCardsManager.instance.StartHand.Add(card.GetComponent<Card>().cardStats);
                 lstCards = cardsHand;
                 canvas = canvasHandCards;
@@ -100,6 +123,7 @@ public class DeckMenuManager : MonoBehaviour
             lstCards = cardsDeck;
             canvas = canvasDeckCards;
         }
+        updateNbCards();
 
         for (int i = 0; i < lstCards.Count; i++) {
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name ==
@@ -136,6 +160,7 @@ public class DeckMenuManager : MonoBehaviour
             else
                 DeckCardsManager.instance.deck.Remove(card.cardStats);
         }
+        updateNbCards();
 
         for (int i = 0; i < lstCards.Count; i++) {
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name == card.cardStats.name) {
