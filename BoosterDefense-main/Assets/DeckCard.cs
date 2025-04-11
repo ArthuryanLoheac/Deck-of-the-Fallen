@@ -7,14 +7,17 @@ using UnityEngine.UI;
 
 public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    GameObject cardDragged;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        cardDragged = DeckMenuManager.instance.TakeCardFrom(GetComponent<Card>());
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+        if (cardDragged)
+            cardDragged.transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
