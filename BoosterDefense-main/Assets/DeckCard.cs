@@ -12,6 +12,7 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
         cardDragged = DeckMenuManager.instance.TakeCardFrom(GetComponent<Card>());
+        cardDragged.transform.SetParent(DeckMenuManager.instance.CardMoved.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -22,7 +23,15 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+        double DeckSize = DeckMenuManager.instance.canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y;
+
+        if (cardDragged) {
+            if (eventData.position.y > DeckSize) {
+                DeckMenuManager.instance.AddCardTo(false, gameObject);
+            } else {
+                DeckMenuManager.instance.AddCardTo(true, gameObject);
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

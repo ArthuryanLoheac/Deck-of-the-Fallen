@@ -10,10 +10,13 @@ public class DeckMenuManager : MonoBehaviour
     public GameObject cardPrefabDeck;
     public GameObject canvasAllCards;
     public GameObject canvasDeckCards;
+    public GameObject CardMoved;
     public Vector2 offsetAll = new Vector2(0, 0);
     public Vector2 offsetDeck = new Vector2(0, 0);
     public Vector2 offsetBetweenCards = new Vector2(0, 0);
+    [HideInInspector]
     public List<List<GameObject>> cardsAll = new List<List<GameObject>>();
+    [HideInInspector]
     public List<List<GameObject>> cardsDeck = new List<List<GameObject>>();
     Vector2 sizeCard;
 
@@ -52,11 +55,56 @@ public class DeckMenuManager : MonoBehaviour
         return card;
     }
 
+    void UpdateOnlyNecessaryList(bool isAll)
+    {
+        if (isAll)
+            UpdatePosCardsAll();
+        else
+            UpdatePosCardsDeck();
+    }
+
+    public void AddCardTo(bool All, GameObject card)
+    {
+        List<List<GameObject>> lstCards = All ? cardsAll : cardsDeck;
+        GameObject canvas = All ? canvasAllCards : canvasDeckCards;
+
+        if (All)
+            DeckCardsManager.instance.AllCards.Add(card.GetComponent<Card>().cardStats);
+        else
+            DeckCardsManager.instance.deck.Add(card.GetComponent<Card>().cardStats);
+    
+        for (int i = 0; i < lstCards.Count; i++) {
+            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name ==
+                card.GetComponent<Card>().cardStats.name) {
+                lstCards[i][0].GetComponent<Card>().cardCount += 1;
+                if (lstCards[i].Count >= 3) {
+                    Destroy(card);
+                } else {
+                    lstCards[i].Add(card);
+                    card.transform.SetParent(canvas.transform);
+                    card.transform.SetSiblingIndex(1);
+                }
+                UpdateOnlyNecessaryList(All);
+                return;
+            }
+        }
+        // Not existing
+        lstCards.Add(new List<GameObject> { card });
+        card.transform.SetParent(canvas.transform);
+        UpdateOnlyNecessaryList(All);
+    }
+
     public GameObject TakeCardFrom(Card card)
     {
+
         bool All = card.transform.parent.gameObject == canvasAllCards;
         List<List<GameObject>> lstCards = All ? cardsAll : cardsDeck;
         GameObject canvas = All ? canvasAllCards : canvasDeckCards;
+        
+        if (All)
+            DeckCardsManager.instance.AllCards.Remove(card.cardStats);
+        else
+            DeckCardsManager.instance.deck.Remove(card.cardStats);
     
         for (int i = 0; i < lstCards.Count; i++) {
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name == card.cardStats.name) {
@@ -76,10 +124,7 @@ public class DeckMenuManager : MonoBehaviour
                         lstCards[i].Add(newCard);
                     }
                 }
-                if (All)
-                    UpdatePosCardsAll();
-                else
-                    UpdatePosCardsDeck();
+                UpdateOnlyNecessaryList(All);
                 return a;
             }
         }
