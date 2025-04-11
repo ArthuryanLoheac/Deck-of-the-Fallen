@@ -4110,6 +4110,14 @@ PrefabInstance:
       value: AssetDemo_Navigation_Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 2311700424674052747, guid: b60fb7d600a39406ab7a9872be88326a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -770.3028
+      objectReference: {fileID: 0}
+    - target: {fileID: 2311700424674052747, guid: b60fb7d600a39406ab7a9872be88326a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -321.15146
+      objectReference: {fileID: 0}
+    - target: {fileID: 2311700424674052747, guid: b60fb7d600a39406ab7a9872be88326a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -118
       objectReference: {fileID: 0}

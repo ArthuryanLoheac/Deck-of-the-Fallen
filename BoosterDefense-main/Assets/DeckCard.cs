@@ -13,6 +13,7 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         cardDragged = DeckMenuManager.instance.TakeCardFrom(GetComponent<Card>());
         cardDragged.transform.SetParent(DeckMenuManager.instance.canvasCardMoved.transform);
+        SoundManager.instance.PlaySound("DrawCard");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -26,12 +27,13 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         double DeckSize = DeckMenuManager.instance.canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y;
 
         if (cardDragged) {
-            if (eventData.position.y > DeckSize) {
+            if ((eventData.position.y - cardDragged.transform.GetComponent<RectTransform>().sizeDelta.y/2) > DeckSize) {
                 DeckMenuManager.instance.AddCardTo(false, gameObject);
             } else {
                 DeckMenuManager.instance.AddCardTo(true, gameObject);
             }
         }
+        SoundManager.instance.PlaySound("DrawCard");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -42,6 +44,7 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnPointerEnter(PointerEventData eventData)
     {
         
+        SoundManager.instance.PlaySound("CardSound");
     }
 
     public void OnPointerExit(PointerEventData eventData)
