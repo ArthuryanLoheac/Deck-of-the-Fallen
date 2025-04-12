@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
   m_Name: CardScrap
   m_EditorClassIdentifier: 
-  name: Junk
-  image: {fileID: 21300000, guid: fa0c0b4dda71f744790f145e106f18ea, type: 3}
+  name: Dumpster
+  image: {fileID: 21300000, guid: 094583f26b32d834080cc6a3257dfd39, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 9007171006751760155, guid: 54066f2cbb6b4844aa97b0d98f93ae2c, type: 3}
@@ -21,7 +21,10 @@ MonoBehaviour:
   ValueSold: 5
   SoldType: 1
   addToCardUsed: 1
-  description: Can be collected to earn <color=blue>scraps</color> <b>(10)</b>
+  description: A scrap container that can be collected by a scrapper.<br>Provides
+    10 scraps when fully harvested.
+  story: "Once a shelter, then a grave \u2014 now just parts to scavenge."
+  sizeFont: 7
   type: 2
   hasHp: 1
   rarity: 0
