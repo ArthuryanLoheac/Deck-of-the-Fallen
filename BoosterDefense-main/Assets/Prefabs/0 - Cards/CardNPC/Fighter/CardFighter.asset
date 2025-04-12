@@ -24,6 +24,7 @@ MonoBehaviour:
   description: Moves toward the nearest enemy and strikes in melee.<br>Attacks 1
     target in close range.
   story: Once a lumberjack, now a legend. His axe swings for those who cannot.
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 0

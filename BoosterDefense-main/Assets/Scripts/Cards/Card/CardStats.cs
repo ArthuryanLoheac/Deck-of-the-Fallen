@@ -36,6 +36,7 @@ public class CardStats : ScriptableObject
     [Header("Description")]
     public string description;
     public string story;
+    public float sizeFont = 7f;
     [Header("Type")]
     public TypeCard type;
     [Header("HP")]

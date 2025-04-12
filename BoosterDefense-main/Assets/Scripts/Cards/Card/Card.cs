@@ -86,6 +86,7 @@ public class Card : MonoBehaviour
         description.enabled = true;
         description.richText = true;
         description.text = cardStats.description;
+        description.fontSize = cardStats.sizeFont;
         story.enabled = true;
         story.richText = true;
         story.text = cardStats.story;
