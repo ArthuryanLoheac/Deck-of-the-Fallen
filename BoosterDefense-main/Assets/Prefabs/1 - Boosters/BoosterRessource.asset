@@ -20,11 +20,9 @@ MonoBehaviour:
   percentSuperRare: 10
   listCardCommon:
   - {fileID: 11400000, guid: 779a59fa18a62c64d85ea3f210f0d3bf, type: 2}
-  - {fileID: 11400000, guid: 78d0cab0bd4388045b61cb4af8cd94c6, type: 2}
   - {fileID: 11400000, guid: bbe6dbcb3fe256845a5281c582ac28d8, type: 2}
   listCardRare:
   - {fileID: 11400000, guid: afff6284fbb6401469572384a93a3eea, type: 2}
-  - {fileID: 11400000, guid: 0d135336106003f47a4c30895687bcf9, type: 2}
   - {fileID: 11400000, guid: b1eb1afbddb0be94ca4c564e1beac245, type: 2}
   listCardSuperRare:
   - {fileID: 11400000, guid: df99c05476b51bf4b88252e699e10297, type: 2}
