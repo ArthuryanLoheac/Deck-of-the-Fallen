@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardScraperLvl 1
+  m_Name: CardFarmerExpert
   m_EditorClassIdentifier: 
-  name: Expert scrapper
-  image: {fileID: 21300000, guid: 8afb8f1ac571c4e4ea8425d746ea8134, type: 3}
+  name: Farmer Expert
+  image: {fileID: 21300000, guid: 28109318f8b11bf45b1dd9b6bb15264a, type: 3}
   price: 30
   priceRessource: 2
-  ghostToSpawn: {fileID: 2395485346363015865, guid: e35a4e0c4b2496c4780c2d014dff723b, type: 3}
+  ghostToSpawn: {fileID: 2395485346363015865, guid: cf59e4c3636fbc446911172c24d446ed, type: 3}
   CanBeSold: 1
   ValueSold: 10
   SoldType: 2
   addToCardUsed: 1
-  description: Collect <color=blue>scraps</color> <b>(1.25 / sec)</b>
+  description: Tracks nearby animals and collects food when in range.<br>Collect
+    food (1.25 / sec). Wide detection radius.
+  story: They say his fields whisper secrets of seasons long forgotten.
   type: 0
   hasHp: 1
   rarity: 1

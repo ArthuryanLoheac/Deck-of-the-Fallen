@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardReparator
+  m_Name: CardScraperExpert
   m_EditorClassIdentifier: 
-  name: Reparator
-  image: {fileID: 21300000, guid: 8adb9bb6bc4ae124396fec1bb2619da4, type: 3}
-  price: 15
+  name: Scrapper Expert
+  image: {fileID: 21300000, guid: 8afb8f1ac571c4e4ea8425d746ea8134, type: 3}
+  price: 30
   priceRessource: 2
-  ghostToSpawn: {fileID: 2395485346363015865, guid: 5232aaacf46aae54fad2f9308fe81f43, type: 3}
+  ghostToSpawn: {fileID: 2395485346363015865, guid: e35a4e0c4b2496c4780c2d014dff723b, type: 3}
   CanBeSold: 1
-  ValueSold: 5
+  ValueSold: 10
   SoldType: 2
   addToCardUsed: 1
-  description: Moves to damaged buildings and restores their health.<br>Heals structures
-    within repair radius.
-  story: Every wall he rebuilds holds back the end
+  description: Moves toward debris and collects scrap when close enough.<br>Collect
+    scraps (1.25 / sec). Wide detection radius.
+  story: From broken machines he crafts miracles.
   type: 0
   hasHp: 1
-  rarity: 0
+  rarity: 1
