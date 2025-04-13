@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93c94551396d1644b071fba9be48e5a, type: 3}
   m_Name: BoosterRessource
   m_EditorClassIdentifier: 
-  nameBooster: Ressources
+  nameBooster: RESSOURCE PACK
   priceGold: 50
-  icon: {fileID: 21300000, guid: 0eed3f039be215541b4ebf66986141bc, type: 3}
+  icon: {fileID: 21300000, guid: d3b47fdf23abe9f469edd8cd2b3dab92, type: 3}
   nbCard: 4
   nbRare: 1
   percentSuperRare: 10

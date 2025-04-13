@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93c94551396d1644b071fba9be48e5a, type: 3}
   m_Name: BoosterNPC
   m_EditorClassIdentifier: 
-  nameBooster: NPC
+  nameBooster: Fallen Companions
   priceGold: 100
-  icon: {fileID: 21300000, guid: b61d06b0a7170364fb931ae8a8cd090c, type: 3}
+  icon: {fileID: 21300000, guid: cb7b9af777719114aafb5aec78e41723, type: 3}
   nbCard: 4
   nbRare: 1
   percentSuperRare: 10
