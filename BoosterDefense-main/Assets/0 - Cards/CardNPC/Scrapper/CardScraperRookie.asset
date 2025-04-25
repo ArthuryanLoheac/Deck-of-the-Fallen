@@ -24,6 +24,8 @@ MonoBehaviour:
   description: Moves toward debris and collects scrap when close enough.<br>Collect
     scraps (0.5 / sec). Short detection radius.
   story: "He sees treasure in the wreckage, though he\u2019s yet to learn the cost."
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 0
+  offsetTop: -23

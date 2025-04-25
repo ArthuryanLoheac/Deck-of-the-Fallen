@@ -24,6 +24,8 @@ MonoBehaviour:
   description: Tracks nearby animals and collects food when in range.<br>Collect
     food (1.25 / sec). Wide detection radius.
   story: They say his fields whisper secrets of seasons long forgotten.
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 1
+  offsetTop: -23

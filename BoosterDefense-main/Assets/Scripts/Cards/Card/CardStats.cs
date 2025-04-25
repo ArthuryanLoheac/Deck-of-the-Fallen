@@ -42,4 +42,7 @@ public class CardStats : ScriptableObject
     [Header("HP")]
     public bool hasHp;
     public Rarity rarity;
+    [Header("Offset")] 
+    [Range(-38f, 38f)]
+    public float offsetTop = 0.0f; // -38 à 38
 }

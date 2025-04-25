@@ -28,3 +28,4 @@ MonoBehaviour:
   type: 0
   hasHp: 1
   rarity: 0
+  offsetTop: -23

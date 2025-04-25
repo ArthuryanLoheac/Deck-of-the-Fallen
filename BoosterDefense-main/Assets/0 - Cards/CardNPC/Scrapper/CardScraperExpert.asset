@@ -24,6 +24,8 @@ MonoBehaviour:
   description: Moves toward debris and collects scrap when close enough.<br>Collect
     scraps (1.25 / sec). Wide detection radius.
   story: From broken machines he crafts miracles.
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 1
+  offsetTop: -23

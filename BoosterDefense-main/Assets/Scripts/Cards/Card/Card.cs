@@ -82,6 +82,9 @@ public class Card : MonoBehaviour
         cardStats = stats;
         textObject.text = cardStats.name;
         iconObject.sprite = cardStats.image;
+        Vector3 v = iconObject.GetComponent<RectTransform>().localPosition;
+        v.y = cardStats.offsetTop;
+        iconObject.GetComponent<RectTransform>().localPosition = v;
         cardCount = 1;
         description.enabled = true;
         description.richText = true;

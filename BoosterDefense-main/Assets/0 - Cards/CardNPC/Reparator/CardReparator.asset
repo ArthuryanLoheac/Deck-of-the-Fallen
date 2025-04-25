@@ -24,6 +24,8 @@ MonoBehaviour:
   description: Moves to damaged buildings and restores their health.<br>Heals structures
     within repair radius.
   story: Every wall he rebuilds holds back the end
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 0
+  offsetTop: -23

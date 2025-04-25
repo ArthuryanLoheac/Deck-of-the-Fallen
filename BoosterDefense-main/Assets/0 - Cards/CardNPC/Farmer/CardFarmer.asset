@@ -24,6 +24,8 @@ MonoBehaviour:
   description: Tracks nearby animals and collects food when in range.<br>Collect
     food (0.5 / sec). Short detection radius.
   story: In the ashes of the old world, he learned to coax life from dead soil.
+  sizeFont: 7
   type: 0
   hasHp: 1
   rarity: 0
+  offsetTop: -23
