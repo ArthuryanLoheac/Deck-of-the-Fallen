@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardFood
+  m_Name: CardSheep
   m_EditorClassIdentifier: 
   name: Sheep
-  image: {fileID: 21300000, guid: ccdc541f14e15d54c9bfe7e1c0850b20, type: 3}
+  image: {fileID: 21300000, guid: dc960966ca2319244a0929b1e3b357a7, type: 3}
   price: 0
   priceRessource: 0
   ghostToSpawn: {fileID: 9007171006751760155, guid: 78aa1e9f03b052448b8670bf6bfe1ada, type: 3}
@@ -21,7 +21,11 @@ MonoBehaviour:
   ValueSold: 5
   SoldType: 2
   addToCardUsed: 1
-  description: Can be collected to earn <color=blue>food</color> <b>(10)</b>
+  description: A wandering source of food, ready for the taking.<br>Can be collected
+    to earn 10 food.
+  story: "Its wool once warmed villages \u2014 now it feeds hungry mouths."
+  sizeFont: 7
   type: 2
   hasHp: 1
   rarity: 0
+  offsetTop: 26
