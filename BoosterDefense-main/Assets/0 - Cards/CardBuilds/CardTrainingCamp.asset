@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardFighterCreator
+  m_Name: CardTrainingCamp
   m_EditorClassIdentifier: 
   name: Training camp
-  image: {fileID: 21300000, guid: 7c00fb0c4cdff4b4ba99198a338fda61, type: 3}
+  image: {fileID: 21300000, guid: a66dfd9be19ee3a4081f6e0cc074755f, type: 3}
   price: 75
   priceRessource: 1
   ghostToSpawn: {fileID: 5070826136400796597, guid: 66e3a1c773dba604fa3d0b16d384bcfe, type: 3}
@@ -21,7 +21,11 @@ MonoBehaviour:
   ValueSold: 20
   SoldType: 1
   addToCardUsed: 1
-  description: Create <color=red>fighters</color> <b>(one each 10 sec) (3 max active)</b>
+  description: Trains fighters over time to join the battle.<br>Creates one fighter
+    every 10 seconds (up to 3 active).
+  story: Once a humble drill ground, now a forge where heroes are born in sweat and
+    steel.
+  sizeFont: 7
   type: 2
   hasHp: 1
   rarity: 2
