@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardScrapCreator
+  m_Name: CardWasteCenter
   m_EditorClassIdentifier: 
-  name: Waste center
-  image: {fileID: 21300000, guid: 55077bd031cdfc043ad26a48497ee5bf, type: 3}
+  name: Waste Center
+  image: {fileID: 21300000, guid: 4fa2fc9b5ab05d247905f4318b6de70f, type: 3}
   price: 75
   priceRessource: 1
   ghostToSpawn: {fileID: 5070826136400796597, guid: b30b3b7e253c7ff40bbb686b9c9e7de0, type: 3}
@@ -21,7 +21,11 @@ MonoBehaviour:
   ValueSold: 20
   SoldType: 1
   addToCardUsed: 1
-  description: Create tree <b>(one each 30 sec) (3 max active)</b>
+  description: An automated dump that generates scrap piles over time.<br>Creates
+    one scrap every 30 seconds (max 3 active).
+  story: Where others see ruins, survivors see opportunity.
+  sizeFont: 7
   type: 2
   hasHp: 1
   rarity: 0
+  offsetTop: 38
