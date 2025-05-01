@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         LooseUI.SetActive(true);
         GameEnded = true;
         TimeManager.instance.setNoSpeed();
-        WinUI.GetComponent<SetUILoose>().SetupUI(0);
+        LooseUI.GetComponent<SetUILoose>().SetupUI(0);
         LevelManager.instance.SetStars(0);
     }
 }

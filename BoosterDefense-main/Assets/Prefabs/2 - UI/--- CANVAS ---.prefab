@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6621,7 +6621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6829,7 +6829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9058824, g: 0.85098046, b: 0.34901962, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -12968,7 +12968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.93981254, b: 0.3820755, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -13592,7 +13592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9058824, g: 0.85098046, b: 0.34901962, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -15262,7 +15262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.882353, b: 0.35686275, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15443,7 +15443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &652381052148333745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15484,7 +15484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21521,7 +21521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22599,7 +22599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25102,7 +25102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980393, g: 0.83921576, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -37141,7 +37141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980392, g: 0.8392157, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -38060,7 +38060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9058824, g: 0.85098046, b: 0.34901962, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -38384,8 +38384,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
-  m_sharedMaterial: {fileID: 392884837564286817, guid: 159f90bfbb65aed4dbd4fcbfeb130e9f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -43538,7 +43538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8980393, g: 0.83921576, b: 0.29411766, a: 1}
+  m_Color: {r: 0.764151, g: 0.59646404, b: 0.378471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -44196,15 +44196,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.29411766
+      value: 0.378471
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.8392157
+      value: 0.59646404
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.8980392
+      value: 0.764151
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontSizeMax
@@ -44557,15 +44557,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.29411766
+      value: 0.378471
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.8392157
+      value: 0.59646404
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.8980392
+      value: 0.764151
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontSizeMax
@@ -44581,7 +44581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4283160293
+      value: 4284586179
       objectReference: {fileID: 0}
     - target: {fileID: 1767820423405472111, guid: 03b9decb394b7ab408f502cd531574b0, type: 3}
       propertyPath: m_VerticalAlignment
@@ -45158,7 +45158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 182.26
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.y
@@ -45574,7 +45574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 182.26
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.y
@@ -45824,7 +45824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 182.26
       objectReference: {fileID: 0}
     - target: {fileID: 6606957867040926348, guid: 10a22e058d7e91d49951dd37091f8537, type: 3}
       propertyPath: m_SizeDelta.y

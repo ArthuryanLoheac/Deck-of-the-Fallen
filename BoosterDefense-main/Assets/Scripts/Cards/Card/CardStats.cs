@@ -35,9 +35,14 @@ public class CardStats : ScriptableObject
     public bool addToCardUsed = true;
     [Header("Description")]
     public string description;
+    public string story;
+    public float sizeFont = 7f;
     [Header("Type")]
     public TypeCard type;
     [Header("HP")]
     public bool hasHp;
     public Rarity rarity;
+    [Header("Offset")] 
+    [Range(-38f, 38f)]
+    public float offsetTop = 0.0f; // -38 à 38
 }

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
+  m_Name: CardSquirrel
+  m_EditorClassIdentifier: 
+  name: Squirrel
+  image: {fileID: 21300000, guid: 92e10c1037ce546479e13dba84e3dfa2, type: 3}
+  price: 0
+  priceRessource: 0
+  ghostToSpawn: {fileID: 9007171006751760155, guid: 662fae2cbf21c19429293745946cd72b, type: 3}
+  CanBeSold: 1
+  ValueSold: 0
+  SoldType: 2
+  addToCardUsed: 1
+  description: A nimble gatherer turned a prize for the hungry.<br>Can be collected
+    to earn 5 food.
+  story: "Once a master of hidden treasures \u2014 now a fleeting memory in the woods.  "
+  sizeFont: 7
+  type: 2
+  hasHp: 1
+  rarity: 0
+  offsetTop: 26
