@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardFireShootingTower
+  m_Name: CardTower
   m_EditorClassIdentifier: 
-  name: Fire tower
-  image: {fileID: 21300000, guid: c3e055a3d2354f945a791ad1c72073b9, type: 3}
+  name: Tower
+  image: {fileID: 21300000, guid: 111e38343411ecf49ba6c5d57ad12b37, type: 3}
   price: 20
   priceRessource: 1
-  ghostToSpawn: {fileID: 1910272335522828243, guid: 1e28e393097b038438f430384b5723dc, type: 3}
+  ghostToSpawn: {fileID: 1910272335522828243, guid: 9200e71b883abb440be82dd4592d1760, type: 3}
   CanBeSold: 1
   ValueSold: 5
   SoldType: 1
   addToCardUsed: 1
-  description: Attack monsters nearby
+  description: Basic defensive structure that automatically targets nearby enemies.
+  story: Its aim never sleeps, even when the world does.
+  sizeFont: 7
   type: 2
   hasHp: 1
-  rarity: 1
+  rarity: 0
+  offsetTop: -15
