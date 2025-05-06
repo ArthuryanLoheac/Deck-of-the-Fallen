@@ -25,7 +25,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
             }
         }
 
-        private void Awake()
+        void Awake()
         {
             image = GetComponent<RawImage>();
             if (image)

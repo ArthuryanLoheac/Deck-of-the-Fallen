@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundMenuManager : MonoBehaviour
+public class DontDestroyOnLoad : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start() {
-        SoundManager.instance.PlayMusic("StartMenu", true);
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }

@@ -35,7 +35,7 @@ public class DeckMenuManager : MonoBehaviour
     [HideInInspector]public bool isHandStartMenu = false;
     int maxCardInHand = 5;
 
-    private void Awake()
+    void Awake()
     {
         if (!instance)
             instance = this;

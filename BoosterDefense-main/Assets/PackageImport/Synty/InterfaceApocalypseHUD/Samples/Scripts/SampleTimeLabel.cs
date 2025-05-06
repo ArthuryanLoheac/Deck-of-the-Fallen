@@ -26,7 +26,7 @@ namespace Synty.Interface.Samples
 
         private bool beat;
 
-        private void Awake()
+        void Awake()
         {
             if (label == null)
             {

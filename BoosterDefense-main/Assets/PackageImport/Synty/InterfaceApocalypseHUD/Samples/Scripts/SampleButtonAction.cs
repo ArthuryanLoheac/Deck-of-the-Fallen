@@ -28,7 +28,7 @@ namespace Synty.Interface.Samples
         public bool runOnEnable;
         public bool applyRandomRotationToActivateObject;
 
-        private void Awake()
+        void Awake()
         {
             if (button == null)
             {

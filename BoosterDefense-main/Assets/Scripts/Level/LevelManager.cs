@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     public level[] levels;
 
-    private void Awake()
+    void Awake()
     {
         if (!instance)
             instance = this;

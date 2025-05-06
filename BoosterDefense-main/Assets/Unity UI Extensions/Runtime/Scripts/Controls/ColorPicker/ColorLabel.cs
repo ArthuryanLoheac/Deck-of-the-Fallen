@@ -27,7 +27,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
 #else
         private Text label;
 #endif
-        private void Awake()
+        void Awake()
         {
 #if UNITY_2022_1_OR_NEWER
             label = GetComponent<TMPro.TMP_Text>();

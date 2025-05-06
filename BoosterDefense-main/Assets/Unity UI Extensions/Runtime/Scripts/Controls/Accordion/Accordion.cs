@@ -41,7 +41,7 @@ namespace UnityEngine.UI.Extensions
 			set { this.m_TransitionDuration = value; }
 		}
 
-        private void Awake()
+        void Awake()
         {
 			m_expandVertical = GetComponent<HorizontalLayoutGroup>() ? false : true;
 			var group = GetComponent<ToggleGroup>();

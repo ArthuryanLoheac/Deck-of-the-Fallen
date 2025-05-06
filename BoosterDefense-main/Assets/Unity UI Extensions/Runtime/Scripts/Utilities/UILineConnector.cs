@@ -16,7 +16,7 @@ namespace UnityEngine.UI.Extensions
         private RectTransform rt;
         private UILineRenderer lr;
 
-        private void Awake()
+        void Awake()
         {
             var canvasParent = GetComponentInParent<RectTransform>().GetParentCanvas();
             if (canvasParent != null)

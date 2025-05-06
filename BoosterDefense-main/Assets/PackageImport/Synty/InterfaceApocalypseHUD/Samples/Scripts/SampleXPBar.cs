@@ -31,7 +31,7 @@ namespace Synty.Interface.Samples
         private float currentXPNormalized;
         private float secondsPerLevelUp;
 
-        private void Awake()
+        void Awake()
         {
             // Set random starting values.
             currentLevel = Random.Range(1, 69);

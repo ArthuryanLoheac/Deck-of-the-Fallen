@@ -26,7 +26,7 @@ namespace Synty.Interface.Samples
         public float inDelay = 2.5f;
         public float outDelay = 2.5f;
 
-        private void Awake()
+        void Awake()
         {
             if (animator == null)
             {

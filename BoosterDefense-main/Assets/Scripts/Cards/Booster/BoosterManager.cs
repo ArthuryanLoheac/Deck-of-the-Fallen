@@ -10,7 +10,7 @@ public class BoosterManager : MonoBehaviour
 
     public List<BoosterStats> boosterOwned;
 
-    private void Awake()
+    void Awake()
     {
         if (!instance)
             instance = this;

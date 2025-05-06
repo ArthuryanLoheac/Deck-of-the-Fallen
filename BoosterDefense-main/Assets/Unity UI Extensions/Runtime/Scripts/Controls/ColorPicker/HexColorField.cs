@@ -17,7 +17,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
 
         private const string hexRegex = "^#?(?:[0-9a-fA-F]{3,4}){1,2}$";
 
-        private void Awake()
+        void Awake()
         {
             hexInputField = GetComponent<InputField>();
 
