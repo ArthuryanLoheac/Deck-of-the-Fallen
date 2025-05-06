@@ -9,6 +9,11 @@ public class MenuButton : MonoBehaviour
     {
         SceneManager.LoadScene(Scene);
     }
+    public void GoToSceneAndClearGame(string Scene)
+    {
+        RessourceManager.instance.ClearRessources();
+        SceneManager.LoadScene(Scene);
+    }
     public void GoToSceneAndDestroyLevelManager(string Scene)
     {
         Destroy(LevelManager.instance.gameObject);

@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Reparator
   image: {fileID: 21300000, guid: 8adb9bb6bc4ae124396fec1bb2619da4, type: 3}
   price: 15
-  priceRessource: 2
+  priceRessource: 3
   ghostToSpawn: {fileID: 2395485346363015865, guid: 5232aaacf46aae54fad2f9308fe81f43, type: 3}
   CanBeSold: 1
   ValueSold: 5
-  SoldType: 2
+  SoldType: 3
   addToCardUsed: 1
   description: Moves to damaged buildings and restores their health.<br>Heals structures
     within repair radius.

@@ -20,7 +20,7 @@ public class BoosterDrawCardUI : MonoBehaviour
 
     public void SetupCard(CardStats stats, int rarity)
     {
-        CardPrefab.GetComponent<Card>().SetStats(stats, true);
+        CardPrefab.GetComponent<Card>().SetStats(stats);
         CardPrefab.SetActive(true);
         if (rarity == 0)
             CardPrefab.GetComponent<Animation>().Play("SpawnCardDraw");

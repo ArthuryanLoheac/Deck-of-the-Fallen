@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Bolts
   image: {fileID: 21300000, guid: 4d5ced1b191ec0442bb8c2e9ac2c715b, type: 3}
   price: 0
-  priceRessource: 0
+  priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 90c73b5a9d389b442b0c63e5fbe4b6ec, type: 3}
   CanBeSold: 1
   ValueSold: 0
-  SoldType: 1
+  SoldType: 3
   addToCardUsed: 1
   description: A small pile of mechanical parts collectable by scrappers.<br>Provides
     5 bolts when harvested.

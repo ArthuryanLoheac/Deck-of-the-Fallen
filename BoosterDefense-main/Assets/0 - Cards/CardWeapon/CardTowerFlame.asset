@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Tower Flame
   image: {fileID: 21300000, guid: 83d187055a55a7542b243b0aa1cc0dcc, type: 3}
   price: 20
-  priceRessource: 1
+  priceRessource: 2
   ghostToSpawn: {fileID: 1910272335522828243, guid: 1e28e393097b038438f430384b5723dc, type: 3}
   CanBeSold: 1
   ValueSold: 5
-  SoldType: 1
+  SoldType: 2
   addToCardUsed: 1
   description: Targets and attacks nearby monsters, igniting them on impact.<br>Deals
     2 damage per second for 2 seconds.

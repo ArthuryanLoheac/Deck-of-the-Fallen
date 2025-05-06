@@ -69,7 +69,7 @@ public class Card : MonoBehaviour
     {
         if (nameRessource == RessourceType.scraps) {
             return scrapsIcon;
-        } else if (nameRessource == RessourceType.gold) {
+        } else if (nameRessource == RessourceType.goldInGame) {
             return goldIcon;
         } else if (nameRessource == RessourceType.food) {
             return foodIcon;
@@ -77,7 +77,7 @@ public class Card : MonoBehaviour
         return null;
     }
 
-    public void SetStats(CardStats stats, bool desctipionActive = false)
+    public void SetStats(CardStats stats)
     {
         cardStats = stats;
         textObject.text = cardStats.name;

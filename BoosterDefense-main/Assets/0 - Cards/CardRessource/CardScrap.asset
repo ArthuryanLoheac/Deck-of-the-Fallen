@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Dumpster
   image: {fileID: 21300000, guid: 094583f26b32d834080cc6a3257dfd39, type: 3}
   price: 0
-  priceRessource: 0
+  priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 54066f2cbb6b4844aa97b0d98f93ae2c, type: 3}
   CanBeSold: 1
   ValueSold: 5
-  SoldType: 1
+  SoldType: 3
   addToCardUsed: 1
   description: A scrap container that can be collected by a scrapper.<br>Provides
     10 scraps when fully harvested.

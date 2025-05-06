@@ -80,7 +80,7 @@ public class Life : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
+        RessourceManager.instance.AddRessource(RessourceType.goldInGame, coinsDropped);
         
         if (GetComponent<Base>() != null)
             GameManager.instance.Defeat();

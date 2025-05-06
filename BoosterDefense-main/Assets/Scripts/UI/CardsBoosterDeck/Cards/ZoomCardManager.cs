@@ -20,7 +20,7 @@ public class ZoomCardManager : MonoBehaviour
     public void ActiveCardZoom()
     {
         CardZoomActive = true;
-        cardInstance.SetStats(cardStats, true);
+        cardInstance.SetStats(cardStats);
     }
     public void DesactiveCardZoom()
     {

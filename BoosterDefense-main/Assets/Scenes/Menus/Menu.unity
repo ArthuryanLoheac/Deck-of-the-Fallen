@@ -779,7 +779,6 @@ GameObject:
   - component: {fileID: 562752194}
   - component: {fileID: 562752196}
   - component: {fileID: 562752197}
-  - component: {fileID: 562752198}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -921,13 +920,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationNormalDraw: {fileID: 0}
   boosterOwned: []
---- !u!114 &562752198
+--- !u!1 &563458585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563458587}
+  - component: {fileID: 563458586}
+  m_Layer: 0
+  m_Name: RessourceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &563458586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562752193}
+  m_GameObject: {fileID: 563458585}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c903fc982e72aa046a9cd965914da158, type: 3}
@@ -940,11 +956,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   scraps: 0
-  gold: 0
+  gold: 32
   food: 0
+  goldInGame: 0
   scrapsIcon: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
   goldIcon: {fileID: 21300000, guid: 0d93693b79a040f45afb3225a1f0b8a6, type: 3}
   foodIcon: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}
+--- !u!4 &563458587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563458585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1009.2764, y: 549.08655, z: -23.965998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &590966989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1131545589775040802, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
@@ -3149,3 +3181,4 @@ SceneRoots:
   - {fileID: 465076423}
   - {fileID: 1602941389}
   - {fileID: 1817574635}
+  - {fileID: 563458587}
