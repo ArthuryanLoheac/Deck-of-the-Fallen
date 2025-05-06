@@ -24,13 +24,10 @@ public class BoosterManager : MonoBehaviour
     {
         //Random Carte
         CardStats cardDraw = lst[Random.Range(0, lst.Count)];
-        if (AddCardToHand) {
-            //Ajoute carte a la main
+        if (AddCardToHand)
             CardsManager.instance.AddCard(cardDraw);
-        } else {
-            //Ajoute dans le deck
-            DeckCardsManager.instance.AllCards.Add(cardDraw);
-        }
+
+        DeckCardsManager.instance.AllCards.Add(cardDraw);
         return cardDraw;
     }
 
