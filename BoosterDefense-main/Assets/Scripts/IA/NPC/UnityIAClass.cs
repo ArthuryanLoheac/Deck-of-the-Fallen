@@ -111,7 +111,7 @@ public class UniteIAClass : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, Ground)) {
                 agent.SetDestination(hit.point);
-                isPriorityMovement = Input.GetKey(KeyCode.LeftShift);
+                isPriorityMovement = true;
                 positionPriorityMovement = hit.point;
                 target =  null;
             }
