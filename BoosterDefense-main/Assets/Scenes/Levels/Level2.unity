@@ -7596,6 +7596,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: 18d1df7ff23541344a4de1a82bce34c4, type: 2}
+  - {fileID: 11400000, guid: df99c05476b51bf4b88252e699e10297, type: 2}
   cardsUsed: []
   StartHand:
   - {fileID: 11400000, guid: 4492136d4bcea5e4688f077614a255ee, type: 2}
