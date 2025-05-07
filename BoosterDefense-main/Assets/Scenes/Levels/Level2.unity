@@ -6702,8 +6702,9 @@ MonoBehaviour:
   - 120
   - 110
   - 90
-  IsMarchandAfter: 010100
-  IsBoss: 000000
+  - 60
+  IsMarchandAfter: 01010000
+  IsBoss: 00000000
   isWinCalled: 0
   posUIs:
   - {fileID: 1573961854}
@@ -7240,6 +7241,7 @@ MonoBehaviour:
   scraps: 230
   gold: 0
   food: 0
+  goldInGame: 0
   scrapsIcon: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
   goldIcon: {fileID: 21300000, guid: 0d93693b79a040f45afb3225a1f0b8a6, type: 3}
   foodIcon: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}
@@ -8171,7 +8173,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.data[0].oneEnemyWaves.Array.size
@@ -8187,7 +8189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.data[3].oneEnemyWaves.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2457409483545730386, guid: e55be623e86e4d647bde1b97e3b83242, type: 3}
       propertyPath: enemyWaves.Array.data[4].oneEnemyWaves.Array.size

@@ -14,7 +14,6 @@ public class DeckCardsManager : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log(instance == null);
         if (!instance)
             instance = this;
         else

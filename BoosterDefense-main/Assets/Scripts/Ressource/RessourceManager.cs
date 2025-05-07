@@ -30,13 +30,10 @@ public class RessourceManager : MonoBehaviour
     }
 
     public void EndGame() {
-        Debug.Log("EndGame");
         gold += goldInGame;
         ClearRessources();
-        Debug.Log(gold);
     }
     public void ClearRessources() {
-        Debug.Log("- ClearRessources");
         goldInGame = 0;
         scraps = 0;
         food = 0;

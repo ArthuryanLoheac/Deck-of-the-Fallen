@@ -62,7 +62,7 @@ public class UniteIAClass : MonoBehaviour
     void OnDestroy()
     {
         CapacitiesOnDeath();
-    }    
+    }
     private void FindPathTimer()
     {
         if (Time.time > nextTimeFindPath) {
