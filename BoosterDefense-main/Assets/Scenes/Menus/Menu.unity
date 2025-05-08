@@ -798,12 +798,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - SceneName: Level1
-    NameLevel: Complexe 47
+    NameLevel: Complex 47
     isDeblocked: 1
     stars: -1
     SceneNameDeblock: Level2
   - SceneName: Level2
-    NameLevel: Hangar Omega
+    NameLevel: Omega Hangar
     isDeblocked: 0
     stars: -1
     SceneNameDeblock: 
@@ -2096,9 +2096,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
   - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
   - {fileID: 11400000, guid: 98fa97c75ca71124fb4139c180ad1fa3, type: 2}
-  - {fileID: 11400000, guid: 2749b0238c7d3fa41b3c64ad1f5b02ef, type: 2}
-  - {fileID: 11400000, guid: 2749b0238c7d3fa41b3c64ad1f5b02ef, type: 2}
-  - {fileID: 11400000, guid: 2749b0238c7d3fa41b3c64ad1f5b02ef, type: 2}
   - {fileID: 11400000, guid: b1eb1afbddb0be94ca4c564e1beac245, type: 2}
   - {fileID: 11400000, guid: b1eb1afbddb0be94ca4c564e1beac245, type: 2}
   - {fileID: 11400000, guid: bbe6dbcb3fe256845a5281c582ac28d8, type: 2}
@@ -2143,8 +2140,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e4c731d2bf2b3a4caf9ff31f645322f, type: 2}
   - {fileID: 11400000, guid: 7ff755c39d4f4bb45915c727498199c8, type: 2}
   - {fileID: 11400000, guid: bbe6dbcb3fe256845a5281c582ac28d8, type: 2}
-  - {fileID: 11400000, guid: 779a59fa18a62c64d85ea3f210f0d3bf, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: afff6284fbb6401469572384a93a3eea, type: 2}
   nbCardMin: 20
 --- !u!1 &1862948742
 GameObject:

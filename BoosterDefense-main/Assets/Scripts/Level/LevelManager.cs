@@ -41,6 +41,11 @@ public class LevelManager : MonoBehaviour
         return null;
     }
 
+    public level GetActualLevel()
+    {
+        return GetLevel(SceneManager.GetActiveScene().name);
+    }
+
     public void SetStars(int stars)
     {
         GetLevel(SceneManager.GetActiveScene().name).stars = stars;
