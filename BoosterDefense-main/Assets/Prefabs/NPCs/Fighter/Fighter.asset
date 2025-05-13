@@ -15,7 +15,7 @@ MonoBehaviour:
   tagTarget:
   - tags:
     - Enemy
-    collect: 3
+    collect: 1
   coolDowncollect:
   - 2
   rangecollect: 2
@@ -24,3 +24,4 @@ MonoBehaviour:
   hp: 15
   coinsDropped: 0
   soundDeath: DeathNPC_H
+  soundSpawn: 

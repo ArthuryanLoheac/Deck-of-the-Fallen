@@ -16,5 +16,5 @@ MonoBehaviour:
   range: 10
   cooldown: 3
   typeBuffs: 1
-  damageBuffs: 2
+  damageBuffs: 1
   timeEffect: 2
