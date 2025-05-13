@@ -20,9 +20,9 @@ MonoBehaviour:
   CanBeSold: 1
   ValueSold: 0
   SoldType: 3
-  addToCardUsed: 1
+  addToCardUsed: 0
   description: Moves toward debris and collects scrap when close enough.<br>Collect
-    scraps (0.5 / sec). Short detection radius.
+    scraps (0.5 / sec). Short detection radius. (Destroy after use)
   story: "He sees treasure in the wreckage, though he\u2019s yet to learn the cost."
   sizeFont: 7
   type: 0

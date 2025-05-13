@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f511af37864c84787aafdc4f2190d2, type: 3}
-  m_Name: CardLittleScrap
+  m_Name: CardScrapLittle
   m_EditorClassIdentifier: 
   name: Bolts
   image: {fileID: 21300000, guid: 4d5ced1b191ec0442bb8c2e9ac2c715b, type: 3}

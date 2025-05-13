@@ -24,7 +24,8 @@ MonoBehaviour:
   - 1
   range: 3
   speed: 2
-  hp: 10
+  hp: 3
   coinsDropped: 2
   zone: 3
   soundDeath: DeathMob
+  soundSpawn: 

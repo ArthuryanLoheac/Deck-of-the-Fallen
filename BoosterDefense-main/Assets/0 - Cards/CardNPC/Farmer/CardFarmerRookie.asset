@@ -22,7 +22,7 @@ MonoBehaviour:
   SoldType: 3
   addToCardUsed: 0
   description: Tracks nearby animals and collects food when in range.<br>Collect
-    food (0.5 / sec). Short detection radius.
+    food (0.5 / sec). Short detection radius. (Destroy after use)
   story: When the sky first turned gray, he planted hope where fear had taken root.
   sizeFont: 7
   type: 0

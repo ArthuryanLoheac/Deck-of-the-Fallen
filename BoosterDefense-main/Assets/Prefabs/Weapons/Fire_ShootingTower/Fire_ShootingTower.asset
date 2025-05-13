@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b731e6837f6039e45b725695985e0ce9, type: 3}
   m_Name: Fire_ShootingTower
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
   range: 10
   cooldown: 3
   typeBuffs: 1
