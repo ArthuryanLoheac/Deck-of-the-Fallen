@@ -6,13 +6,16 @@ using UnityEngine.UI;
 [System.Serializable]	
 public class Sound {
     public string name;
+    [Range(0.0f, 1.0f)]
+    public float volumeDiff = 0.5f;
     public AudioClip clip;
 }
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    private AudioSource audioSource;
+    private AudioSource audioSourceMusic;
+    private AudioSource audioSourceSound;
     public Sound[] musics;
     public Sound[] sounds;
     private string currentMusic;
@@ -33,9 +36,12 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSourceMusic = gameObject.AddComponent<AudioSource>();
+        audioSourceSound = gameObject.AddComponent<AudioSource>();
         volumeMusic = PlayerPrefs.GetFloat("VolumeMusic", .5f);
         volumeSound = PlayerPrefs.GetFloat("VolumeSound", .5f);
+        audioSourceMusic.volume = volumeMusic;
+        audioSourceSound.volume = volumeSound;
         PlayMusic("StartMenu", true); 
     }
 
@@ -45,16 +51,15 @@ public class SoundManager : MonoBehaviour
 
     public void SetVolumeMusic(Slider slider)
     {
-        this.volumeMusic = slider.value;
-        if (audioSource.isPlaying) {
-            audioSource.volume = volumeMusic;
-        }
+        volumeMusic = slider.value;
+        audioSourceMusic.volume = volumeMusic;
         PlayerPrefs.SetFloat("VolumeMusic", volumeMusic);
         PlayerPrefs.Save();
     }
     public void SetVolumeSound(Slider slider)
     {
-        this.volumeSound = slider.value;
+        volumeSound = slider.value;
+        audioSourceSound.volume = volumeSound;
         PlayerPrefs.SetFloat("VolumeSound", volumeSound);
         PlayerPrefs.Save();
     }
@@ -62,9 +67,10 @@ public class SoundManager : MonoBehaviour
     public void PlaySound(string soundName)
     {
         Sound sound = System.Array.Find(sounds, s => s.name == soundName);
+        audioSourceSound.volume = volumeSound;
 
         if (sound != null && sound.clip != null)
-            audioSource.PlayOneShot(sound.clip, volumeSound);
+            audioSourceSound.PlayOneShot(sound.clip, sound.volumeDiff);
     }
 
     public void PlayMusic(string musicName, bool loop = false)
@@ -73,11 +79,11 @@ public class SoundManager : MonoBehaviour
 
         if (music != null && currentMusic != musicName) {
             currentMusic = musicName;
-            audioSource.Stop();
-            audioSource.clip = music.clip;
-            audioSource.volume = volumeMusic;
-            audioSource.loop = loop;
-            audioSource.Play();
+            audioSourceMusic.Stop();
+            audioSourceMusic.clip = music.clip;
+            audioSourceMusic.volume = volumeMusic;
+            audioSourceMusic.loop = loop;
+            audioSourceMusic.Play();
         }
     }
 }
