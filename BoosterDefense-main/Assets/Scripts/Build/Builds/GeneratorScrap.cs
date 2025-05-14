@@ -32,10 +32,17 @@ public class GeneratorScrap : MonoBehaviour
     private Vector3 GetRandomPos()
     {
         float dist = Random.Range(2f, range);
-        Vector3 vec = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
-        while(Physics.Raycast(transform.position, vec, dist + 0.5f)) {
-            vec = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        Vector3 vec = new Vector3(Random.Range(-1f, 1f), 0.2f, Random.Range(-1f, 1f)).normalized;
+        Vector3 pos = transform.position;
+        pos.y = 0.2f;
+        while(Physics.Raycast(pos, vec, dist + 0.5f)) {
+            vec = new Vector3(Random.Range(-1f, 1f), 0.2f, Random.Range(-1f, 1f)).normalized;
+            dist = Random.Range(2f, range);
         }
+        Debug.Log("DRAWWWW");
+        Debug.DrawRay(pos, vec * (dist + 0.5f), Color.red, 10f);
+        vec.y = 0;
+        vec.Normalize();
         return vec * dist;
     }
 

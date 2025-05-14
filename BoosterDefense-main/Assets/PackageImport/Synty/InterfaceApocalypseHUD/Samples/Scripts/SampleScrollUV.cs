@@ -10,7 +10,7 @@ public class SampleScrollUV : MonoBehaviour
     public Vector2 speed = new Vector2(1, 0);
     public Vector2 size = new Vector2(256, 256);
 
-    private void Awake()
+    void Awake()
     {
         if (rawImage == null)
         {

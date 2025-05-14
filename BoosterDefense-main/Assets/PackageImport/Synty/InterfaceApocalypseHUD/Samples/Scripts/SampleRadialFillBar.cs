@@ -32,7 +32,7 @@ namespace Synty.Interface.Samples
 
         public string LabelText => string.Format(labelText, (image.fillAmount / fillAmountFull * 100f).ToString("0"));
 
-        private void Awake()
+        void Awake()
         {
             if (image == null)
             {

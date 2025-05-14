@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Scrapper Expert
   image: {fileID: 21300000, guid: 8afb8f1ac571c4e4ea8425d746ea8134, type: 3}
   price: 30
-  priceRessource: 2
+  priceRessource: 3
   ghostToSpawn: {fileID: 2395485346363015865, guid: e35a4e0c4b2496c4780c2d014dff723b, type: 3}
   CanBeSold: 1
   ValueSold: 10
-  SoldType: 2
+  SoldType: 3
   addToCardUsed: 1
   description: Moves toward debris and collects scrap when close enough.<br>Collect
     scraps (1.25 / sec). Wide detection radius.

@@ -23,7 +23,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
             }
         }
 
-        private void Awake()
+        void Awake()
         {
             slider = GetComponent<BoxSlider>();
             image = GetComponent<RawImage>();

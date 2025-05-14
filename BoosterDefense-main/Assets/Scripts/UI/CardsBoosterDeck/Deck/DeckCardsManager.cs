@@ -12,7 +12,7 @@ public class DeckCardsManager : MonoBehaviour
     public List<CardStats> StartHand;
     public int nbCardMin;
 
-    private void Awake()
+    void Awake()
     {
         if (!instance)
             instance = this;

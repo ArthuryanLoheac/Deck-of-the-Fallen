@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public enum RessourceType
 {
     gold,
+    goldInGame,
     scraps,
     food,
 }
@@ -15,7 +16,7 @@ public class RessourceManager : MonoBehaviour
     public static RessourceManager instance;
     public LayerMask ressourceLayer;
     public LayerMask AllLayer;
-    public int scraps = 0, gold = 1, food = 2;
+    public int scraps = 0, gold = 0, food = 0, goldInGame = 0;
 
     public Sprite scrapsIcon, goldIcon, foodIcon;
 
@@ -25,6 +26,17 @@ public class RessourceManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void EndGame() {
+        gold += goldInGame;
+        ClearRessources();
+    }
+    public void ClearRessources() {
+        goldInGame = 0;
+        scraps = 0;
+        food = 0;
     }
 
     public int GetRessourceAmount(RessourceType nameRessource)
@@ -33,6 +45,8 @@ public class RessourceManager : MonoBehaviour
             return scraps;
         } else if (nameRessource == RessourceType.gold) {
             return gold;
+        } else if (nameRessource == RessourceType.goldInGame) {
+            return goldInGame;
         } else if (nameRessource == RessourceType.food) {
             return food;
         }
@@ -43,6 +57,8 @@ public class RessourceManager : MonoBehaviour
     {
         if (nameRessource == RessourceType.scraps) {
             return scrapsIcon;
+        } else if (nameRessource == RessourceType.goldInGame) {
+            return goldIcon;
         } else if (nameRessource == RessourceType.gold) {
             return goldIcon;
         } else if (nameRessource == RessourceType.food) {
@@ -59,6 +75,8 @@ public class RessourceManager : MonoBehaviour
             gold += amount;
         } else if (nameRessource == RessourceType.food) {
             food += amount;
+        } else if (nameRessource == RessourceType.goldInGame) {
+            goldInGame += amount;
         }
     }
 }

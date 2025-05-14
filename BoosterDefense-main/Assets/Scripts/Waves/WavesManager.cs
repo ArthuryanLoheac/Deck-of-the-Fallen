@@ -15,25 +15,27 @@ public enum typeIconWaves{
 public class WavesManager : MonoBehaviour
 {
     public static WavesManager instance;
-    public Button button;
-    public bool isDrawCardResetCalled;
-    private GameObject[] Spawners;
-    public int maxWave;
-    public int waveActual;
-    public int lastWaveCompleted = 0;
-    private GameObject spawnerMax;
-    private List<float> timeMaxStartingWave;
+    [Header("PARAMETERS")]
     public float[] timeAfterStartingWave;
     public bool[] IsMarchandAfter;
     public bool[] IsBoss;
-    public bool isWinCalled = false;
+    [HideInInspector]public bool isDrawCardResetCalled;
+    private GameObject[] Spawners;
+    [HideInInspector]public int maxWave;
+    [HideInInspector]public int waveActual;
+    [HideInInspector]public int lastWaveCompleted = 0;
+    private GameObject spawnerMax;
+    private List<float> timeMaxStartingWave;
+    [HideInInspector]public bool isWinCalled = false;
 
     private bool isInWave = false;
     private float startTimeWave = 0;
 
     [Header("UIS")]
+    public Button button;
     public List<GameObject> posUIs = new List<GameObject>();
     public List<GameObject> lines = new List<GameObject>();
+    [Header("UI Prefabs")]
     public GameObject boosterPrefab;
     public GameObject normalPrefab;
     public GameObject bossPrefab;

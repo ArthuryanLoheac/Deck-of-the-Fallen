@@ -16,8 +16,10 @@ public class DrawCardsButton : MonoBehaviour
     public void ResetDrawTime()
     {
         drawTime = drawTimeMax;
-        for (int i = 0; i < drawTime; i++) {
-            DeckManager.instance.DrawAndSpawnCardValue();
+        if (WavesManager.instance.waveActual != 0) { // Dont draw on the first round
+            for (int i = 0; i < drawTime; i++) {
+                DeckManager.instance.DrawAndSpawnCardValue();
+            }
         }
         drawTime = 0;
     }

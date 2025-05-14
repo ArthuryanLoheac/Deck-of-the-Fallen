@@ -129,7 +129,7 @@ namespace UnityEngine.UI.Extensions
             set { _onTextValueChanged = value; }
         }
 
-        private void Awake()
+        void Awake()
         {
             if (LerpCurve != null && LerpCurve.length > 0)
             {

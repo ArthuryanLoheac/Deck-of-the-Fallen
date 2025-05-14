@@ -9,14 +9,21 @@ public class IAAttackMonster : UniteIAClass
     private float nextTimeAttack;
     private float coolDownAttack;
 
-    
+    IEnumerator delayCapacity(GameObject target, float animDuration)
+    {
+        yield return new WaitForSeconds(animDuration);
+        if (target != null && !GetComponent<Life>().isDead){
+            target.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(target)].collect);
+            SoundManager.instance.PlaySound("NpcAttackAxe");
+        }
+    }
+
     public void Attack(GameObject targetAttack)
     {
         if (Time.time > nextTimeAttack) {
             nextTimeAttack = Time.time + ComputeSpeed(coolDownAttack, false);
-            targetAttack.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(targetAttack)].collect);
+            StartCoroutine(delayCapacity(targetAttack, mYstats.getDelay("Attack")));
             animator.Play("Attack");
-            SoundManager.instance.PlaySound("NpcAttackAxe");
         }
     }
     public override void CapacitiesOnRange(GameObject targetAttack)

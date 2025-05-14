@@ -177,7 +177,7 @@ namespace UnityEngine.UI.Extensions
         #endregion
 
         #region Setup
-        private void Awake()
+        void Awake()
         {
             scrollRect = GetComponent<ScrollRect>();
             scrollRectTransform = (RectTransform) scrollRect.transform;

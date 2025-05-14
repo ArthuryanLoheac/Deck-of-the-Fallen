@@ -10,13 +10,20 @@ public class Enemy : EnemyIAClass
     private float nextTimeAttack;
     private float coolDownAttack;
 
+    IEnumerator delayCapacity(GameObject target, float animDuration)
+    {
+        yield return new WaitForSeconds(animDuration);
+        if (target != null && !GetComponent<Life>().isDead) {
+            SoundManager.instance.PlaySound("ZombieAttackSimple");
+            target.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(target)].damage);
+        }
+    }
     public void Attack(GameObject targetAttack)
     {
         if (Time.time > nextTimeAttack) {
             nextTimeAttack = Time.time + ComputeSpeed(coolDownAttack, false);
-            targetAttack.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(targetAttack)].damage);
+            StartCoroutine(delayCapacity(targetAttack, mYstats.getDelay("Attack")));
             animator.Play("Attack");
-            SoundManager.instance.PlaySound("ZombieAttackSimple");
         }
     }
     public override void CapacitiesOnRange(GameObject targetAttack)

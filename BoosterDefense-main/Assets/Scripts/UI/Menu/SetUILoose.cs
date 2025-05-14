@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SetUILoose : MonoBehaviour
 {
-    public GameObject textWaves;
+    public TMP_Text textWaves;
+    public TMP_Text textLevel;
     public GameObject Etoiles1;
     public GameObject Etoiles2;
     public GameObject Etoiles3;
@@ -28,6 +30,7 @@ public class SetUILoose : MonoBehaviour
         int max = WavesManager.instance.maxWave;
 
         textWaves.GetComponent<TMP_Text>().text = actual.ToString() + "/" + max.ToString();
+        textLevel.text = LevelManager.instance.GetActualLevel().NameLevel;
 
         if (stars < 4) {
             if (stars >= 1)

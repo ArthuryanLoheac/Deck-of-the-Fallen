@@ -25,7 +25,11 @@ MonoBehaviour:
   - 1
   range: 3
   speed: 3
-  hp: 10
+  hp: 5
   coinsDropped: 2
   zone: 3
   soundDeath: DeathMob
+  soundSpawn: 
+  syncWithAnimationDelay:
+  - animation: Attack
+    delay: 0.43

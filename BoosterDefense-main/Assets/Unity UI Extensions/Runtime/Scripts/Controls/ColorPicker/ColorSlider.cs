@@ -20,7 +20,7 @@ namespace UnityEngine.UI.Extensions.ColorPicker
 
         private bool listen = true;
 
-        private void Awake()
+        void Awake()
         {
             slider = GetComponent<Slider>();
 

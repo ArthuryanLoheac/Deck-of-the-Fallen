@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 5
-  typeRessource: 2
+  typeRessource: 3
   CollectedRessourcePopup: {fileID: 1701203980560767050, guid: 9481b55468067cd408ba859aa8d02343, type: 3}
 --- !u!114 &7691732585810095643
 MonoBehaviour:
@@ -704,7 +704,6 @@ MonoBehaviour:
   timeMinMaxWait: {x: 1, y: 3}
   speed: 2
   distanceMaxNewPos: 7
-  soundSpawn: SpawnSquirrel
 --- !u!54 &4671171810282549583
 Rigidbody:
   m_ObjectHideFlags: 0

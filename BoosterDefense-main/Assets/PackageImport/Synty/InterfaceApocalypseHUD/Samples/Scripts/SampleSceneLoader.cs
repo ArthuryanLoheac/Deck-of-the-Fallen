@@ -31,7 +31,7 @@ namespace Synty.Interface.Samples
         private List<RectTransform> contentList = new List<RectTransform>();
         private RectTransform currentContent;
 
-        private void Awake()
+        void Awake()
         {
             contentList = contentParent.GetComponentsInChildren<RectTransform>(true)
                 .Where(screen => screen.parent == contentParent)

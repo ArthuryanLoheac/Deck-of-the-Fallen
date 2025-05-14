@@ -9,12 +9,20 @@ public class IACollectRessources : UniteIAClass
     private float nextTimeAttack;
     private float coolDownAttack;
     
+    IEnumerator delayCapacity(GameObject target, float animDuration)
+    {
+        yield return new WaitForSeconds(animDuration);
+        if (target != null && !GetComponent<Life>().isDead){
+            target.GetComponent<Ressource>().collectRessource(stats.tagTarget[getIdPriorityTarget(target)].collect, gameObject);
+        }
+    }
+
     public void Collect(GameObject target)
     {
         if (Time.time > nextTimeAttack) {
-            nextTimeAttack = Time.time + ComputeSpeed(stats.coolDowncollect[0], false);
-            target.GetComponent<Ressource>().collectRessource(stats.tagTarget[getIdPriorityTarget(target)].collect, gameObject);
             animator.Play("Attack");
+            StartCoroutine(delayCapacity(target, mYstats.getDelay("Attack")));
+            nextTimeAttack = Time.time + ComputeSpeed(stats.coolDowncollect[0], false);
         }
     }
     public override void CapacitiesOnRange(GameObject target)

@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
-  typeRessource: 1
-  statsBar: {fileID: 8749365430953877397, guid: 72ee53b5c77ab994bb94c3e575c07b84, type: 3}
+  typeRessource: 2
   CollectedRessourcePopup: {fileID: 1701203980560767050, guid: 9481b55468067cd408ba859aa8d02343, type: 3}
 --- !u!65 &5036927618059304599
 BoxCollider:
@@ -117,7 +116,6 @@ MonoBehaviour:
   hp: 20
   isDead: 0
   hpMax: 0
-  HPBarprefabs: {fileID: 8749365430953877397, guid: 72ee53b5c77ab994bb94c3e575c07b84, type: 3}
   coinsDropped: 0
   DamagePopUp: {fileID: 1701203980560767050, guid: a86448216c2eaa6469a0551b56a1e553, type: 3}
 --- !u!208 &7962103425230030437

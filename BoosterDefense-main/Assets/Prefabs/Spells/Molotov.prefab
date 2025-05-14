@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RangeExplosion: 4
   timeEffect: 4
-  Damage: 3
+  Damage: 1
   FireFx: {fileID: 1392961458021664, guid: 7c2d45330a7b1894ca1aacb0ebd30599, type: 3}

@@ -9,11 +9,19 @@ public class IAReparatorBuildings : UniteIAClass
     private float nextTimeAttack;
     private float coolDownAttack;
     
+    IEnumerator delayCapacity(GameObject target, float animDuration)
+    {
+        yield return new WaitForSeconds(animDuration);
+        if (target != null && !GetComponent<Life>().isDead){
+            target.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(target)].collect, TypeDamage.Heal);
+        }
+    }
+
     public void Reparator(GameObject target)
     {
         if (Time.time > nextTimeAttack) {
             nextTimeAttack = Time.time + stats.coolDowncollect[0];
-            target.GetComponent<Life>().TakeDamage(stats.tagTarget[getIdPriorityTarget(target)].collect, TypeDamage.Heal);
+            StartCoroutine(delayCapacity(target, mYstats.getDelay("Attack")));
             animator.Play("Attack");
         }
     }

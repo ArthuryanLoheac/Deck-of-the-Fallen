@@ -52,8 +52,8 @@ public class UniteIAClass : MonoBehaviour
                 }
             }
             animator.SetFloat("Speed", SmoothValue(agent.desiredVelocity.sqrMagnitude));
-            animator.SetFloat("SpeedAttack",  ComputeSpeed(1));
-                CheckClickAndMove();
+            animator.SetFloat("SpeedAttack", ComputeSpeed(1));
+            CheckClickAndMove();
         }
     }
     #endregion  Update
@@ -62,7 +62,7 @@ public class UniteIAClass : MonoBehaviour
     void OnDestroy()
     {
         CapacitiesOnDeath();
-    }    
+    }
     private void FindPathTimer()
     {
         if (Time.time > nextTimeFindPath) {
@@ -111,7 +111,7 @@ public class UniteIAClass : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, Ground)) {
                 agent.SetDestination(hit.point);
-                isPriorityMovement = Input.GetKey(KeyCode.LeftShift);
+                isPriorityMovement = true;
                 positionPriorityMovement = hit.point;
                 target =  null;
             }

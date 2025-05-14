@@ -139,7 +139,7 @@ public class placementInGrid : MonoBehaviour
     {
         if (posableInHitBoxes)
             isPosabled = true;
-        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.goldInGame))
             isPosabled = false;
     }
 
@@ -147,7 +147,7 @@ public class placementInGrid : MonoBehaviour
     {
         if (posableInHitBoxes)
             isPosabled = true;
-        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.goldInGame))
             isPosabled = false;
     }
 
@@ -155,7 +155,7 @@ public class placementInGrid : MonoBehaviour
     {
         if (posableInHitBoxes)
             isPosabled = true;
-        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.gold))
+        else if (!(other.GetComponent<Ressource>() && other.GetComponent<Ressource>().typeRessource == RessourceType.goldInGame))
             isPosabled = true;
     }
 }

@@ -88,6 +88,7 @@ public class LevelButton : MonoBehaviour
     public void LoadSceneLevel()
     {
         if (LevelManager.instance.levels[levelId].isDeblocked) {
+            RessourceManager.instance.ClearRessources();
             SceneManager.LoadScene(LevelManager.instance.levels[levelId].SceneName);
         }
     }

@@ -71,7 +71,7 @@ public class Life : MonoBehaviour
             SoundManager.instance.PlaySound(GetComponent<Enemy>().stats.soundDeath);
         if (GetComponent<EnemyKamikaze>())
             SoundManager.instance.PlaySound(GetComponent<EnemyKamikaze>().stats.soundDeath);
-    
+
         this.transform.GetChild(0).GetComponent<Animator>().SetBool("Dead", true);
         this.GetComponent<NavMeshAgent>().enabled = false;
         Destroy(gameObject, 1.39f);
@@ -80,13 +80,12 @@ public class Life : MonoBehaviour
     private void Death()
     {
         isDead = true;
-        RessourceManager.instance.AddRessource(RessourceType.gold, coinsDropped);
+        RessourceManager.instance.AddRessource(RessourceType.goldInGame, coinsDropped);
         
         if (GetComponent<Base>() != null)
             GameManager.instance.Defeat();
 
         GetComponent<BuffsAndDebuffs>().ResetBuffs();
-        
 
         if (GetComponent<IACollectRessources>() || GetComponent<IAAttackMonster>() || GetComponent<IAReparatorBuildings>())
             DeathAlly();
@@ -94,7 +93,6 @@ public class Life : MonoBehaviour
             DeathEnnemy();
         else 
             Destroy(gameObject);
-
         UpdateHealthBar();
     }
     // Update is called once per frame

@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     public level[] levels;
 
-    private void Awake()
+    void Awake()
     {
         if (!instance)
             instance = this;
@@ -39,6 +39,11 @@ public class LevelManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public level GetActualLevel()
+    {
+        return GetLevel(SceneManager.GetActiveScene().name);
     }
 
     public void SetStars(int stars)

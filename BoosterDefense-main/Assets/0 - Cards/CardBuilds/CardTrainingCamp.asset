@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Training camp
   image: {fileID: 21300000, guid: a66dfd9be19ee3a4081f6e0cc074755f, type: 3}
   price: 75
-  priceRessource: 1
+  priceRessource: 2
   ghostToSpawn: {fileID: 5070826136400796597, guid: 66e3a1c773dba604fa3d0b16d384bcfe, type: 3}
   CanBeSold: 1
   ValueSold: 20
-  SoldType: 1
+  SoldType: 2
   addToCardUsed: 1
   description: Trains fighters over time to join the battle.<br>Creates one fighter
     every 10 seconds (up to 3 active).
