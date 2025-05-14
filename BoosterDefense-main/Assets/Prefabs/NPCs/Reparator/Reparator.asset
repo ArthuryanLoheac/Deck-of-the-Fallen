@@ -25,3 +25,7 @@ MonoBehaviour:
   hp: 10
   coinsDropped: 0
   soundDeath: DeathNPC_F
+  soundSpawn: 
+  syncWithAnimationDelay:
+  - animation: Attack
+    delay: 0.43

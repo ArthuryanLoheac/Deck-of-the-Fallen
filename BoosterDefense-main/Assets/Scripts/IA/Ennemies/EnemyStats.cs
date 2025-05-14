@@ -10,6 +10,13 @@ public class listTarget {
     public float damage;
 }
 
+[Serializable]
+public class AnimationsDelayEnemy {
+    public string animation;
+    public float delay;
+}
+
+
 [CreateAssetMenu(fileName = "New EnemyStats", menuName = "Enemy")]
 public class EnemyStats : ScriptableObject
 {
@@ -23,4 +30,16 @@ public class EnemyStats : ScriptableObject
     public float zone;
     public string soundDeath;
     public string soundSpawn;
+    [Tooltip("Durée à attendre (en secondes) avant de collecter la ressource, afin de synchroniser avec l'animation.")]
+    public AnimationsDelayEnemy[] syncWithAnimationDelay;
+
+    public float getDelay(string anim)
+    {
+        foreach (AnimationsDelayEnemy ad in syncWithAnimationDelay) {
+            if (ad.animation == anim) {
+                return ad.delay;
+            }
+        }
+        return 0;
+    }
 }

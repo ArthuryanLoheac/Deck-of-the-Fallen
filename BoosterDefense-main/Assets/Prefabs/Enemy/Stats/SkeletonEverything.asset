@@ -31,3 +31,6 @@ MonoBehaviour:
   zone: 3
   soundDeath: DeathMob
   soundSpawn: 
+  syncWithAnimationDelay:
+  - animation: Attack
+    delay: 0.43

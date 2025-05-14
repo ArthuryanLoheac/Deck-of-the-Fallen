@@ -14,13 +14,11 @@ public class EnemyKamikaze : EnemyIAClass
     private float nextTimeAttack;
     private float coolDownAttack;
 
-    public void Explode()
+    IEnumerator delayCapacityExplode(float animDuration)
     {
-        SoundManager.instance.PlaySound("KamikazeBoom");
-        if (Time.time > nextTimeAttack) {
-            mYstats.soundDeath = "";
-            animator.Play("Attack");
-            SoundManager.instance.PlaySound("ZombieAttackSimple");
+        yield return new WaitForSeconds(animDuration);
+        if (!GetComponent<Life>().isDead) {
+            SoundManager.instance.PlaySound("KamikazeBoom");
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, RadiusExplode);
             foreach(Collider col in hitColliders) {
                 if (col.gameObject.GetComponent<Life>() && col.gameObject.tag != "Enemy")
@@ -28,6 +26,15 @@ public class EnemyKamikaze : EnemyIAClass
             }
             Instantiate(Explosion, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
+    }
+
+    public void Explode()
+    {
+        if (Time.time > nextTimeAttack) {
+            mYstats.soundDeath = "";
+            animator.Play("Attack");
+            StartCoroutine(delayCapacityExplode(mYstats.getDelay("Attack")));
         }
     }
     public override void CapacitiesOnRange(GameObject targetAttack)

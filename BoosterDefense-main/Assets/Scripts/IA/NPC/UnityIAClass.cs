@@ -52,8 +52,8 @@ public class UniteIAClass : MonoBehaviour
                 }
             }
             animator.SetFloat("Speed", SmoothValue(agent.desiredVelocity.sqrMagnitude));
-            animator.SetFloat("SpeedAttack",  ComputeSpeed(1));
-                CheckClickAndMove();
+            animator.SetFloat("SpeedAttack", ComputeSpeed(1));
+            CheckClickAndMove();
         }
     }
     #endregion  Update
