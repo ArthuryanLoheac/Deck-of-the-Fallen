@@ -6429,7 +6429,7 @@ PrefabInstance:
       objectReference: {fileID: 1881733631}
     - target: {fileID: 1488469717191844017, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819164900104741775, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: drawTime
