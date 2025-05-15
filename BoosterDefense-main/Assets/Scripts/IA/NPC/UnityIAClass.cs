@@ -24,6 +24,8 @@ public class UniteIAClass : MonoBehaviour
     [HideInInspector]public float yVelocity = 0.0f;
     [HideInInspector]public float nextTimeFindPath;
 
+    private float timeNotMoving;
+
     #region Capacity
     public virtual void CapacitiesOnRange(GameObject targetAttack) {}
     public virtual void CapacitiesPassives() {}
@@ -123,8 +125,14 @@ public class UniteIAClass : MonoBehaviour
         animator.SetBool("Attack", false);
         UpdatePathPriority();
 
+        if (agent.velocity == Vector3.zero) {
+            timeNotMoving += Time.deltaTime;
+        } else {
+            timeNotMoving = 0;
+        }
         //Check is arrived
-        if (Vector3.Distance(positionPriorityMovement, transform.position) <= agent.stoppingDistance) {
+        if (Vector3.Distance(positionPriorityMovement, transform.position) <= agent.stoppingDistance
+            || timeNotMoving >= 1.0f) {
             isPriorityMovement = false;
             positionPriorityMovement = Vector3.zero;
             FindAndSetTarget();
