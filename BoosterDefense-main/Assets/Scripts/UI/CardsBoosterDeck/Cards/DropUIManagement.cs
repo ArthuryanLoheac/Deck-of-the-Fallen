@@ -7,7 +7,6 @@ public class DropUIManagement : MonoBehaviour
     public static DropUIManagement instance;
     public GameObject DropAll;
     public GameObject DropDeck;
-    public GameObject DropHand;
 
     void Awake()
     {
@@ -22,7 +21,6 @@ public class DropUIManagement : MonoBehaviour
     {
         DropAll.SetActive(false);
         DropDeck.SetActive(false);
-        DropHand.SetActive(false);
     }
 
     public void ActiveDrop(DeckEmplacement emplacement)
@@ -30,15 +28,9 @@ public class DropUIManagement : MonoBehaviour
         if (emplacement == DeckEmplacement.All) {
             DropAll.SetActive(false);
             DropDeck.SetActive(true);
-            DropHand.SetActive(true);
         } else if (emplacement == DeckEmplacement.Deck) {
             DropAll.SetActive(true);
             DropDeck.SetActive(false);
-            DropHand.SetActive(true);
-        } else if (emplacement == DeckEmplacement.Hand) {
-            DropAll.SetActive(true);
-            DropDeck.SetActive(true);
-            DropHand.SetActive(false);
         }
     }
 }

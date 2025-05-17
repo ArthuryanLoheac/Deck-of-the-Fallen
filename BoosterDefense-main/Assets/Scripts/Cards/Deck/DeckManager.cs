@@ -51,10 +51,6 @@ public class DeckManager : MonoBehaviour
         //Ajoute carte du deck dans le deck
         foreach (CardStats card in DeckCardsManager.instance.deck)
             cards.Add(card);
-        //Ajoute carte de la main dans le paquet de la main
-        foreach (CardStats card in DeckCardsManager.instance.StartHand)
-            StartHand.Add(card);
-
         ShuffleDeck();
     }
 
