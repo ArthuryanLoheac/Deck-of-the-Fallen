@@ -11,7 +11,6 @@ public class DeckManager : MonoBehaviour
     public Button drawButton;
     public List<CardStats> cards;
     public List<CardStats> cardsUsed;
-    public List<CardStats> StartHand;
 
     private void CheckSwapCardsUsedToCards()
     {
@@ -26,6 +25,14 @@ public class DeckManager : MonoBehaviour
     void Update()
     {
         CheckSwapCardsUsedToCards();
+    }
+    public void Reset()
+    {
+        cards.Clear();
+        cardsUsed.Clear();
+        foreach (CardStats card in DeckCardsManager.instance.deck)
+            cards.Add(card);
+        ShuffleDeck();
     }
 
     public void AddCardUsed(CardStats card)
@@ -88,11 +95,19 @@ public class DeckManager : MonoBehaviour
         cards.RemoveRange(0, nbCardDraw);
         return cardsDrawned;
     }
-
+    
+    
     public void DrawAndSpawnXCard(int x)
     {
         List<CardStats> list = DrawXCard(x);
-        foreach(CardStats card in list) {
+        foreach (CardStats card in list)
+        {
+            CardsManager.instance.AddCard(card);
+        }
+    }
+    public void SpawnCards(List<CardStats> cards)
+    {
+        foreach (CardStats card in cards) {
             CardsManager.instance.AddCard(card);
         }
     }
