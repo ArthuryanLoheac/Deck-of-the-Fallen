@@ -28,14 +28,6 @@ public class DeckManager : MonoBehaviour
         CheckSwapCardsUsedToCards();
     }
 
-    public void GiveCardStart()
-    {
-        //donne les cartes de la main dans la main
-        foreach(CardStats cardstat in StartHand) {
-            CardsManager.instance.AddCard(cardstat);
-        }
-    }
-
     public void AddCardUsed(CardStats card)
     {
         cardsUsed.Add(card);

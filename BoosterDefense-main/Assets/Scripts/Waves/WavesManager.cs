@@ -250,7 +250,7 @@ public class WavesManager : MonoBehaviour
             endWave();
         
         //Check Disable button next wave
-        if (!PlaceBase.instance.BasePlaced || !isValidToNextWave()) {
+        if (!PlaceBase.instance.BasePlaced || !isValidToNextWave() || MulliganManager.instance.isInMulligan) {
             TimerCoolDown.instance.UpdateCoolDown(false);
             button.interactable = false;
             isDrawCardResetCalled = false;
