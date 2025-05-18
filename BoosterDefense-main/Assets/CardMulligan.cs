@@ -2,30 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
-public class CardMulligan : MonoBehaviour
+public class CardMulligan : MonoBehaviour, IPointerClickHandler
 {
     public int id;
-    public GameObject button;
-    public TMP_Text txt_button;
     bool discard;
+    bool Destroyable;
+    Vector3 originalScale;
 
     public void Start()
     {
         ActiveDestroy(false);
         discard = true;
-        txt_button.text = discard ? "Discard" : "Keep";
+        originalScale = GetComponent<RectTransform>().localScale;
     }
 
     public void DestroyCard()
     {
-        discard = !discard;
-        txt_button.text = discard ? "Discard" : "Keep";
-        MulliganManager.instance.RemoveCard(id);
     }
 
     public void ActiveDestroy(bool active)
     {
-        button.SetActive(active);
+        Destroyable = active;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (Destroyable)
+        {
+            discard = !discard;
+            MulliganManager.instance.RemoveCard(id);
+        }
+    }
+
+    void Update()
+    {
+        float Scale = discard ? 1 : 0.8f;
+        GetComponent<RectTransform>().localScale = originalScale * Scale;
     }
 }

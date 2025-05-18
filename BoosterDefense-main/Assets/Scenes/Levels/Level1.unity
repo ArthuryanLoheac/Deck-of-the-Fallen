@@ -1905,7 +1905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.060455, y: -315.70468}
+  m_AnchoredPosition: {x: 0, y: -240}
   m_SizeDelta: {x: 222.4386, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632917102
@@ -3320,7 +3320,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 2
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3378,7 +3378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -306.68457}
+  m_AnchoredPosition: {x: 25.77181, y: -302.17447}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1133887941
@@ -5580,7 +5580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126.896545, y: -239.31032}
+  m_AnchoredPosition: {x: 150, y: -240}
   m_SizeDelta: {x: 222.4386, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867735637
@@ -6733,9 +6733,10 @@ MonoBehaviour:
   buttonTake: {fileID: 2119970214}
   buttonMulligan: {fileID: 1867735635}
   buttonDiscard: {fileID: 632917100}
+  BackGround: {fileID: 1930579014}
+  Title: {fileID: 543302799}
   TextButtonKeep: {fileID: 234425156}
   TextMulligan: {fileID: 1128797156}
-  TextTitle: {fileID: 543302800}
 --- !u!114 &2054712277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6896,7 +6897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153, y: -239.31032}
+  m_AnchoredPosition: {x: -150, y: -240}
   m_SizeDelta: {x: 222.4386, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119970217
