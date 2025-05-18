@@ -13,12 +13,22 @@ public class MulliganManager : MonoBehaviour
     public GameObject buttonTake;
     public GameObject buttonMulligan;
     public GameObject buttonDiscard;
-    public TMP_Text TextButtonMulligan;
+    public GameObject BackGround;
+    public GameObject Title;
+    public TMP_Text TextButtonKeep;
+    public TMP_Text TextMulligan;
     List<CardStats> cards = new List<CardStats>();
     List<int> cardsDiscarded = new List<int>();
     List<GameObject> cardsObj = new List<GameObject>();
     float widthCard = 0;
     int cardToRemove = 0;
+    int draw = 5;
+
+    void setDecoration(bool b)
+    {
+        BackGround.SetActive(b);
+        Title.SetActive(b);
+    }
 
     public void Awake()
     {
@@ -26,11 +36,14 @@ public class MulliganManager : MonoBehaviour
         buttonTake.SetActive(false);
         buttonMulligan.SetActive(false);
         buttonDiscard.SetActive(false);
+        TextMulligan.gameObject.SetActive(false);
+        setDecoration(false);
     }
 
     public void Start()
     {
         isInMulligan = false;
+        setText();
         widthCard = mulliganPrefabCard.GetComponent<RectTransform>().sizeDelta.x;
     }
 
@@ -48,21 +61,36 @@ public class MulliganManager : MonoBehaviour
         buttonTake.SetActive(false);
         buttonMulligan.SetActive(false);
         buttonDiscard.SetActive(false);
+
         if (cardToRemove == 0 || skipCheck == true)
         {
-            RemoveCardDiscarded();
-            isInMulligan = false;
-            DeckManager.instance.SpawnCards(cards);
-            ClearMulligan();
+            EndValidation();
         }
         else
         {
-            cardsDiscarded.Clear();
-            buttonDiscard.GetComponent<Button>().interactable =
-                cardsDiscarded.Count == cardToRemove;
-            buttonDiscard.SetActive(true);
-            ActiveDestroy(true);
+            switchToDiscard();
         }
+    }
+
+    void EndValidation()
+    {
+        RemoveCardDiscarded();
+        isInMulligan = false;
+        DeckManager.instance.SpawnCards(cards);
+        ClearMulligan();
+        setDecoration(false);
+        TextMulligan.gameObject.SetActive(false);
+    }
+
+    void switchToDiscard()
+    {
+        cardsDiscarded.Clear();
+        buttonDiscard.GetComponent<Button>().interactable =
+            cardsDiscarded.Count == cardToRemove;
+        buttonDiscard.SetActive(true);
+        TextMulligan.gameObject.SetActive(false);
+        Title.GetComponent<TMP_Text>().text = "DISCARD " + cardToRemove.ToString() + ((cardToRemove <= 1) ? " CARD" : " CARDS");
+        ActiveDestroy(true);
     }
 
     void ClearMulligan()
@@ -83,17 +111,25 @@ public class MulliganManager : MonoBehaviour
         Mulligan();
     }
 
+    void setText()
+    {
+        TextButtonKeep.text = "Take " + (draw - cardToRemove).ToString();
+        TextMulligan.text = "You will return " + (cardToRemove+1).ToString() + " card in your deck.";
+    }
+
     IEnumerator MulliganDraw()
     {
-        TextButtonMulligan.text = "Mulligan (-" + (cardToRemove + 1).ToString() + ")";
+        setText();
+        bool NotMaxCard = ((cardToRemove + 1) < draw);
 
-        int draw = 5;
         cards.Clear();
         cards = DeckManager.instance.DrawXCard(draw);
         buttonTake.SetActive(true);
         buttonMulligan.SetActive(true);
         buttonTake.GetComponent<Button>().interactable = false;
         buttonMulligan.GetComponent<Button>().interactable = false;
+        if (!NotMaxCard)
+            TextMulligan.gameObject.SetActive(false);
         for (int i = 0; i < draw; i++)
         {
             Vector3 pos = transform.position;
@@ -105,12 +141,14 @@ public class MulliganManager : MonoBehaviour
         }
         setIds();
         buttonTake.GetComponent<Button>().interactable = true;
-        if ((cardToRemove + 1) < draw)
+        if (NotMaxCard)
             buttonMulligan.GetComponent<Button>().interactable = true;
     }
 
     public void Mulligan()
     {
+        TextMulligan.gameObject.SetActive(true);
+        setDecoration(true);
         isInMulligan = true;
         StartCoroutine(MulliganDraw());
     }
