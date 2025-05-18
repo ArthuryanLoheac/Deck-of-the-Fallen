@@ -96,9 +96,9 @@ public class MulliganManager : MonoBehaviour
     void ClearMulligan()
     {
         foreach (GameObject obj in cardsObj)
-        {
             Destroy(obj);
-        }
+        foreach (int cardI in cardsDiscarded)
+            DeckManager.instance.AddCardDeckEnd(cards[cardI]);
         cardsObj.Clear();
         cards.Clear();
     }
@@ -133,7 +133,7 @@ public class MulliganManager : MonoBehaviour
         for (int i = 0; i < draw; i++)
         {
             Vector3 pos = transform.position;
-            pos.x += (i - (draw / 2)) * (widthCard * 1.5f);
+            pos.x += (i - (draw / 2)) * (widthCard * 1.75f);
             GameObject card = Instantiate(mulliganPrefabCard, pos, Quaternion.identity, transform);
             card.GetComponent<Card>().SetStats(cards[i]);
             cardsObj.Add(card);

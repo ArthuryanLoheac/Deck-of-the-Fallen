@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: -876546973899608171, guid: ad0e17ca7acab4240b3f19146f2ef92e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1817,8 +1817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  button: {fileID: 0}
-  txt_button: {fileID: 0}
+  discardShader: {fileID: -876546973899608171, guid: 1099282cac130a647b8aa7aebf5eb665, type: 3}
+  aplliedImg: {fileID: 5655472176293529300}
 --- !u!1 &9101769233615916128
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class CardMulligan : MonoBehaviour, IPointerClickHandler
 {
     public int id;
-    bool discard;
+    bool notDiscard;
     bool Destroyable;
     Vector3 originalScale;
 
     public void Start()
     {
         ActiveDestroy(false);
-        discard = true;
+        notDiscard = true;
         originalScale = GetComponent<RectTransform>().localScale;
     }
 
@@ -32,14 +32,14 @@ public class CardMulligan : MonoBehaviour, IPointerClickHandler
     {
         if (Destroyable)
         {
-            discard = !discard;
+            notDiscard = !notDiscard;
             MulliganManager.instance.RemoveCard(id);
         }
     }
 
     void Update()
     {
-        float Scale = discard ? 1 : 0.8f;
+        float Scale = notDiscard ? 1 : 0.9f;
         GetComponent<RectTransform>().localScale = originalScale * Scale;
     }
 }
