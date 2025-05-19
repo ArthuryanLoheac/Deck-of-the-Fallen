@@ -2533,6 +2533,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
+  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   AllCards:
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
@@ -3325,6 +3328,10 @@ PrefabInstance:
     - target: {fileID: 7649340531728078244, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948985511966958040, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.000122
       objectReference: {fileID: 0}
     - target: {fileID: 9101815051794437591, guid: f15529eef349c4aa2a2e793af3417c52, type: 3}
       propertyPath: m_AnchorMax.y

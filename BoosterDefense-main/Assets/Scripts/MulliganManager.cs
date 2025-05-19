@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +16,11 @@ public class MulliganManager : MonoBehaviour
     public GameObject buttonDiscard;
     public GameObject BackGround;
     public GameObject Title;
+    public GameObject parentForCards;
     public TMP_Text TextButtonKeep;
     public TMP_Text TextMulligan;
     List<CardStats> cards = new List<CardStats>();
-    List<int> cardsDiscarded = new List<int>();
+    [HideInInspector] public List<int> cardsDiscarded = new List<int>();
     List<GameObject> cardsObj = new List<GameObject>();
     float widthCard = 0;
     int cardToRemove = 0;
@@ -123,6 +125,7 @@ public class MulliganManager : MonoBehaviour
     {
         setText();
         bool NotMaxCard = ((cardToRemove + 1) < draw);
+        float scale = Screen.width;
 
         cards.Clear();
         cards = DeckManager.instance.DrawXCard(draw);
@@ -135,8 +138,8 @@ public class MulliganManager : MonoBehaviour
         for (int i = 0; i < draw; i++)
         {
             Vector3 pos = transform.position;
-            pos.x += (i - (draw / 2)) * (widthCard * 1.80f);
-            GameObject card = Instantiate(mulliganPrefabCard, pos, Quaternion.identity, transform);
+            pos.x += (i - (draw / 2)) * (scale/9);
+            GameObject card = Instantiate(mulliganPrefabCard, pos, Quaternion.identity, parentForCards.transform);
             card.GetComponent<Card>().SetStats(cards[i]);
             cardsObj.Add(card);
             yield return new WaitForSeconds(0.1f);

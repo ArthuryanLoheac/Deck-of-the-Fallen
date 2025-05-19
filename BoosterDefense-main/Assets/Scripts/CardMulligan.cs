@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardMulligan : MonoBehaviour, IPointerClickHandler
+public class CardMulligan : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public int id;
     bool notDiscard;
     bool Destroyable;
+    bool zoomed;
     Vector3 originalScale;
 
     public void Awake()
@@ -42,12 +43,37 @@ public class CardMulligan : MonoBehaviour, IPointerClickHandler
         {
             notDiscard = !notDiscard;
             MulliganManager.instance.RemoveCard(id);
+            if (notDiscard)
+                transform.SetSiblingIndex(id);
+            else
+                transform.SetAsFirstSibling();
         }
     }
 
     void Update()
     {
-        float Scale = notDiscard ? 1 : 0.9f;
+        float Scale = notDiscard ? (zoomed ? 1.1f : 1) : 0.85f;
         GetComponent<RectTransform>().localScale = originalScale * Scale;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        zoomed = true;
+        if (notDiscard)
+            transform.SetAsLastSibling();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        zoomed = false;
+        if (Destroyable)
+        {
+            if (notDiscard)
+            {
+                transform.SetSiblingIndex(id + MulliganManager.instance.cardsDiscarded.Count);
+            }
+        }
+        else
+            transform.SetSiblingIndex(id);
     }
 }
