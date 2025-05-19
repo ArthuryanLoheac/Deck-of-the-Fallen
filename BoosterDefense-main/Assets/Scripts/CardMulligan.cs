@@ -12,11 +12,19 @@ public class CardMulligan : MonoBehaviour, IPointerClickHandler
     bool Destroyable;
     Vector3 originalScale;
 
+    public void Awake()
+    {
+        Vector3 a = GetComponent<RectTransform>().eulerAngles;
+        a.y = 90;
+        GetComponent<RectTransform>().eulerAngles = a;
+    }
+
     public void Start()
     {
         ActiveDestroy(false);
         notDiscard = true;
         originalScale = GetComponent<RectTransform>().localScale;
+        GetComponent<Animation>().Play("CardFlipSpawn");
     }
 
     public void DestroyCard()
