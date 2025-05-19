@@ -60,7 +60,10 @@ public class CardMulligan : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
     {
         zoomed = true;
         if (notDiscard)
+        {
+            SoundManager.instance.PlaySound("CardSound");
             transform.SetAsLastSibling();
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

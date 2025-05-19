@@ -142,6 +142,7 @@ public class MulliganManager : MonoBehaviour
             GameObject card = Instantiate(mulliganPrefabCard, pos, Quaternion.identity, parentForCards.transform);
             card.GetComponent<Card>().SetStats(cards[i]);
             cardsObj.Add(card);
+            SoundManager.instance.PlaySound("DrawCard");
             yield return new WaitForSeconds(0.1f);
         }
         setIds();
