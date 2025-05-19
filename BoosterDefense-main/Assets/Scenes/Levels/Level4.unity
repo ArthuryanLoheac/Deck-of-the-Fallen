@@ -1882,7 +1882,7 @@ Transform:
   m_GameObject: {fileID: 706739172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.7, y: -1.57, z: 19}
+  m_LocalPosition: {x: 13.307127, y: -1.57, z: 12.803808}
   m_LocalScale: {x: 2, y: 0.85858, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4903,7 +4903,7 @@ Transform:
   m_GameObject: {fileID: 1598883746}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.1, y: -1.92, z: -20}
+  m_LocalPosition: {x: -13.692873, y: -1.92, z: -12.196192}
   m_LocalScale: {x: 2, y: 0.85858, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5777,7 +5777,6 @@ MonoBehaviour:
   drawButton: {fileID: 0}
   cards: []
   cardsUsed: []
-  StartHand: []
 --- !u!4 &1895557861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 273660591722076206, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
@@ -6295,12 +6294,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   AllCards: []
-  StartHand:
-  - {fileID: 11400000, guid: 7ff755c39d4f4bb45915c727498199c8, type: 2}
-  - {fileID: 11400000, guid: 2e4c731d2bf2b3a4caf9ff31f645322f, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   nbCardMin: 0
 --- !u!4 &2028422632
 Transform:

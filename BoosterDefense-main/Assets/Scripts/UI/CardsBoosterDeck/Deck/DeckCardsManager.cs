@@ -9,7 +9,6 @@ public class DeckCardsManager : MonoBehaviour
     public static DeckCardsManager instance;
     public List<CardStats> deck;
     public List<CardStats> AllCards;
-    public List<CardStats> StartHand;
     public int nbCardMin;
 
     void Awake()

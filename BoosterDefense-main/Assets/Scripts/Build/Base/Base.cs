@@ -9,7 +9,7 @@ public class Base : MonoBehaviour
     void Start()
     {
         //parameter de la base
-        DeckManager.instance.GiveCardStart();
+        MulliganManager.instance.Mulligan();
         PlaceBase.instance.BasePlaced = true;
     }
 }

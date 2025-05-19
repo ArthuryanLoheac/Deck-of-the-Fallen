@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: dbaf0185fa593a14b8571e1247ef4fd8, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f195b73fc0cc41a438a8eafea5a01857, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &50298834
 MonoBehaviour:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e6b0d4aedc5908042806568713ee9e21, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c24c377771711e347a0fa41cd5a93592, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &54702873 stripped
 MonoBehaviour:
@@ -1672,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 706739172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.7, y: -1.57, z: 19}
+  m_LocalPosition: {x: 18.307127, y: -1.57, z: 17.803808}
   m_LocalScale: {x: 2, y: 0.85858, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2065,8 +2065,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 736045595}
-  - {fileID: 1881733624}
-  - {fileID: 2028422632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &885939739 stripped
@@ -4069,7 +4067,7 @@ Transform:
   m_GameObject: {fileID: 1598883746}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.1, y: -1.92, z: -20}
+  m_LocalPosition: {x: -19.692873, y: -1.92, z: -18.196192}
   m_LocalScale: {x: 2, y: 0.85858, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4778,12 +4776,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881733623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 456.03323, y: 296.3342, z: -7.7437935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 884325524}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1881733625
 MonoBehaviour:
@@ -4990,7 +4988,6 @@ MonoBehaviour:
   drawButton: {fileID: 0}
   cards: []
   cardsUsed: []
-  StartHand: []
 --- !u!4 &1895557861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 273660591722076206, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
@@ -5508,12 +5505,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   AllCards: []
-  StartHand:
-  - {fileID: 11400000, guid: 7ff755c39d4f4bb45915c727498199c8, type: 2}
-  - {fileID: 11400000, guid: 2e4c731d2bf2b3a4caf9ff31f645322f, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
-  - {fileID: 11400000, guid: beb4a360d65cf2d4f8e4acf8d7104676, type: 2}
   nbCardMin: 0
 --- !u!4 &2028422632
 Transform:
@@ -5524,11 +5515,11 @@ Transform:
   m_GameObject: {fileID: 2028422630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 592.5034, y: 447.94766, z: 387.7717}
+  m_LocalPosition: {x: 1048.5366, y: 744.28186, z: 380.0279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 884325524}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2028422633
 MonoBehaviour:
@@ -5960,6 +5951,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8868484628837159506, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1881733625}
     - target: {fileID: 9016816134101548115, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_Name
       value: --- CANVAS ---
@@ -6487,6 +6482,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 884325524}
+  - {fileID: 2028422632}
+  - {fileID: 1881733624}
   - {fileID: 835651627}
   - {fileID: 2478997041256476191}
   - {fileID: 50298832}

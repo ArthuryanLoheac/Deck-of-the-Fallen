@@ -16,8 +16,10 @@ public class DrawCardsButton : MonoBehaviour
     public void ResetDrawTime()
     {
         drawTime = drawTimeMax;
-        if (WavesManager.instance.waveActual != 0) { // Dont draw on the first round
-            for (int i = 0; i < drawTime; i++) {
+        if (WavesManager.instance.waveActual != 0)
+        { // Dont draw on the first round
+            for (int i = 0; i < drawTime; i++)
+            {
                 DeckManager.instance.DrawAndSpawnCardValue();
             }
         }
@@ -64,7 +66,7 @@ public class DrawCardsButton : MonoBehaviour
 
     void Update()
     {
-        if (!PlaceBase.instance.BasePlaced) {
+        if (PlaceBase.instance.BasePlaced == false || MulliganManager.instance.isInMulligan) {
             button.interactable = false;
             textDrawRemaining.text = bonusDraw.ToString() + " bonus draws";
         } else {
