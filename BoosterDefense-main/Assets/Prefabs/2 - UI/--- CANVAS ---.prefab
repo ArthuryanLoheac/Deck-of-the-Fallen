@@ -12651,6 +12651,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1957791206071642596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2637729207260902386}
+  m_Layer: 5
+  m_Name: CardsChildren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2637729207260902386
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957791206071642596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7229442491009933927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0.05126953}
+  m_SizeDelta: {x: 0, y: 0.19995117}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1974986567633585257
 GameObject:
   m_ObjectHideFlags: 0
@@ -14400,7 +14435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 25.6115, y: -0.47891235}
+  m_AnchoredPosition: {x: 25.6115, y: -0.47888184}
   m_SizeDelta: {x: 519.3033, y: 0.95776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4468156869779136115
@@ -22401,6 +22436,7 @@ RectTransform:
   - {fileID: 3986955448847998592}
   - {fileID: 6152602272839732841}
   - {fileID: 6511476189099705368}
+  - {fileID: 2637729207260902386}
   m_Father: {fileID: 3245761010206226201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.265}
   m_AnchorMin: {x: 0, y: 0}
@@ -22490,8 +22526,10 @@ MonoBehaviour:
   buttonDiscard: {fileID: 3692097818985521556}
   BackGround: {fileID: 5071555848252515421}
   Title: {fileID: 9112479973510241768}
+  parentForCards: {fileID: 1957791206071642596}
   TextButtonKeep: {fileID: 5833233575864016825}
   TextMulligan: {fileID: 1413790277042920051}
+  cardsDiscarded: 
 --- !u!1 &4457723768759426752
 GameObject:
   m_ObjectHideFlags: 0
@@ -44331,7 +44369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10.997986}
+  m_AnchoredPosition: {x: 0, y: -10.997925}
   m_SizeDelta: {x: 1953.3889, y: 1073.1709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1736623927018091581
