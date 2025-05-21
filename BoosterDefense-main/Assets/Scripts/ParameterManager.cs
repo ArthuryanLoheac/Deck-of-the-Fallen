@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ParameterManager : MonoBehaviour
 {
     static public ParameterManager instance;
-    public Slider sliderMusic, sliderSound;
+    public Slider sliderMusic, sliderSound, sliderCamSens;
     public GameObject canva;
     public bool isOpen = false;
     // Start is called before the first frame update
@@ -31,6 +31,7 @@ public class ParameterManager : MonoBehaviour
             return;
         sliderMusic.value = SoundManager.instance.volumeMusic;
         sliderSound.value = SoundManager.instance.volumeSound;
+        sliderCamSens.value = ParameterDatas.instance.SensivityCam;
     }
 
     public void OpenCloseParameters(bool open)

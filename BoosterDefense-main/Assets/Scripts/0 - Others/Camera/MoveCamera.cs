@@ -31,8 +31,9 @@ public class MoveCamera : MonoBehaviour
 
     private void UpdateMoveMouse()
     {
-        Vector3 vec = new Vector3(  transform.eulerAngles.x + (-Input.GetAxis("Mouse Y")) * Time.unscaledDeltaTime * rotationSpeedMouse,
-                                    transform.eulerAngles.y - (-Input.GetAxis("Mouse X")) * Time.unscaledDeltaTime * rotationSpeedMouse,
+        float speed = rotationSpeedMouse * ParameterDatas.instance.SensivityCam;
+        Vector3 vec = new Vector3(  transform.eulerAngles.x + (-Input.GetAxis("Mouse Y")) * Time.unscaledDeltaTime * speed,
+                                    transform.eulerAngles.y - (-Input.GetAxis("Mouse X")) * Time.unscaledDeltaTime * speed,
                                     transform.eulerAngles.z);
         
         transform.eulerAngles = MaxMinAngle(vec);

@@ -24,6 +24,7 @@ public class MulliganManager : MonoBehaviour
     List<GameObject> cardsObj = new List<GameObject>();
     float widthCard = 0;
     int cardToRemove = 0;
+    public int freeMulligan = 1;
     int draw = 5;
 
     void setDecoration(bool b)
@@ -109,7 +110,14 @@ public class MulliganManager : MonoBehaviour
 
     public void UnValidMulligan()
     {
-        cardToRemove += 1;
+        if (freeMulligan > 0)
+        {
+            freeMulligan -= 1;
+        }
+        else
+        {
+            cardToRemove += 1;
+        }
         ClearMulligan();
         DeckManager.instance.Reset();
         Mulligan();
@@ -118,7 +126,14 @@ public class MulliganManager : MonoBehaviour
     void setText()
     {
         TextButtonKeep.text = "Take " + (draw - cardToRemove).ToString();
-        TextMulligan.text = "You will return " + (cardToRemove+1).ToString() + " card in your deck.";
+        if (freeMulligan > 0)
+        {
+            TextMulligan.text = freeMulligan.ToString() + " free mulligan" + (freeMulligan > 1 ? "s" : "") + " left";
+        }
+        else
+        {
+            TextMulligan.text = "You will return " + (cardToRemove+1).ToString() + " card in your deck.";
+        }
     }
 
     IEnumerator MulliganDraw()

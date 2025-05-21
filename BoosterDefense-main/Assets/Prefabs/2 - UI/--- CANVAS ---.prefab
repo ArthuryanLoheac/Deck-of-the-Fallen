@@ -12683,7 +12683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.05126953}
+  m_AnchoredPosition: {x: 0, y: 0.05126953}
   m_SizeDelta: {x: 0, y: 0.19995117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1974986567633585257
@@ -22069,7 +22069,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 2
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -22530,6 +22530,7 @@ MonoBehaviour:
   TextButtonKeep: {fileID: 5833233575864016825}
   TextMulligan: {fileID: 1413790277042920051}
   cardsDiscarded: 
+  freeMulligan: 1
 --- !u!1 &4457723768759426752
 GameObject:
   m_ObjectHideFlags: 0
