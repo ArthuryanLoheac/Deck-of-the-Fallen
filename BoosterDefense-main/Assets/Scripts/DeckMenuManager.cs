@@ -108,8 +108,7 @@ public class DeckMenuManager : MonoBehaviour
 
         for (int i = 0; i < lstCards.Count; i++)
         {
-            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name ==
-                card.GetComponent<Card>().cardStats.name)
+            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>() == card.GetComponent<Card>())
             {
                 lstCards[i][0].GetComponent<Card>().cardCount += 1;
                 if (lstCards[i].Count >= 3)
@@ -148,7 +147,7 @@ public class DeckMenuManager : MonoBehaviour
 
         for (int i = 0; i < lstCards.Count; i++)
         {
-            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name == card.cardStats.name)
+            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>() == card)
             {
                 GameObject a;
                 if (lstCards[i].Count == 1)
@@ -237,7 +236,7 @@ public class DeckMenuManager : MonoBehaviour
     {
         for (int i = 0; i < lst.Count; i++)
         {
-            if (stat.name == lst[i][0].GetComponent<Card>().cardStats.name)
+            if (stat == lst[i][0].GetComponent<Card>().cardStats)
             {
                 return i;
             }
@@ -249,7 +248,7 @@ public class DeckMenuManager : MonoBehaviour
     {
         for (int j = 0; j < cards.Count; j++)
         {
-            if (cards[j][0].GetComponent<Card>().cardStats.name == instanceCards[i].name)
+            if (cards[j][0].GetComponent<Card>().cardStats == instanceCards[i])
             {
                 cards[j][0].GetComponent<Card>().cardCount += 1;
                 return cards[j][0].GetComponent<Card>().cardCount;

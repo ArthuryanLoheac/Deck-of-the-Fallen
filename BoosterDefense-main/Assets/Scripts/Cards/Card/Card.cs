@@ -27,7 +27,7 @@ public class Card : MonoBehaviour
     [Header("Count")]
     [HideInInspector]public int cardCount;
     public TMP_Text textCardCount;
-    [HideInInspector]public CardStats cardStats;
+    public CardStats cardStats;
 
 
     [Header("Description")]
@@ -132,6 +132,16 @@ public class Card : MonoBehaviour
         foreach (Image img in lstToTransparenceWhenBlocked) {
             img.color = GetColorTransparent(img.color, b);
         }
+    }
+
+    public static bool operator ==(Card a, Card b)
+    {
+        return a.cardStats == b.cardStats;
+    }
+
+    public static bool operator !=(Card a, Card b)
+    {
+        return !(a == b);
     }
 
     void Start()

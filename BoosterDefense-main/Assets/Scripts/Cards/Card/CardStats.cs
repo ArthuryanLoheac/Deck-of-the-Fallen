@@ -11,10 +11,17 @@ public enum TypeCard {
     Equipement
 }
 
-public enum Rarity {
+public enum Rarity
+{
     Common,
     Rare,
     SuperRare
+}
+
+public enum TypeCardArt
+{
+    NORMAL_ART,
+    FULL_ART
 }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
@@ -39,10 +46,22 @@ public class CardStats : ScriptableObject
     public float sizeFont = 7f;
     [Header("Type")]
     public TypeCard type;
+    [HideInInspector] public TypeCardArt artType = TypeCardArt.NORMAL_ART;
     [Header("HP")]
     public bool hasHp;
     public Rarity rarity;
-    [Header("Offset")] 
+    [Header("Offset")]
     [Range(-38f, 38f)]
     public float offsetTop = 0.0f; // -38 à 38
+
+    
+    public static bool operator ==(CardStats a, CardStats b)
+    {
+        return a.name == b.name && a.artType == b.artType;
+    }
+
+    public static bool operator !=(CardStats a, CardStats b)
+    {
+        return !(a == b);
+    }
 }

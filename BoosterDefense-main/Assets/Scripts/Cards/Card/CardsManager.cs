@@ -130,10 +130,10 @@ public class CardsManager : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
     }
 
-    public Card GetCardInHand(string nameCard)
+    public Card GetCardInHand(CardStats CardStat)
     {
         for(int i = 0; i < transform.childCount; i++) {
-            if (transform.GetChild(i).GetComponent<Card>().cardStats.name == nameCard) {
+            if (transform.GetChild(i).GetComponent<Card>().cardStats == CardStat) {
                 return transform.GetChild(i).gameObject.GetComponent<Card>();
             }
         }
@@ -157,8 +157,8 @@ public class CardsManager : MonoBehaviour
 
     public void AddCard(CardStats cardToAdd)
     {
-        if (GetCardInHand(cardToAdd.name) != null){
-            GetCardInHand(cardToAdd.name).cardCount += 1;
+        if (GetCardInHand(cardToAdd) != null){
+            GetCardInHand(cardToAdd).cardCount += 1;
         } else {
             GameObject card = Instantiate(prefabCard, transform);
             card.GetComponent<SpawnGhost>().ghostToSpawn = cardToAdd.ghostToSpawn;
