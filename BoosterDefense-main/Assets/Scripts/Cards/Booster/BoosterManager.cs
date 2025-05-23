@@ -7,7 +7,7 @@ public class BoosterManager : MonoBehaviour
 {
     public static BoosterManager instance;
     public Animation animationNormalDraw;
-    public float chanceFullArt = 0.05f;
+    public float chanceFullArt = 0.5f;
 
     public List<BoosterStats> boosterOwned;
 

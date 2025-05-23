@@ -1,10 +1,10 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetCardStats : MonoBehaviour
+public class SetCardStats : SetCardClass
 {
     
     public Image[] lstToTransparenceWhenBlocked;
@@ -41,24 +41,6 @@ public class SetCardStats : MonoBehaviour
     public Sprite ContoursCommon;
     public Image BG;
 
-    private string GetSpriteType(TypeCard type)
-    {
-        switch (type)
-        {
-            case TypeCard.Sort:
-                return "SPELL";
-            case TypeCard.Npc:
-                return "HEROS";
-            case TypeCard.Batiment:
-                return "BUILDING";
-            case TypeCard.Vehicule:
-                return "VEHICLE";
-            case TypeCard.Equipement:
-                return "EQUIPMENT";
-            default:
-                return "BUILDING";
-        }
-    }
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
         if (nameRessource == RessourceType.scraps)
@@ -76,15 +58,8 @@ public class SetCardStats : MonoBehaviour
         return null;
     }
     
-    private Color GetColorTransparent(Color col, bool b)
-    {
-        if (b)
-            return new Color(col.r, col.g, col.b, 1);
-        else
-            return new Color(col.r, col.g, col.b, .7f);
-    }
-
-    public void MakeTransparent(bool b)
+    
+    public override void MakeTransparent(bool b) 
     {
         foreach (Image img in lstToTransparenceWhenBlocked)
         {
@@ -92,7 +67,7 @@ public class SetCardStats : MonoBehaviour
         }
     }
 
-    public void SetStats(CardStats stats)
+    public override void SetStats(CardStats stats)
     {
         textObject.text = stats.name;
         Image.sprite = stats.image;

@@ -64,9 +64,9 @@ MonoBehaviour:
   cardStats: {fileID: 0}
   cardVisuals:
   - typeCardArt: 0
-    setCardStats: {fileID: 7781778073323306511}
+    setCardStats: {fileID: 1856458659828430377}
   - typeCardArt: 1
-    setCardStats: {fileID: 7781778073323306511}
+    setCardStats: {fileID: 4296294597120261997}
 --- !u!114 &6379716944137766168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,22 +239,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5312490878825528236 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
-  m_PrefabInstance: {fileID: 9114585668098017864}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7781778073323306511 stripped
+--- !u!114 &1856458659828430377 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1550345145696826439, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7475680777055517793, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
   m_PrefabInstance: {fileID: 9114585668098017864}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ec7a3a161e7dd4eab3add72b0886fe, type: 3}
+  m_Script: {fileID: 11500000, guid: b6181a506cfad1c4c88f15cf302b0a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4296294597120261997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5035590030090908965, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_PrefabInstance: {fileID: 9114585668098017864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976291715909f694692c2e1c44de3e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &5312490878825528236 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_PrefabInstance: {fileID: 9114585668098017864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1029 &8135967869983035434
 DefaultAsset:
   m_ObjectHideFlags: 0

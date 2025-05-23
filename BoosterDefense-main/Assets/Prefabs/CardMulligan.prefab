@@ -65,9 +65,9 @@ MonoBehaviour:
   cardStats: {fileID: 0}
   cardVisuals:
   - typeCardArt: 0
-    setCardStats: {fileID: 5115232718603718065}
+    setCardStats: {fileID: 3801583114531767703}
   - typeCardArt: 1
-    setCardStats: {fileID: 5115232718603718065}
+    setCardStats: {fileID: 1629487019262938323}
 --- !u!114 &9159295392597533260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +198,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+--- !u!114 &1629487019262938323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5035590030090908965, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_PrefabInstance: {fileID: 6016558123191777782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976291715909f694692c2e1c44de3e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2815397830629981406 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8389457155489318184, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
@@ -209,15 +220,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5115232718603718065 stripped
+--- !u!114 &3801583114531767703 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1550345145696826439, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7475680777055517793, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
   m_PrefabInstance: {fileID: 6016558123191777782}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ec7a3a161e7dd4eab3add72b0886fe, type: 3}
+  m_Script: {fileID: 11500000, guid: b6181a506cfad1c4c88f15cf302b0a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &7258494925164677138 stripped

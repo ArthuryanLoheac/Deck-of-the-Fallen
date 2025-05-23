@@ -10,7 +10,7 @@ using System;
 public class CardVisual
 {
     public TypeCardArt typeCardArt;
-    public SetCardStats setCardStats;
+    public SetCardClass setCardStats;
 }
 
 public class Card : MonoBehaviour
@@ -38,7 +38,7 @@ public class Card : MonoBehaviour
 
     public CardVisual[] cardVisuals;
 
-    SetCardStats getSetCardStats(TypeCardArt artType)
+    SetCardClass getSetCardStats(TypeCardArt artType)
     {
         foreach (CardVisual style in cardVisuals)
         {
@@ -49,12 +49,28 @@ public class Card : MonoBehaviour
         }
         return null;
     }
+    void DisableNotSetCardStats(TypeCardArt artType)
+    {
+        foreach (CardVisual style in cardVisuals)
+        {
+            if (style.typeCardArt != artType)
+            {
+                style.setCardStats.gameObject.SetActive(false);
+            }
+            else    
+            {
+                style.setCardStats.gameObject.SetActive(true);
+            }
+        }
+    }
+
 
     public void SetStats(CardStats stats)
     {
         cardStats = stats;
         cardCount = 1;
         getSetCardStats(stats.artType).SetStats(stats);
+        DisableNotSetCardStats(stats.artType);
     }
     private void MakeTransparent(bool b)
     {
