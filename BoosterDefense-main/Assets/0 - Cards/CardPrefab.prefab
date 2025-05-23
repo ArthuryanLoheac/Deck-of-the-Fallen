@@ -108,6 +108,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3859638319157623763}
   - {fileID: 6879260915842373028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -193,33 +194,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a8ec4d6c8f3d248b972034df351381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lstToTransparenceWhenBlocked:
-  - {fileID: 8273373581914009308}
-  - {fileID: 2343885989525650066}
-  - {fileID: 4587827470614396425}
-  - {fileID: 8732003444462414941}
-  - {fileID: 9042125892910119042}
-  - {fileID: 9042125892910119042}
-  - {fileID: 1294331876344690350}
-  iconObject: {fileID: 4587827470614396425}
-  textObject: {fileID: 7258250115534292180}
-  iconPrice: {fileID: 9042125892910119042}
-  textPrice: {fileID: 5781257696362733086}
-  textPrice_Free: {fileID: 7855865933478458389}
-  scrapsIcon: {fileID: 21300000, guid: 103a06042454eca4eab53ef2aa0e65f7, type: 3}
-  goldIcon: {fileID: 21300000, guid: dca9d872a843c9b4aa9363ce1f9fe3c9, type: 3}
-  foodIcon: {fileID: 21300000, guid: c29c85c4fccb77e4e9af29c204a80e70, type: 3}
   cardCount: 0
   textCardCount: {fileID: 8389457155489318184}
   cardStats: {fileID: 0}
-  description: {fileID: 6312347165509568895}
-  story: {fileID: 1262851552017410979}
-  iconType: {fileID: 9206660298194665216}
-  iconHP: {fileID: 517224353775921503}
-  textHP: {fileID: 4286883402488302243}
-  Contour: {fileID: 2343885989525650066}
-  ContoursCommon: {fileID: 21300000, guid: 429fa1fcfbbfdcd4e8bcc94622153a43, type: 3}
-  BG: {fileID: 8273373581914009308}
+  cardVisuals:
+  - typeCardArt: 0
+    setCardStats: {fileID: 1550345145696826439}
+  - typeCardArt: 1
+    setCardStats: {fileID: 1550345145696826439}
 --- !u!114 &4112455891166056531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,11 +289,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6879260915842373028}
+  m_Father: {fileID: 4018408308879438308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.171803, y: 100.56812}
+  m_AnchoredPosition: {x: 27.371815, y: 122.46813}
   m_SizeDelta: {x: 61.6966, y: 15.8825}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5432654052331469494
@@ -1035,7 +1017,7 @@ GameObject:
   - component: {fileID: 4907010425482230364}
   - component: {fileID: 9042125892910119042}
   m_Layer: 5
-  m_Name: BG
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1613,6 +1595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6879260915842373028}
+  - component: {fileID: 1550345145696826439}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -1634,7 +1617,6 @@ RectTransform:
   m_Children:
   - {fileID: 5729019085689658304}
   - {fileID: 8219533864043402512}
-  - {fileID: 3859638319157623763}
   - {fileID: 3887006985157944461}
   - {fileID: 2098607314374061204}
   - {fileID: 4959138071400596457}
@@ -1645,6 +1627,41 @@ RectTransform:
   m_AnchoredPosition: {x: -3.8, y: 21.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1550345145696826439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231029645415712577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ec7a3a161e7dd4eab3add72b0886fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lstToTransparenceWhenBlocked:
+  - {fileID: 8273373581914009308}
+  - {fileID: 1294331876344690350}
+  - {fileID: 4587827470614396425}
+  - {fileID: 2343885989525650066}
+  - {fileID: 8732003444462414941}
+  - {fileID: 9042125892910119042}
+  Image: {fileID: 4587827470614396425}
+  textObject: {fileID: 7258250115534292180}
+  iconPrice: {fileID: 9042125892910119042}
+  textPrice: {fileID: 5781257696362733086}
+  textPrice_Free: {fileID: 7855865933478458389}
+  scrapsIcon: {fileID: 21300000, guid: 103a06042454eca4eab53ef2aa0e65f7, type: 3}
+  goldIcon: {fileID: 21300000, guid: dca9d872a843c9b4aa9363ce1f9fe3c9, type: 3}
+  foodIcon: {fileID: 21300000, guid: c29c85c4fccb77e4e9af29c204a80e70, type: 3}
+  description: {fileID: 6312347165509568895}
+  story: {fileID: 1262851552017410979}
+  typeCard: {fileID: 9206660298194665216}
+  iconHP: {fileID: 517224353775921503}
+  textHP: {fileID: 4286883402488302243}
+  Contour: {fileID: 2343885989525650066}
+  ContoursCommon: {fileID: 21300000, guid: 429fa1fcfbbfdcd4e8bcc94622153a43, type: 3}
+  BG: {fileID: 8273373581914009308}
 --- !u!1 &7145361168096462019
 GameObject:
   m_ObjectHideFlags: 0
