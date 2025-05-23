@@ -7,6 +7,7 @@ public class BoosterManager : MonoBehaviour
 {
     public static BoosterManager instance;
     public Animation animationNormalDraw;
+    public float chanceFullArt = 0.05f;
 
     public List<BoosterStats> boosterOwned;
 
@@ -24,8 +25,10 @@ public class BoosterManager : MonoBehaviour
     {
         //Random Carte
         CardStats cardDraw = lst[Random.Range(0, lst.Count)];
+        if (Random.Range(0.0f, 1.0f) <= chanceFullArt)
+            cardDraw.artType = TypeCardArt.FULL_ART;
         if (AddCardToHand)
-            CardsManager.instance.AddCard(cardDraw);
+                CardsManager.instance.AddCard(cardDraw);
 
         DeckCardsManager.instance.AllCards.Add(cardDraw);
         return cardDraw;

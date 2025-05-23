@@ -53,15 +53,36 @@ public class CardStats : ScriptableObject
     [Header("Offset")]
     [Range(-38f, 38f)]
     public float offsetTop = 0.0f; // -38 à 38
-
     
     public static bool operator ==(CardStats a, CardStats b)
     {
+        if (ReferenceEquals(a, b))
+            return true;
+        if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+            return false;
         return a.name == b.name && a.artType == b.artType;
     }
 
     public static bool operator !=(CardStats a, CardStats b)
     {
         return !(a == b);
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (ReferenceEquals(this, obj))
+            return true;
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+        CardStats other = (CardStats)obj;
+        return name == other.name && artType == other.artType;
+    }
+
+    public override int GetHashCode()
+    {
+        int hash = 17;
+        hash = hash * 23 + (name != null ? name.GetHashCode() : 0);
+        hash = hash * 23 + artType.GetHashCode();
+        return hash;
     }
 }

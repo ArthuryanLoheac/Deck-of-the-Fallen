@@ -7,8 +7,23 @@ using Unity.VisualScripting;
 
 public class Card : MonoBehaviour
 {
+    public override bool Equals(object obj)
+    {
+        if (ReferenceEquals(this, obj))
+            return true;
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+        Card other = (Card)obj;
+        return cardStats == other.cardStats;
+    }
+
+    public override int GetHashCode()
+    {
+        return cardStats != null ? cardStats.GetHashCode() : 0;
+    }
     
     public Image[] lstToTransparenceWhenBlocked;
+
     [Header("Card")]
     public Image iconObject;
     public TMP_Text textObject;
@@ -95,22 +110,26 @@ public class Card : MonoBehaviour
         story.text = cardStats.story;
         iconType.text = GetSpriteType(stats.type);
         iconHP.SetActive(stats.hasHp);
-        if (stats.hasHp){
+        if (stats.hasHp)
+        {
             textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
         }
-    
+
         if (stats.rarity == Rarity.Rare)
             Contour.sprite = ContoursCommon;
         if (stats.rarity == Rarity.Common)
             Contour.sprite = ContoursCommon;
         if (stats.rarity == Rarity.SuperRare)
             Contour.sprite = ContoursCommon;
-    
-        if (cardStats.price <= 0) {
+
+        if (cardStats.price <= 0)
+        {
             iconPrice.gameObject.SetActive(false);
             textPrice.gameObject.SetActive(false);
             textPrice_Free.gameObject.SetActive(true);
-        } else {
+        }
+        else
+        {
             iconPrice.gameObject.SetActive(true);
             textPrice.gameObject.SetActive(true);
             iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
