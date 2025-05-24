@@ -46,7 +46,7 @@ public class CardStats : ScriptableObject
     public float sizeFont = 7f;
     [Header("Type")]
     public TypeCard type;
-    [HideInInspector] public TypeCardArt artType = TypeCardArt.NORMAL_ART;
+    public TypeCardArt artType = TypeCardArt.NORMAL_ART;
     [Header("HP")]
     public bool hasHp;
     public Rarity rarity;

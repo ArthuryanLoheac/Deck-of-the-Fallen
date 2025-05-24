@@ -26,6 +26,7 @@ MonoBehaviour:
   story: In the ashes of the old world, he learned to coax life from dead soil.
   sizeFont: 7
   type: 0
+  artType: 0
   hasHp: 1
   rarity: 0
   offsetTop: -23

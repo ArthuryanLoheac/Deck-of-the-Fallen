@@ -108,7 +108,7 @@ public class DeckMenuManager : MonoBehaviour
 
         for (int i = 0; i < lstCards.Count; i++)
         {
-            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>() == card.GetComponent<Card>())
+            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats == card.GetComponent<Card>().cardStats)
             {
                 lstCards[i][0].GetComponent<Card>().cardCount += 1;
                 if (lstCards[i].Count >= 3)
@@ -147,7 +147,7 @@ public class DeckMenuManager : MonoBehaviour
 
         for (int i = 0; i < lstCards.Count; i++)
         {
-            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>() == card)
+            if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats == card.cardStats)
             {
                 GameObject a;
                 if (lstCards[i].Count == 1)
@@ -248,7 +248,8 @@ public class DeckMenuManager : MonoBehaviour
     {
         for (int j = 0; j < cards.Count; j++)
         {
-            if (cards[j][0].GetComponent<Card>().cardStats == instanceCards[i])
+            if (cards[j][0].GetComponent<Card>().cardStats.name == instanceCards[i].name &&
+                cards[j][0].GetComponent<Card>().cardStats.artType == instanceCards[i].artType)
             {
                 cards[j][0].GetComponent<Card>().cardCount += 1;
                 return cards[j][0].GetComponent<Card>().cardCount;
@@ -272,7 +273,10 @@ public class DeckMenuManager : MonoBehaviour
 
         DeckCardsManager.instance.deck.Sort(delegate (CardStats a, CardStats b)
         {
-            return a.name.CompareTo(b.name);
+            int nameComparison = a.name.CompareTo(b.name);
+            if (nameComparison != 0)
+                return nameComparison;
+            return a.artType.CompareTo(b.artType);
         });
 
         for (int i = 0; i < DeckCardsManager.instance.deck.Count; i++)
