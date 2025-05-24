@@ -81,7 +81,7 @@ public class DeckMenuManager : MonoBehaviour
         updateNbCards();
     }
 
-    void UpdateOnlyNecessaryList(bool isAll)
+    void UpdateOnlyNecessaryList()
     {
         UpdatePosCardsAll();
         UpdatePosCardsDeck();
@@ -111,24 +111,28 @@ public class DeckMenuManager : MonoBehaviour
             if (lstCards[i].Count > 0 && lstCards[i][0].GetComponent<Card>().cardStats.name == card.GetComponent<Card>().cardStats.name)
             {
                 lstCards[i][0].GetComponent<Card>().cardCount += 1;
+                //Debug.Log(lstCards[i].Count + " " + card.GetComponent<Card>().cardStats.name);
                 if (lstCards[i].Count >= 3)
                 {
                     Destroy(card);
+                    UpdateOnlyNecessaryList();
+                    return;
                 }
                 else
                 {
                     lstCards[i].Add(card);
                     card.transform.SetParent(canvas.transform);
                     card.transform.SetSiblingIndex(1);
+                    UpdateOnlyNecessaryList();
+                    return;
                 }
-                UpdateOnlyNecessaryList(All);
-                return;
             }
         }
+        //Debug.Log("NOOO " + card.GetComponent<Card>().cardStats.name);
         // Not existing
-        lstCards.Add(new List<GameObject> { card });
         card.transform.SetParent(canvas.transform);
-        UpdateOnlyNecessaryList(All);
+        lstCards.Add(new List<GameObject> { card });
+        UpdateOnlyNecessaryList();
     }
 
     public GameObject TakeCardFrom(Card card)
@@ -169,7 +173,7 @@ public class DeckMenuManager : MonoBehaviour
                         lstCards[i].Add(newCard);
                     }
                 }
-                UpdateOnlyNecessaryList(All);
+                UpdateOnlyNecessaryList();
                 return a;
             }
         }

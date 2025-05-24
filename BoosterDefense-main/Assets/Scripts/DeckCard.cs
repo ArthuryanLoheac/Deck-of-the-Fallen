@@ -26,14 +26,20 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         double DeckSize = DeckMenuManager.instance.canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y;
 
-        if (cardDragged) {
-            if ((eventData.position.y - cardDragged.transform.GetComponent<RectTransform>().sizeDelta.y/2) > DeckSize) {
-                DeckMenuManager.instance.AddCardTo(false, gameObject);
-            } else {
-                DeckMenuManager.instance.AddCardTo(true, gameObject);
+        if (cardDragged)
+        {
+            Debug.Log(eventData.position.y + " / " + DeckSize);
+            if ((eventData.position.y - cardDragged.transform.GetComponent<RectTransform>().sizeDelta.y / 2) > DeckSize)
+            {
+                DeckMenuManager.instance.AddCardTo(false, cardDragged);
             }
+            else
+            {
+                DeckMenuManager.instance.AddCardTo(true, cardDragged);
+            }
+            cardDragged = null;
+            SoundManager.instance.PlaySound("DrawCard");
         }
-        SoundManager.instance.PlaySound("DrawCard");
     }
 
     public void OnPointerClick(PointerEventData eventData)
