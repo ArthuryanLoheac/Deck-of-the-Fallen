@@ -34,6 +34,7 @@ public class IACollectRessources : UniteIAClass
 
     void Start()
     {
+        mYstats = Instantiate(mYstats);
         StartSetValues(mYstats);
         coolDownAttack = coolDownCapacities[0];
         nextTimeAttack = coolDownAttack;

@@ -154,7 +154,7 @@ public class UniteIAClass : MonoBehaviour
 
     public void StartSetValues(NPCStats mYstats)
     {
-        stats = mYstats;
+        stats = Instantiate(mYstats);
         coolDownCapacities = stats.coolDowncollect;
         Ground = UnitClick.instance.Ground;
         sizeY = GetComponent<Collider>().bounds.size.y + 0.5f;

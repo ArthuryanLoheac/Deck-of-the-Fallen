@@ -67,6 +67,7 @@ public class EnemyExplodeOnDie : EnemyIAClass
 
     void Start()
     {
+        mYstats = Instantiate(mYstats);
         StartSetValues(mYstats);
         nextTimeAttack = coolDownAttack = stats.coolDownCapacities[0];
     }

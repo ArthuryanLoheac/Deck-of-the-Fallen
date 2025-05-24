@@ -117,7 +117,7 @@ public class EnemyIAClass : MonoBehaviour
 
     public void StartSetValues(EnemyStats mYstats)
     {
-        stats = mYstats;
+        stats = Instantiate(mYstats);
         //Set stats
         agent.speed = ComputeSpeed(stats.speed);
         agent.stoppingDistance = stats.range;

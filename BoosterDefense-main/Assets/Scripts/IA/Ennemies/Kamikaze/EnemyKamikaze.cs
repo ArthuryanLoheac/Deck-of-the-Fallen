@@ -46,6 +46,7 @@ public class EnemyKamikaze : EnemyIAClass
 
     void Start()
     {
+        mYstats = Instantiate(mYstats);
         StartSetValues(mYstats);
         nextTimeAttack = coolDownAttack = stats.coolDownCapacities[0];
     }
