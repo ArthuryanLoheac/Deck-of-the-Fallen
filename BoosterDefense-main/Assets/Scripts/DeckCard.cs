@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     GameObject cardDragged;
+    float deckSize = 0.6f; // percentage of the screen (from the bottom)
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -24,12 +25,9 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        double DeckSize = DeckMenuManager.instance.canvasDeckCards.GetComponent<RectTransform>().sizeDelta.y;
-
         if (cardDragged)
         {
-            Debug.Log(eventData.position.y + " / " + DeckSize);
-            if ((eventData.position.y - cardDragged.transform.GetComponent<RectTransform>().sizeDelta.y / 2) > DeckSize)
+            if (eventData.position.y > Screen.height * deckSize)
             {
                 DeckMenuManager.instance.AddCardTo(false, cardDragged);
             }
