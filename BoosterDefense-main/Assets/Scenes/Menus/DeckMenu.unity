@@ -2243,9 +2243,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   scraps: 0
-  gold: 200
+  gold: 200000000
   food: 0
-  goldInGame: 200
+  goldInGame: 200000000
   scrapsIcon: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
   goldIcon: {fileID: 21300000, guid: 0d93693b79a040f45afb3225a1f0b8a6, type: 3}
   foodIcon: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}

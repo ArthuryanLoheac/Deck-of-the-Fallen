@@ -38,7 +38,6 @@ public class SetCardStatsFullArt : SetCardClass
     [Header("BG Contours")]
     public Image Contour;
     public Sprite ContoursCommon;
-    public Image BG;
 
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
@@ -70,9 +69,6 @@ public class SetCardStatsFullArt : SetCardClass
     {
         textObject.text = stats.name;
         Image.sprite = stats.image;
-        Vector3 v = Image.GetComponent<RectTransform>().localPosition;
-        v.y = stats.offsetTop;
-        Image.GetComponent<RectTransform>().localPosition = v;
         description.enabled = true;
         description.richText = true;
         description.text = stats.description;

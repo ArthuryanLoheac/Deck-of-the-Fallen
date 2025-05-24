@@ -25,7 +25,7 @@ public class DeckCardsManager : MonoBehaviour
         IEnumerable<CardStats> cards = lst.OrderBy(card => card.name);
         int i = 0;
         foreach(CardStats card in cards){
-            lst[i] = card;
+            lst[i] = Instantiate(card);
             i++;
         }
     }
