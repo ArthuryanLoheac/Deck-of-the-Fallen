@@ -60,7 +60,7 @@ public class CardStats : ScriptableObject
             return true;
         if (a is null || b is null)
             return false;
-        return a.name == b.name && a.artType == b.artType;
+        return a.name == b.name;
     }
 
     public static bool operator !=(CardStats a, CardStats b)
@@ -75,7 +75,7 @@ public class CardStats : ScriptableObject
         if (obj == null || GetType() != obj.GetType())
             return false;
         CardStats other = (CardStats)obj;
-        return name == other.name && artType == other.artType;
+        return name == other.name;
     }
 
     public override int GetHashCode()

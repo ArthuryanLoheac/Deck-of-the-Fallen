@@ -24,7 +24,7 @@ public class BoosterManager : MonoBehaviour
     private CardStats DrawFromList(List<CardStats> lst, bool AddCardToHand = false)
     {
         //Random Carte
-        CardStats cardDraw = lst[Random.Range(0, lst.Count)];
+        CardStats cardDraw = Instantiate(lst[Random.Range(0, lst.Count)]);
         if (Random.Range(0.0f, 1.0f) <= chanceFullArt)
             cardDraw.artType = TypeCardArt.FULL_ART;
         if (AddCardToHand)
