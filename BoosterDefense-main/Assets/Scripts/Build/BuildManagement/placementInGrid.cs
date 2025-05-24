@@ -82,8 +82,8 @@ public class placementInGrid : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) {
             BuildManager.instance.isBuilding = false;
             CardsManager.instance.AddCard(card);
-            if (CardsManager.instance.GetCardInHand(card.name).cardCount == 1) {
-                CardsManager.instance.GetCardInHand(card.name).transform.SetSiblingIndex(posInSiblings);
+            if (CardsManager.instance.GetCardInHand(card).cardCount == 1) {
+                CardsManager.instance.GetCardInHand(card).transform.SetSiblingIndex(posInSiblings);
             }
             CardsManager.instance.UpdatePosCards();
             Destroy(gameObject);

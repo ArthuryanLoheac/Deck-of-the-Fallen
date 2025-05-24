@@ -26,6 +26,7 @@ MonoBehaviour:
   story: Steel speaks louder than gold in a world where survival is currency.
   sizeFont: 7
   type: 0
+  artType: 0
   hasHp: 1
   rarity: 0
   offsetTop: -23

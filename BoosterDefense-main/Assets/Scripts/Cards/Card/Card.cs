@@ -4,134 +4,91 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using System;
+
+[Serializable]
+public class CardVisual
+{
+    public TypeCardArt typeCardArt;
+    public SetCardClass setCardStats;
+}
 
 public class Card : MonoBehaviour
 {
-    
-    public Image[] lstToTransparenceWhenBlocked;
-    [Header("Card")]
-    public Image iconObject;
-    public TMP_Text textObject;
-    
-    [Header("Price")]
-    public Image iconPrice;
-    public TMP_Text textPrice;
-    public TMP_Text textPrice_Free;
-    private Button button;
-    [Header("Icons Price")]
-    public Sprite scrapsIcon;
-    public Sprite goldIcon;
-    public Sprite foodIcon;
-
-
-    [Header("Count")]
-    [HideInInspector]public int cardCount;
-    public TMP_Text textCardCount;
-    [HideInInspector]public CardStats cardStats;
-
-
-    [Header("Description")]
-    public TMP_Text description;
-    public TMP_Text story;
-
-
-    [Header("Type")]
-    public TMP_Text iconType;
-    [Header("HP")]
-    public GameObject iconHP;
-    public TMP_Text textHP;
-
-
-    [Header("BG Contours")]
-    public Image Contour;
-    public Sprite ContoursCommon;
-    public Image BG;
-
-    private string GetSpriteType(TypeCard type)
+    public override bool Equals(object obj)
     {
-        switch(type) {
-            case TypeCard.Sort:
-                return "SPELL";
-            case TypeCard.Npc:
-                return "HEROS";
-            case TypeCard.Batiment:
-                return "BUILDING";
-            case TypeCard.Vehicule:
-                return "VEHICLE";
-            case TypeCard.Equipement:
-                return "EQUIPMENT";
-            default :
-                return "BUILDING";
-        }
+        if (ReferenceEquals(this, obj))
+            return true;
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+        Card other = (Card)obj;
+        return cardStats == other.cardStats;
     }
 
-    private Sprite getIconRessourcesCard(RessourceType nameRessource)
+    public override int GetHashCode()
     {
-        if (nameRessource == RessourceType.scraps) {
-            return scrapsIcon;
-        } else if (nameRessource == RessourceType.goldInGame) {
-            return goldIcon;
-        } else if (nameRessource == RessourceType.food) {
-            return foodIcon;
+        return cardStats != null ? cardStats.GetHashCode() : 0;
+    }
+    private Button button;
+
+    [Header("Count")]
+    [HideInInspector] public int cardCount;
+    public TMP_Text textCardCount;
+    [HideInInspector] public CardStats cardStats;
+
+    public CardVisual[] cardVisuals;
+
+    SetCardClass getSetCardStats(TypeCardArt artType)
+    {
+        foreach (CardVisual style in cardVisuals)
+        {
+            if (style.typeCardArt == artType)
+            {
+                return style.setCardStats;
+            }
         }
         return null;
     }
+    void DisableNotSetCardStats(TypeCardArt artType)
+    {
+        foreach (CardVisual style in cardVisuals)
+        {
+            if (style.typeCardArt != artType)
+            {
+                style.setCardStats.gameObject.SetActive(false);
+            }
+            else    
+            {
+                style.setCardStats.gameObject.SetActive(true);
+            }
+        }
+    }
+
 
     public void SetStats(CardStats stats)
     {
         cardStats = stats;
-        textObject.text = cardStats.name;
-        iconObject.sprite = cardStats.image;
-        Vector3 v = iconObject.GetComponent<RectTransform>().localPosition;
-        v.y = cardStats.offsetTop;
-        iconObject.GetComponent<RectTransform>().localPosition = v;
         cardCount = 1;
-        description.enabled = true;
-        description.richText = true;
-        description.text = cardStats.description;
-        description.fontSize = cardStats.sizeFont;
-        story.enabled = true;
-        story.richText = true;
-        story.text = cardStats.story;
-        iconType.text = GetSpriteType(stats.type);
-        iconHP.SetActive(stats.hasHp);
-        if (stats.hasHp){
-            textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
-        }
-    
-        if (stats.rarity == Rarity.Rare)
-            Contour.sprite = ContoursCommon;
-        if (stats.rarity == Rarity.Common)
-            Contour.sprite = ContoursCommon;
-        if (stats.rarity == Rarity.SuperRare)
-            Contour.sprite = ContoursCommon;
-    
-        if (cardStats.price <= 0) {
-            iconPrice.gameObject.SetActive(false);
-            textPrice.gameObject.SetActive(false);
-            textPrice_Free.gameObject.SetActive(true);
-        } else {
-            iconPrice.gameObject.SetActive(true);
-            textPrice.gameObject.SetActive(true);
-            iconPrice.sprite = getIconRessourcesCard(cardStats.priceRessource);
-            textPrice.text = cardStats.price.ToString();
-            textPrice_Free.gameObject.SetActive(false);
-        }
+        getSetCardStats(stats.artType).SetStats(stats);
+        DisableNotSetCardStats(stats.artType);
     }
-
-    private Color GetColorTransparent(Color col, bool b)
-    {
-        if (b)
-            return new Color(col.r, col.g, col.b, 1);
-        else
-            return new Color(col.r, col.g, col.b, .7f);
-    }
-
     private void MakeTransparent(bool b)
     {
-        foreach (Image img in lstToTransparenceWhenBlocked) {
-            img.color = GetColorTransparent(img.color, b);
-        }
+        getSetCardStats(cardStats.artType).MakeTransparent(b);
+    }
+
+    public static bool operator ==(Card a, Card b)
+    {
+        if (ReferenceEquals(a, b))
+            return true;
+        if (a is null || b is null)
+            return false;
+        return a.cardStats == b.cardStats;
+    }
+
+    public static bool operator !=(Card a, Card b)
+    {
+        return !(a == b);
     }
 
     void Start()
@@ -141,7 +98,8 @@ public class Card : MonoBehaviour
 
     private void UpdatePrice()
     {
-        if (cardStats.price > 0 && button){
+        if (cardStats.price > 0 && button)
+        {
             if (RessourceManager.instance.GetRessourceAmount(cardStats.priceRessource) < cardStats.price)
                 button.interactable = false;
             else
@@ -152,10 +110,13 @@ public class Card : MonoBehaviour
 
     private void UpdateCount()
     {
-        if (cardCount > 1) {
+        if (cardCount > 1)
+        {
             textCardCount.enabled = true;
             textCardCount.text = "x" + cardCount.ToString();
-        } else {
+        }
+        else
+        {
             textCardCount.enabled = false;
         }
     }
@@ -165,14 +126,16 @@ public class Card : MonoBehaviour
         UpdatePrice();
         UpdateCount();
         //Destroy if no more card
-        if (cardCount <= 0) {
+        if (cardCount <= 0)
+        {
             CardsManager.instance.RemovePackCard(gameObject);
         }
     }
 
     void Update()
     {
-        if (cardStats != null) {
+        if (cardStats != null)
+        {
             UpdateCard();
         }
     }
@@ -180,7 +143,8 @@ public class Card : MonoBehaviour
     public void SellCard()
     {
         //Vend cette carte
-        if (cardStats.CanBeSold) {
+        if (cardStats.CanBeSold)
+        {
             RessourceManager.instance.AddRessource(cardStats.SoldType, cardStats.ValueSold);
             CardsManager.instance.RemoveCard(gameObject);
             CardsManager.instance.UpdatePosCards();

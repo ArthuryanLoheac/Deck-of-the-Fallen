@@ -279,7 +279,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1604136165}
   m_HandleRect: {fileID: 1604136164}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -927,6 +927,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 173910075006801334, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 173910075006801334, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 467174897036611276, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -973,6 +981,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983043377567144690, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012254081924553559, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012254081924553559, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012254081924553559, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1012359679997825056, guid: af01dc0baa006754cba6a0363a08099e, type: 3}
@@ -2223,9 +2243,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   scraps: 0
-  gold: 0
+  gold: 200000000
   food: 0
-  goldInGame: 0
+  goldInGame: 200000000
   scrapsIcon: {fileID: 21300000, guid: 27876e2e5443e1b44a768ca5c1eed20b, type: 3}
   goldIcon: {fileID: 21300000, guid: 0d93693b79a040f45afb3225a1f0b8a6, type: 3}
   foodIcon: {fileID: 21300000, guid: 4f02bc277ec982849a84664a18f50c9e, type: 3}
@@ -2392,7 +2412,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1562034818}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3195,7 +3215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationNormalDraw: {fileID: 0}
-  boosterOwned: []
+  chanceFullArt: 0.5
+  boosterOwned:
+  - {fileID: 11400000, guid: 8ca33b10e6d963b499290d0e49a3bef0, type: 2}
 --- !u!1001 &1588669995
 PrefabInstance:
   m_ObjectHideFlags: 0
