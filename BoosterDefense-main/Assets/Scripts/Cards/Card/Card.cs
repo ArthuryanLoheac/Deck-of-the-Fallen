@@ -35,6 +35,8 @@ public class Card : MonoBehaviour
     [HideInInspector] public int cardCount;
     public TMP_Text textCardCount;
     [HideInInspector] public CardStats cardStats;
+    public bool isFlipped = false;
+    public bool updatePrice = false;
 
     public CardVisual[] cardVisuals;
 
@@ -64,14 +66,24 @@ public class Card : MonoBehaviour
         }
     }
 
-
-    public void SetStats(CardStats stats)
+    public void SetStats(CardStats stats, bool flipped = false)
     {
         cardStats = stats;
         cardCount = 1;
-        getSetCardStats(stats.artType).SetStats(stats);
-        DisableNotSetCardStats(stats.artType);
+        isFlipped = flipped;
+        TypeCardArt type = isFlipped ? TypeCardArt.FLIPPED : stats.artType;
+        getSetCardStats(type).SetStats(stats);
+        DisableNotSetCardStats(type);
     }
+
+    public void flip()
+    {
+        if (isFlipped)
+        {
+            SetStats(cardStats, false);
+        }
+    }
+
     private void MakeTransparent(bool b)
     {
         getSetCardStats(cardStats.artType).MakeTransparent(b);
@@ -98,7 +110,7 @@ public class Card : MonoBehaviour
 
     private void UpdatePrice()
     {
-        if (cardStats.price > 0 && button)
+        if (cardStats.price > 0 && button && updatePrice)
         {
             if (RessourceManager.instance.GetRessourceAmount(cardStats.priceRessource) < cardStats.price)
                 button.interactable = false;

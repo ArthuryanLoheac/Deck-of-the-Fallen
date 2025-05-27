@@ -43,6 +43,7 @@ public class BoosterManager : MonoBehaviour
         BoosterManagerUI.instance.SetupCardsUIButtons();
         cardsDraw = new List<CardStats>();
         List<int> raritys = new List<int>();
+
         // Comon
         BoosterDrawCardUI.instance.isDrawing = true;
         for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++)
@@ -62,7 +63,7 @@ public class BoosterManager : MonoBehaviour
                 raritys.Add(2);
             }
         }
-        BoosterDrawCardUI.instance.SetupCards(cardsDraw, raritys);
+        StartCoroutine(BoosterDrawCardUI.instance.SetupCards(cardsDraw, raritys));
         yield return new WaitForSeconds(0);
     }
 

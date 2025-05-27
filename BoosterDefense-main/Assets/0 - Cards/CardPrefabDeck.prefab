@@ -67,6 +67,8 @@ MonoBehaviour:
     setCardStats: {fileID: 1856458659828430377}
   - typeCardArt: 1
     setCardStats: {fileID: 4296294597120261997}
+  - typeCardArt: 2
+    setCardStats: {fileID: 3495487825429913181}
 --- !u!114 &6379716944137766168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +250,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6181a506cfad1c4c88f15cf302b0a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3495487825429913181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5692537799919178773, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_PrefabInstance: {fileID: 9114585668098017864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a9a1374fdc0874691d5a69a45cac23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4296294597120261997 stripped

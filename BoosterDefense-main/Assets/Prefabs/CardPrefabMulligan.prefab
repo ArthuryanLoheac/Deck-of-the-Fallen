@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9159295392597533260}
   - component: {fileID: 8566089226541568274}
   m_Layer: 5
-  m_Name: CardMulligan
+  m_Name: CardPrefabMulligan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,6 +68,8 @@ MonoBehaviour:
     setCardStats: {fileID: 3801583114531767703}
   - typeCardArt: 1
     setCardStats: {fileID: 1629487019262938323}
+  - typeCardArt: 2
+    setCardStats: {fileID: 2125962132171042275}
 --- !u!114 &9159295392597533260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +213,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 976291715909f694692c2e1c44de3e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2125962132171042275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5692537799919178773, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
+  m_PrefabInstance: {fileID: 6016558123191777782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a9a1374fdc0874691d5a69a45cac23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2815397830629981406 stripped
