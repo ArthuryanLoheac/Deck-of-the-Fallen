@@ -4898,7 +4898,7 @@ MonoBehaviour:
   - 45
   - 45
   - 45
-  IsMarchandAfter: 0001000100
+  IsMarchandAfter: 0100000100
   IsBoss: 0000000000
   isDrawCardResetCalled: 0
   maxWave: 0
@@ -5546,7 +5546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationNormalDraw: {fileID: 0}
-  chanceFullArt: 0.05
   boosterOwned: []
 --- !u!114 &2028422634
 MonoBehaviour:
@@ -5892,6 +5891,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 205563072467260573, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1881733630}
+    - target: {fileID: 205563072467260573, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextWaveSpawners
+      objectReference: {fileID: 0}
+    - target: {fileID: 632601968177927455, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533610597380301607, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: CardPrefab
+      value: 
+      objectReference: {fileID: 4333293451054857453, guid: 83886a917d795d6498b6c8fd555ab6c0, type: 3}
     - target: {fileID: 1892518073786979630, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5988,6 +6003,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4170313040907898382, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1881733626}
+    - target: {fileID: 4170313040907898382, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setLowSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349892850010195041, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1881733626}
+    - target: {fileID: 4349892850010195041, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setHighSpeed
+      objectReference: {fileID: 0}
     - target: {fileID: 5642559574510148202, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6003,6 +6034,14 @@ PrefabInstance:
     - target: {fileID: 6270020605117150129, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407355879238218455, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1881733626}
+    - target: {fileID: 6407355879238218455, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setNormalSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 6408620424709816502, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6034,6 +6073,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7408178178113209316, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583308994308462094, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7884734768675319837, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
@@ -6073,7 +6116,8 @@ PrefabInstance:
       value: --- CANVAS ---
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7583308994308462094, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 566e804d89b95a74da47ad66c7fe78dc, type: 3}

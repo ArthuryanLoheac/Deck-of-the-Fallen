@@ -89,13 +89,14 @@ GameObject:
   - component: {fileID: 4848402462130034308}
   - component: {fileID: -8154699867229696526}
   - component: {fileID: 4112455891166056531}
+  - component: {fileID: 5497271861042342031}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4018408308879438308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -223,6 +224,23 @@ MonoBehaviour:
   - {fileID: 8732003444462414941}
   - {fileID: 9042125892910119042}
   Zoomed: 0
+--- !u!111 &5497271861042342031
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380974737205684631}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 4af0f0ad2e6f4f64a97b8793d3ca2632, type: 2}
+  - {fileID: 7400000, guid: 1b6eb5328ea8a71459ec06e9099777dc, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &517224353775921503
 GameObject:
   m_ObjectHideFlags: 0

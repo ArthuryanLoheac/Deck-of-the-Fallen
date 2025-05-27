@@ -37,36 +37,32 @@ public class BoosterManager : MonoBehaviour
 
     IEnumerator DrawAnimationCoroutine(BoosterStats boosterStats, bool AddCardToHand = false)
     {
+        BoosterDrawCardUI.instance.DesactiveCard();
+        List<CardStats> cards = new List<CardStats>();
+        List<int> raritys = new List<int>();
         // Comon
         BoosterDrawCardUI.instance.isDrawing = true;
-        for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++) {
-            BoosterDrawCardUI.instance.DesactiveCard();
-
-            CardStats card = DrawFromList(boosterStats.listCardCommon, 0, AddCardToHand);
-
-            BoosterDrawCardUI.instance.SetupCard(card, 0);
-            SoundManager.instance.PlaySound("DrawCard");
-            yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++)
+        {
+            cards.Add(DrawFromList(boosterStats.listCardCommon, 0, AddCardToHand));
+            raritys.Add(0);
         }
         //Rare and super rare
         for (int j = 0; j < boosterStats.nbRare; j++) {
-            BoosterDrawCardUI.instance.DesactiveCard();
-
-            if (Random.Range(1, 101) < boosterStats.percentSuperRare) {
-                //Super rare
-                CardStats card = DrawFromList(boosterStats.listCardSuperRare, 2, AddCardToHand);
-                BoosterDrawCardUI.instance.SetupCard(card, 1);
-                SoundManager.instance.PlaySound("DrawCard");
-                yield return new WaitForSeconds(1.5f);
-            } else {
+            if (Random.Range(1, 101) >= boosterStats.percentSuperRare) {
                 //rare
-                CardStats card = DrawFromList(boosterStats.listCardRare, 1, AddCardToHand);
-                BoosterDrawCardUI.instance.SetupCard(card, 1);
-                SoundManager.instance.PlaySound("DrawCard");
-                yield return new WaitForSeconds(1.5f);
+                cards.Add(DrawFromList(boosterStats.listCardRare, 1, AddCardToHand));
+                raritys.Add(1);
+            } else {
+                //Super rare
+                cards.Add(DrawFromList(boosterStats.listCardSuperRare, 2, AddCardToHand));
+                raritys.Add(2);
             }
-            BoosterDrawCardUI.instance.DesactiveCard();
         }
+        BoosterDrawCardUI.instance.SetupCards(cards, raritys);
+    
+        yield return new WaitForSeconds(30);
+        BoosterDrawCardUI.instance.DesactiveCard();
         BoosterDrawCardUI.instance.isDrawing = false;
         //Fermeture marchand apres pioche
         if (BoosterMarchandManager.instance) {

@@ -153,7 +153,7 @@ public class MulliganManager : MonoBehaviour
         for (int i = 0; i < draw; i++)
         {
             Vector3 pos = transform.position;
-            pos.x += (i - (draw / 2)) * (scale/9);
+            pos.x += (i - (draw / 2.0f) + 0.5f) * (scale/9.0f);
             GameObject card = Instantiate(mulliganPrefabCard, pos, Quaternion.identity, parentForCards.transform);
             card.GetComponent<Card>().SetStats(cards[i]);
             cardsObj.Add(card);
