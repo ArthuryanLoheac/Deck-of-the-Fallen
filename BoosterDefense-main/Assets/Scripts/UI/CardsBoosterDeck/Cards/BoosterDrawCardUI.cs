@@ -38,11 +38,10 @@ public class BoosterDrawCardUI : MonoBehaviour
         {
             Vector3 pos = transform.GetComponent<RectTransform>().position;
             float ipos = i - (stats.Count / 2.0f) + 0.5f;
-            Debug.Log(ipos);
-            pos.x += ipos * (scale/10.0f);
+            pos.x += ipos * (scale/8.0f);
             CardInstantiate.Add(Instantiate(CardPrefab, pos, Quaternion.identity, transform));
             CardInstantiate[i].transform.GetComponent<RectTransform>().localScale = new Vector3(2, 2, 2);
-            SetupCard(stats[i], rarity[i], CardInstantiate[i]);
+            SetupCard(stats[i], rarity[i], CardInstantiate[i]); 
         }
     }
     public void DesactiveCard()

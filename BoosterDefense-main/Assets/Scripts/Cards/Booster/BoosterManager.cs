@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoosterManager : MonoBehaviour
 {
     public static BoosterManager instance;
     public Animation animationNormalDraw;
-    private float[] chanceFullArtList = {0.03f, 0.05f, 0.08f};
+    List<CardStats> cardsDraw;
+    private float[] chanceFullArtList = { 0.03f, 0.05f, 0.08f };
 
     public List<BoosterStats> boosterOwned;
 
@@ -29,7 +31,7 @@ public class BoosterManager : MonoBehaviour
         if (chance <= chanceFullArtList[rareLevel])
             cardDraw.artType = TypeCardArt.FULL_ART;
         if (AddCardToHand)
-                CardsManager.instance.AddCard(cardDraw);
+            CardsManager.instance.AddCard(cardDraw);
 
         DeckCardsManager.instance.AllCards.Add(cardDraw);
         return cardDraw;
@@ -38,34 +40,41 @@ public class BoosterManager : MonoBehaviour
     IEnumerator DrawAnimationCoroutine(BoosterStats boosterStats, bool AddCardToHand = false)
     {
         BoosterDrawCardUI.instance.DesactiveCard();
-        List<CardStats> cards = new List<CardStats>();
+        BoosterManagerUI.instance.SetupCardsUIButtons();
+        cardsDraw = new List<CardStats>();
         List<int> raritys = new List<int>();
         // Comon
         BoosterDrawCardUI.instance.isDrawing = true;
         for (int i = 0; i < boosterStats.nbCard - boosterStats.nbRare; i++)
         {
-            cards.Add(DrawFromList(boosterStats.listCardCommon, 0, AddCardToHand));
+            cardsDraw.Add(DrawFromList(boosterStats.listCardCommon, 0, AddCardToHand));
             raritys.Add(0);
         }
         //Rare and super rare
         for (int j = 0; j < boosterStats.nbRare; j++) {
             if (Random.Range(1, 101) >= boosterStats.percentSuperRare) {
                 //rare
-                cards.Add(DrawFromList(boosterStats.listCardRare, 1, AddCardToHand));
+                cardsDraw.Add(DrawFromList(boosterStats.listCardRare, 1, AddCardToHand));
                 raritys.Add(1);
             } else {
                 //Super rare
-                cards.Add(DrawFromList(boosterStats.listCardSuperRare, 2, AddCardToHand));
+                cardsDraw.Add(DrawFromList(boosterStats.listCardSuperRare, 2, AddCardToHand));
                 raritys.Add(2);
             }
         }
-        BoosterDrawCardUI.instance.SetupCards(cards, raritys);
-    
-        yield return new WaitForSeconds(30);
+        BoosterDrawCardUI.instance.SetupCards(cardsDraw, raritys);
+        yield return new WaitForSeconds(0);
+    }
+
+    public void CloseBoosterOpening()
+    {
+        foreach (CardStats car in cardsDraw)
+            CardsManager.instance.AddCard(car);
         BoosterDrawCardUI.instance.DesactiveCard();
         BoosterDrawCardUI.instance.isDrawing = false;
         //Fermeture marchand apres pioche
-        if (BoosterMarchandManager.instance) {
+        if (BoosterMarchandManager.instance)
+        {
             BoosterMarchandManager.instance.Activated = false;
             TimerCoolDown.instance.setIconWait(IconWaveType.Wait);
             WavesManager.instance.nextTypeWave();
@@ -73,6 +82,6 @@ public class BoosterManager : MonoBehaviour
     }
     public void OpenBooster(BoosterStats boosterStats, bool AddCardToHand = false)
     {
-        StartCoroutine(DrawAnimationCoroutine(boosterStats, AddCardToHand));
+        StartCoroutine(DrawAnimationCoroutine(boosterStats, false));
     }
 }
