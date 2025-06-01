@@ -21,7 +21,8 @@ public enum Rarity
 public enum TypeCardArt
 {
     NORMAL_ART,
-    FULL_ART
+    FULL_ART,
+    FLIPPED
 }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]

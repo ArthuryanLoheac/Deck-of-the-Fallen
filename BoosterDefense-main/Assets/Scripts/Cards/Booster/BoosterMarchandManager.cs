@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoosterMarchandManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BoosterMarchandManager : MonoBehaviour
     public List<BoosterStats> lst;
     public bool Activated;
     public static BoosterMarchandManager instance;
+
+    public Button buttonObject;
 
     void Awake()
     {
