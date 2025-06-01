@@ -63,6 +63,8 @@ MonoBehaviour:
   cardCount: 0
   textCardCount: {fileID: 2815397830629981406}
   cardStats: {fileID: 0}
+  isFlipped: 0
+  updatePrice: 0
   cardVisuals:
   - typeCardArt: 0
     setCardStats: {fileID: 3801583114531767703}
@@ -95,6 +97,9 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 264a22015e1746b4380d33139e7d06a2, type: 2}
+  - {fileID: 7400000, guid: 4af0f0ad2e6f4f64a97b8793d3ca2632, type: 2}
+  - {fileID: 7400000, guid: 1b6eb5328ea8a71459ec06e9099777dc, type: 2}
+  - {fileID: 7400000, guid: edd7c12de92f3c74f90ca127a11beedb, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -193,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018408308879438308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -3.960002
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4848402462130034308, guid: 20b1cb9c16e62014797aa121916bdde0, type: 3}

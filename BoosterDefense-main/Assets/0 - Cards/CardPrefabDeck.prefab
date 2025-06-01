@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3952221169921597396}
   - component: {fileID: 2656000143156364171}
   - component: {fileID: 6379716944137766168}
+  - component: {fileID: 630768087813620519}
   m_Layer: 5
   m_Name: CardPrefabDeck
   m_TagString: Untagged
@@ -62,6 +63,8 @@ MonoBehaviour:
   cardCount: 0
   textCardCount: {fileID: 725314332288978784}
   cardStats: {fileID: 0}
+  isFlipped: 0
+  updatePrice: 0
   cardVisuals:
   - typeCardArt: 0
     setCardStats: {fileID: 1856458659828430377}
@@ -81,6 +84,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af91a81524e464946a1203db2a59c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &630768087813620519
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333293451054857453}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 264a22015e1746b4380d33139e7d06a2, type: 2}
+  - {fileID: 7400000, guid: 4af0f0ad2e6f4f64a97b8793d3ca2632, type: 2}
+  - {fileID: 7400000, guid: 1b6eb5328ea8a71459ec06e9099777dc, type: 2}
+  - {fileID: 7400000, guid: edd7c12de92f3c74f90ca127a11beedb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &9114585668098017864
 PrefabInstance:
   m_ObjectHideFlags: 0

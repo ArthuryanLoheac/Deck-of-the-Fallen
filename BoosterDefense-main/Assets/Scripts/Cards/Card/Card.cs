@@ -76,11 +76,19 @@ public class Card : MonoBehaviour
         DisableNotSetCardStats(type);
     }
 
+    IEnumerator flipCardAnimation()
+    {
+        GetComponent<Animation>().Play("CardFlipHide");
+        yield return new WaitForSeconds(.1f);
+        SetStats(cardStats, false);
+        GetComponent<Animation>().Play("CardFlipSpawn");
+    }
+
     public void flip()
     {
         if (isFlipped)
         {
-            SetStats(cardStats, false);
+            StartCoroutine(flipCardAnimation());
         }
     }
 

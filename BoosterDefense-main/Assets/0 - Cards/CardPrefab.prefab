@@ -242,6 +242,8 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 4af0f0ad2e6f4f64a97b8793d3ca2632, type: 2}
   - {fileID: 7400000, guid: 1b6eb5328ea8a71459ec06e9099777dc, type: 2}
+  - {fileID: 7400000, guid: 264a22015e1746b4380d33139e7d06a2, type: 2}
+  - {fileID: 7400000, guid: edd7c12de92f3c74f90ca127a11beedb, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -923,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f8fe12dc68ec26c4188bb3bc47acb8c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ea186f9d9e4da84096b9962f8d829f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
