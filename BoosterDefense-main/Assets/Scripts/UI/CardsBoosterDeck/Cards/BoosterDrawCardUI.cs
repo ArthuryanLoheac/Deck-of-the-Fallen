@@ -34,6 +34,7 @@ public class BoosterDrawCardUI : MonoBehaviour
         float scale = Screen.width;
         DesactiveCard();
 
+        BoosterManagerUI.instance.SetupCardsUIButtons();
         for (int i = 0; i < stats.Count; i++)
         {
             Vector3 pos = transform.GetComponent<RectTransform>().position;
@@ -46,7 +47,26 @@ public class BoosterDrawCardUI : MonoBehaviour
             cardCreated.GetComponent<Animation>().Play("CardFlipSpawn");
             yield return new WaitForSeconds(0.2f);
         }
+        BoosterManagerUI.instance.ActiveCardsUiButtons();
+        BoosterManagerUI.instance.isReveal = RevealState.NOT_REVEAL;
     }
+    public void RevealAllCards()
+    {
+        foreach (GameObject card in CardInstantiate) {
+            card.GetComponent<Card>().flip();
+        }
+    }
+
+    public bool isRevealedAll()
+    {
+        foreach (GameObject card in CardInstantiate)
+        {
+            if (card.GetComponent<Card>().isFlipped)
+                return false;
+        }
+        return true;
+    }
+
     public void DesactiveCard()
     {
         foreach (GameObject obj in CardInstantiate)

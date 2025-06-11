@@ -40,7 +40,6 @@ public class BoosterManager : MonoBehaviour
     IEnumerator DrawAnimationCoroutine(BoosterStats boosterStats, bool AddCardToHand = false)
     {
         BoosterDrawCardUI.instance.DesactiveCard();
-        BoosterManagerUI.instance.SetupCardsUIButtons();
         cardsDraw = new List<CardStats>();
         List<int> raritys = new List<int>();
 

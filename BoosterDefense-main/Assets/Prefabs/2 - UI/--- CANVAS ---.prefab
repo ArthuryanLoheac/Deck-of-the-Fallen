@@ -12488,7 +12488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a41a7f98624e848839246d8bed46e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonObject: {fileID: 3099741868683529586}
+  txtButton: {fileID: 6242329330543604947}
+  buttonObjectReveal: {fileID: 3099741868683529586}
 --- !u!1 &1811123322382269693
 GameObject:
   m_ObjectHideFlags: 0
@@ -12659,7 +12660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -246.64636}
+  m_AnchoredPosition: {x: 0, y: -303.04877}
   m_SizeDelta: {x: 222.4386, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5720622689161380526
@@ -12746,7 +12747,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5631837666619646287}
         m_TargetAssemblyTypeName: BoosterManagerUI, Assembly-CSharp
-        m_MethodName: TakeCards
+        m_MethodName: TakeOrReveal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14037,7 +14038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take
+  m_text: Reveal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
   m_sharedMaterial: {fileID: 4299220722095240433, guid: 5ad3bd70008689c418483dba1db4c2c2, type: 2}
@@ -44687,7 +44688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10.997925}
+  m_AnchoredPosition: {x: 0, y: -10.997864}
   m_SizeDelta: {x: 1953.3889, y: 1073.1709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1736623927018091581
