@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardWasteCenter
   m_EditorClassIdentifier: 
   name: Waste Center
-  image: {fileID: 21300000, guid: 4fa2fc9b5ab05d247905f4318b6de70f, type: 3}
+  image: {fileID: 21300000, guid: 513f9a8035d0e9247a2a969263ccbf68, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 75
   priceRessource: 2
   ghostToSpawn: {fileID: 5070826136400796597, guid: b30b3b7e253c7ff40bbb686b9c9e7de0, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
   story: Where others see ruins, survivors see opportunity.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: 38
+  offsetTop: 32

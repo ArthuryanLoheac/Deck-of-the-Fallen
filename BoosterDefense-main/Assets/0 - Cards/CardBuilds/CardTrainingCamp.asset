@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardTrainingCamp
   m_EditorClassIdentifier: 
   name: Training camp
-  image: {fileID: 21300000, guid: a66dfd9be19ee3a4081f6e0cc074755f, type: 3}
+  image: {fileID: 21300000, guid: 96e3ea3c1c14d7344bfb89492d18425c, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 75
   priceRessource: 2
   ghostToSpawn: {fileID: 5070826136400796597, guid: 66e3a1c773dba604fa3d0b16d384bcfe, type: 3}
@@ -27,6 +28,7 @@ MonoBehaviour:
     steel.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 2
-  offsetTop: 27
+  offsetTop: 22

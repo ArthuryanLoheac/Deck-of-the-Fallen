@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardMolotov
   m_EditorClassIdentifier: 
   name: Molotov
-  image: {fileID: 21300000, guid: 50acf63db96da85479b62d7d36e6eeed, type: 3}
+  image: {fileID: 21300000, guid: 00590836c7112154aa1dabc8893330b9, type: 3}
+  backGround: {fileID: 21300000, guid: 5d5e7a565e9014d43a29a3578d5d77a2, type: 3}
   price: 10
   priceRessource: 1
   ghostToSpawn: {fileID: 215035147963519678, guid: e0fb050cddd6f2248beddfdbe4716a7e, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
   story: BURN YOUR ENNEMIES !!!
   sizeFont: 7
   type: 1
+  artType: 0
   hasHp: 0
   rarity: 0
-  offsetTop: -25
+  offsetTop: -33

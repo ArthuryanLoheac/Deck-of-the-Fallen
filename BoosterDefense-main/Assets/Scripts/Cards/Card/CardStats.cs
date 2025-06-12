@@ -30,6 +30,7 @@ public class CardStats : ScriptableObject
 {
     public new string name;
     public Sprite image;
+    public Sprite backGround;
     [Header("Price")]
     public int price;
     public RessourceType priceRessource;

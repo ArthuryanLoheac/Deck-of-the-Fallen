@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardScrapLittle
   m_EditorClassIdentifier: 
   name: Bolts
-  image: {fileID: 21300000, guid: 4d5ced1b191ec0442bb8c2e9ac2c715b, type: 3}
+  image: {fileID: 21300000, guid: 6283a004eba1af34280a6ba1823dc750, type: 3}
+  backGround: {fileID: 21300000, guid: 9fd53de7263dc7c48b77d497bde3d9f5, type: 3}
   price: 0
   priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 90c73b5a9d389b442b0c63e5fbe4b6ec, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
   story: Scattered remains of machines that once moved the world.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: -20
+  offsetTop: -25

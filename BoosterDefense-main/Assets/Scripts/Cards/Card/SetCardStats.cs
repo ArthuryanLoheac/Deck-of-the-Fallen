@@ -11,6 +11,7 @@ public class SetCardStats : SetCardClass
 
     [Header("Card")]
     public Image Image;
+    public Image BackGround;
     public TMP_Text textObject;
 
     [Header("Price")]
@@ -67,13 +68,20 @@ public class SetCardStats : SetCardClass
         }
     }
 
+    private void SetRectTransform(Image img, CardStats stats)
+    {
+        Vector3 v = img.GetComponent<RectTransform>().localPosition;
+        v.y = stats.offsetTop;
+        img.GetComponent<RectTransform>().localPosition = v;
+    }
+
     public override void SetStats(CardStats stats)
     {
         textObject.text = stats.name;
         Image.sprite = stats.image;
-        Vector3 v = Image.GetComponent<RectTransform>().localPosition;
-        v.y = stats.offsetTop;
-        Image.GetComponent<RectTransform>().localPosition = v;
+        BackGround.sprite = stats.backGround;
+        SetRectTransform(Image, stats);
+        SetRectTransform(BackGround, stats);
         description.enabled = true;
         description.richText = true;
         description.text = stats.description;

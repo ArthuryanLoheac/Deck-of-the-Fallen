@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardFarmerRookie
   m_EditorClassIdentifier: 
   name: Farmer Rookie
-  image: {fileID: 21300000, guid: 28109318f8b11bf45b1dd9b6bb15264a, type: 3}
+  image: {fileID: 21300000, guid: 127c3cce39bec2f4d9cc14ba42565524, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 0
   priceRessource: 3
   ghostToSpawn: {fileID: 2395485346363015865, guid: c87d4b9e6df4df6448fa30c88f7e659e, type: 3}
@@ -26,6 +27,7 @@ MonoBehaviour:
   story: When the sky first turned gray, he planted hope where fear had taken root.
   sizeFont: 7
   type: 0
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: -23
+  offsetTop: -32
