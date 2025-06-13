@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public class CardVisual

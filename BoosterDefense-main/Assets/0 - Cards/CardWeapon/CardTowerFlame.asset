@@ -31,3 +31,4 @@ MonoBehaviour:
   hasHp: 1
   rarity: 1
   offsetTop: -25
+  offsetFinal: -23

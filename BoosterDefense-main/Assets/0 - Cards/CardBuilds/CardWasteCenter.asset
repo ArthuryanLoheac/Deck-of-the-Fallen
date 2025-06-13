@@ -30,4 +30,5 @@ MonoBehaviour:
   artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: 32
+  offsetTop: 30
+  offsetFinal: 38

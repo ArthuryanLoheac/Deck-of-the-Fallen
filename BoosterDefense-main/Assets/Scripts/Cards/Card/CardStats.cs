@@ -55,6 +55,9 @@ public class CardStats : ScriptableObject
     [Header("Offset")]
     [Range(-38f, 38f)]
     public float offsetTop = 0.0f; // -38 à 38
+    [Range(-42f, 42f)]
+    public float offsetFinal = 0.0f; // -38 à 38
+    public bool BgFollow = false;
     
     public static bool operator ==(CardStats a, CardStats b)
     {

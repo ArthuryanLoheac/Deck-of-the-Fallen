@@ -1,10 +1,12 @@
     using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SetCardStats : SetCardClass
+public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHandler
 {
     
     public Image[] lstToTransparenceWhenBlocked;
@@ -42,6 +44,11 @@ public class SetCardStats : SetCardClass
     public Sprite ContoursCommon;
     public Image BG;
 
+    bool isZoomed;
+    CardStats myStats;
+    Vector3 scaleOriginal;
+    Vector3 scaleBGOriginal;
+
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
         if (nameRessource == RessourceType.scraps)
@@ -68,20 +75,21 @@ public class SetCardStats : SetCardClass
         }
     }
 
-    private void SetRectTransform(Image img, CardStats stats)
+    private void SetRectTransform(Image img, float offset)
     {
         Vector3 v = img.GetComponent<RectTransform>().localPosition;
-        v.y = stats.offsetTop;
+        v.y = offset;
         img.GetComponent<RectTransform>().localPosition = v;
     }
 
     public override void SetStats(CardStats stats)
     {
+        myStats = stats;
         textObject.text = stats.name;
         Image.sprite = stats.image;
         BackGround.sprite = stats.backGround;
-        SetRectTransform(Image, stats);
-        SetRectTransform(BackGround, stats);
+        SetRectTransform(Image, stats.offsetTop);
+        SetRectTransform(BackGround, stats.offsetTop);
         description.enabled = true;
         description.richText = true;
         description.text = stats.description;
@@ -92,9 +100,7 @@ public class SetCardStats : SetCardClass
         typeCard.text = GetSpriteType(stats.type);
         iconHP.SetActive(stats.hasHp);
         if (stats.hasHp)
-        {
             textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
-        }
 
         if (stats.rarity == Rarity.Rare)
             Contour.sprite = ContoursCommon;
@@ -117,5 +123,45 @@ public class SetCardStats : SetCardClass
             textPrice.text = stats.price.ToString();
             textPrice_Free.gameObject.SetActive(false);
         }
+        scaleOriginal = Image.GetComponent<RectTransform>().localScale;
+        scaleBGOriginal = BackGround.GetComponent<RectTransform>().localScale;
+    }
+
+    void Update()
+    {
+        if (isZoomed)
+        {
+            SetRectTransform(Image, myStats.offsetFinal);
+            Image.GetComponent<RectTransform>().localScale = new Vector3(
+                scaleOriginal.y * 1.1f, scaleOriginal.x * 1.1f, scaleOriginal.z * 1.1f
+            );
+            if (myStats.BgFollow)
+            {
+                SetRectTransform(BackGround, myStats.offsetFinal);
+                BackGround.GetComponent<RectTransform>().localScale = new Vector3(
+                    scaleBGOriginal.x * 1.1f, scaleBGOriginal.y * 1.1f, scaleBGOriginal.z * 1.1f
+            );
+            }
+        }
+        else
+        {
+            SetRectTransform(Image, myStats.offsetTop);
+            Image.GetComponent<RectTransform>().localScale = scaleOriginal;
+            if (myStats.BgFollow)
+            {
+                SetRectTransform(BackGround, myStats.offsetTop);
+                BackGround.GetComponent<RectTransform>().localScale = scaleBGOriginal;
+            }
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isZoomed = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isZoomed = false;
     }
 }

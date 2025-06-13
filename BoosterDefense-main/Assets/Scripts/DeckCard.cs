@@ -47,7 +47,6 @@ public class DeckCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
         SoundManager.instance.PlaySound("CardSound");
     }
 

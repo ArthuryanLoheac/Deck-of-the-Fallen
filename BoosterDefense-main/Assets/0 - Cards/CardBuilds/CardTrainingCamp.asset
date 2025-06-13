@@ -32,3 +32,5 @@ MonoBehaviour:
   hasHp: 1
   rarity: 2
   offsetTop: 22
+  offsetFinal: 32
+  BgFollow: 0
