@@ -129,30 +129,21 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
 
     void Update()
     {
-        if (isZoomed)
+        float offset = isZoomed ? myStats.offsetFinal : myStats.offsetTop;
+        float scale = isZoomed ? 1.1f : 1;
+
+        SetRectTransform(Image, offset);
+        Image.GetComponent<RectTransform>().localScale = new Vector3(
+            scaleOriginal.y * scale, scaleOriginal.x * scale, scaleOriginal.z * scale
+        );
+        if (myStats.BgFollow)
         {
-            SetRectTransform(Image, myStats.offsetFinal);
-            Image.GetComponent<RectTransform>().localScale = new Vector3(
-                scaleOriginal.y * 1.1f, scaleOriginal.x * 1.1f, scaleOriginal.z * 1.1f
-            );
-            if (myStats.BgFollow)
-            {
-                SetRectTransform(BackGround, myStats.offsetFinal);
-                BackGround.GetComponent<RectTransform>().localScale = new Vector3(
-                    scaleBGOriginal.x * 1.1f, scaleBGOriginal.y * 1.1f, scaleBGOriginal.z * 1.1f
-            );
-            }
+            SetRectTransform(BackGround, offset);
+            BackGround.GetComponent<RectTransform>().localScale = new Vector3(
+                scaleBGOriginal.x * scale, scaleBGOriginal.y * scale, scaleBGOriginal.z * scale
+        );
         }
-        else
-        {
-            SetRectTransform(Image, myStats.offsetTop);
-            Image.GetComponent<RectTransform>().localScale = scaleOriginal;
-            if (myStats.BgFollow)
-            {
-                SetRectTransform(BackGround, myStats.offsetTop);
-                BackGround.GetComponent<RectTransform>().localScale = scaleBGOriginal;
-            }
-        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)

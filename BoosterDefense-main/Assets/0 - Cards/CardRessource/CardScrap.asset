@@ -32,4 +32,4 @@ MonoBehaviour:
   rarity: 0
   offsetTop: -30
   offsetFinal: -25
-  BgFollow: 1
+  BgFollow: 0
