@@ -1,4 +1,5 @@
-    using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
@@ -49,6 +50,7 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
     Vector3 scaleBGOriginal;
     float scaleTarget; // 0 to 1
     float scale;
+    float timeRef;
 
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
@@ -66,7 +68,6 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
         }
         return null;
     }
-    
     
     public override void MakeTransparent(bool b) 
     {
@@ -144,13 +145,26 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
             scale -= Time.deltaTime * 7f;
     }
 
-    void LateUpdate()
+    void update_rotation()
+    {
+        if (scaleTarget == 0)
+        {
+            Image.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, 0);
+            return;
+        }
+        timeRef += Time.deltaTime;
+
+        Image.GetComponent<RectTransform>().localRotation = Quaternion.Euler(
+            0, 0, Mathf.Sin(timeRef * 2) * 2
+        );
+    }
+
+    void Update()
     {
         update_scale();
+        update_rotation();
         float offset = myStats.offsetTop + ((myStats.offsetFinal - myStats.offsetTop) * scale);
         float newScale = 1 + (scale * 0.1f);
- 
-        Debug.Log("scale: " + scale + " offset: " + offset + " newScale: " + newScale);
 
         SetRectTransform(Image, offset);
         Image.GetComponent<RectTransform>().localScale = new Vector3(
@@ -168,6 +182,7 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
     public void OnPointerEnter(PointerEventData eventData)
     {
         scaleTarget = 1f;
+        timeRef = Mathf.PI;
     }
 
     public void OnPointerExit(PointerEventData eventData)
