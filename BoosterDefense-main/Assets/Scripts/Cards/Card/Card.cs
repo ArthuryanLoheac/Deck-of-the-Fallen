@@ -41,7 +41,7 @@ public class Card : MonoBehaviour
 
     public CardVisual[] cardVisuals;
 
-    SetCardClass getSetCardStats(TypeCardArt artType)
+    public SetCardClass getSetCardStats(TypeCardArt artType)
     {
         foreach (CardVisual style in cardVisuals)
         {

@@ -179,6 +179,20 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
         }
     }
 
+    public override void SetActiveZoomDrag(bool active, bool reset)
+    {
+        if (active)
+        {
+            scaleTarget = 1f;
+            if (reset)
+                timeRef = Mathf.PI;            
+        }
+        else
+        {
+            scaleTarget = 0f;
+        }
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         scaleTarget = 1f;

@@ -33,4 +33,5 @@ public abstract class SetCardClass : MonoBehaviour
 
     abstract public void MakeTransparent(bool b);
     abstract public void SetStats(CardStats stats);
+    abstract public void SetActiveZoomDrag(bool b, bool reset);
 }
