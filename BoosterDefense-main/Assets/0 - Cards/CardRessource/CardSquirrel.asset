@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardSquirrel
   m_EditorClassIdentifier: 
   name: Squirrel
-  image: {fileID: 21300000, guid: 92e10c1037ce546479e13dba84e3dfa2, type: 3}
+  image: {fileID: 21300000, guid: 269712b1a7863d648ac1fd4aa88070cf, type: 3}
+  backGround: {fileID: 21300000, guid: a70d8a42419dd2c4aba3929db6b3a77f, type: 3}
   price: 0
   priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 662fae2cbf21c19429293745946cd72b, type: 3}
@@ -26,6 +27,8 @@ MonoBehaviour:
   story: "Once a master of hidden treasures \u2014 now a fleeting memory in the woods.  "
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: 26
+  offsetTop: 15
+  offsetFinal: 25

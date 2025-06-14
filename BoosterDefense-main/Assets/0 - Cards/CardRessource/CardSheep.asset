@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardSheep
   m_EditorClassIdentifier: 
   name: Sheep
-  image: {fileID: 21300000, guid: dc960966ca2319244a0929b1e3b357a7, type: 3}
+  image: {fileID: 21300000, guid: 118c59aa4eb7cc4458da58f9a36e86fb, type: 3}
+  backGround: {fileID: 21300000, guid: a70d8a42419dd2c4aba3929db6b3a77f, type: 3}
   price: 0
   priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 78aa1e9f03b052448b8670bf6bfe1ada, type: 3}
@@ -26,6 +27,8 @@ MonoBehaviour:
   story: "Its wool once warmed villages \u2014 now it feeds hungry mouths."
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: 26
+  offsetTop: 15
+  offsetFinal: 25

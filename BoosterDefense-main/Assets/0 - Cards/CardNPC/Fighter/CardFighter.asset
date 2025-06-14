@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardFighter
   m_EditorClassIdentifier: 
   name: Fighter
-  image: {fileID: 21300000, guid: 52080e5d41b80c04a9098b636ada7a99, type: 3}
+  image: {fileID: 21300000, guid: 8964878b8b91c824382b495407e3e779, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 15
   priceRessource: 3
   ghostToSpawn: {fileID: 2395485346363015865, guid: 31a27a95cb350a5479a4be33957393dc, type: 3}
@@ -26,6 +27,8 @@ MonoBehaviour:
   story: Once a lumberjack, now a legend. His axe swings for those who cannot.
   sizeFont: 7
   type: 0
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: -23
+  offsetTop: -36
+  offsetFinal: -34

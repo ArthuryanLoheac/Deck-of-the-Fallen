@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardTower
   m_EditorClassIdentifier: 
   name: Tower
-  image: {fileID: 21300000, guid: 111e38343411ecf49ba6c5d57ad12b37, type: 3}
+  image: {fileID: 21300000, guid: e5494f0ffc8226642a92cdab7f1aa7c2, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 20
   priceRessource: 2
   ghostToSpawn: {fileID: 1910272335522828243, guid: 9200e71b883abb440be82dd4592d1760, type: 3}
@@ -25,6 +26,9 @@ MonoBehaviour:
   story: Its aim never sleeps, even when the world does.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: -15
+  offsetTop: -25
+  offsetFinal: -15
+  BgFollow: 0

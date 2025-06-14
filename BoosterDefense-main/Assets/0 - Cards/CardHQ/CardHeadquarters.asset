@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardHeadquarters
   m_EditorClassIdentifier: 
   name: Headquarters
-  image: {fileID: 21300000, guid: 366fe52221b62694c8ca9a6a4f45bebb, type: 3}
+  image: {fileID: 21300000, guid: d82251578e9c6654889027e24e92fd42, type: 3}
+  backGround: {fileID: 21300000, guid: c7754cf70f1fddf4587b6fb01d723dd1, type: 3}
   price: 0
   priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 29e0b19ebf610894a9f1e4a4d3205f4d, type: 3}
@@ -26,6 +27,9 @@ MonoBehaviour:
   story: Hope has only one address left.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 0
-  offsetTop: 30
+  offsetTop: 25
+  offsetFinal: 35
+  BgFollow: 0

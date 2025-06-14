@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardMolotovBig
   m_EditorClassIdentifier: 
   name: Molotov BIG
-  image: {fileID: 21300000, guid: 50acf63db96da85479b62d7d36e6eeed, type: 3}
+  image: {fileID: 21300000, guid: 00590836c7112154aa1dabc8893330b9, type: 3}
+  backGround: {fileID: 21300000, guid: 5d5e7a565e9014d43a29a3578d5d77a2, type: 3}
   price: 30
   priceRessource: 1
   ghostToSpawn: {fileID: 215035147963519678, guid: a2000b3ec189f404d8b06f6977cf06bc, type: 3}
@@ -26,6 +27,9 @@ MonoBehaviour:
   story: GO BACK TO HELL MONSTERS !!!
   sizeFont: 7
   type: 1
+  artType: 0
   hasHp: 0
   rarity: 1
-  offsetTop: -25
+  offsetTop: -33
+  offsetFinal: -31
+  BgFollow: 0

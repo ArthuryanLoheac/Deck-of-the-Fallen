@@ -26,15 +26,18 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(transform.parent.parent);
 
         //Desactive detection by mouse to deteect object behind
-        foreach(Image image in imageToDisableWhileDragging) {
+        foreach (Image image in imageToDisableWhileDragging)
+        {
             image.raycastTarget = false;
         }
+        GetComponent<Card>().getSetCardStats(GetComponent<Card>().cardStats.artType).SetActiveZoomDrag(true, true);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //Update pos when dragging
         transform.position = Input.mousePosition;
+        GetComponent<Card>().getSetCardStats(GetComponent<Card>().cardStats.artType).SetActiveZoomDrag(true, false);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -50,6 +53,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         foreach(Image image in imageToDisableWhileDragging) {
             image.raycastTarget = true;
         }
+        GetComponent<Card>().getSetCardStats(GetComponent<Card>().cardStats.artType).SetActiveZoomDrag(false, false);
     }
 
     public void OnPointerClick(PointerEventData eventData)

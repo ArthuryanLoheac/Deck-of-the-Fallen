@@ -55,9 +55,9 @@ public class SetCardStatsFullArt : SetCardClass
         }
         return null;
     }
-    
-    
-    public override void MakeTransparent(bool b) 
+
+
+    public override void MakeTransparent(bool b)
     {
         foreach (Image img in lstToTransparenceWhenBlocked)
         {
@@ -105,4 +105,6 @@ public class SetCardStatsFullArt : SetCardClass
             textPrice_Free.gameObject.SetActive(false);
         }
     }
+    
+    public override void SetActiveZoomDrag(bool b, bool reset) {}
 }

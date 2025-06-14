@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public class CardVisual
@@ -40,7 +41,7 @@ public class Card : MonoBehaviour
 
     public CardVisual[] cardVisuals;
 
-    SetCardClass getSetCardStats(TypeCardArt artType)
+    public SetCardClass getSetCardStats(TypeCardArt artType)
     {
         foreach (CardVisual style in cardVisuals)
         {

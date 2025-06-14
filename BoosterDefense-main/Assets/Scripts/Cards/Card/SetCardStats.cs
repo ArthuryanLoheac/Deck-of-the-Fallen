@@ -1,16 +1,20 @@
-    using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SetCardStats : SetCardClass
+public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHandler
 {
     
     public Image[] lstToTransparenceWhenBlocked;
 
     [Header("Card")]
     public Image Image;
+    public Image BackGround;
     public TMP_Text textObject;
 
     [Header("Price")]
@@ -41,6 +45,13 @@ public class SetCardStats : SetCardClass
     public Sprite ContoursCommon;
     public Image BG;
 
+    CardStats myStats;
+    Vector3 scaleOriginal;
+    Vector3 scaleBGOriginal;
+    float scaleTarget; // 0 to 1
+    float scale;
+    float timeRef;
+
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
         if (nameRessource == RessourceType.scraps)
@@ -58,7 +69,6 @@ public class SetCardStats : SetCardClass
         return null;
     }
     
-    
     public override void MakeTransparent(bool b) 
     {
         foreach (Image img in lstToTransparenceWhenBlocked)
@@ -67,13 +77,21 @@ public class SetCardStats : SetCardClass
         }
     }
 
+    private void SetRectTransform(Image img, float offset)
+    {
+        Vector3 v = img.GetComponent<RectTransform>().localPosition;
+        v.y = offset;
+        img.GetComponent<RectTransform>().localPosition = v;
+    }
+
     public override void SetStats(CardStats stats)
     {
+        myStats = stats;
         textObject.text = stats.name;
         Image.sprite = stats.image;
-        Vector3 v = Image.GetComponent<RectTransform>().localPosition;
-        v.y = stats.offsetTop;
-        Image.GetComponent<RectTransform>().localPosition = v;
+        BackGround.sprite = stats.backGround;
+        SetRectTransform(Image, stats.offsetTop);
+        SetRectTransform(BackGround, stats.offsetTop);
         description.enabled = true;
         description.richText = true;
         description.text = stats.description;
@@ -84,9 +102,7 @@ public class SetCardStats : SetCardClass
         typeCard.text = GetSpriteType(stats.type);
         iconHP.SetActive(stats.hasHp);
         if (stats.hasHp)
-        {
             textHP.text = stats.ghostToSpawn.GetComponent<placementInGrid>().objToSpawn.GetComponent<Life>().hp.ToString();
-        }
 
         if (stats.rarity == Rarity.Rare)
             Contour.sprite = ContoursCommon;
@@ -109,5 +125,82 @@ public class SetCardStats : SetCardClass
             textPrice.text = stats.price.ToString();
             textPrice_Free.gameObject.SetActive(false);
         }
+        scaleOriginal = Image.GetComponent<RectTransform>().localScale;
+        scaleBGOriginal = BackGround.GetComponent<RectTransform>().localScale;
+        scaleTarget = 0;
+        scale = 0;
+    }
+
+    void update_scale()
+    {
+        if (scaleTarget - scale < 0.01f && scaleTarget - scale > -0.01f)
+        {
+            scale = scaleTarget;
+            return;
+        }
+
+        if (scaleTarget >= scale)
+            scale += Time.deltaTime * 7f;
+        else
+            scale -= Time.deltaTime * 7f;
+    }
+
+    void update_rotation()
+    {
+        if (scaleTarget == 0)
+        {
+            Image.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, 0);
+            return;
+        }
+        timeRef += Time.deltaTime;
+
+        Image.GetComponent<RectTransform>().localRotation = Quaternion.Euler(
+            0, 0, Mathf.Sin(timeRef * 2) * 2
+        );
+    }
+
+    void Update()
+    {
+        update_scale();
+        update_rotation();
+        float offset = myStats.offsetTop + ((myStats.offsetFinal - myStats.offsetTop) * scale);
+        float newScale = 1 + (scale * 0.1f);
+
+        SetRectTransform(Image, offset);
+        Image.GetComponent<RectTransform>().localScale = new Vector3(
+            scaleOriginal.y * newScale, scaleOriginal.x * newScale, scaleOriginal.z * newScale
+        );
+        if (myStats.BgFollow)
+        {
+            SetRectTransform(BackGround, offset);
+            BackGround.GetComponent<RectTransform>().localScale = new Vector3(
+                scaleBGOriginal.x * newScale, scaleBGOriginal.y * newScale, scaleBGOriginal.z * newScale
+        );
+        }
+    }
+
+    public override void SetActiveZoomDrag(bool active, bool reset)
+    {
+        if (active)
+        {
+            scaleTarget = 1f;
+            if (reset)
+                timeRef = Mathf.PI;            
+        }
+        else
+        {
+            scaleTarget = 0f;
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        scaleTarget = 1f;
+        timeRef = Mathf.PI;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        scaleTarget = 0;
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardTowerFlame
   m_EditorClassIdentifier: 
   name: Tower Flame
-  image: {fileID: 21300000, guid: 83d187055a55a7542b243b0aa1cc0dcc, type: 3}
+  image: {fileID: 21300000, guid: 54d5808c4a4696d4e8f169a6f5099c35, type: 3}
+  backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
   price: 20
   priceRessource: 2
   ghostToSpawn: {fileID: 1910272335522828243, guid: 1e28e393097b038438f430384b5723dc, type: 3}
@@ -26,6 +27,9 @@ MonoBehaviour:
   story: Some walls are made of fire.
   sizeFont: 7
   type: 2
+  artType: 0
   hasHp: 1
   rarity: 1
-  offsetTop: -15
+  offsetTop: -25
+  offsetFinal: -15
+  BgFollow: 0
