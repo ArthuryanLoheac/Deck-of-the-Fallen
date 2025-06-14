@@ -44,10 +44,11 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
     public Sprite ContoursCommon;
     public Image BG;
 
-    bool isZoomed;
     CardStats myStats;
     Vector3 scaleOriginal;
     Vector3 scaleBGOriginal;
+    float scaleTarget; // 0 to 1
+    float scale;
 
     private Sprite getIconRessourcesCard(RessourceType nameRessource)
     {
@@ -125,34 +126,52 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
         }
         scaleOriginal = Image.GetComponent<RectTransform>().localScale;
         scaleBGOriginal = BackGround.GetComponent<RectTransform>().localScale;
+        scaleTarget = 0;
+        scale = 0;
     }
 
-    void Update()
+    void update_scale()
     {
-        float offset = isZoomed ? myStats.offsetFinal : myStats.offsetTop;
-        float scale = isZoomed ? 1.1f : 1;
+        if (scaleTarget - scale < 0.01f && scaleTarget - scale > -0.01f)
+        {
+            scale = scaleTarget;
+            return;
+        }
+
+        if (scaleTarget >= scale)
+            scale += Time.deltaTime * 7f;
+        else
+            scale -= Time.deltaTime * 7f;
+    }
+
+    void LateUpdate()
+    {
+        update_scale();
+        float offset = myStats.offsetTop + ((myStats.offsetFinal - myStats.offsetTop) * scale);
+        float newScale = 1 + (scale * 0.1f);
+ 
+        Debug.Log("scale: " + scale + " offset: " + offset + " newScale: " + newScale);
 
         SetRectTransform(Image, offset);
         Image.GetComponent<RectTransform>().localScale = new Vector3(
-            scaleOriginal.y * scale, scaleOriginal.x * scale, scaleOriginal.z * scale
+            scaleOriginal.y * newScale, scaleOriginal.x * newScale, scaleOriginal.z * newScale
         );
         if (myStats.BgFollow)
         {
             SetRectTransform(BackGround, offset);
             BackGround.GetComponent<RectTransform>().localScale = new Vector3(
-                scaleBGOriginal.x * scale, scaleBGOriginal.y * scale, scaleBGOriginal.z * scale
+                scaleBGOriginal.x * newScale, scaleBGOriginal.y * newScale, scaleBGOriginal.z * newScale
         );
         }
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        isZoomed = true;
+        scaleTarget = 1f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        isZoomed = false;
+        scaleTarget = 0;
     }
 }
