@@ -93,8 +93,14 @@ public class placementInGrid : MonoBehaviour
     private void ChangeColors(Transform t, Material material)
     {
         for (int i = 0; i < t.childCount; i++) {
-            if (t.GetChild(i).gameObject.GetComponent<Renderer>() != null && t.GetChild(i).gameObject.tag != "UiArea") {
-                t.GetChild(i).gameObject.GetComponent<Renderer>().material = material;
+            if (t.GetChild(i).gameObject.GetComponent<Renderer>() != null && t.GetChild(i).gameObject.tag != "UiArea")
+            {
+                var renderer = t.GetChild(i).gameObject.GetComponent<Renderer>();
+                Material[] mats = renderer.materials;
+                for (int j = 0; j < mats.Length; j++) {
+                    mats[j] = material;
+                }
+                renderer.materials = mats;
             }
             if (t.GetChild(i).transform.childCount > 0) {
                 ChangeColors(t.GetChild(i).transform, material);
