@@ -15,6 +15,8 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
     [Header("Card")]
     public Image Image;
     public Image BackGround;
+    public Image ForeGround;
+    public Image ForeGroundCadre;
     public TMP_Text textObject;
 
     [Header("Price")]
@@ -90,6 +92,12 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
         textObject.text = stats.name;
         Image.sprite = stats.image;
         BackGround.sprite = stats.backGround;
+        ForeGround.sprite = stats.foreGround;
+        // If no foreground sprite, make ForeGroundCadre invisible
+        if (ForeGround.sprite == null)
+            ForeGroundCadre.color = new Color(0, 0, 0, 0);
+        else
+            SetRectTransform(ForeGround, stats.offsetTop);  
         SetRectTransform(Image, stats.offsetTop);
         SetRectTransform(BackGround, stats.offsetTop);
         description.enabled = true;
