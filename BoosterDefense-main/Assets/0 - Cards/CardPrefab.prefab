@@ -237,6 +237,8 @@ MonoBehaviour:
   - {fileID: 5363248497216827041}
   - {fileID: 679805558982292122}
   - {fileID: 7329706029126416964}
+  - {fileID: 7229216786861560971}
+  - {fileID: 5076759720321580756}
   Zoomed: 0
 --- !u!111 &5497271861042342031
 Animation:
@@ -2745,7 +2747,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6181a506cfad1c4c88f15cf302b0a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lstToTransparenceWhenBlocked: []
+  lstToTransparenceWhenBlocked:
+  - {fileID: 8273373581914009308}
+  - {fileID: 5425841807497770953}
+  - {fileID: 2343885989525650066}
+  - {fileID: 1294331876344690350}
+  - {fileID: 7229216786861560971}
   Image: {fileID: 4587827470614396425}
   BackGround: {fileID: 8914909224118910947}
   ForeGround: {fileID: 5076759720321580756}
@@ -3898,7 +3905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61960787, g: 0.5058824, b: 0.29803923, a: 1}
+  m_Color: {r: 0.61960787, g: 0.5058824, b: 0.29803923, a: 0.003921569}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3988,7 +3995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61960787, g: 0.5058824, b: 0.29803923, a: 0.007843138}
+  m_Color: {r: 0.61960787, g: 0.5058824, b: 0.29803923, a: 0.003921569}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

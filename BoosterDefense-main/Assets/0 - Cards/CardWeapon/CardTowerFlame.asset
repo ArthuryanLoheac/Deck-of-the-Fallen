@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Tower Flame
   image: {fileID: 21300000, guid: 54d5808c4a4696d4e8f169a6f5099c35, type: 3}
   backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
+  foreGround: {fileID: 1382460637, guid: 003452834241dca46a36946c76ab102e, type: 3}
   price: 20
   priceRessource: 2
   ghostToSpawn: {fileID: 1910272335522828243, guid: 1e28e393097b038438f430384b5723dc, type: 3}

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Farmer
   image: {fileID: 21300000, guid: 127c3cce39bec2f4d9cc14ba42565524, type: 3}
   backGround: {fileID: 21300000, guid: e9bbc33c905279240b78b8bbc0089549, type: 3}
+  foreGround: {fileID: -909839219, guid: 0c4f2f993d803824c9eb242b615392ca, type: 3}
   price: 15
   priceRessource: 3
   ghostToSpawn: {fileID: 2395485346363015865, guid: c87d4b9e6df4df6448fa30c88f7e659e, type: 3}
@@ -32,3 +33,4 @@ MonoBehaviour:
   rarity: 0
   offsetTop: -32
   offsetFinal: -30
+  BgFollow: 0

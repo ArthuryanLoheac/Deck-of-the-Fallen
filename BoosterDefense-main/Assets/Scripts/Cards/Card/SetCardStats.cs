@@ -169,6 +169,8 @@ public class SetCardStats : SetCardClass, IPointerEnterHandler, IPointerExitHand
 
     void Update()
     {
+        if (!myStats)
+            return;
         update_scale();
         update_rotation();
         float offset = myStats.offsetTop + ((myStats.offsetFinal - myStats.offsetTop) * scale);

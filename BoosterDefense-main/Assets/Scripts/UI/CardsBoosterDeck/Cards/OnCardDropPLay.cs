@@ -23,6 +23,7 @@ public class OnCardDropPLay : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log("ON DROP :");
         //When releasing a card on the sell part
         GameObject dropped = eventData.pointerDrag;
         if (dropped.GetComponent<Button>().interactable) {

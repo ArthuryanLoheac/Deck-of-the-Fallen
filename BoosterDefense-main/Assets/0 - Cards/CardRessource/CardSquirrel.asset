@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Squirrel
   image: {fileID: 21300000, guid: 269712b1a7863d648ac1fd4aa88070cf, type: 3}
   backGround: {fileID: 21300000, guid: a70d8a42419dd2c4aba3929db6b3a77f, type: 3}
+  foreGround: {fileID: -909839219, guid: 0c4f2f993d803824c9eb242b615392ca, type: 3}
   price: 0
   priceRessource: 1
   ghostToSpawn: {fileID: 9007171006751760155, guid: 662fae2cbf21c19429293745946cd72b, type: 3}
@@ -32,3 +33,4 @@ MonoBehaviour:
   rarity: 0
   offsetTop: 15
   offsetFinal: 25
+  BgFollow: 0
