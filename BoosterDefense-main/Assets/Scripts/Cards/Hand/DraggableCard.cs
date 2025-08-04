@@ -42,7 +42,6 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("ON DROP :");
         //When release card
         UnitDrag.instance.IsDraggingCard = false;
         OnCardDropPLay.instance.endDrag();
