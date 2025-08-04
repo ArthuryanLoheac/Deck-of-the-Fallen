@@ -81,3 +81,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154193
+  packageName: POLYGON Apocalypse - Low Poly 3D Art by Synty
+  packageVersion: 1.18.3
+  assetPath: Assets/PackageImport/PolygonParticleFX/Models/SM_Wep_Ammo_BulletLarge_01.fbx
+  uploadId: 755319
