@@ -63,8 +63,8 @@ MonoBehaviour:
   delayBetweenTwoSpawn: 30
   maxSpawn: 3
   prefabs:
-  - {fileID: 9007171006751760155, guid: f0cd7e4d49e8ba6469a88b877283617a, type: 3}
-  - {fileID: 9007171006751760155, guid: 7ec85d35170ca114a9303f330dbd18f8, type: 3}
+  - {fileID: 9007171006751760155, guid: 240093d6e4b9c0a4992675f06ab58fcf, type: 3}
+  - {fileID: 9007171006751760155, guid: cf65e2c399188a8458bd9852ff47e1d1, type: 3}
   range: 7
   prefabUI: {fileID: 4151731063816292453, guid: 1e000836bb3a87c4192ed76403559348, type: 3}
 --- !u!65 &7508674429168981380
